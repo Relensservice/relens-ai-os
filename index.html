@@ -1,1028 +1,133 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>ReLens Studio | Doorstep Optical Reglazing Puducherry</title>
-  <meta name="description" content="Minimalist optical studio. Keep your favorite frames, upgrade with digital prescription lenses. Free doorstep pickup & delivery in Puducherry." />
-
-  <!-- Google Fonts: Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          },
-          colors: {
-            studio: {
-              bg: '#FBFBFA',
-              surface: '#FFFFFF',
-              card: '#F6F6F4',
-              border: '#E8E8E4',
-              muted: '#71717A',
-              dark: '#121214',
-            },
-            accent: {
-              50: '#FDF8F3',
-              500: '#C28E5C',
-              600: '#A46F3E',
-              700: '#85542B',
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
-    /* Custom refined scrollbars */
-    ::-webkit-scrollbar { width: 5px; height: 5px; }
-    ::-webkit-scrollbar-track { background: #FBFBFA; }
-    ::-webkit-scrollbar-thumb { background: #D4D4D8; border-radius: 9999px; }
-    ::-webkit-scrollbar-thumb:hover { background: #A1A1AA; }
+<!-- ========================================================
+     ESSILOR® INDIA OFFICIAL PORTFOLIO
+======================================================== -->
+<section id="essilor-hub" class="py-20 bg-studio-surface border-b border-studio-border">
+  <div class="max-w-7xl mx-auto px-6">
     
-    .hairline-border {
-      border: 1px solid #E8E8E4;
-    }
-  </style>
-</head>
-
-<body class="bg-studio-bg text-studio-dark font-sans antialiased selection:bg-studio-dark selection:text-white min-h-screen flex flex-col">
-
-  <!-- Top Editorial Bar -->
-  <div class="bg-studio-dark text-white text-[11px] font-medium tracking-wide py-2 px-6">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-accent-500 animate-pulse"></span>
-        <span>Doorstep Eyeglass Reglazing Lab • Puducherry Exclusive</span>
-      </div>
-      <div class="hidden sm:flex items-center gap-6 text-zinc-400">
-        <span>Free Pickup & Return Delivery</span>
-        <span>Pay on Delivery (UPI / Cash)</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sticky Studio Navigation -->
-  <header class="sticky top-0 z-40 bg-studio-bg/90 backdrop-blur-md border-b border-studio-border">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-full bg-studio-dark text-white flex items-center justify-center font-extrabold text-sm tracking-tighter">
-          RL
-        </div>
-        <div>
-          <span class="text-xl font-bold tracking-tight text-studio-dark">ReLens<span class="text-accent-500">.</span></span>
-          <span class="text-[10px] text-studio-muted block -mt-1 tracking-wider uppercase font-semibold">Optical Studio</span>
-        </div>
-      </a>
-
-      <!-- Desktop Links -->
-      <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-wider text-studio-muted">
-        <a href="#services" class="hover:text-studio-dark transition-colors">Catalog</a>
-        <a href="#rx-guide" class="hover:text-studio-dark transition-colors">Lens Technology</a>
-        <a href="#process" class="hover:text-studio-dark transition-colors">How It Works</a>
-        <a href="#faq" class="hover:text-studio-dark transition-colors">Care Guide</a>
-      </nav>
-
-      <!-- Header Actions -->
-      <div class="flex items-center gap-3">
-        <!-- Cart Button -->
-        <button onclick="openCart()" class="relative p-2.5 rounded-full bg-studio-surface hover:bg-studio-card border border-studio-border text-studio-dark transition-all flex items-center justify-center shadow-sm">
-          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-          <span id="nav-cart-count" class="absolute -top-1 -right-1 bg-studio-dark text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
-        </button>
-
-        <!-- Primary Action -->
-        <button onclick="openRxModal('Single Vision Digital')" class="px-5 py-2.5 rounded-full bg-studio-dark text-white text-xs font-bold tracking-wide hover:bg-zinc-800 transition shadow-sm">
-          Configure Pair
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="max-w-7xl mx-auto px-6 pt-12 sm:pt-16 pb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-    
-    <div class="lg:col-span-7 space-y-6">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-studio-surface border border-studio-border text-xs font-semibold text-studio-muted">
-        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-accent-500"></i>
-        <span>Doorstep Reglaze & Deep Frame Restoration</span>
-      </div>
-
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-studio-dark leading-[1.12]">
-        Keep the frames you love. <br />
-        <span class="text-accent-500 underline decoration-studio-border decoration-wavy underline-offset-8">Upgrade the lenses.</span>
-      </h1>
-
-      <p class="text-base sm:text-lg text-studio-muted font-normal max-w-xl leading-relaxed">
-        Don’t discard your favorite glasses. We collect your frames from your home in Puducherry, computer-edge precision lenses in our optical lab, and deliver them back in 48 hours.
-      </p>
-
-      <div class="flex flex-wrap items-center gap-4 pt-2">
-        <button onclick="openRxModal()" class="px-7 py-3.5 rounded-full bg-studio-dark text-white text-xs font-bold tracking-wider uppercase hover:bg-zinc-800 transition shadow-md flex items-center gap-2">
-          <span>Upload Prescription & Configure</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </button>
-        <button onclick="openPickupModal()" class="px-6 py-3.5 rounded-full bg-studio-surface border border-studio-border text-xs font-bold tracking-wider uppercase hover:bg-studio-card transition">
-          Direct Pickup Booking
-        </button>
-      </div>
-
-      <div class="flex items-center gap-6 pt-4 text-xs text-studio-muted">
-        <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-accent-500"></i> Free Frame Alignment</span>
-        <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-accent-500"></i> Ultrasonic Deep-Clean</span>
-        <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-accent-500"></i> Starting from ₹790</span>
-      </div>
-    </div>
-
-    <!-- Hero Image & Metrics Showcase -->
-    <div class="lg:col-span-5 relative">
-      <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-zinc-100 border border-studio-border shadow-xl relative">
-        <img 
-          src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=1000&q=80" 
-          alt="Precision Eyewear Crafting" 
-          class="w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-studio-dark/60 via-transparent to-transparent"></div>
-        <div class="absolute bottom-6 left-6 right-6 text-white">
-          <p class="text-[11px] font-semibold tracking-widest uppercase text-accent-50">Precision Edging Lab</p>
-          <p class="text-sm font-medium text-zinc-200 mt-1">ValueVis™ & Essilor® Authorized reglazing standard.</p>
-        </div>
-      </div>
-
-      <!-- Floating Stat Badge -->
-      <div class="absolute -bottom-5 -left-5 bg-studio-surface p-4 rounded-2xl shadow-xl border border-studio-border hidden sm:block">
-        <p class="text-2xl font-black text-studio-dark tracking-tight">48 Hours</p>
-        <p class="text-[10px] font-bold text-studio-muted uppercase tracking-wider">Pondy Turnaround</p>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- Value Pillars -->
-  <section class="border-y border-studio-border bg-studio-surface py-12">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <div class="flex items-start gap-4">
-        <div class="w-10 h-10 rounded-2xl bg-studio-card border border-studio-border flex items-center justify-center font-bold text-xs text-studio-dark shrink-0">
-          01
-        </div>
-        <div>
-          <h2 class="text-sm font-bold text-studio-dark">Doorstep Collection & Return</h2>
-          <p class="text-xs text-studio-muted mt-1 leading-relaxed">Our optical specialist collects your frames and paper prescription right from your home or office in Puducherry.</p>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-4">
-        <div class="w-10 h-10 rounded-2xl bg-studio-card border border-studio-border flex items-center justify-center font-bold text-xs text-studio-dark shrink-0">
-          02
-        </div>
-        <div>
-          <h2 class="text-sm font-bold text-studio-dark">Authentic Lab Quality</h2>
-          <p class="text-xs text-studio-muted mt-1 leading-relaxed">ValueVis™ digital freeform and Essilor® Crizal® optics with laser breath-marks and authenticity guarantee cards.</p>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-4">
-        <div class="w-10 h-10 rounded-2xl bg-studio-card border border-studio-border flex items-center justify-center font-bold text-xs text-studio-dark shrink-0">
-          03
-        </div>
-        <div>
-          <h2 class="text-sm font-bold text-studio-dark">Complimentary Frame Spa</h2>
-          <p class="text-xs text-studio-muted mt-1 leading-relaxed">Every pair receives ultrasonic cavitation cleaning, screw tightening, temple balancing, and fresh nose pads.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Product Catalog -->
-  <section id="services" class="max-w-7xl mx-auto px-6 py-20">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
       <div>
-        <span class="text-xs font-bold uppercase tracking-wider text-accent-500">Reglazing Rate Card</span>
-        <h2 class="text-3xl font-extrabold tracking-tight text-studio-dark mt-1">Select Your Lens Upgrade</h2>
-        <p class="text-studio-muted text-xs mt-1">Transparent pricing inclusive of lab cutting, fitting, and doorstep logistics.</p>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold tracking-wide mb-2">
+          <span>Official Authorized Reglazing</span>
+        </div>
+        <h2 class="text-3xl font-extrabold tracking-tight text-studio-dark">Full Essilor® India Collection</h2>
+        <p class="text-studio-muted text-xs sm:text-sm mt-1">Every pair fitted to your frame with official warranty card & authentic laser fog-mark inspection.</p>
       </div>
-      <a href="https://wa.me/919488353749?text=Hi%20ReLens,%20I%20need%20a%20quote%20for%20Essilor%20or%20ValueVis%20lenses" target="_blank" class="text-xs font-bold text-studio-dark hover:text-accent-500 transition-colors flex items-center gap-1">
-        <span>Request Essilor Crizal® / Varilux® Quote</span>
-        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+
+      <a href="https://wa.me/919488353749?text=Hi%20ReLens,%20I%20need%20the%20official%20Essilor%20India%20price%20quotation" target="_blank" class="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all shadow-sm flex items-center gap-2 self-start md:self-auto">
+        <i data-lucide="message-circle" class="w-4 h-4"></i>
+        <span>Request Official Price List</span>
       </a>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Essilor India 4-Pillar Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-      <!-- Product 1 -->
-      <div class="bg-studio-surface rounded-2xl border border-studio-border p-6 flex flex-col justify-between hover:shadow-lg transition-all group">
+      <!-- Column 1: Eyezen Digital -->
+      <div class="bg-studio-bg rounded-2xl border border-studio-border p-6 flex flex-col justify-between hover:border-blue-300 transition-all">
         <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-zinc-100 text-zinc-700 uppercase">Single Vision</span>
-            <span class="text-xs font-mono font-bold text-studio-dark">From ₹790</span>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 uppercase">Single Vision</span>
+            <span class="text-[11px] font-mono text-studio-muted">Eyezen®</span>
           </div>
-          <h3 class="text-lg font-bold text-studio-dark group-hover:text-accent-500 transition-colors">Clear Distance or Reading</h3>
-          <p class="text-xs text-studio-muted mt-2 leading-relaxed">Hard-coated single-vision lenses for daily reading, computer work, or driving correction.</p>
-          
-          <ul class="mt-4 space-y-2 text-xs text-studio-muted">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent-500"></i> 1.50 Hard Coat: ₹790</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent-500"></i> 1.56 Anti-Reflective ARC: ₹1,090</li>
-          </ul>
-        </div>
-
-        <button onclick="openRxModal('Single Vision Digital')" class="mt-6 w-full py-2.5 rounded-xl bg-studio-dark hover:bg-zinc-800 text-white text-xs font-bold tracking-wide transition flex items-center justify-center gap-1.5">
-          <span>Configure & Upload Rx</span>
-          <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-        </button>
-      </div>
-
-      <!-- Product 2 -->
-      <div class="bg-studio-surface rounded-2xl border border-studio-border p-6 flex flex-col justify-between hover:shadow-lg transition-all group">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-50 text-accent-600 border border-amber-200 uppercase">Digital Comfort</span>
-            <span class="text-xs font-mono font-bold text-studio-dark">From ₹1,190</span>
-          </div>
-          <h3 class="text-lg font-bold text-studio-dark group-hover:text-accent-500 transition-colors">BlueCut+ Screen Shield</h3>
-          <p class="text-xs text-studio-muted mt-2 leading-relaxed">Engineered for laptops and phones. Filters harmful 420nm high-energy blue rays to stop eye strain.</p>
-          
-          <ul class="mt-4 space-y-2 text-xs text-studio-muted">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent-500"></i> 1.56 BlueCut ARC: ₹1,190</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent-500"></i> 1.60 MR-8 Hi-Index: ₹1,850</li>
-          </ul>
-        </div>
-
-        <button onclick="openRxModal('BlueCut Screen Shield')" class="mt-6 w-full py-2.5 rounded-xl bg-studio-dark hover:bg-zinc-800 text-white text-xs font-bold tracking-wide transition flex items-center justify-center gap-1.5">
-          <span>Configure & Upload Rx</span>
-          <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-        </button>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="bg-studio-surface rounded-2xl border border-studio-border p-6 flex flex-col justify-between hover:shadow-lg transition-all group relative">
-        <div class="absolute -top-3 right-4 bg-accent-500 text-white text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full shadow-sm">
-          Popular
-        </div>
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-zinc-100 text-zinc-700 uppercase">Progressive</span>
-            <span class="text-xs font-mono font-bold text-studio-dark">From ₹2,450</span>
-          </div>
-          <h3 class="text-lg font-bold text-studio-dark group-hover:text-accent-500 transition-colors">ValueVis™ Customized Freeform</h3>
-          <p class="text-xs text-studio-muted mt-2 leading-relaxed">No visible lines. Smooth optical corridor balancing driving, computer screens, and mobile reading.</p>
-          
-          <ul class="mt-4 space-y-2 text-xs text-studio-muted">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent-500"></i> 1.56 Customized Freeform: ₹2,450</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent-500"></i> Optix ARC Green Anti-Glare</li>
-          </ul>
-        </div>
-
-        <button onclick="openRxModal('Customized Freeform Progressive')" class="mt-6 w-full py-2.5 rounded-xl bg-accent-500 hover:bg-accent-600 text-white text-xs font-bold tracking-wide transition flex items-center justify-center gap-1.5">
-          <span>Configure & Upload Rx</span>
-          <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-        </button>
-      </div>
-
-      <!-- Product 4 -->
-      <div class="bg-studio-surface rounded-2xl border border-studio-border p-6 flex flex-col justify-between hover:shadow-lg transition-all group">
-        <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-zinc-100 text-zinc-700 uppercase">Flagship Tier</span>
-            <span class="text-xs font-mono font-bold text-studio-dark">From ₹3,490</span>
-          </div>
-          <h3 class="text-lg font-bold text-studio-dark group-hover:text-accent-500 transition-colors">EVOLUX ELITE European</h3>
-          <p class="text-xs text-studio-muted mt-2 leading-relaxed">Panoramic vision width with virtually zero swim distortion. Micro-engraved 'X' authenticity mark.</p>
-          
-          <ul class="mt-4 space-y-2 text-xs text-studio-muted">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent-500"></i> 1.56 Evolux Elite: ₹3,490</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent-500"></i> 1.60 Ultra-Thin MR-8: ₹4,650</li>
-          </ul>
-        </div>
-
-        <button onclick="openRxModal('EVOLUX ELITE Panoramic')" class="mt-6 w-full py-2.5 rounded-xl bg-studio-dark hover:bg-zinc-800 text-white text-xs font-bold tracking-wide transition flex items-center justify-center gap-1.5">
-          <span>Configure & Upload Rx</span>
-          <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Process Timeline -->
-  <section id="process" class="bg-studio-dark text-white py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      
-      <div class="max-w-xl mb-14">
-        <span class="text-xs font-bold uppercase tracking-widest text-accent-500">Streamlined Care</span>
-        <h2 class="text-3xl font-extrabold tracking-tight mt-1">How ReLens Doorstep Works</h2>
-        <p class="text-zinc-400 text-xs mt-2">Zero retail showroom hassle. We handle pick up, optical edge-glazing, and doorstep return.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        
-        <div class="border-t border-zinc-800 pt-6">
-          <span class="text-xs font-bold text-accent-500">01</span>
-          <h3 class="text-sm font-bold mt-2 text-white">Upload Rx & Configure</h3>
-          <p class="text-xs text-zinc-400 mt-2 leading-relaxed">Upload a phone snapshot of your prescription or enter manual power numbers.</p>
-        </div>
-
-        <div class="border-t border-zinc-800 pt-6">
-          <span class="text-xs font-bold text-accent-500">02</span>
-          <h3 class="text-sm font-bold mt-2 text-white">Free Doorstep Pickup</h3>
-          <p class="text-xs text-zinc-400 mt-2 leading-relaxed">Our specialist collects your frame in a secure optical case from your Puducherry location.</p>
-        </div>
-
-        <div class="border-t border-zinc-800 pt-6">
-          <span class="text-xs font-bold text-accent-500">03</span>
-          <h3 class="text-sm font-bold mt-2 text-white">Precision Edging & Spa</h3>
-          <p class="text-xs text-zinc-400 mt-2 leading-relaxed">Fitted in our optical lab. Frames receive deep ultrasonic cavitation sanitization and realignment.</p>
-        </div>
-
-        <div class="border-t border-zinc-800 pt-6">
-          <span class="text-xs font-bold text-accent-500">04</span>
-          <h3 class="text-sm font-bold mt-2 text-white">48h Delivery & Pay</h3>
-          <p class="text-xs text-zinc-400 mt-2 leading-relaxed">Returned to your door. Try your fresh clear lenses and pay securely via UPI or cash.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Editorial Footer -->
-  <footer class="mt-auto bg-studio-surface border-t border-studio-border py-12">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-        
-        <div class="md:col-span-2 space-y-3">
-          <div class="flex items-center gap-2">
-            <div class="w-7 h-7 rounded-full bg-studio-dark text-white flex items-center justify-center font-bold text-xs">RL</div>
-            <span class="text-base font-bold text-studio-dark">ReLens Studio</span>
-          </div>
-          <p class="text-xs text-studio-muted leading-relaxed max-w-sm">
-            Professional doorstep spectacle lens replacement studio serving Puducherry. Authorized partner for ValueVis™ Digital Optics and Essilor® Crizal® optical reglazing.
+          <h3 class="text-base font-bold text-studio-dark">Eyezen® Start & Boost</h3>
+          <p class="text-xs text-studio-muted mt-2 leading-relaxed">
+            Optimized for screen users. Eyezen Boost delivers up to +1.10 D accommodative support to stop screen fatigue.
           </p>
-          <p class="text-xs text-studio-dark pt-1">
-            <strong>Lab Desk:</strong> +91 94883 53749 • Pondy Doorstep Pickup Service
-          </p>
+
+          <div class="mt-4 pt-3 border-t border-studio-border space-y-1.5 text-xs text-studio-dark">
+            <p>• Eyezen Start (Digital SV)</p>
+            <p>• Eyezen Boost (+0.4 to +1.1)</p>
+            <p>• Choice of Crizal® Rock / Sapphire</p>
+          </div>
         </div>
 
+        <button onclick="openRxModal('Essilor Eyezen Digital')" class="mt-6 w-full py-2.5 rounded-full bg-studio-dark hover:bg-zinc-800 text-white text-xs font-bold transition flex items-center justify-center gap-1.5">
+          <span>Configure Eyezen</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+
+      <!-- Column 2: Varilux Progressive -->
+      <div class="bg-studio-bg rounded-2xl border border-blue-400 p-6 flex flex-col justify-between shadow-md relative">
+        <div class="absolute -top-3 right-4 bg-blue-600 text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-sm">
+          Flagship
+        </div>
         <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-studio-dark mb-3">Service Areas</h4>
-          <p class="text-xs text-studio-muted leading-relaxed">
-            White Town, Heritage Town, Lawspet, Muthialpet, Saram, Villianur, Gorimedu, ECR, and all surrounding Puducherry areas.
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 uppercase">Progressive</span>
+            <span class="text-[11px] font-mono text-studio-muted">Varilux®</span>
+          </div>
+          <h3 class="text-base font-bold text-studio-dark">Varilux® Comfort, Physio & XR</h3>
+          <p class="text-xs text-studio-muted mt-2 leading-relaxed">
+            World leader in progressive optics. From Comfort Max ergonomics to XR series powered by behavioral AI.
           </p>
+
+          <div class="mt-4 pt-3 border-t border-studio-border space-y-1.5 text-xs text-studio-dark">
+            <p>• Varilux® Comfort Max</p>
+            <p>• Varilux® Physio 3.0</p>
+            <p>• Varilux® XR Series (AI Driven)</p>
+          </div>
         </div>
 
+        <button onclick="openRxModal('Essilor Varilux Progressive')" class="mt-6 w-full py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition flex items-center justify-center gap-1.5">
+          <span>Configure Varilux</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+
+      <!-- Column 3: Crizal Coatings -->
+      <div class="bg-studio-bg rounded-2xl border border-studio-border p-6 flex flex-col justify-between hover:border-blue-300 transition-all">
         <div>
-          <h4 class="text-xs font-bold uppercase tracking-wider text-studio-dark mb-3">Lab Standards</h4>
-          <ul class="space-y-1.5 text-xs text-studio-muted">
-            <li>• Ultrasonic Deep Cleaning</li>
-            <li>• Laser Fog-Mark Verified</li>
-            <li>• Free Frame Realignment</li>
-            <li>• Authenticity Cards Included</li>
-          </ul>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-zinc-200 text-zinc-800 uppercase">Protection</span>
+            <span class="text-[11px] font-mono text-studio-muted">Crizal®</span>
+          </div>
+          <h3 class="text-base font-bold text-studio-dark">Crizal® Coating Suites</h3>
+          <p class="text-xs text-studio-muted mt-2 leading-relaxed">
+            Ultimate durability, reflection-free transparency, and selective blue-violet light filtration.
+          </p>
+
+          <div class="mt-4 pt-3 border-t border-studio-border space-y-1.5 text-xs text-studio-dark">
+            <p>• <strong>Easy Pro:</strong> Anti-smudge shield</p>
+            <p>• <strong>Rock™:</strong> 3x scratch resistance</p>
+            <p>• <strong>Sapphire™ HR:</strong> Pure clarity</p>
+            <p>• <strong>Prevencia™:</strong> UV & Blue-cut</p>
+          </div>
         </div>
 
+        <button onclick="openRxModal('Essilor Crizal FSV')" class="mt-6 w-full py-2.5 rounded-full bg-studio-dark hover:bg-zinc-800 text-white text-xs font-bold transition flex items-center justify-center gap-1.5">
+          <span>Select Crizal Pair</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </button>
       </div>
 
-      <div class="border-t border-studio-border pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-studio-muted gap-2">
-        <p>© 2026 ReLens Lab. All rights reserved.</p>
-        <p>Engineered for clear vision in Puducherry.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ========================================================
-       MODAL 1: CONFIGURE & PRESCRIPTION UPLOAD MODAL
-  ======================================================== -->
-  <div id="rx-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
-    <!-- Backdrop -->
-    <div data-backdrop class="fixed inset-0 bg-studio-dark/60 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closeRxModal()"></div>
-
-    <!-- Centered Dialog -->
-    <div class="fixed inset-0 z-10 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      <div data-sheet-panel class="w-full max-w-xl bg-studio-surface border border-studio-border rounded-3xl shadow-2xl p-6 sm:p-8 transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto">
-        
-        <div class="flex items-center justify-between pb-4 border-b border-studio-border">
-          <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-accent-500">Studio Configurator</span>
-            <h3 class="text-xl font-extrabold text-studio-dark">Select Lenses & Prescription</h3>
+      <!-- Column 4: Light Management & Speciality -->
+      <div class="bg-studio-bg rounded-2xl border border-studio-border p-6 flex flex-col justify-between hover:border-blue-300 transition-all">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800 uppercase">Adaptive & Care</span>
+            <span class="text-[11px] font-mono text-studio-muted">Specialty</span>
           </div>
-          <button onclick="closeRxModal()" class="p-2 text-studio-muted hover:text-studio-dark rounded-full transition">
-            <i data-lucide="x" class="w-5 h-5"></i>
-          </button>
+          <h3 class="text-base font-bold text-studio-dark">Transitions® & Stellest®</h3>
+          <p class="text-xs text-studio-muted mt-2 leading-relaxed">
+            Transitions® GEN S™ for ultra-fast tint shifting, and Stellest® myopia control lenses for kids.
+          </p>
+
+          <div class="mt-4 pt-3 border-t border-studio-border space-y-1.5 text-xs text-studio-dark">
+            <p>• Transitions® GEN S™ (8 colors)</p>
+            <p>• Transitions® XTRActive® (Drive)</p>
+            <p>• Stellest® (Kids Myopia Control)</p>
+            <p>• Xperio® Polarized Sun Lenses</p>
+          </div>
         </div>
 
-        <form id="rx-config-form" class="mt-5 space-y-5" onsubmit="event.preventDefault(); addConfiguredLensToCart();">
-          
-          <!-- Category selection -->
-          <div>
-            <label class="block text-xs font-bold text-studio-dark mb-1">1. Lens Category</label>
-            <select id="cfg-lens-category" class="w-full bg-studio-card border border-studio-border rounded-xl px-3.5 py-2.5 text-xs text-studio-dark focus:outline-none focus:border-studio-dark transition" onchange="calculatePrice()">
-              <option value="Single Vision Digital" data-base="790">Single Vision Digital (From ₹790)</option>
-              <option value="BlueCut Screen Shield" data-base="1190">BlueCut+ Anti-Glare Screen Shield (From ₹1,190)</option>
-              <option value="Customized Freeform Progressive" data-base="2450">ValueVis™ Customized Freeform Progressive (From ₹2,450)</option>
-              <option value="EVOLUX ELITE Panoramic" data-base="3490">EVOLUX ELITE European Panoramic Flagship (From ₹3,490)</option>
-            </select>
-          </div>
-
-          <!-- Refractive Index -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label class="block text-xs font-bold text-studio-dark mb-1">2. Lens Index / Thinness</label>
-              <select id="cfg-lens-index" class="w-full bg-studio-card border border-studio-border rounded-xl px-3.5 py-2.5 text-xs text-studio-dark focus:outline-none focus:border-studio-dark transition" onchange="calculatePrice()">
-                <option value="1.50 Standard Resin" data-price="0">1.50 Standard (Plano to ±2.00 D)</option>
-                <option value="1.56 Mid-Index Slim" data-price="350">1.56 Slim (+₹350)</option>
-                <option value="1.60 MR-8 High Impact" data-price="900">1.60 MR-8 Hi-Impact (+₹900)</option>
-                <option value="1.67 Ultra-Thin" data-price="1600">1.67 Ultra-Thin (+₹1,600)</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-studio-dark mb-1">3. Lens Coating</label>
-              <select id="cfg-lens-coating" class="w-full bg-studio-card border border-studio-border rounded-xl px-3.5 py-2.5 text-xs text-studio-dark focus:outline-none focus:border-studio-dark transition" onchange="calculatePrice()">
-                <option value="Optix ARC Green Anti-Glare" data-price="0">Optix ARC Green (Included)</option>
-                <option value="Bluvex BlueCut+ Filter" data-price="300">Bluvex BlueCut+ Filter (+₹300)</option>
-                <option value="Photochromic Sun-Drive Grey" data-price="800">Photochromic Grey Adaptive (+₹800)</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Prescription Method Tabs -->
-          <div class="pt-2 border-t border-studio-border">
-            <label class="block text-xs font-bold text-studio-dark mb-2">4. Prescription Input Method</label>
-            <div class="flex rounded-xl bg-studio-card p-1 border border-studio-border text-xs mb-3">
-              <button type="button" id="tab-btn-upload" onclick="switchRxTab('upload')" class="flex-1 py-1.5 font-bold rounded-lg bg-studio-surface text-studio-dark shadow-sm">
-                Upload Photo / Slip
-              </button>
-              <button type="button" id="tab-btn-manual" onclick="switchRxTab('manual')" class="flex-1 py-1.5 font-semibold text-studio-muted rounded-lg">
-                Enter Manually
-              </button>
-              <button type="button" id="tab-btn-pickup" onclick="switchRxTab('pickup')" class="flex-1 py-1.5 font-semibold text-studio-muted rounded-lg">
-                Collect Physical Copy
-              </button>
-            </div>
-
-            <!-- Tab 1: File Upload Simulation -->
-            <div id="rx-tab-upload" class="space-y-2">
-              <label class="border-2 border-dashed border-studio-border hover:border-accent-500 rounded-2xl p-5 flex flex-col items-center justify-center cursor-pointer bg-studio-card/50 transition">
-                <i data-lucide="upload-cloud" class="w-7 h-7 text-studio-muted mb-2"></i>
-                <span class="text-xs font-bold text-studio-dark">Tap to upload prescription slip</span>
-                <span class="text-[10px] text-studio-muted mt-0.5">JPG, PNG, or PDF file (or WhatsApp it later)</span>
-                <input type="file" id="rx-file-input" accept="image/*,.pdf" class="hidden" onchange="handleRxFileSelect(event)" />
-              </label>
-              <div id="rx-file-status" class="text-xs font-medium text-accent-600 hidden flex items-center gap-1.5">
-                <i data-lucide="file-check" class="w-4 h-4"></i>
-                <span id="rx-file-name">Prescription attached</span>
-              </div>
-            </div>
-
-            <!-- Tab 2: Manual Numbers -->
-            <div id="rx-tab-manual" class="hidden space-y-2">
-              <div class="grid grid-cols-4 gap-2 text-[11px] font-bold text-studio-muted text-center">
-                <span>Eye</span><span>SPH</span><span>CYL</span><span>AXIS</span>
-              </div>
-              <div class="grid grid-cols-4 gap-2">
-                <span class="text-xs font-bold py-2 text-center">OD (Right)</span>
-                <input type="text" id="rx-od-sph" placeholder="-2.00" class="p-2 text-center text-xs bg-studio-card border border-studio-border rounded-lg" />
-                <input type="text" id="rx-od-cyl" placeholder="-0.50" class="p-2 text-center text-xs bg-studio-card border border-studio-border rounded-lg" />
-                <input type="text" id="rx-od-axis" placeholder="180" class="p-2 text-center text-xs bg-studio-card border border-studio-border rounded-lg" />
-              </div>
-              <div class="grid grid-cols-4 gap-2">
-                <span class="text-xs font-bold py-2 text-center">OS (Left)</span>
-                <input type="text" id="rx-os-sph" placeholder="-1.75" class="p-2 text-center text-xs bg-studio-card border border-studio-border rounded-lg" />
-                <input type="text" id="rx-os-cyl" placeholder="0.00" class="p-2 text-center text-xs bg-studio-card border border-studio-border rounded-lg" />
-                <input type="text" id="rx-os-axis" placeholder="0" class="p-2 text-center text-xs bg-studio-card border border-studio-border rounded-lg" />
-              </div>
-            </div>
-
-            <!-- Tab 3: Collect Physical Copy -->
-            <div id="rx-tab-pickup" class="hidden p-4 rounded-xl bg-studio-card text-xs text-studio-muted">
-              <p>Our doorstep agent will collect your doctor's physical prescription paper at the same time they collect your eyeglasses frame.</p>
-            </div>
-          </div>
-
-          <!-- Live Price & Submit -->
-          <div class="pt-4 border-t border-studio-border flex items-center justify-between">
-            <div>
-              <span class="text-[10px] text-studio-muted block uppercase font-bold tracking-wider">Fitted Price (Per Pair)</span>
-              <span class="text-2xl font-black text-studio-dark font-mono" id="modal-price-display">₹790</span>
-            </div>
-            <button type="submit" class="px-6 py-3 rounded-full bg-studio-dark hover:bg-zinc-800 text-white text-xs font-bold tracking-wide transition shadow-md flex items-center gap-2">
-              <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-              <span>Add to Reglaze Cart</span>
-            </button>
-          </div>
-
-        </form>
-
+        <button onclick="openRxModal('Essilor Transitions')" class="mt-6 w-full py-2.5 rounded-full bg-studio-dark hover:bg-zinc-800 text-white text-xs font-bold transition flex items-center justify-center gap-1.5">
+          <span>Configure Specialty</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </button>
       </div>
+
     </div>
   </div>
-
-  <!-- ========================================================
-       MODAL 2: CART DRAWER (RIGHT SLIDE-IN)
-  ======================================================== -->
-  <div id="cart-drawer" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
-    <div data-backdrop class="fixed inset-0 bg-studio-dark/60 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closeCart()"></div>
-
-    <div data-sheet-panel class="fixed inset-y-0 right-0 max-w-full flex pl-10 transform translate-x-full transition-transform duration-300 ease-in-out">
-      <div class="w-screen max-w-md bg-studio-surface border-l border-studio-border flex flex-col shadow-2xl">
-        
-        <!-- Header -->
-        <div class="p-6 border-b border-studio-border flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <i data-lucide="shopping-bag" class="w-4 h-4 text-studio-dark"></i>
-            <h3 class="font-extrabold text-sm uppercase tracking-wider text-studio-dark">Your Reglaze Cart</h3>
-            <span id="drawer-item-count" class="text-xs px-2 py-0.5 rounded-full bg-studio-card font-bold border border-studio-border">0</span>
-          </div>
-          <button onclick="closeCart()" class="p-2 text-studio-muted hover:text-studio-dark rounded-full transition">
-            <i data-lucide="x" class="w-5 h-5"></i>
-          </button>
-        </div>
-
-        <!-- Items Container -->
-        <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-3">
-          <!-- Dynamically populated -->
-        </div>
-
-        <!-- Footer -->
-        <div class="p-6 border-t border-studio-border bg-studio-card/40 space-y-3">
-          <div class="space-y-1.5 text-xs">
-            <div class="flex justify-between text-studio-muted">
-              <span>Lenses Subtotal</span>
-              <span id="cart-subtotal" class="font-mono text-studio-dark font-bold">₹0</span>
-            </div>
-            <div class="flex justify-between text-studio-muted">
-              <span>Doorstep Pickup & Delivery</span>
-              <span class="text-accent-600 font-bold">FREE</span>
-            </div>
-            <div class="flex justify-between text-studio-muted">
-              <span>Ultrasonic Frame Spa</span>
-              <span class="text-accent-600 font-bold">FREE</span>
-            </div>
-            <div class="pt-2 border-t border-studio-border flex justify-between text-sm font-bold text-studio-dark">
-              <span>Total Due on Delivery</span>
-              <span id="cart-grand-total" class="text-lg font-black font-mono">₹0</span>
-            </div>
-          </div>
-
-          <button id="btn-proceed-pickup" onclick="openPickupModal()" class="w-full py-3.5 rounded-full bg-studio-dark hover:bg-zinc-800 text-white text-xs font-bold tracking-wider uppercase transition shadow-md flex items-center justify-center gap-2">
-            <i data-lucide="truck" class="w-4 h-4"></i>
-            <span>Schedule Doorstep Pickup</span>
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================================
-       MODAL 3: DOORSTEP PICKUP DETAILS
-  ======================================================== -->
-  <div id="pickup-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
-    <div data-backdrop class="fixed inset-0 bg-studio-dark/60 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closePickupModal()"></div>
-
-    <div class="fixed inset-0 z-10 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      <div data-sheet-panel class="w-full max-w-lg bg-studio-surface border border-studio-border rounded-3xl shadow-2xl p-6 sm:p-8 transform scale-95 transition-all duration-300">
-        
-        <div class="flex items-center justify-between pb-4 border-b border-studio-border">
-          <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-accent-500">Puducherry Doorstep Service</span>
-            <h3 class="text-xl font-extrabold text-studio-dark">Schedule Frame Pickup</h3>
-          </div>
-          <button onclick="closePickupModal()" class="p-2 text-studio-muted hover:text-studio-dark rounded-full transition">
-            <i data-lucide="x" class="w-5 h-5"></i>
-          </button>
-        </div>
-
-        <form id="pickup-form" class="mt-5 space-y-4" onsubmit="event.preventDefault(); submitPickupBooking();">
-          
-          <div>
-            <label class="block text-xs font-bold text-studio-dark mb-1">Your Full Name *</label>
-            <input type="text" id="pk-name" required placeholder="e.g. Ravisankar" class="w-full bg-studio-card border border-studio-border rounded-xl px-3.5 py-2.5 text-xs text-studio-dark focus:outline-none focus:border-studio-dark" />
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label class="block text-xs font-bold text-studio-dark mb-1">WhatsApp Number *</label>
-              <input type="tel" id="pk-phone" required pattern="[0-9]{10}" placeholder="10-digit mobile" class="w-full bg-studio-card border border-studio-border rounded-xl px-3.5 py-2.5 text-xs text-studio-dark focus:outline-none focus:border-studio-dark" />
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-studio-dark mb-1">Pickup Time Slot *</label>
-              <select id="pk-slot" class="w-full bg-studio-card border border-studio-border rounded-xl px-3.5 py-2.5 text-xs text-studio-dark focus:outline-none focus:border-studio-dark">
-                <option value="Morning (10 AM - 1 PM)">Morning (10 AM - 1 PM)</option>
-                <option value="Afternoon (2 PM - 5 PM)">Afternoon (2 PM - 5 PM)</option>
-                <option value="Evening (5 PM - 8 PM)">Evening (5 PM - 8 PM)</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-xs font-bold text-studio-dark mb-1">Puducherry Address & Landmark *</label>
-            <textarea id="pk-address" required rows="2" placeholder="e.g. No. 14, Romain Rolland St, White Town, Puducherry" class="w-full bg-studio-card border border-studio-border rounded-xl px-3.5 py-2 text-xs text-studio-dark focus:outline-none focus:border-studio-dark"></textarea>
-          </div>
-
-          <div class="p-3.5 rounded-xl bg-studio-card border border-studio-border flex items-center justify-between text-xs">
-            <span class="text-studio-muted">Total Due on Safe Delivery:</span>
-            <span id="pk-due-display" class="text-base font-extrabold text-studio-dark font-mono">₹0</span>
-          </div>
-
-          <button type="submit" class="w-full py-3.5 rounded-full bg-studio-dark hover:bg-zinc-800 text-white text-xs font-bold tracking-wider uppercase transition shadow-md flex items-center justify-center gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
-            <span>Confirm & WhatsApp Order</span>
-          </button>
-        </form>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================================
-       MODAL 4: ORDER CONFIRMED
-  ======================================================== -->
-  <div id="confirmed-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
-    <div data-backdrop class="fixed inset-0 bg-studio-dark/60 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closeConfirmedModal()"></div>
-
-    <div class="fixed inset-0 z-10 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      <div data-sheet-panel class="w-full max-w-md bg-studio-surface border border-studio-border rounded-3xl shadow-2xl p-6 sm:p-8 transform scale-95 transition-all duration-300 text-center">
-        
-        <div class="w-14 h-14 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 mx-auto flex items-center justify-center mb-4">
-          <i data-lucide="check" class="w-7 h-7"></i>
-        </div>
-
-        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-600">Booking Confirmed</span>
-        <h3 class="text-2xl font-extrabold text-studio-dark mt-1">Pickup Scheduled!</h3>
-        <p class="text-studio-muted text-xs mt-1">Our doorstep lab specialist has logged your request.</p>
-
-        <div class="mt-4 p-4 rounded-2xl bg-studio-card border border-studio-border text-left space-y-1.5 text-xs">
-          <div class="flex justify-between">
-            <span class="text-studio-muted">Order ID:</span>
-            <span id="cf-order-id" class="font-mono text-studio-dark font-bold">#RL-000000</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-studio-muted">Slot:</span>
-            <span id="cf-order-slot" class="text-studio-dark font-medium">-</span>
-          </div>
-          <div class="flex justify-between pt-1 border-t border-studio-border">
-            <span class="text-studio-muted">Pay on Delivery:</span>
-            <span id="cf-order-total" class="font-mono text-studio-dark font-bold">₹0</span>
-          </div>
-        </div>
-
-        <div class="mt-6 space-y-2">
-          <a id="cf-whatsapp-btn" href="#" target="_blank" class="w-full py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold tracking-wider uppercase transition shadow-md flex items-center justify-center gap-2">
-            <i data-lucide="message-circle" class="w-4 h-4"></i>
-            <span>Send Details to WhatsApp Desk</span>
-          </a>
-          <button onclick="closeConfirmedModal()" class="w-full py-2.5 rounded-full bg-studio-card hover:bg-studio-border text-studio-dark text-xs font-semibold transition">
-            Close & Return
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================================
-       JAVASCRIPT APPLICATION ENGINE
-  ======================================================== -->
-  <script>
-    /**
-     * Prescription Upload Method Switcher
-     */
-    let currentRxMethod = 'upload';
-    let attachedFileName = '';
-
-    function switchRxTab(method) {
-      currentRxMethod = method;
-      const tabs = ['upload', 'manual', 'pickup'];
-      
-      tabs.forEach(t => {
-        const panel = document.getElementById(`rx-tab-${t}`);
-        const btn = document.getElementById(`tab-btn-${t}`);
-        if (t === method) {
-          panel.classList.remove('hidden');
-          btn.className = "flex-1 py-1.5 font-bold rounded-lg bg-studio-surface text-studio-dark shadow-sm";
-        } else {
-          panel.classList.add('hidden');
-          btn.className = "flex-1 py-1.5 font-semibold text-studio-muted rounded-lg";
-        }
-      });
-    }
-
-    function handleRxFileSelect(e) {
-      if (e.target.files && e.target.files[0]) {
-        attachedFileName = e.target.files[0].name;
-        document.getElementById('rx-file-status').classList.remove('hidden');
-        document.getElementById('rx-file-name').innerText = `Attached: ${attachedFileName}`;
-      }
-    }
-
-    /**
-     * Modal Visibility Controller (Zero-crash architecture)
-     */
-    const MODALS = {
-      rx: 'rx-modal',
-      cart: 'cart-drawer',
-      pickup: 'pickup-modal',
-      confirmed: 'confirmed-modal'
-    };
-
-    function showModal(id) {
-      const modal = document.getElementById(id);
-      if (!modal) return;
-      modal.classList.remove('hidden');
-      document.body.classList.add('overflow-hidden');
-
-      const backdrop = modal.querySelector('[data-backdrop]');
-      const sheet = modal.querySelector('[data-sheet-panel]');
-
-      requestAnimationFrame(() => {
-        if (backdrop) {
-          backdrop.classList.remove('opacity-0');
-          backdrop.classList.add('opacity-100');
-        }
-        if (sheet) {
-          sheet.classList.remove('translate-x-full', 'scale-95');
-          sheet.classList.add('translate-x-0', 'scale-100');
-        }
-      });
-    }
-
-    function hideModal(id) {
-      const modal = document.getElementById(id);
-      if (!modal) return;
-
-      const backdrop = modal.querySelector('[data-backdrop]');
-      const sheet = modal.querySelector('[data-sheet-panel]');
-
-      if (backdrop) {
-        backdrop.classList.remove('opacity-100');
-        backdrop.classList.add('opacity-0');
-      }
-      if (sheet) {
-        if (id === 'cart-drawer') {
-          sheet.classList.remove('translate-x-0');
-          sheet.classList.add('translate-x-full');
-        } else {
-          sheet.classList.remove('scale-100');
-          sheet.classList.add('scale-95');
-        }
-      }
-
-      setTimeout(() => {
-        modal.classList.add('hidden');
-        if (!document.querySelector('[role="dialog"]:not(.hidden)')) {
-          document.body.classList.remove('overflow-hidden');
-        }
-      }, 250);
-    }
-
-    // Exposed window triggers
-    window.openRxModal = function(preferredCategory = null) {
-      const catSelect = document.getElementById('cfg-lens-category');
-      if (preferredCategory && catSelect) {
-        for (let i = 0; i < catSelect.options.length; i++) {
-          if (catSelect.options[i].value.toLowerCase().includes(preferredCategory.toLowerCase())) {
-            catSelect.selectedIndex = i;
-            break;
-          }
-        }
-      }
-      calculatePrice();
-      showModal(MODALS.rx);
-    };
-    window.closeRxModal = () => hideModal(MODALS.rx);
-
-    window.openCart = function() {
-      renderCart();
-      showModal(MODALS.cart);
-    };
-    window.closeCart = () => hideModal(MODALS.cart);
-
-    window.openPickupModal = function() {
-      hideModal(MODALS.cart);
-      const total = getCartSubtotal();
-      document.getElementById('pk-due-display').innerText = `₹${total || 790}`;
-      showModal(MODALS.pickup);
-    };
-    window.closePickupModal = () => hideModal(MODALS.pickup);
-
-    window.closeConfirmedModal = () => hideModal(MODALS.confirmed);
-
-    /**
-     * Pricing Calculation Engine
-     */
-    function calculatePrice() {
-      const catSelect = document.getElementById('cfg-lens-category');
-      const idxSelect = document.getElementById('cfg-lens-index');
-      const coatSelect = document.getElementById('cfg-lens-coating');
-      const priceDisplay = document.getElementById('modal-price-display');
-
-      if (!catSelect || !idxSelect || !coatSelect) return 0;
-
-      const base = parseInt(catSelect.options[catSelect.selectedIndex].getAttribute('data-base') || 790, 10);
-      const idxExtra = parseInt(idxSelect.options[idxSelect.selectedIndex].getAttribute('data-price') || 0, 10);
-      const coatExtra = parseInt(coatSelect.options[coatSelect.selectedIndex].getAttribute('data-price') || 0, 10);
-
-      const total = base + idxExtra + coatExtra;
-      if (priceDisplay) priceDisplay.innerText = `₹${total}`;
-      return total;
-    }
-
-    /**
-     * Cart Logic
-     */
-    function getStoredCart() {
-      try {
-        const stored = localStorage.getItem('relens_wix_cart');
-        return stored ? JSON.parse(stored) : [];
-      } catch (e) {
-        return [];
-      }
-    }
-
-    function saveStoredCart(cart) {
-      localStorage.setItem('relens_wix_cart', JSON.stringify(cart));
-      updateCartBadge(cart.length);
-    }
-
-    function getCartSubtotal() {
-      return getStoredCart().reduce((sum, item) => sum + item.price, 0);
-    }
-
-    function updateCartBadge(count) {
-      const b1 = document.getElementById('nav-cart-count');
-      const b2 = document.getElementById('drawer-item-count');
-      if (b1) b1.innerText = count;
-      if (b2) b2.innerText = count;
-    }
-
-    function addConfiguredLensToCart() {
-      const cat = document.getElementById('cfg-lens-category').value;
-      const idx = document.getElementById('cfg-lens-index').value;
-      const coat = document.getElementById('cfg-lens-coating').value;
-      const price = calculatePrice();
-
-      let rxSummary = 'Physical slip collection';
-      if (currentRxMethod === 'upload') {
-        rxSummary = attachedFileName ? `Slip: ${attachedFileName}` : 'Snapshot to be sent via WhatsApp';
-      } else if (currentRxMethod === 'manual') {
-        const odSph = document.getElementById('rx-od-sph').value || '0.00';
-        const osSph = document.getElementById('rx-os-sph').value || '0.00';
-        rxSummary = `R: SPH ${odSph} | L: SPH ${osSph}`;
-      }
-
-      const item = {
-        id: 'ITEM-' + Date.now().toString().slice(-5),
-        category: cat,
-        index: idx,
-        coating: coat,
-        rx: rxSummary,
-        price: price
-      };
-
-      const cart = getStoredCart();
-      cart.push(item);
-      saveStoredCart(cart);
-
-      closeRxModal();
-      openCart();
-    }
-
-    function removeCartItem(id) {
-      let cart = getStoredCart();
-      cart = cart.filter(i => i.id !== id);
-      saveStoredCart(cart);
-      renderCart();
-    }
-    window.removeCartItem = removeCartItem;
-
-    function renderCart() {
-      const cart = getStoredCart();
-      const container = document.getElementById('cart-items-container');
-      const subtotalEl = document.getElementById('cart-subtotal');
-      const totalEl = document.getElementById('cart-grand-total');
-      const checkoutBtn = document.getElementById('btn-proceed-pickup');
-
-      const subtotal = getCartSubtotal();
-      if (subtotalEl) subtotalEl.innerText = `₹${subtotal}`;
-      if (totalEl) totalEl.innerText = `₹${subtotal}`;
-
-      if (!container) return;
-
-      if (cart.length === 0) {
-        container.innerHTML = `
-          <div class="py-16 text-center text-studio-muted">
-            <i data-lucide="shopping-bag" class="w-10 h-10 mx-auto text-zinc-300 mb-2"></i>
-            <p class="text-xs font-bold text-studio-dark">Your Cart is Empty</p>
-            <p class="text-[11px] text-studio-muted mt-1">Configure lenses and attach your prescription to begin.</p>
-            <button onclick="closeCart(); openRxModal();" class="mt-4 px-4 py-2 rounded-full bg-studio-dark text-white text-xs font-semibold">
-              Select Lenses Now
-            </button>
-          </div>
-        `;
-        if (checkoutBtn) {
-          checkoutBtn.disabled = true;
-          checkoutBtn.classList.add('opacity-40', 'pointer-events-none');
-        }
-        if (window.lucide) lucide.createIcons();
-        return;
-      }
-
-      if (checkoutBtn) {
-        checkoutBtn.disabled = false;
-        checkoutBtn.classList.remove('opacity-40', 'pointer-events-none');
-      }
-
-      let html = '';
-      cart.forEach(item => {
-        html += `
-          <div class="p-3.5 rounded-2xl bg-studio-card border border-studio-border flex items-start justify-between gap-3">
-            <div class="flex-1 space-y-0.5">
-              <div class="flex justify-between items-center">
-                <span class="text-xs font-bold text-studio-dark">${item.category}</span>
-                <span class="text-xs font-mono font-bold text-studio-dark">₹${item.price}</span>
-              </div>
-              <p class="text-[11px] text-studio-muted">${item.index} • ${item.coating}</p>
-              <p class="text-[10px] text-accent-600 font-medium">Rx: ${item.rx}</p>
-            </div>
-            <button onclick="removeCartItem('${item.id}')" class="text-zinc-400 hover:text-red-500 p-1">
-              <i data-lucide="trash-2" class="w-4 h-4"></i>
-            </button>
-          </div>
-        `;
-      });
-
-      container.innerHTML = html;
-      if (window.lucide) lucide.createIcons();
-    }
-
-    /**
-     * Pickup Booking & WhatsApp Formatting
-     */
-    function submitPickupBooking() {
-      const cart = getStoredCart();
-      const total = cart.length > 0 ? getCartSubtotal() : 790;
-      const orderId = 'RL-' + Math.floor(100000 + Math.random() * 900000);
-      
-      const name = document.getElementById('pk-name').value.trim();
-      const phone = document.getElementById('pk-phone').value.trim();
-      const slot = document.getElementById('pk-slot').value;
-      const address = document.getElementById('pk-address').value.trim();
-
-      const itemsSummary = cart.length > 0 
-        ? cart.map(i => `${i.category} [${i.index}] (${i.rx})`).join(' | ')
-        : 'Direct Frame Inspection / Consultation';
-
-      // Pre-fill WhatsApp message
-      const text = `*NEW REGLAZE PICKUP BOOKING - ReLens Studio*%0A` +
-        `------------------------------------%0A` +
-        `*Order ID:* ${orderId}%0A` +
-        `*Customer Name:* ${name}%0A` +
-        `*WhatsApp:* ${phone}%0A` +
-        `*Pickup Slot:* ${slot}%0A` +
-        `*Address:* ${address}%0A` +
-        `*Lenses Ordered:* ${itemsSummary}%0A` +
-        `*Total on Delivery:* ₹${total}%0A` +
-        `------------------------------------%0A` +
-        `Please confirm pickup schedule.`;
-
-      document.getElementById('cf-order-id').innerText = `#${orderId}`;
-      document.getElementById('cf-order-slot').innerText = slot;
-      document.getElementById('cf-order-total').innerText = `₹${total}`;
-      document.getElementById('cf-whatsapp-btn').href = `https://wa.me/919488353749?text=${text}`;
-
-      // Reset cart
-      saveStoredCart([]);
-
-      hideModal(MODALS.pickup);
-      showModal(MODALS.confirmed);
-    }
-
-    // Global Initializer
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.lucide) lucide.createIcons();
-      updateCartBadge(getStoredCart().length);
-
-      // Escape key listener
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          Object.values(MODALS).forEach(id => hideModal(id));
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+</section>
