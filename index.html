@@ -1,166 +1,1340 @@
-<!-- ========================================================
-     ESSILOR® INDIA OFFICIAL PORTFOLIO
-======================================================== -->
-<section id="essilor-hub" class="py-20 bg-studio-surface border-b border-studio-border">
-  <div class="max-w-7xl mx-auto px-6">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReLens Lab - ValueVis™, Essilor® & Bausch + Lomb</title>
     
-    <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-      <div>
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold tracking-wide mb-2">
-          <span>Official Authorized Reglazing</span>
-        </div>
-        <h2 class="text-3xl font-extrabold tracking-tight text-studio-dark">Full Essilor® India Collection</h2>
-        <p class="text-studio-muted text-xs sm:text-sm mt-1">Every pair fitted to your frame with official warranty card & authentic laser fog-mark inspection.</p>
-      </div>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            900: '#064e3b',
+                        },
+                        vv: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            900: '#7c2d12',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen pb-24 md:pb-12">
 
-      <a href="https://wa.me/919488353749?text=Hi%20ReLens,%20I%20need%20the%20official%20Essilor%20India%20price%20quotation" target="_blank" class="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all shadow-sm flex items-center gap-2 self-start md:self-auto">
-        <i data-lucide="message-circle" class="w-4 h-4"></i>
-        <span>Request Official Price List</span>
-      </a>
+    <!-- Top Announcement Bar -->
+    <div class="bg-slate-900 text-slate-200 text-xs py-2 px-4 text-center font-medium flex items-center justify-center gap-2 border-b border-slate-800">
+        <span class="inline-block w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+        <span>Authorized Doorstep Optical Reglazing • ValueVis™ Official 2026 Price List & Authenticity Guarantee</span>
     </div>
 
-    <!-- Essilor India 4-Pillar Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Main Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-slate-900 to-orange-600 text-white flex items-center justify-center font-extrabold text-xl shadow-md">
+                    RL
+                </div>
+                <div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-xl font-black tracking-tight text-slate-900">ReLens<span class="text-orange-600">Lab</span></span>
+                        <span class="text-[10px] uppercase font-extrabold bg-orange-100 text-orange-800 px-1.5 py-0.5 rounded">ValueVis™ Partner</span>
+                    </div>
+                    <p class="text-[11px] text-slate-500 font-medium">Doorstep Eyeglass Lens Replacement & Optical Care</p>
+                </div>
+            </div>
 
-      <!-- Column 1: Eyezen Digital -->
-      <div class="bg-studio-bg rounded-2xl border border-studio-border p-6 flex flex-col justify-between hover:border-blue-300 transition-all">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 uppercase">Single Vision</span>
-            <span class="text-[11px] font-mono text-studio-muted">Eyezen®</span>
-          </div>
-          <h3 class="text-base font-bold text-studio-dark">Eyezen® Start & Boost</h3>
-          <p class="text-xs text-studio-muted mt-2 leading-relaxed">
-            Optimized for screen users. Eyezen Boost delivers up to +1.10 D accommodative support to stop screen fatigue.
-          </p>
+            <!-- Action Buttons: My Bookings & Cart -->
+            <div class="flex items-center gap-2 md:gap-3">
+                <a href="https://wa.me/919488353749?text=Hi%20ReLens%20Lab,%20I%20need%20optometrist%20guidance%20for%20ValueVis%20lenses" target="_blank" class="hidden sm:flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-orange-600 px-3 py-2 rounded-lg bg-slate-100 transition">
+                    <i data-lucide="message-square" class="w-4 h-4 text-orange-600"></i>
+                    <span>WhatsApp Optometrist</span>
+                </a>
 
-          <div class="mt-4 pt-3 border-t border-studio-border space-y-1.5 text-xs text-studio-dark">
-            <p>• Eyezen Start (Digital SV)</p>
-            <p>• Eyezen Boost (+0.4 to +1.1)</p>
-            <p>• Choice of Crizal® Rock / Sapphire</p>
-          </div>
+                <button onclick="toggleOrdersDrawer(true)" class="text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-3 py-2 rounded-lg transition-colors flex items-center gap-1.5">
+                    <i data-lucide="clock" class="w-4 h-4 text-slate-600"></i>
+                    <span class="hidden sm:inline">My Bookings</span>
+                    <span id="orders-badge" class="hidden bg-orange-600 text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">0</span>
+                </button>
+
+                <button onclick="toggleCartDrawer(true)" class="relative bg-orange-600 hover:bg-orange-700 text-white px-3.5 py-2 rounded-lg font-bold text-xs flex items-center gap-2 shadow-sm transition-transform active:scale-95">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Cart</span>
+                    <span id="cart-counter" class="bg-white text-orange-900 font-extrabold text-[11px] px-1.5 py-0.2 rounded-full">0</span>
+                    <span id="header-cart-total" class="hidden md:inline font-bold border-l border-orange-400 pl-2">₹0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 py-6 space-y-8">
+
+        <!-- Brand Showcase Switcher Tabs -->
+        <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between gap-2 overflow-x-auto custom-scrollbar">
+            <div class="flex items-center gap-2">
+                <button onclick="switchBrandTab('valuevis')" id="tab-brand-vv" class="brand-tab px-4 py-2.5 rounded-xl font-black text-xs transition flex items-center gap-2 bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-sm shrink-0">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i> ValueVis™ Collection (July 2026)
+                </button>
+                <button onclick="switchBrandTab('essilor')" id="tab-brand-essilor" class="brand-tab px-4 py-2.5 rounded-xl font-bold text-xs text-slate-600 hover:bg-slate-100 transition flex items-center gap-2 shrink-0">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-blue-600"></i> Essilor® Series
+                </button>
+                <button onclick="switchBrandTab('bausch')" id="tab-brand-bausch" class="brand-tab px-4 py-2.5 rounded-xl font-bold text-xs text-slate-600 hover:bg-slate-100 transition flex items-center gap-2 shrink-0">
+                    <i data-lucide="eye" class="w-4 h-4 text-cyan-600"></i> Bausch + Lomb® Contact Lenses
+                </button>
+            </div>
+            <div class="text-[11px] font-bold text-slate-500 hidden lg:block pr-3">
+                100% Genuine Digital Tech & Authentic Certification
+            </div>
         </div>
 
-        <button onclick="openRxModal('Essilor Eyezen Digital')" class="mt-6 w-full py-2.5 rounded-full bg-studio-dark hover:bg-zinc-800 text-white text-xs font-bold transition flex items-center justify-center gap-1.5">
-          <span>Configure Eyezen</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-        </button>
-      </div>
+        <!-- SECTION: VALUEVIS COLLECTION -->
+        <div id="section-valuevis" class="space-y-8">
+            
+            <!-- ValueVis Hero Banner -->
+            <div class="bg-gradient-to-br from-slate-950 via-slate-900 to-orange-950 rounded-3xl text-white p-6 sm:p-8 shadow-xl relative overflow-hidden">
+                <div class="relative z-10 max-w-3xl space-y-4">
+                    <div class="inline-flex items-center gap-2 bg-orange-500/20 text-orange-300 border border-orange-500/40 px-3.5 py-1.5 rounded-full text-xs font-bold">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-orange-400"></i>
+                        VERSATILE. VALUE. VISION. • Engineered with Advanced European & American Tech
+                    </div>
+                    <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+                        ValueVis™ Precision Digital Lenses.<br>
+                        <span class="text-orange-400">One Lens. Three Layers. Seamless Vision.</span>
+                    </h1>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">
+                        Designed for modern lifestyles constantly shifting between mobile screens, driving, work, and conversations. Crafted to deliver Absolute Clarity, Ergonomic Comfort, and Long-lasting Durability.
+                    </p>
+                    
+                    <div class="pt-2 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-200">
+                        <div class="bg-white/10 rounded-xl p-3 border border-white/10">
+                            <strong class="block text-orange-400 font-bold">1. Visual Correction</strong>
+                            <span>Clear vision for distant and near focal needs.</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-3 border border-white/10">
+                            <strong class="block text-cyan-300 font-bold">2. Digital Comfort</strong>
+                            <span>BlueCut+ technology for screens and digital devices.</span>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-3 border border-white/10">
+                            <strong class="block text-emerald-300 font-bold">3. Visual Clarity</strong>
+                            <span>Optix ARC Green & Bluvex ARC Blue coatings.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <!-- Column 2: Varilux Progressive -->
-      <div class="bg-studio-bg rounded-2xl border border-blue-400 p-6 flex flex-col justify-between shadow-md relative">
-        <div class="absolute -top-3 right-4 bg-blue-600 text-white text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-sm">
-          Flagship
+            <!-- Visual Technology Explainer & Diagram Suite -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                
+                <!-- Card 1: Spectacle Optical Geometry (Bifocals vs Progressive) -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 space-y-4 shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-sm text-slate-900 flex items-center gap-2">
+                            <i data-lucide="glasses" class="w-4 h-4 text-orange-600"></i> Optical Geometry Guide
+                        </h3>
+                        <span class="text-[10px] bg-slate-100 font-bold text-slate-600 px-2 py-0.5 rounded">PDF Reference</span>
+                    </div>
+                    <p class="text-xs text-slate-500">ValueVis produces three distinct physical lens focal layouts:</p>
+
+                    <!-- SVG Geometry Representation -->
+                    <div class="space-y-3 pt-1">
+                        <!-- Kryptok -->
+                        <div class="border border-slate-200 rounded-xl p-2.5 flex items-center gap-3 bg-slate-50">
+                            <svg class="w-20 h-10 shrink-0 text-slate-800" viewBox="0 0 100 50">
+                                <rect x="2" y="2" width="96" height="46" rx="8" fill="#fff" stroke="#475569" stroke-width="2"/>
+                                <path d="M 30 46 A 20 20 0 0 1 70 46 Z" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="3,2"/>
+                                <text x="50" y="20" font-size="8" text-anchor="middle" fill="#64748b">Distance</text>
+                                <text x="50" y="42" font-size="7" font-weight="bold" text-anchor="middle" fill="#c2410c">Near</text>
+                            </svg>
+                            <div class="text-[11px]">
+                                <strong class="text-slate-800 block">Kryptok (Round Bifocal)</strong>
+                                <span class="text-slate-500">Circular reading button segment in lower zone.</span>
+                            </div>
+                        </div>
+
+                        <!-- D-Bifocal -->
+                        <div class="border border-slate-200 rounded-xl p-2.5 flex items-center gap-3 bg-slate-50">
+                            <svg class="w-20 h-10 shrink-0 text-slate-800" viewBox="0 0 100 50">
+                                <rect x="2" y="2" width="96" height="46" rx="8" fill="#fff" stroke="#475569" stroke-width="2"/>
+                                <path d="M 28 26 L 72 26 A 22 22 0 0 1 28 26 Z" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,2"/>
+                                <text x="50" y="18" font-size="8" text-anchor="middle" fill="#64748b">Distance</text>
+                                <text x="50" y="38" font-size="7" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Near (Flat-Top)</text>
+                            </svg>
+                            <div class="text-[11px]">
+                                <strong class="text-slate-800 block">D-Bifocal (Straight Line)</strong>
+                                <span class="text-slate-500">Wide flat-top D segment for wider reading.</span>
+                            </div>
+                        </div>
+
+                        <!-- Progressive -->
+                        <div class="border border-slate-200 rounded-xl p-2.5 flex items-center gap-3 bg-slate-50">
+                            <svg class="w-20 h-10 shrink-0 text-slate-800" viewBox="0 0 100 50">
+                                <rect x="2" y="2" width="96" height="46" rx="8" fill="#fff" stroke="#475569" stroke-width="2"/>
+                                <!-- Upper Far -->
+                                <circle cx="50" cy="14" r="8" fill="#d1fae5"/>
+                                <!-- Corridor -->
+                                <path d="M 44 22 C 44 30 42 34 38 46 L 62 46 C 58 34 56 30 56 22 Z" fill="#fef3c7" stroke="#d97706" stroke-width="1.2" stroke-dasharray="2,2"/>
+                                <text x="50" y="16" font-size="7" font-weight="bold" text-anchor="middle" fill="#047857">Far</text>
+                                <text x="50" y="31" font-size="6" font-weight="bold" text-anchor="middle" fill="#b45309">Mid</text>
+                                <text x="50" y="44" font-size="6" font-weight="bold" text-anchor="middle" fill="#b45309">Near</text>
+                            </svg>
+                            <div class="text-[11px]">
+                                <strong class="text-slate-800 block">Progressive (No Line)</strong>
+                                <span class="text-slate-500">Seamless smooth corridor from Far → Mid → Near.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Corridor Comparison & Freeform Performance Rating -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 space-y-3 shadow-sm">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-bold text-sm text-slate-900 flex items-center gap-2">
+                            <i data-lucide="layers" class="w-4 h-4 text-orange-600"></i> Freeform Corridor Tiers
+                        </h3>
+                        <span class="text-[10px] bg-orange-100 text-orange-800 font-bold px-2 py-0.5 rounded">Ratings</span>
+                    </div>
+                    <div class="space-y-2 text-xs">
+                        <div class="p-2 rounded-lg bg-orange-50 border border-orange-200">
+                            <div class="flex justify-between font-bold text-orange-950">
+                                <span>EVOLUX ELITE (Flagship)</span>
+                                <span class="text-orange-600">★★★★★</span>
+                            </div>
+                            <p class="text-[11px] text-orange-800 mt-0.5">Panoramic vision coverage, ultra-smooth visual flow, maximum corridor width.</p>
+                        </div>
+                        <div class="p-2 rounded-lg bg-slate-50 border border-slate-200">
+                            <div class="flex justify-between font-bold text-slate-800">
+                                <span>EVOLUX (European Tech)</span>
+                                <span class="text-amber-600">★★★★☆</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 mt-0.5">Wide dynamic vision zones, balanced corridor, everyday active driving.</p>
+                        </div>
+                        <div class="p-2 rounded-lg bg-slate-50 border border-slate-200">
+                            <div class="flex justify-between font-bold text-slate-800">
+                                <span>CUSTOMIZED (American Freeform)</span>
+                                <span class="text-amber-600">★★★★☆</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 mt-0.5">Precision design, controlled visual transition, optimal zone distribution.</p>
+                        </div>
+                        <div class="p-2 rounded-lg bg-slate-50 border border-slate-200">
+                            <div class="flex justify-between font-bold text-slate-800">
+                                <span>VENTURE & ENTICE (Entry Freeform)</span>
+                                <span class="text-amber-600">★★★☆☆</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 mt-0.5">Reliable everyday performance, standard reading corridor, fast adaptation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Authenticity, Engravings & Thickness Chart -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 space-y-3 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-sm text-slate-900 flex items-center gap-2">
+                                <i data-lucide="award" class="w-4 h-4 text-orange-600"></i> Engravings & Thickness
+                            </h3>
+                            <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">Card Included</span>
+                        </div>
+                        
+                        <!-- Engraving Marks -->
+                        <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                            <div class="bg-slate-50 border border-slate-200 p-2 rounded-xl">
+                                <span class="font-mono font-black text-base text-orange-600">VT</span>
+                                <span class="block text-[10px] text-slate-500 font-medium">Venture</span>
+                            </div>
+                            <div class="bg-slate-50 border border-slate-200 p-2 rounded-xl">
+                                <span class="font-mono font-black text-base text-orange-600">CM</span>
+                                <span class="block text-[10px] text-slate-500 font-medium">Customized</span>
+                            </div>
+                            <div class="bg-slate-50 border border-slate-200 p-2 rounded-xl">
+                                <span class="font-mono font-black text-base text-orange-600">X</span>
+                                <span class="block text-[10px] text-slate-500 font-medium">Evolux / Elite</span>
+                            </div>
+                        </div>
+
+                        <!-- Thickness Breakdown -->
+                        <div class="text-[11px] text-slate-600 space-y-1 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                            <strong class="block text-slate-800 text-xs">Thickness Comparison (-6.00 D at 65mm):</strong>
+                            <div class="flex justify-between"><span>1.50 Index:</span> <span class="font-bold">9.4 mm</span></div>
+                            <div class="flex justify-between"><span>1.56 Index:</span> <span class="font-bold">8.1 mm</span></div>
+                            <div class="flex justify-between"><span>1.60 MR-8:</span> <span class="font-bold text-orange-700">7.3 mm (20% Thinner)</span></div>
+                            <div class="flex justify-between"><span>1.67 High Index:</span> <span class="font-bold text-orange-700">6.2 mm</span></div>
+                            <div class="flex justify-between"><span>1.74 Ultra Thin:</span> <span class="font-bold text-orange-700">5.5 mm (40% Thinner)</span></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-orange-50 border border-orange-200 p-2 rounded-lg text-[11px] text-orange-900 font-semibold flex items-center gap-1.5">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-orange-600 shrink-0"></i> Every pair includes a ValueVis™ Certificate of Authenticity.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ValueVis Sub-category Filter Tabs -->
+            <div class="flex items-center justify-between border-b border-slate-200 pb-3 pt-2">
+                <div>
+                    <h2 class="text-base font-black text-slate-900">ValueVis™ Lens Categories</h2>
+                    <p class="text-xs text-slate-500">Official July 2026 Price List (Inclusive of all taxes)</p>
+                </div>
+                <div class="flex gap-1.5 overflow-x-auto custom-scrollbar text-xs font-bold">
+                    <button onclick="filterVV('all')" class="vv-sub-btn active bg-slate-900 text-white px-3 py-1.5 rounded-lg shrink-0">All ValueVis</button>
+                    <button onclick="filterVV('elite')" class="vv-sub-btn bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 px-3 py-1.5 rounded-lg shrink-0">Evolux Elite</button>
+                    <button onclick="filterVV('evolux')" class="vv-sub-btn bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 px-3 py-1.5 rounded-lg shrink-0">Evolux Progressive</button>
+                    <button onclick="filterVV('customized')" class="vv-sub-btn bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 px-3 py-1.5 rounded-lg shrink-0">Customized Freeform</button>
+                    <button onclick="filterVV('venture_entice')" class="vv-sub-btn bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 px-3 py-1.5 rounded-lg shrink-0">Venture & Entice</button>
+                    <button onclick="filterVV('daynite')" class="vv-sub-btn bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 px-3 py-1.5 rounded-lg shrink-0">DayNite Adaptive</button>
+                    <button onclick="filterVV('single_vision')" class="vv-sub-btn bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 px-3 py-1.5 rounded-lg shrink-0">Single Vision & FSV</button>
+                    <button onclick="filterVV('bifocals')" class="vv-sub-btn bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 px-3 py-1.5 rounded-lg shrink-0">Bifocals (KT & D)</button>
+                    <button onclick="filterVV('stock')" class="vv-sub-btn bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 px-3 py-1.5 rounded-lg shrink-0">Stock QuickFit</button>
+                </div>
+            </div>
+
+            <!-- ValueVis Lens Grid Container -->
+            <div id="vv-lens-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Injected via JavaScript -->
+            </div>
+
         </div>
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 uppercase">Progressive</span>
-            <span class="text-[11px] font-mono text-studio-muted">Varilux®</span>
-          </div>
-          <h3 class="text-base font-bold text-studio-dark">Varilux® Comfort, Physio & XR</h3>
-          <p class="text-xs text-studio-muted mt-2 leading-relaxed">
-            World leader in progressive optics. From Comfort Max ergonomics to XR series powered by behavioral AI.
-          </p>
 
-          <div class="mt-4 pt-3 border-t border-studio-border space-y-1.5 text-xs text-studio-dark">
-            <p>• Varilux® Comfort Max</p>
-            <p>• Varilux® Physio 3.0</p>
-            <p>• Varilux® XR Series (AI Driven)</p>
-          </div>
+        <!-- SECTION: ESSILOR SERIES -->
+        <div id="section-essilor" class="hidden space-y-6">
+            <div class="bg-blue-900 text-white p-6 rounded-2xl shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <span class="text-[10px] font-extrabold uppercase bg-blue-500/30 text-blue-200 px-2 py-0.5 rounded">Standard Authorized MRP</span>
+                    <h2 class="text-xl sm:text-2xl font-black mt-1">Official Essilor® Optical Reglazing</h2>
+                    <p class="text-xs text-blue-200 mt-1 max-w-2xl">Official Crizal®, Eyezen®, Transitions® GEN S™, and Varilux® lenses at uniform retail price with genuine warranty card and laser fog-mark inspection.</p>
+                </div>
+            </div>
+            <div id="essilor-lens-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Essilor lenses rendered here -->
+            </div>
         </div>
 
-        <button onclick="openRxModal('Essilor Varilux Progressive')" class="mt-6 w-full py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition flex items-center justify-center gap-1.5">
-          <span>Configure Varilux</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-        </button>
-      </div>
-
-      <!-- Column 3: Crizal Coatings -->
-      <div class="bg-studio-bg rounded-2xl border border-studio-border p-6 flex flex-col justify-between hover:border-blue-300 transition-all">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-zinc-200 text-zinc-800 uppercase">Protection</span>
-            <span class="text-[11px] font-mono text-studio-muted">Crizal®</span>
-          </div>
-          <h3 class="text-base font-bold text-studio-dark">Crizal® Coating Suites</h3>
-          <p class="text-xs text-studio-muted mt-2 leading-relaxed">
-            Ultimate durability, reflection-free transparency, and selective blue-violet light filtration.
-          </p>
-
-          <div class="mt-4 pt-3 border-t border-studio-border space-y-1.5 text-xs text-studio-dark">
-            <p>• <strong>Easy Pro:</strong> Anti-smudge shield</p>
-            <p>• <strong>Rock™:</strong> 3x scratch resistance</p>
-            <p>• <strong>Sapphire™ HR:</strong> Pure clarity</p>
-            <p>• <strong>Prevencia™:</strong> UV & Blue-cut</p>
-          </div>
+        <!-- SECTION: BAUSCH + LOMB CONTACT LENSES -->
+        <div id="section-bausch" class="hidden space-y-6">
+            <div class="bg-cyan-950 text-white p-6 rounded-2xl shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <span class="text-[10px] font-extrabold uppercase bg-cyan-500/30 text-cyan-200 px-2 py-0.5 rounded">⚡ Same-Day Delivery Hub</span>
+                    <h2 class="text-xl sm:text-2xl font-black mt-1">Bausch + Lomb® Contact Lenses</h2>
+                    <p class="text-xs text-cyan-200 mt-1 max-w-2xl">Powers from -0.50 D to -6.00 D delivered same-day in Puducherry when ordered before 4:00 PM.</p>
+                </div>
+            </div>
+            <div id="bausch-lens-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Bausch lenses rendered here -->
+            </div>
         </div>
 
-        <button onclick="openRxModal('Essilor Crizal FSV')" class="mt-6 w-full py-2.5 rounded-full bg-studio-dark hover:bg-zinc-800 text-white text-xs font-bold transition flex items-center justify-center gap-1.5">
-          <span>Select Crizal Pair</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-        </button>
-      </div>
+    </main>
 
-      <!-- Column 4: Light Management & Speciality -->
-      <div class="bg-studio-bg rounded-2xl border border-studio-border p-6 flex flex-col justify-between hover:border-blue-300 transition-all">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800 uppercase">Adaptive & Care</span>
-            <span class="text-[11px] font-mono text-studio-muted">Specialty</span>
-          </div>
-          <h3 class="text-base font-bold text-studio-dark">Transitions® & Stellest®</h3>
-          <p class="text-xs text-studio-muted mt-2 leading-relaxed">
-            Transitions® GEN S™ for ultra-fast tint shifting, and Stellest® myopia control lenses for kids.
-          </p>
+    <!-- Modal: Configure Lens / Add to Cart -->
+    <div id="config-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
+            
+            <div class="px-5 py-3.5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+                <div>
+                    <span id="modal-brand-tag" class="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded bg-orange-100 text-orange-800">ValueVis™</span>
+                    <h3 id="modal-lens-title" class="text-base font-bold text-slate-900 mt-0.5">Configure Pair</h3>
+                </div>
+                <button onclick="closeConfigModal()" class="w-8 h-8 rounded-full hover:bg-slate-200 text-slate-500 flex items-center justify-center transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
 
-          <div class="mt-4 pt-3 border-t border-studio-border space-y-1.5 text-xs text-studio-dark">
-            <p>• Transitions® GEN S™ (8 colors)</p>
-            <p>• Transitions® XTRActive® (Drive)</p>
-            <p>• Stellest® (Kids Myopia Control)</p>
-            <p>• Xperio® Polarized Sun Lenses</p>
-          </div>
+            <div class="p-5 space-y-4 overflow-y-auto custom-scrollbar text-sm">
+                
+                <!-- Nickname -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Frame Nickname / Tag</label>
+                    <input type="text" id="cfg-frame-nick" placeholder="e.g., Titanium Oval, Brown Acetate Frame" class="w-full text-xs px-3.5 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500">
+                </div>
+
+                <!-- Frame Structure (with authentic ValueVis lab fitting costs) -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1.5">Select Frame Construction & Lab Fitting</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <label class="border border-slate-200 rounded-lg p-2.5 text-center cursor-pointer hover:border-orange-500 transition has-[:checked]:border-orange-600 has-[:checked]:bg-orange-50/50">
+                            <input type="radio" name="frame_type" value="full" checked onchange="updateModalPrice()" class="hidden">
+                            <span class="block font-bold text-xs text-slate-800">Full Rim</span>
+                            <span class="block text-[10px] text-slate-500">+₹200 Fitting</span>
+                        </label>
+                        <label class="border border-slate-200 rounded-lg p-2.5 text-center cursor-pointer hover:border-orange-500 transition has-[:checked]:border-orange-600 has-[:checked]:bg-orange-50/50">
+                            <input type="radio" name="frame_type" value="half" onchange="updateModalPrice()" class="hidden">
+                            <span class="block font-bold text-xs text-slate-800">Half Rim (Supra)</span>
+                            <span class="block text-[10px] text-slate-500">+₹300 Fitting</span>
+                        </label>
+                        <label class="border border-slate-200 rounded-lg p-2.5 text-center cursor-pointer hover:border-orange-500 transition has-[:checked]:border-orange-600 has-[:checked]:bg-orange-50/50">
+                            <input type="radio" name="frame_type" value="rimless" onchange="updateModalPrice()" class="hidden">
+                            <span class="block font-bold text-xs text-slate-800">Rimless</span>
+                            <span class="block text-[10px] text-slate-500">+₹500 Fitting</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Index & Coating Dropdowns -->
+                <div id="cfg-index-container">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Select Specific Index & Coating Variant</label>
+                    <select id="cfg-variant-select" onchange="updateModalPrice()" class="w-full text-xs font-medium px-3.5 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500">
+                        <!-- Filled by JS -->
+                    </select>
+                </div>
+
+                <!-- Optional Add-ons -->
+                <div class="space-y-2 pt-1 border-t border-slate-100">
+                    <label class="block text-xs font-bold text-slate-700">Optional Lab Add-Ons</label>
+                    <div class="space-y-1.5">
+                        <label class="flex items-center justify-between text-xs p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                            <div class="flex items-center gap-2">
+                                <input type="checkbox" id="cfg-dualcoat" onchange="updateModalPrice()" class="text-orange-600 rounded">
+                                <div>
+                                    <span class="font-bold text-slate-800">Dual Coat Finish</span>
+                                    <span class="block text-[10px] text-slate-500">Green reflection front + Blue reflection back</span>
+                                </div>
+                            </div>
+                            <span id="cfg-dualcoat-label" class="font-bold text-slate-700">+₹300</span>
+                        </label>
+
+                        <label class="flex items-center justify-between text-xs p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+                            <div class="flex items-center gap-2">
+                                <input type="checkbox" id="cfg-tint" onchange="updateModalPrice()" class="text-orange-600 rounded">
+                                <div>
+                                    <span class="font-bold text-slate-800">Sunglass Tint (Full / Gradient)</span>
+                                    <span class="block text-[10px] text-slate-500">Grey, Brown, Blue, Green, Yellow, Pink</span>
+                                </div>
+                            </div>
+                            <span class="font-bold text-slate-700">+₹300</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Prescription Mode -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Prescription Details</label>
+                    <div class="space-y-1.5 text-xs">
+                        <label class="flex items-center gap-2 text-slate-800 cursor-pointer">
+                            <input type="radio" name="rx_mode" value="doorstep" checked class="text-orange-600">
+                            <span>Hand over physical prescription at doorstep pickup</span>
+                        </label>
+                        <label class="flex items-center gap-2 text-slate-800 cursor-pointer">
+                            <input type="radio" name="rx_mode" value="whatsapp" class="text-orange-600">
+                            <span>Share prescription image on WhatsApp after checkout</span>
+                        </label>
+                        <label class="flex items-center gap-2 text-slate-800 cursor-pointer">
+                            <input type="radio" name="rx_mode" value="call" class="text-orange-600">
+                            <span>Optometrist phone call requested</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="px-5 py-3.5 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
+                <div>
+                    <div class="text-[10px] text-slate-500">Total Price (Fitted per Pair)</div>
+                    <span id="modal-final-price" class="text-xl font-black text-slate-900">₹0</span>
+                </div>
+                <button onclick="confirmAddToCart()" class="bg-orange-600 hover:bg-orange-700 active:scale-95 text-white font-bold text-xs px-5 py-2.5 rounded-lg shadow-md transition flex items-center gap-1.5">
+                    <i data-lucide="plus-circle" class="w-4 h-4"></i> Add to Cart
+                </button>
+            </div>
+
         </div>
-
-        <button onclick="openRxModal('Essilor Transitions')" class="mt-6 w-full py-2.5 rounded-full bg-studio-dark hover:bg-zinc-800 text-white text-xs font-bold transition flex items-center justify-center gap-1.5">
-          <span>Configure Specialty</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-        </button>
-      </div>
-
     </div>
-  </div>
-</section>
-<!-- Lens Brand & Category Dropdown inside Configurator -->
-<div>
-  <label class="block text-xs font-bold text-studio-dark mb-1">1. Lens Brand & Optical Line</label>
-  <select id="cfg-lens-category" class="w-full bg-studio-card border border-studio-border rounded-xl px-3.5 py-2.5 text-xs text-studio-dark focus:outline-none focus:border-studio-dark transition" onchange="calculatePrice()">
-    <optgroup label="ValueVis™ Digital Series (Fast Turnaround)">
-      <option value="ValueVis Single Vision Clear" data-base="790">ValueVis™ Single Vision Clear (₹790)</option>
-      <option value="ValueVis BlueCut Screen Shield" data-base="1190">ValueVis™ BlueCut+ Screen Shield (₹1,190)</option>
-      <option value="ValueVis Customized Progressive" data-base="2450">ValueVis™ Customized Freeform Progressive (₹2,450)</option>
-      <option value="ValueVis Evolux Elite Flagship" data-base="3490">ValueVis™ EVOLUX ELITE European (₹3,490)</option>
-    </optgroup>
 
-    <optgroup label="Essilor® India - Single Vision & Digital">
-      <option value="Essilor Crizal Easy Pro SV" data-base="2600">Essilor® Crizal Easy Pro Single Vision (₹2,600)</option>
-      <option value="Essilor Crizal Rock SV" data-base="3400">Essilor® Crizal Rock™ 3X Scratch Proof (₹3,400)</option>
-      <option value="Essilor Eyezen Start" data-base="4200">Essilor® Eyezen® Start Digital Optimization (₹4,200)</option>
-      <option value="Essilor Eyezen Boost" data-base="5100">Essilor® Eyezen® Boost (Anti-Fatigue) (₹5,100)</option>
-      <option value="Essilor Stellest Kids Myopia" data-base="9800">Essilor® Stellest® Myopia Control (Kids) (₹9,800)</option>
-    </optgroup>
+    <!-- Slide-over Drawer: Cart -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden">
+        <div class="absolute inset-y-0 right-0 max-w-md w-full bg-white shadow-2xl flex flex-col animate-in slide-in-from-right duration-200">
+            <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="shopping-bag" class="w-5 h-5 text-orange-600"></i>
+                    <h3 class="font-bold text-base text-slate-900">Your Reglaze Cart</h3>
+                    <span id="drawer-cart-count" class="bg-orange-100 text-orange-800 text-xs font-black px-2 py-0.5 rounded-full">0</span>
+                </div>
+                <button onclick="toggleCartDrawer(false)" class="w-8 h-8 rounded-full hover:bg-slate-200 text-slate-500 flex items-center justify-center">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
 
-    <optgroup label="Essilor® India - Varilux® Progressives">
-      <option value="Essilor Varilux Liberty 3.0" data-base="5900">Essilor® Varilux® Liberty 3.0 Digital (₹5,900)</option>
-      <option value="Essilor Varilux Comfort Max" data-base="11500">Essilor® Varilux® Comfort Max Ergonomic (₹11,500)</option>
-      <option value="Essilor Varilux Physio 3.0" data-base="18900">Essilor® Varilux® Physio 3.0 High Contrast (₹18,900)</option>
-      <option value="Essilor Varilux XR Series AI" data-base="32500">Essilor® Varilux® XR Series™ AI Flagship (₹32,500)</option>
-    </optgroup>
+            <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar">
+                <!-- Cart items -->
+            </div>
 
-    <optgroup label="Essilor® Light Management & Sun">
-      <option value="Essilor Transitions GEN S" data-base="6500">Essilor® Transitions® GEN S™ Smart Light (₹6,500)</option>
-      <option value="Essilor Transitions XTRActive" data-base="8200">Essilor® Transitions® XTRActive® In-Car Active (₹8,200)</option>
-      <option value="Essilor Xperio Polarized" data-base="6900">Essilor® Xperio® Glare-Free Polarized (₹6,900)</option>
-    </optgroup>
-  </select>
-</div>
+            <!-- Footer -->
+            <div class="p-4 border-t border-slate-200 bg-white space-y-3">
+                <div class="space-y-1 text-xs text-slate-600">
+                    <div class="flex justify-between">
+                        <span>Items Subtotal</span>
+                        <span id="summary-subtotal" class="font-bold text-slate-900">₹0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Doorstep Pickup & Delivery</span>
+                        <span class="text-emerald-600 font-bold uppercase text-[11px]">Free Included</span>
+                    </div>
+                    <div class="border-t border-slate-200 pt-2 flex justify-between items-baseline font-black text-sm text-slate-900">
+                        <span>Pay on Delivery Total</span>
+                        <span id="summary-final-total" class="text-xl text-orange-600">₹0</span>
+                    </div>
+                </div>
+
+                <button id="checkout-btn" onclick="openCheckoutWizard()" class="w-full bg-orange-600 hover:bg-orange-700 active:scale-98 text-white font-bold text-sm py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                    Book Doorstep Pickup <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Multi-Step Doorstep Checkout -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
+        <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[94vh]">
+            <div class="px-5 py-3.5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-orange-600"></i>
+                    <h3 class="text-base font-bold text-slate-900">Schedule Doorstep Reglaze Pickup</h3>
+                </div>
+                <button onclick="closeCheckoutWizard()" class="w-8 h-8 rounded-full hover:bg-slate-200 text-slate-500 flex items-center justify-center">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <form id="checkout-form" onsubmit="handleOrderSubmission(event)" class="p-5 space-y-4 overflow-y-auto custom-scrollbar text-xs">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Customer Name *</label>
+                        <input type="text" id="cust-name" required placeholder="Your Name" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">WhatsApp Mobile *</label>
+                        <input type="tel" id="cust-phone" required pattern="[0-9]{10}" placeholder="10-digit mobile" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-bold text-slate-700 mb-1">Pickup Address *</label>
+                    <textarea id="cust-address" required rows="2" placeholder="House/Flat No, Street, Area" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500"></textarea>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Landmark</label>
+                        <input type="text" id="cust-landmark" placeholder="Nearby spot" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">City *</label>
+                        <input type="text" id="cust-city" required value="Puducherry" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Pickup Date *</label>
+                        <input type="date" id="cust-date" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Time Slot *</label>
+                        <select id="cust-slot" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-orange-500">
+                            <option value="Morning (10:00 AM - 01:00 PM)">Morning (10 AM - 1 PM)</option>
+                            <option value="Afternoon (02:00 PM - 05:00 PM)">Afternoon (2 PM - 5 PM)</option>
+                            <option value="Evening (05:00 PM - 08:00 PM)">Evening (5 PM - 8 PM)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bg-orange-50 border border-orange-200 rounded-xl p-3 text-orange-950 space-y-1">
+                    <div class="font-bold flex items-center gap-1.5 text-xs">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-orange-600"></i> Zero Advance Required
+                    </div>
+                    <p class="text-[11px] text-orange-800">Pay on Delivery via UPI or Cash only after inspecting lens vision clarity on your eyes.</p>
+                </div>
+
+                <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4"></i> Confirm Doorstep Booking
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Order Success Confirmation -->
+    <div id="success-modal" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md rounded-2xl p-6 shadow-2xl text-center space-y-4">
+            <div class="w-14 h-14 rounded-full bg-orange-100 text-orange-600 mx-auto flex items-center justify-center">
+                <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+            </div>
+            <div>
+                <h3 class="text-xl font-black text-slate-900">Order Confirmed!</h3>
+                <p class="text-xs text-slate-500 mt-1">Our doorstep lab specialist has received your booking.</p>
+                <div class="mt-2 bg-slate-100 py-1.5 px-3 rounded-lg text-xs font-mono font-bold text-slate-800 inline-block" id="success-order-id">
+                    ORDER #RL-XXXXXX
+                </div>
+            </div>
+
+            <div class="border-t border-b border-slate-100 py-3 text-left text-xs space-y-1.5 text-slate-600">
+                <div class="flex justify-between"><span>Customer:</span> <strong id="success-cust-name">-</strong></div>
+                <div class="flex justify-between"><span>Pickup:</span> <strong id="success-pickup-time">-</strong></div>
+                <div class="flex justify-between"><span>Pay on Delivery:</span> <strong id="success-final-price" class="text-orange-600 font-black text-sm">-</strong></div>
+            </div>
+
+            <a id="success-whatsapp-btn" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-3 rounded-xl shadow-md transition flex items-center justify-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4"></i> Dispatch to WhatsApp (+91 94883 53749)
+            </a>
+
+            <button onclick="closeSuccessModal()" class="text-xs font-semibold text-slate-500 hover:text-slate-800">
+                Back to Catalog
+            </button>
+        </div>
+    </div>
+
+    <!-- Drawer: Past Bookings Tracker -->
+    <div id="orders-drawer" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden">
+        <div class="absolute inset-y-0 right-0 max-w-md w-full bg-white shadow-2xl flex flex-col animate-in slide-in-from-right duration-200">
+            <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="clock" class="w-5 h-5 text-orange-600"></i>
+                    <h3 class="font-bold text-base text-slate-900">My Doorstep Bookings</h3>
+                </div>
+                <button onclick="toggleOrdersDrawer(false)" class="w-8 h-8 rounded-full hover:bg-slate-200 text-slate-500 flex items-center justify-center">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div id="past-orders-list" class="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar text-xs">
+                <p class="text-slate-400 text-center py-8">No recent bookings found.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application JavaScript Engine -->
+    <script>
+        // ValueVis Complete July 2026 Price List Data
+        const VALUEVIS_PRODUCTS = [
+            // 1. EVOLUX ELITE
+            {
+                id: 'vv-evolux-elite',
+                category: 'elite',
+                name: 'ValueVis™ EVOLUX ELITE (Flagship Progressive)',
+                badge: 'Flagship 5★ Series',
+                badgeColor: 'bg-orange-100 text-orange-900',
+                engraving: 'X (Evolux Elite)',
+                description: 'Panoramic vision coverage with ultra-smooth visual flow. Absolute precision across every focal zone.',
+                features: ['Expanded visual field with zero swim effect', 'Instant adaptation guarantee', 'European technology engineering', 'Engraved with X mark on lens'],
+                dualCoatEligibleTier: 700,
+                variants: [
+                    { label: '1.56 Index - ClearView Optix ARC (Green)', price: 10190 },
+                    { label: '1.56 Index - ClearView Bluvex ARC (Blue)', price: 10690 },
+                    { label: '1.56 Index - DayNite Photochromic Optix ARC', price: 11190 },
+                    { label: '1.56 Index - DayNite Photochromic Bluvex ARC', price: 11690 },
+                    { label: '1.60 MR-8 - ClearView Optix ARC (Green)', price: 12790 },
+                    { label: '1.60 MR-8 - ClearView Bluvex ARC (Blue)', price: 12280 },
+                    { label: '1.60 MR-8 - DayNite Optix ARC', price: 17090 },
+                    { label: '1.60 MR-8 - DayNite Bluvex ARC', price: 17690 },
+                    { label: '1.67 High Index - ClearView Optix ARC', price: 14490 },
+                    { label: '1.67 High Index - ClearView Bluvex ARC', price: 13990 },
+                    { label: '1.67 High Index - DayNite Optix ARC', price: 21190 },
+                    { label: '1.67 High Index - DayNite Bluvex ARC', price: 21690 },
+                    { label: '1.74 Ultra Thin - ClearView Optix ARC', price: 26190 },
+                    { label: '1.74 Ultra Thin - ClearView Bluvex ARC', price: 25690 },
+                    { label: '1.74 Ultra Thin - DayNite Optix ARC', price: 37790 },
+                    { label: '1.74 Ultra Thin - DayNite Bluvex ARC', price: 38290 },
+                ]
+            },
+            // 2. EVOLUX PROGRESSIVE
+            {
+                id: 'vv-evolux-prog',
+                category: 'evolux',
+                name: 'ValueVis™ EVOLUX Progressive (European Tech)',
+                badge: 'Active & Driving 4.5★',
+                badgeColor: 'bg-amber-100 text-amber-900',
+                engraving: 'X (Evolux)',
+                description: 'Crafted for real life vision. Dependable performance for frequent focus shifters, everyday drivers, and digital screens.',
+                features: ['Extended field of vision for road & screens', 'Wide dynamic vision zones', 'MR-8 high impact strength available', 'Authentic X engraving'],
+                dualCoatEligibleTier: 700,
+                variants: [
+                    { label: '1.56 Index - ClearView Optix ARC (Green)', price: 6990 },
+                    { label: '1.56 Index - ClearView Bluvex ARC (Blue)', price: 7490 },
+                    { label: '1.56 Index - DayNite Optix ARC', price: 8190 },
+                    { label: '1.56 Index - DayNite Bluvex ARC', price: 8690 },
+                    { label: '1.60 MR-8 - ClearView Optix ARC', price: 9390 },
+                    { label: '1.60 MR-8 - ClearView Bluvex ARC', price: 8890 },
+                    { label: '1.60 MR-8 - DayNite Optix ARC', price: 13890 },
+                    { label: '1.60 MR-8 - DayNite Bluvex ARC', price: 14390 },
+                    { label: '1.67 High Index - ClearView Optix ARC', price: 10690 },
+                    { label: '1.67 High Index - ClearView Bluvex ARC', price: 11190 },
+                    { label: '1.67 High Index - DayNite Optix ARC', price: 17690 },
+                    { label: '1.67 High Index - DayNite Bluvex ARC', price: 18190 }
+                ]
+            },
+            // 3. CUSTOMIZED FREEFORM PROGRESSIVE
+            {
+                id: 'vv-customized-prog',
+                category: 'customized',
+                name: 'ValueVis™ CUSTOMIZED Progressive (American Freeform)',
+                badge: 'Precision Freeform 4★',
+                badgeColor: 'bg-blue-100 text-blue-900',
+                engraving: 'CM (Customized)',
+                description: 'Advanced American Freeform Technology. Smooth progression for clear vision at all distances with reduced peripheral distortions.',
+                features: ['Smooth visual adaptation for natural stability', 'Light & durable balanced design', 'Available up to 1.74 ultra thin', 'Engraved with CM mark'],
+                dualCoatEligibleTier: 500,
+                variants: [
+                    { label: '1.56 Clear - HMC Green (Optix)', price: 3990 },
+                    { label: '1.56 Clear - HMC Blue (Bluvex)', price: 4290 },
+                    { label: '1.56 Bluecut - HMC Green', price: 4390 },
+                    { label: '1.56 Bluecut - HMC Blue', price: 4690 },
+                    { label: '1.60 Clear - HMC Green', price: 6490 },
+                    { label: '1.60 Clear - HMC Blue', price: 6790 },
+                    { label: '1.60 Bluecut - HMC Green', price: 6790 },
+                    { label: '1.60 Bluecut - HMC Blue', price: 7090 },
+                    { label: '1.67 Clear - HMC Green', price: 8090 },
+                    { label: '1.67 Clear - HMC Blue', price: 8390 },
+                    { label: '1.67 Bluecut - HMC Green', price: 8390 },
+                    { label: '1.67 Bluecut - HMC Blue', price: 8690 },
+                    { label: '1.74 Ultra Thin Clear - HMC Green', price: 18990 },
+                    { label: '1.74 Ultra Thin Bluecut - HMC Blue', price: 20090 }
+                ]
+            },
+            // 4. VENTURE & ENTICE
+            {
+                id: 'vv-venture-prog',
+                category: 'venture_entice',
+                name: 'ValueVis™ VENTURE & ENTICE Freeform Progressives',
+                badge: 'Everyday Value 3★',
+                badgeColor: 'bg-emerald-100 text-emerald-900',
+                engraving: 'VT (Venture)',
+                description: 'Next level progressives for everyday vision. Wider visual zones, smoother transitions, and quicker adaptation.',
+                features: ['Venture 1.56 & 1.60 freeform corridor', 'Entice 1.49 budget progressive', 'Engraved with VT mark (Venture)'],
+                dualCoatEligibleTier: 300,
+                variants: [
+                    { label: 'Entice 1.49 Clear - HMC Green', price: 2090 },
+                    { label: 'Entice 1.49 Clear - HMC Blue', price: 2290 },
+                    { label: 'Venture 1.56 Clear - HMC Green', price: 3090 },
+                    { label: 'Venture 1.56 Clear - HMC Blue', price: 3290 },
+                    { label: 'Venture 1.56 Bluecut - HMC Green', price: 3490 },
+                    { label: 'Venture 1.56 Bluecut - HMC Blue', price: 3690 },
+                    { label: 'Venture 1.60 Clear - HMC Green', price: 5090 },
+                    { label: 'Venture 1.60 Bluecut - HMC Blue', price: 5590 }
+                ]
+            },
+            // 5. DAYNITE ADAPTIVE PHOTOCHROMIC
+            {
+                id: 'vv-daynite-adaptive',
+                category: 'daynite',
+                name: 'ValueVis™ DAYNITE Light-Adaptive Progressives',
+                badge: 'Sun & Screen Adaptive',
+                badgeColor: 'bg-slate-900 text-white',
+                engraving: 'VT / CM Mark',
+                description: 'Intelligently responds to light changes: darkens in bright sunlight for glare shielding, clears indoors for screen work.',
+                features: ['Smooth indoor/outdoor transition', 'UV400 + Blue light filtration', 'PG (Photo Grey) & PG Bluecut combinations'],
+                dualCoatEligibleTier: 500,
+                variants: [
+                    { label: 'Entice 1.49 PG - HMC Green', price: 2990 },
+                    { label: 'Entice 1.49 PG - HMC Blue', price: 3190 },
+                    { label: 'Venture 1.56 PG - HMC Green', price: 4090 },
+                    { label: 'Venture 1.56 PG Bluecut - HMC Blue', price: 4690 },
+                    { label: 'Venture 1.60 PG - HMC Green', price: 7690 },
+                    { label: 'Venture 1.60 PG Bluecut - HMC Blue', price: 9990 },
+                    { label: 'Customized 1.56 PG - HMC Green', price: 5290 },
+                    { label: 'Customized 1.56 PG Bluecut - HMC Blue', price: 6090 },
+                    { label: 'Customized 1.60 PG - HMC Green', price: 9090 },
+                    { label: 'Customized 1.60 PG Bluecut - HMC Blue', price: 11790 },
+                    { label: 'Customized 1.67 PG - HMC Green', price: 13490 },
+                    { label: 'Customized 1.67 PG Bluecut - HMC Blue', price: 15790 },
+                    { label: 'Customized 1.74 Ultra Thin PG - HMC Green', price: 29890 },
+                    { label: 'Customized 1.74 Ultra Thin PG Bluecut - HMC Blue', price: 32090 }
+                ]
+            },
+            // 6. SINGLE VISION RX & PRECIOUS BLUE FSV
+            {
+                id: 'vv-single-vision',
+                category: 'single_vision',
+                name: 'ValueVis™ PRECIOUS BLUE FSV & Single Vision RX',
+                badge: 'Precision Single Focus',
+                badgeColor: 'bg-indigo-100 text-indigo-900',
+                engraving: 'Authentication Card',
+                description: 'Precision optics for clearer everyday distance or reading. Available as Finished Single Vision or Custom RX surfacing.',
+                features: ['Scratch resistance & dust/water repellent', 'Precious Blue 1.56 ready stock power range', 'DayNite transition options available'],
+                dualCoatEligibleTier: 300,
+                variants: [
+                    { label: 'Precious Blue FSV 1.56 Clear (+4.00 to -6.00)', price: 1490 },
+                    { label: 'Precious Blue FSV 1.56 Bluecut (Screens)', price: 1590 },
+                    { label: 'Precious Blue FSV 1.56 PG Photochromic', price: 1890 },
+                    { label: 'Precious Blue FSV 1.56 PG Bluecut', price: 1990 },
+                    { label: 'Single Vision RX 1.56 Clear - HMC Green', price: 3290 },
+                    { label: 'Single Vision RX 1.56 Bluecut - HMC Blue', price: 3790 },
+                    { label: 'Single Vision RX 1.56 DayNite Green', price: 4090 },
+                    { label: 'Single Vision RX 1.60 Clear - HMC Green', price: 5490 },
+                    { label: 'Single Vision RX 1.60 Bluecut - HMC Blue', price: 5990 },
+                    { label: 'Single Vision RX 1.60 DayNite Green', price: 8290 },
+                    { label: 'Single Vision RX 1.67 Clear - HMC Green', price: 6990 },
+                    { label: 'Single Vision RX 1.67 Bluecut - HMC Blue', price: 7590 },
+                    { label: 'Single Vision RX 1.67 DayNite Green', price: 12990 }
+                ]
+            },
+            // 7. BIFOCALS (KRYPTOK & D-BIFOCAL)
+            {
+                id: 'vv-bifocals',
+                category: 'bifocals',
+                name: 'ValueVis™ RX Bifocals (Kryptok & D-Bifocal)',
+                badge: 'Classic Dual Focus',
+                badgeColor: 'bg-purple-100 text-purple-900',
+                engraving: 'Authentication Card',
+                description: 'Clear vision for distance and near in a single lens. Choose classic round KT or comfortable flat-top D segment.',
+                features: ['Kryptok (KT) 1.49 & KT Plus 1.56', 'D-Bifocal 1.49 & D-Bifocal Plus 1.56', 'DayNite add-on available (+₹1,000)', 'Photo brown available (+₹500)'],
+                dualCoatEligibleTier: 300,
+                variants: [
+                    { label: 'Kryptok (KT) 1.49 Clear - HMC Green', price: 1990 },
+                    { label: 'Kryptok (KT) 1.49 Bluecut - HMC Blue', price: 2490 },
+                    { label: 'KT Plus 1.56 Clear - HMC Green', price: 2390 },
+                    { label: 'KT Plus 1.56 Bluecut - HMC Blue', price: 2890 },
+                    { label: 'D-Bifocal 1.49 Clear - HMC Green', price: 2390 },
+                    { label: 'D-Bifocal 1.49 Bluecut - HMC Blue', price: 2590 },
+                    { label: 'D-Bifocal Plus 1.56 Clear - HMC Green', price: 2790 },
+                    { label: 'D-Bifocal Plus 1.56 Bluecut - HMC Blue', price: 2990 },
+                    { label: 'Lenticular High Power (+8.00 to +14.00) HMC Green', price: 3290 }
+                ]
+            },
+            // 8. STOCK QUICKFIT
+            {
+                id: 'vv-stock-quickfit',
+                category: 'stock',
+                name: 'ValueVis™ QUICKFIT Stock Lenses (KT & Progressives)',
+                badge: 'Instant Dispensing',
+                badgeColor: 'bg-teal-100 text-teal-900',
+                engraving: 'Authentication Card',
+                description: 'Pre-calibrated progressive and bifocal stock lenses (+3.00 to -2.00, Add +3.00) for budget reglazing.',
+                features: ['Fast turnaround times', 'V2 Digital Progressive 1.56', 'V2 Kryptok 1.56 budget', 'Includes ValueVis Authenticity Card'],
+                dualCoatEligibleTier: 300,
+                variants: [
+                    { label: 'V2 Stock Kryptok 1.56 HC (Hard Coat)', price: 790 },
+                    { label: 'V2 Stock Kryptok 1.56 HMC (Anti-Glare)', price: 990 },
+                    { label: 'V2 Stock Bluecut Kryptok 1.56 HMC', price: 1390 },
+                    { label: 'V2 Stock PG Photochromic Kryptok 1.56 HMC', price: 1890 },
+                    { label: 'V2 Stock Dig Progressive 1.56 HMC', price: 1890 },
+                    { label: 'V2 Stock Dig Bluecut Progressive 1.56 HMC', price: 2490 },
+                    { label: 'V2 Stock Dig PG Photo Progressive 1.56 HMC', price: 2790 },
+                    { label: 'V2 Stock Dig PG Bluecut Progressive 1.56 HMC', price: 3890 }
+                ]
+            }
+        ];
+
+        // Essilor Standard MRP Catalog (Maintained)
+        const ESSILOR_PRODUCTS = [
+            { id: 'ess-easypro', name: 'Essilor® Crizal® Easy Pro (1.56 UV)', price: 3900, desc: 'World-standard smudge & dust repellent with green AR and breath-mark verification.' },
+            { id: 'ess-rock', name: 'Essilor® Crizal® Rock™ (High Durability)', price: 4500, desc: '3x more scratch resistant matrix against drops and daily rough wiping.' },
+            { id: 'ess-sapphire', name: 'Essilor® Crizal® Sapphire™ HR 360°', price: 5700, desc: 'Flagship multi-angular reflection reduction for video calls and cameras.' },
+            { id: 'ess-eyezen', name: 'Essilor® Eyezen® Start (Screen Fatigue)', price: 6500, desc: 'Dualoptim™ smartphone technology relaxing visual focus during long screen hours.' },
+            { id: 'ess-transitions', name: 'Essilor® Transitions® GEN S™ + Crizal®', price: 10800, desc: 'Fastest dynamic smart lens: activates outdoors in 25s, clears indoors in 2 mins.' },
+            { id: 'ess-varilux-liberty', name: 'Essilor® Varilux® Liberty 3.0 Progressive', price: 12800, desc: 'World #1 progressive lens brand with Path Optimizer™ smooth adaptation.' },
+            { id: 'ess-varilux-comfort', name: 'Essilor® Varilux® Comfort Max Progressive', price: 18500, desc: 'Flex Optim™ ergonomics expanding all-day viewing postures up to 227 positions.' }
+        ];
+
+        // Bausch + Lomb Catalog (Maintained)
+        const BAUSCH_PRODUCTS = [
+            { id: 'bl-soflens59', name: 'Bausch + Lomb SofLens® 59 (Monthly 6PK)', price: 1350, desc: '59% water Hilafilcon B material resisting protein deposits.' },
+            { id: 'bl-purevision2', name: 'Bausch + Lomb PureVision® 2 HD (Monthly 6PK)', price: 2350, desc: '130 Dk/t silicone hydrogel with High Definition anti-glare optics.' },
+            { id: 'bl-biotrue', name: 'Bausch + Lomb Biotrue® ONEday (Daily 30PK)', price: 2750, desc: '78% bio-inspired water content matching the human cornea.' },
+            { id: 'bl-ultra', name: 'Bausch + Lomb ULTRA® with MoistureSeal®', price: 3350, desc: 'Retains 95% moisture for 16 full hours of digital screen work.' }
+        ];
+
+        // Application State
+        let currentVVFilter = 'all';
+        let activeModalProduct = null;
+        let cart = JSON.parse(localStorage.getItem('relens_cart') || '[]');
+        let pastOrders = JSON.parse(localStorage.getItem('relens_orders') || '[]');
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderValueVisCatalog();
+            renderEssilorCatalog();
+            renderBauschCatalog();
+            updateCartBadges();
+            renderPastOrders();
+            lucide.createIcons();
+
+            const dateInput = document.getElementById('cust-date');
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.min = tomorrow.toISOString().split('T')[0];
+            dateInput.value = tomorrow.toISOString().split('T')[0];
+        });
+
+        // Tab Switcher
+        function switchBrandTab(brand) {
+            document.querySelectorAll('.brand-tab').forEach(b => {
+                b.classList.remove('bg-gradient-to-r', 'from-orange-600', 'to-amber-600', 'text-white', 'shadow-sm');
+                b.classList.add('text-slate-600');
+            });
+
+            document.getElementById('section-valuevis').classList.add('hidden');
+            document.getElementById('section-essilor').classList.add('hidden');
+            document.getElementById('section-bausch').classList.add('hidden');
+
+            if (brand === 'valuevis') {
+                document.getElementById('section-valuevis').classList.remove('hidden');
+                document.getElementById('tab-brand-vv').classList.add('bg-gradient-to-r', 'from-orange-600', 'to-amber-600', 'text-white', 'shadow-sm');
+                document.getElementById('tab-brand-vv').classList.remove('text-slate-600');
+            } else if (brand === 'essilor') {
+                document.getElementById('section-essilor').classList.remove('hidden');
+                document.getElementById('tab-brand-essilor').classList.add('bg-gradient-to-r', 'from-orange-600', 'to-amber-600', 'text-white', 'shadow-sm');
+                document.getElementById('tab-brand-essilor').classList.remove('text-slate-600');
+            } else if (brand === 'bausch') {
+                document.getElementById('section-bausch').classList.remove('hidden');
+                document.getElementById('tab-brand-bausch').classList.add('bg-gradient-to-r', 'from-orange-600', 'to-amber-600', 'text-white', 'shadow-sm');
+                document.getElementById('tab-brand-bausch').classList.remove('text-slate-600');
+            }
+            lucide.createIcons();
+        }
+
+        // Filter ValueVis sub-categories
+        function filterVV(category) {
+            currentVVFilter = category;
+            document.querySelectorAll('.vv-sub-btn').forEach(b => {
+                b.classList.remove('bg-slate-900', 'text-white');
+                b.classList.add('bg-white', 'text-slate-700');
+            });
+            event.target.classList.add('bg-slate-900', 'text-white');
+            event.target.classList.remove('bg-white', 'text-slate-700');
+            renderValueVisCatalog();
+        }
+
+        // Render ValueVis
+        function renderValueVisCatalog() {
+            const container = document.getElementById('vv-lens-grid');
+            const items = VALUEVIS_PRODUCTS.filter(p => currentVVFilter === 'all' || p.category === currentVVFilter);
+
+            container.innerHTML = items.map(p => {
+                const basePrice = p.variants[0].price;
+                return `
+                    <div class="bg-white rounded-2xl border border-slate-200 hover:border-orange-300 shadow-sm hover:shadow-md transition p-5 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded ${p.badgeColor}">${p.badge}</span>
+                                <span class="text-[10px] font-mono text-slate-500 font-bold bg-slate-100 px-2 py-0.5 rounded">Engraving: ${p.engraving}</span>
+                            </div>
+                            <h3 class="text-base font-black text-slate-900 leading-snug">${p.name}</h3>
+                            <p class="text-xs text-slate-500 line-clamp-2">${p.description}</p>
+                            
+                            <ul class="text-xs space-y-1 text-slate-600 pt-2 border-t border-slate-100">
+                                ${p.features.map(f => `
+                                    <li class="flex items-center gap-1.5 text-[11px]">
+                                        <i data-lucide="check" class="w-3.5 h-3.5 text-orange-600 shrink-0"></i>
+                                        <span>${f}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+
+                            <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 text-[11px] text-slate-600">
+                                <span class="font-bold text-slate-800">${p.variants.length} Lens Index Options</span>
+                                <span class="block text-slate-500">From ${p.variants[0].label.split(' - ')[0]}</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 border-t border-slate-100 flex items-end justify-between">
+                            <div>
+                                <div class="text-[10px] text-slate-400 font-bold uppercase">Official MRP Starts at</div>
+                                <span class="text-xl font-black text-slate-900">₹${basePrice.toLocaleString()}</span>
+                                <div class="text-[10px] text-slate-500">+ Lab Frame Fitting</div>
+                            </div>
+                            <button onclick="openConfigModal('${p.id}')" class="bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition active:scale-95 flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="wrench" class="w-3.5 h-3.5"></i> Select & Fit
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            lucide.createIcons();
+        }
+
+        // Render Essilor
+        function renderEssilorCatalog() {
+            const container = document.getElementById('essilor-lens-grid');
+            container.innerHTML = ESSILOR_PRODUCTS.map(e => `
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 flex flex-col justify-between space-y-3">
+                    <div class="space-y-1.5">
+                        <span class="text-[10px] font-black uppercase text-blue-800 bg-blue-100 px-2 py-0.5 rounded">Essilor Authorized</span>
+                        <h3 class="text-sm font-bold text-slate-900">${e.name}</h3>
+                        <p class="text-xs text-slate-500">${e.desc}</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block font-bold">Standard MRP</span>
+                            <span class="text-lg font-black text-slate-900">₹${e.price.toLocaleString()}</span>
+                        </div>
+                        <button onclick="addSimpleToCart('${e.id}', '${e.name}', ${e.price}, 'Essilor®')" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-3 py-2 rounded-lg">
+                            Add Essilor
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render Bausch + Lomb
+        function renderBauschCatalog() {
+            const container = document.getElementById('bausch-lens-grid');
+            container.innerHTML = BAUSCH_PRODUCTS.map(b => `
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 flex flex-col justify-between space-y-3">
+                    <div class="space-y-1.5">
+                        <span class="text-[10px] font-black uppercase text-cyan-800 bg-cyan-100 px-2 py-0.5 rounded">⚡ Same-Day Delivery</span>
+                        <h3 class="text-sm font-bold text-slate-900">${b.name}</h3>
+                        <p class="text-xs text-slate-500">${b.desc}</p>
+                    </div>
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block font-bold">Box MRP</span>
+                            <span class="text-lg font-black text-slate-900">₹${b.price.toLocaleString()}</span>
+                        </div>
+                        <button onclick="addSimpleToCart('${b.id}', '${b.name}', ${b.price}, 'Bausch + Lomb')" class="bg-cyan-600 hover:bg-cyan-700 text-white text-xs font-bold px-3 py-2 rounded-lg">
+                            Add Contact Lens
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Open Config Modal for ValueVis
+        function openConfigModal(productId) {
+            activeModalProduct = VALUEVIS_PRODUCTS.find(p => p.id === productId);
+            if (!activeModalProduct) return;
+
+            document.getElementById('modal-lens-title').textContent = activeModalProduct.name;
+            document.getElementById('cfg-frame-nick').value = '';
+            document.getElementById('cfg-dualcoat').checked = false;
+            document.getElementById('cfg-tint').checked = false;
+            document.getElementById('cfg-dualcoat-label').textContent = `+₹${activeModalProduct.dualCoatEligibleTier}`;
+
+            // Populate Variant Selector
+            const varSelect = document.getElementById('cfg-variant-select');
+            varSelect.innerHTML = activeModalProduct.variants.map((v, i) => `
+                <option value="${i}" data-price="${v.price}">${v.label} - ₹${v.price.toLocaleString()}</option>
+            `).join('');
+
+            updateModalPrice();
+            document.getElementById('config-modal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeConfigModal() {
+            document.getElementById('config-modal').classList.add('hidden');
+        }
+
+        function updateModalPrice() {
+            if (!activeModalProduct) return;
+
+            const varSelect = document.getElementById('cfg-variant-select');
+            const selectedOpt = varSelect.options[varSelect.selectedIndex];
+            const lensPrice = parseInt(selectedOpt.getAttribute('data-price') || '0', 10);
+
+            // Frame fitting charges: Full 200, Supra 300, Rimless 500
+            let fitting = 200;
+            const fVal = document.querySelector('input[name="frame_type"]:checked')?.value;
+            if (fVal === 'half') fitting = 300;
+            if (fVal === 'rimless') fitting = 500;
+
+            let addOns = 0;
+            if (document.getElementById('cfg-dualcoat').checked) {
+                addOns += activeModalProduct.dualCoatEligibleTier;
+            }
+            if (document.getElementById('cfg-tint').checked) {
+                addOns += 300;
+            }
+
+            const total = lensPrice + fitting + addOns;
+            document.getElementById('modal-final-price').textContent = `₹${total.toLocaleString()}`;
+        }
+
+        function confirmAddToCart() {
+            if (!activeModalProduct) return;
+
+            const varSelect = document.getElementById('cfg-variant-select');
+            const selectedOpt = varSelect.options[varSelect.selectedIndex];
+            const lensPrice = parseInt(selectedOpt.getAttribute('data-price') || '0', 10);
+            const variantText = selectedOpt.text.split(' - ₹')[0];
+
+            let fitting = 200;
+            const fVal = document.querySelector('input[name="frame_type"]:checked')?.value;
+            const fLabel = fVal === 'full' ? 'Full Rim' : (fVal === 'half' ? 'Half Rim (Supra)' : 'Rimless');
+            if (fVal === 'half') fitting = 300;
+            if (fVal === 'rimless') fitting = 500;
+
+            let addOns = [];
+            let addOnTotal = 0;
+            if (document.getElementById('cfg-dualcoat').checked) {
+                addOns.push('Dual Coat (Green/Blue)');
+                addOnTotal += activeModalProduct.dualCoatEligibleTier;
+            }
+            if (document.getElementById('cfg-tint').checked) {
+                addOns.push('Sunglass Tint');
+                addOnTotal += 300;
+            }
+
+            const frameNick = document.getElementById('cfg-frame-nick').value.trim() || 'Customer Frame';
+            const rxMode = document.querySelector('input[name="rx_mode"]:checked')?.value || 'doorstep';
+            const rxLabel = rxMode === 'doorstep' ? 'Handover at Doorstep' : (rxMode === 'whatsapp' ? 'WhatsApp Prescription' : 'Optometrist Call');
+
+            const item = {
+                cartId: 'item_' + Date.now(),
+                brand: 'ValueVis™',
+                name: activeModalProduct.name,
+                variant: variantText,
+                frame: `${frameNick} (${fLabel})`,
+                addOns: addOns.join(', ') || 'None',
+                rx: rxLabel,
+                price: lensPrice + fitting + addOnTotal
+            };
+
+            cart.push(item);
+            localStorage.setItem('relens_cart', JSON.stringify(cart));
+            closeConfigModal();
+            updateCartBadges();
+            toggleCartDrawer(true);
+        }
+
+        function addSimpleToCart(id, name, price, brand) {
+            cart.push({
+                cartId: 'item_' + Date.now(),
+                brand: brand,
+                name: name,
+                variant: 'Standard Selection',
+                frame: 'Doorstep Pickup / Direct Dispatch',
+                addOns: 'Standard Warranty',
+                rx: 'Doorstep Verification',
+                price: price
+            });
+            localStorage.setItem('relens_cart', JSON.stringify(cart));
+            updateCartBadges();
+            toggleCartDrawer(true);
+        }
+
+        // Cart Drawer
+        function toggleCartDrawer(show) {
+            const drawer = document.getElementById('cart-drawer');
+            if (show) {
+                renderCartItems();
+                drawer.classList.remove('hidden');
+            } else {
+                drawer.classList.add('hidden');
+            }
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cart-items-container');
+            document.getElementById('drawer-cart-count').textContent = cart.length;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 space-y-2 text-slate-400">
+                        <i data-lucide="glasses" class="w-12 h-12 mx-auto text-slate-300"></i>
+                        <p class="font-bold text-sm text-slate-600">Your cart is empty</p>
+                        <p class="text-xs">Add a ValueVis™, Essilor®, or Bausch+Lomb pair to schedule doorstep service.</p>
+                    </div>
+                `;
+                calculateCartTotals();
+                lucide.createIcons();
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="text-[10px] font-black uppercase text-orange-800 bg-orange-100 px-1.5 py-0.2 rounded">${item.brand}</span>
+                            <h4 class="text-xs font-bold text-slate-900 mt-0.5">${item.name}</h4>
+                            <p class="text-[11px] text-slate-600 font-medium">👓 ${item.frame}</p>
+                        </div>
+                        <button onclick="removeCartItem('${item.cartId}')" class="text-slate-400 hover:text-red-500 p-1">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                    <div class="text-[10px] text-slate-500 space-y-0.5 bg-white p-2 rounded border border-slate-100">
+                        <div><strong>Variant:</strong> ${item.variant}</div>
+                        <div><strong>Add-ons:</strong> ${item.addOns}</div>
+                        <div><strong>Rx Mode:</strong> ${item.rx}</div>
+                    </div>
+                    <div class="flex justify-between items-baseline pt-1">
+                        <span class="text-[11px] text-slate-400">Fitted & Tested</span>
+                        <span class="text-sm font-extrabold text-slate-900">₹${item.price.toLocaleString()}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            calculateCartTotals();
+            lucide.createIcons();
+        }
+
+        function removeCartItem(cartId) {
+            cart = cart.filter(i => i.cartId !== cartId);
+            localStorage.setItem('relens_cart', JSON.stringify(cart));
+            renderCartItems();
+            updateCartBadges();
+        }
+
+        function calculateCartTotals() {
+            const subtotal = cart.reduce((acc, cur) => acc + cur.price, 0);
+            document.getElementById('summary-subtotal').textContent = `₹${subtotal.toLocaleString()}`;
+            document.getElementById('header-cart-total').textContent = `₹${subtotal.toLocaleString()}`;
+            document.getElementById('summary-final-total').textContent = `₹${subtotal.toLocaleString()}`;
+            document.getElementById('checkout-btn').disabled = cart.length === 0;
+        }
+
+        function updateCartBadges() {
+            const count = cart.length;
+            document.getElementById('cart-counter').textContent = count;
+            const subtotal = cart.reduce((acc, cur) => acc + cur.price, 0);
+            document.getElementById('header-cart-total').textContent = `₹${subtotal.toLocaleString()}`;
+        }
+
+        // Checkout Flow
+        function openCheckoutWizard() {
+            if (cart.length === 0) return;
+            toggleCartDrawer(false);
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+
+        function closeCheckoutWizard() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function handleOrderSubmission(e) {
+            e.preventDefault();
+
+            const orderId = 'RL-' + Math.floor(100000 + Math.random() * 900000);
+            const name = document.getElementById('cust-name').value.trim();
+            const phone = document.getElementById('cust-phone').value.trim();
+            const address = document.getElementById('cust-address').value.trim();
+            const landmark = document.getElementById('cust-landmark').value.trim();
+            const city = document.getElementById('cust-city').value.trim();
+            const date = document.getElementById('cust-date').value;
+            const slot = document.getElementById('cust-slot').value;
+
+            const total = cart.reduce((acc, cur) => acc + cur.price, 0);
+
+            const order = {
+                orderId,
+                name,
+                phone,
+                address: `${address}, ${landmark ? landmark + ', ' : ''}${city}`,
+                date: `${date} (${slot})`,
+                items: [...cart],
+                total
+            };
+
+            pastOrders.unshift(order);
+            localStorage.setItem('relens_orders', JSON.stringify(pastOrders));
+
+            cart = [];
+            localStorage.setItem('relens_cart', JSON.stringify(cart));
+            updateCartBadges();
+
+            document.getElementById('success-order-id').textContent = `ORDER #${orderId}`;
+            document.getElementById('success-cust-name').textContent = name;
+            document.getElementById('success-pickup-time').textContent = order.date;
+            document.getElementById('success-final-price').textContent = `₹${total.toLocaleString()}`;
+
+            // WhatsApp Message
+            const itemsSummary = order.items.map((it, i) => 
+                `${i+1}. *${it.brand} ${it.name}*%0A   • Variant: ${it.variant}%0A   • Frame: ${it.frame}%0A   • Addons: ${it.addOns}%0A   • Price: ₹${it.price}`
+            ).join('%0A%0A');
+
+            const waMsg = `*New Doorstep Booking - ReLens Lab*%0A` +
+                `*Order ID:* ${orderId}%0A` +
+                `*Customer:* ${name}%0A` +
+                `*Phone:* ${phone}%0A` +
+                `*Address:* ${order.address}%0A` +
+                `*Scheduled Slot:* ${order.date}%0A%0A` +
+                `*Items Selected:*%0A${itemsSummary}%0A%0A` +
+                `*Pay on Delivery Total:* ₹${total}%0A` +
+                `_Authenticity Card and Frame Fitting Requested._`;
+
+            document.getElementById('success-whatsapp-btn').href = `https://wa.me/919488353749?text=${waMsg}`;
+
+            closeCheckoutWizard();
+            document.getElementById('success-modal').classList.remove('hidden');
+            renderPastOrders();
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        function toggleOrdersDrawer(show) {
+            const drawer = document.getElementById('orders-drawer');
+            if (show) {
+                renderPastOrders();
+                drawer.classList.remove('hidden');
+            } else {
+                drawer.classList.add('hidden');
+            }
+        }
+
+        function renderPastOrders() {
+            const container = document.getElementById('past-orders-list');
+            const badge = document.getElementById('orders-badge');
+
+            if (pastOrders.length > 0) {
+                badge.textContent = pastOrders.length;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            if (pastOrders.length === 0) {
+                container.innerHTML = `<p class="text-slate-400 text-center py-8">No recent bookings found.</p>`;
+                return;
+            }
+
+            container.innerHTML = pastOrders.map(ord => `
+                <div class="border border-slate-200 rounded-xl p-3.5 space-y-2 bg-slate-50">
+                    <div class="flex justify-between items-center">
+                        <span class="font-mono font-bold text-slate-800">${ord.orderId}</span>
+                        <span class="bg-orange-100 text-orange-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full">Scheduled</span>
+                    </div>
+                    <div class="text-[11px] text-slate-600">
+                        <div>📅 ${ord.date}</div>
+                        <div>📍 ${ord.address}</div>
+                    </div>
+                    <div class="text-[11px] border-t border-slate-200 pt-1.5 space-y-1">
+                        ${ord.items.map(it => `
+                            <div class="flex justify-between text-slate-700">
+                                <span>${it.name} (${it.frame})</span>
+                                <strong>₹${it.price}</strong>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="flex justify-between items-center border-t border-slate-200 pt-1.5 font-bold">
+                        <span>Pay on Delivery</span>
+                        <span class="text-orange-600 font-black">₹${ord.total.toLocaleString()}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
