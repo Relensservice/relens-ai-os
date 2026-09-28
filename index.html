@@ -100,6 +100,29 @@
         </div>
     </header>
 
+<!-- ValueVis Lens Reference Banner Slider -->
+<section class="max-w-7xl mx-auto px-4 pt-5">
+  <div class="relative overflow-hidden rounded-3xl shadow-lg border border-slate-200 bg-slate-950">
+    <div id="lens-reference-slider" class="relative aspect-[16/7] min-h-[230px]">
+      <img src="assets/banners/slide1.webp" alt="ValueVis Evolux Elite DayNite lens reference" class="lens-banner absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700">
+      <img src="assets/banners/slide2.webp" alt="ValueVis progressive lens reference" class="lens-banner absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700">
+      <img src="assets/banners/slide3.webp" alt="ValueVis Precious Blue lens reference" class="lens-banner absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700">
+      <img src="assets/banners/slide4.webp" alt="ValueVis children's lens reference" class="lens-banner absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700">
+      <img src="assets/banners/slide5.webp" alt="ValueVis MR-8 1.60 lens reference" class="lens-banner absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700">
+      <img src="assets/banners/slide6.webp" alt="ValueVis lens coating technology reference" class="lens-banner absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700">
+      <div class="absolute inset-x-0 bottom-0 p-3 sm:p-5 bg-gradient-to-t from-slate-950/90 to-transparent">
+        <div class="flex items-end justify-between gap-3">
+          <div><span class="inline-block bg-amber-400 text-slate-950 text-[9px] sm:text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded">Lens Reference</span><p class="mt-1 text-white text-sm sm:text-lg font-black">Explore ValueVis lens technologies & designs</p><p class="text-[10px] sm:text-xs text-slate-200">Reference images • Final selection depends on prescription, lens design and availability.</p></div>
+          <a href="#vv-lens-grid" class="hidden sm:inline-flex bg-white text-slate-950 px-3 py-2 rounded-lg text-xs font-black whitespace-nowrap">View Lens Options</a>
+        </div>
+      </div>
+      <button type="button" onclick="changeLensBanner(-1)" aria-label="Previous lens banner" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/45 text-white text-xl hover:bg-black/70">‹</button>
+      <button type="button" onclick="changeLensBanner(1)" aria-label="Next lens banner" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/45 text-white text-xl hover:bg-black/70">›</button>
+      <div id="lens-banner-dots" class="absolute bottom-3 right-3 flex gap-1.5"></div>
+    </div>
+  </div>
+</section>
+
     <!-- ReLens storefront quick actions -->
 <section class="max-w-7xl mx-auto px-4 pt-5">
   <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-5 sm:p-7">
@@ -1393,6 +1416,20 @@
                 </div>
             `).join('');
         }
-    </script>
+    <script>
+let lensBannerIndex = 0;
+let lensBannerTimer;
+function renderLensBanner(){
+  const slides = document.querySelectorAll('.lens-banner');
+  const dots = document.getElementById('lens-banner-dots');
+  if(!slides.length) return;
+  slides.forEach((s,i)=>s.classList.toggle('opacity-100',i===lensBannerIndex), slides.forEach((s,i)=>s.classList.toggle('opacity-0',i!==lensBannerIndex)));
+  if(dots){ dots.innerHTML=''; slides.forEach((_,i)=>{ const b=document.createElement('button'); b.type='button'; b.className='w-2 h-2 rounded-full '+(i===lensBannerIndex?'bg-amber-400':'bg-white/50'); b.onclick=()=>{lensBannerIndex=i;renderLensBanner();resetLensBannerTimer()}; dots.appendChild(b); }); }
+}
+function changeLensBanner(dir){ const slides=document.querySelectorAll('.lens-banner'); if(!slides.length)return; lensBannerIndex=(lensBannerIndex+dir+slides.length)%slides.length; renderLensBanner(); resetLensBannerTimer(); }
+function resetLensBannerTimer(){ clearInterval(lensBannerTimer); lensBannerTimer=setInterval(()=>changeLensBanner(1),5000); }
+document.addEventListener('DOMContentLoaded',()=>{renderLensBanner();resetLensBannerTimer()});
+</script>
+</script>
 </body>
 </html>
