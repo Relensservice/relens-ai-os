@@ -642,8 +642,8 @@
                 <i data-lucide="check-circle-2" class="w-8 h-8"></i>
             </div>
             <div>
-                <h3 class="text-xl font-black text-slate-900">Order Confirmed!</h3>
-                <p class="text-xs text-slate-500 mt-1">Our doorstep lab specialist has received your booking.</p>
+                <h3 class="text-xl font-black text-slate-900">Booking Request Created</h3>
+                <p class="text-xs text-slate-500 mt-1">Your request is saved on this device. Send the WhatsApp message and selected files to ReLens for verification.</p>
                 <div class="mt-2 bg-slate-100 py-1.5 px-3 rounded-lg text-xs font-mono font-bold text-slate-800 inline-block" id="success-order-id">
                     ORDER #RL-XXXXXX
                 </div>
@@ -1319,12 +1319,14 @@
                 `${i+1}. *${it.brand} ${it.name}*%0A   • Variant: ${it.variant}%0A   • Frame: ${it.frame}%0A   • Addons: ${it.addOns}%0A   • Price: ₹${it.price}`
             ).join('%0A%0A');
 
-            const waMsg = `*New Doorstep Booking - ReLens Lab*%0A` +
+            const waMsg = `*New Doorstep Booking - ReLens*%0A` +
                 `*Order ID:* ${orderId}%0A` +
                 `*Customer:* ${name}%0A` +
                 `*Phone:* ${phone}%0A` +
                 `*Address:* ${order.address}%0A` +
-                `*Scheduled Slot:* ${order.date}%0A%0A` +
+                `*Scheduled Slot:* ${order.date}%0A` +
+                `*Prescription File Selected:* ${encodeURIComponent(order.prescriptionFile)}%0A` +
+                `*Frame Photo Selected:* ${encodeURIComponent(order.frameFile)}%0A%0A` +
                 `*Items Selected:*%0A${itemsSummary}%0A%0A` +
                 `*Pay on Delivery Total:* ₹${total}%0A` +
                 `_Authenticity Card and Frame Fitting Requested._`;
