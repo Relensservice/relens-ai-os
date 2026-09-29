@@ -1423,13 +1423,12 @@ function renderLensBanner(){
   const slides = document.querySelectorAll('.lens-banner');
   const dots = document.getElementById('lens-banner-dots');
   if(!slides.length) return;
-  slides.forEach((s,i)=>s.classList.toggle('opacity-100',i===lensBannerIndex), slides.forEach((s,i)=>s.classList.toggle('opacity-0',i!==lensBannerIndex)));
+  slides.forEach((s,i)=>{s.classList.toggle('opacity-100',i===lensBannerIndex);s.classList.toggle('opacity-0',i!==lensBannerIndex);});
   if(dots){ dots.innerHTML=''; slides.forEach((_,i)=>{ const b=document.createElement('button'); b.type='button'; b.className='w-2 h-2 rounded-full '+(i===lensBannerIndex?'bg-amber-400':'bg-white/50'); b.onclick=()=>{lensBannerIndex=i;renderLensBanner();resetLensBannerTimer()}; dots.appendChild(b); }); }
 }
 function changeLensBanner(dir){ const slides=document.querySelectorAll('.lens-banner'); if(!slides.length)return; lensBannerIndex=(lensBannerIndex+dir+slides.length)%slides.length; renderLensBanner(); resetLensBannerTimer(); }
 function resetLensBannerTimer(){ clearInterval(lensBannerTimer); lensBannerTimer=setInterval(()=>changeLensBanner(1),5000); }
 document.addEventListener('DOMContentLoaded',()=>{renderLensBanner();resetLensBannerTimer()});
-</script>
 </script>
 </body>
 </html>
