@@ -2,492 +2,511 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#061f3d" />
-  <title>ReLens | Lens Replacement Catalog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReLens Premium Lens Catalog</title>
   <style>
     :root {
       --navy:#061f3d;
-      --navy2:#0b3565;
-      --gold:#eab52b;
-      --bg:#f4f6fa;
-      --card:#ffffff;
-      --ink:#13243a;
-      --muted:#6d7b8d;
-      --line:#e3e8ef;
-      --green:#18a66a;
-      --red:#d94a38;
-      --shadow:0 18px 48px rgba(4,28,55,.12);
-      --radius:18px;
+      --navy2:#0a2f68;
+      --navy3:#0d2d57;
+      --blue:#0a59b3;
+      --gold:#f7c84a;
+      --gold2:#f9d979;
+      --white:#ffffff;
+      --ink:#0d1a2a;
+      --muted:#5d6d7f;
+      --line:rgba(255,255,255,0.18);
+      --bg:#eef3f9;
+      --card:#f7f9fd;
+      --shadow:0 24px 60px rgba(4, 22, 40, 0.16);
+      --radius:26px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #edf3fd 0%, #edf2f8 100%);
       color:var(--ink);
-      background:var(--bg);
-      line-height:1.5;
     }
-    a{color:inherit;text-decoration:none}
-    button,input,select,textarea{font:inherit}
-    .topbar{
-      background:linear-gradient(120deg,#0d2a5e,#163e78);
+    img { max-width:100%; display:block; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(1220px, calc(100% - 24px)); margin:0 auto; }
+    .topbar {
+      background:#071f3f;
       color:#fff;
-      font-size:14px;
-      padding:12px 18px;
       text-align:center;
-      letter-spacing:.02em;
+      font-size:13px;
+      letter-spacing:0.04em;
+      padding:12px 16px;
+      font-weight:600;
     }
-    .topbar strong{color:#ffc857}
-    .container{max-width:1300px;margin:0 auto;padding:0 18px}
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;
-      position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);z-index:20;border-bottom:1px solid var(--line)
+    .nav {
+      background: rgba(255,255,255,0.9);
+      border-bottom:1px solid rgba(15,31,50,0.08);
+      position:sticky; top:0; z-index:30; backdrop-filter: blur(10px);
     }
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:26px;letter-spacing:-.04em}
-    .brand-mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--gold));display:grid;place-items:center;color:#fff;font-size:16px;font-weight:900}
-    .brand .light{color:var(--navy)}
-    .brand .gold{color:var(--gold)}
-    .nav-right{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-    .nav-links{display:flex;gap:18px;font-size:14px;color:var(--muted);flex-wrap:wrap}
-    .nav-links a{padding:6px 0}
-    .nav-links a:hover{color:var(--navy)}
-    .pill-btn{
-      background:var(--navy);color:#fff;border:0;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer
+    .nav-inner {
+      height:74px; display:flex; align-items:center; justify-content:space-between; gap:16px;
     }
-    .pill-btn.secondary{background:#fff;border:1px solid var(--line);color:var(--navy)}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;padding:24px 0 10px}
-    .hero-copy{padding:26px 0}
-    .eyebrow{font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:800;text-transform:uppercase}
-    h1{font-size:clamp(2.3rem,4vw,4rem);line-height:1.02;margin:10px 0 14px;letter-spacing:-.05em}
-    .lead{font-size:1.05rem;color:var(--muted);max-width:620px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .btn-primary,.btn-secondary,.btn-book{
-      display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:12px 18px;font-weight:700;border:none;cursor:pointer;transition:.2s ease
+    .brand {
+      display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:-.07em;
+      font-size:clamp(2rem, 2vw, 3rem);
     }
-    .btn-primary{background:var(--gold);color:var(--navy)}
-    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 32px rgba(234,181,43,.24)}
-    .btn-secondary{background:#edf3f8;color:var(--navy);border:1px solid var(--line)}
-    .hero-card{
-      background:linear-gradient(180deg,#fff,#f8fafc);
-      border:1px solid var(--line);border-radius:26px;padding:18px;box-shadow:var(--shadow)
+    .brand-mark {
+      width:50px;height:50px;border-radius:16px;background:linear-gradient(135deg, var(--navy2), #0f5da7);
+      display:grid;place-items:center;color:#fff; font-size:1.5rem; font-weight:900;
+      box-shadow: 0 12px 22px rgba(15,61,120,0.24);
     }
-    .mini-badge{display:inline-block;background:#ecfdf5;color:#166534;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:700}
-    .stat-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-    .stat-box{flex:1;min-width:110px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
-    .stat-box strong{display:block;font-size:26px;color:var(--navy)}
-    .stat-box span{font-size:12px;color:var(--muted)}
-    .panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .catalog-wrap{padding:28px 0 10px}
-    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:18px;flex-wrap:wrap}
-    .section-head h2{margin:0;font-size:clamp(1.6rem,2vw,2.1rem);letter-spacing:-.04em}
-    .muted{color:var(--muted)}
-    .category-row{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
-    .tag{padding:9px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;color:var(--navy);cursor:pointer;transition:.2s ease}
-    .tag.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-    .lens-card{padding:0;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.2s ease}
-    .lens-card:hover{transform:translateY(-3px);box-shadow:0 20px 52px rgba(4,28,55,.15)}
-    .lens-thumb{height:170px;background:linear-gradient(135deg,#edf3fa,#dfeaf9);display:grid;place-items:center;position:relative;overflow:hidden}
-    .lens-thumb::before{content:"";position:absolute;inset:10% 18% 18% 18%;border-radius:50%;background:rgba(255,255,255,.18);filter:blur(5px)}
-    .lens-thumb img{max-width:86%;max-height:80%;position:relative;z-index:1;object-fit:contain}
-    .lens-body{padding:16px}
-    .label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:var(--gold);margin-bottom:8px}
-    .lens-card h3{margin:0 0 8px;font-size:1.12rem}
-    .lens-card p{margin:0 0 10px;color:var(--muted);font-size:14px;line-height:1.55}
-    .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 12px}
-    .chip{background:#f3f7fb;border-radius:999px;padding:6px 9px;font-size:11px;color:var(--navy);font-weight:600}
-    .price-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px}
-    .price{font-size:1.2rem;font-weight:800;color:var(--navy)}
-    .small{font-size:12px;color:var(--muted)}
-    .inline-btn{background:var(--gold);color:var(--navy);border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
-    .inline-btn.secondary{background:#edf3f8}
-    .book-panel{
-      position:sticky;top:84px;background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);padding:20px
+    .brand .re { color:var(--navy); }
+    .brand .lens { color:var(--blue); }
+    .nav-links {
+      display:flex; align-items:center; gap:22px; color:var(--muted); font-size:14px; font-weight:600;
     }
-    .book-list{display:grid;gap:10px;margin-top:12px}
-    .book-item{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:#f8fafc;border:1px solid var(--line);border-radius:12px;font-size:14px}
-    .book-empty{padding:18px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:14px;background:#fafbff}
-    .booking-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start;padding-bottom:18px}
-    .panel-box{padding:28px 26px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow)}
-    .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-    .field{display:flex;flex-direction:column;gap:6px}
-    .field label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-    .field input,.field textarea,.field select{
-      width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)
+    .nav-links a:hover { color:var(--navy); }
+    .cta-btn {
+      background:linear-gradient(135deg, #f9d35a, #e4b62b);
+      color:#071f3f; border:none; border-radius:999px; padding:10px 18px; font-weight:800; cursor:pointer;
+      box-shadow: 0 12px 22px rgba(234, 182, 39, 0.24);
     }
-    textarea{min-height:90px;resize:vertical}
-    .upload-box{display:flex;align-items:center;justify-content:center;border:1.5px dashed var(--line);border-radius:16px;padding:22px;background:#f8faff;color:var(--muted);min-height:130px;text-align:center}
-    .upload-box strong{display:block;color:var(--navy)}
-    .bottom-note{margin-top:14px;color:var(--muted);font-size:13px}
-    .total-row{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--line);margin-top:12px}
-    .total{font-size:2rem;font-weight:800;color:var(--navy)}
-    .wa-btn{background:#25D366;color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer;width:100%}
-    .other-btn{background:var(--navy);color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer;width:100%}
-    .section{padding:30px 0}
-    .list{display:grid;gap:12px;margin-top:18px}
-    .list-row{display:grid;grid-template-columns:1.4fr auto auto;gap:12px;align-items:center;padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:14px}
-    .list-row strong{display:block;font-size:16px}
-    .list-row small{color:var(--muted)}
-    .footer{padding:26px 0 50px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line);margin-top:20px}
-    @media (max-width:980px){.hero,.booking-grid{grid-template-columns:1fr}.book-panel{position:relative;top:0}.nav{flex-wrap:wrap}.nav-links{width:100%;justify-content:space-between}.form-grid{grid-template-columns:1fr}.brand{font-size:20px}}
-    @media (max-width:600px){.topbar{font-size:12px}.nav-right{width:100%;justify-content:space-between}.nav-links{gap:10px}.card-grid{grid-template-columns:1fr}.list-row{grid-template-columns:1fr}.hero{padding-top:12px}}
+
+    .hero {
+      padding:32px 0 16px;
+    }
+    .hero-panel {
+      background:linear-gradient(135deg, #0d2a5f, #0a3e86 42%, #0d2a56);
+      border-radius:32px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      position:relative;
+      min-height:620px;
+    }
+    .hero-visual {
+      position:absolute; inset:0;
+      background:
+        radial-gradient(circle at 72% 28%, rgba(255,255,255,0.12), transparent 18%),
+        radial-gradient(circle at 78% 68%, rgba(75,127,255,0.22), transparent 24%),
+        linear-gradient(110deg, rgba(11,38,78,0.2), transparent 38%);
+    }
+    .hero-content {
+      position:relative; z-index:2; display:grid; grid-template-columns:1.05fr .95fr; min-height:620px; gap:18px; padding:28px 36px 26px;
+    }
+    .eyebrow {
+      text-transform:uppercase; letter-spacing:.12em; font-size:12px; font-weight:800; color:#d8dff2; opacity:0.8;
+    }
+    .hero-copy { align-self:center; }
+    .hero-copy h1 {
+      margin:12px 0 18px; font-size:clamp(3rem, 5vw, 6rem); letter-spacing:-.08em; line-height:0.88; color:#fff;
+      max-width:620px; font-weight:900;
+    }
+    .hero-copy .tagline {
+      color: rgba(255,255,255,0.9); font-size:1.15rem; max-width:560px; line-height:1.5;
+    }
+    .hero-actions { display:flex; gap:12px; margin-top:22px; flex-wrap:wrap; }
+    .btn-primary, .btn-secondary {
+      border:none; border-radius:12px; padding:14px 20px; font-weight:800; cursor:pointer;
+      font-size:15px;
+    }
+    .btn-primary { background: var(--gold); color:#061f3d; }
+    .btn-secondary { background: rgba(255,255,255,0.13); backdrop-filter: blur(4px); color:#fff; border:1px solid rgba(255,255,255,0.2); }
+
+    .hero-side {
+      display:flex; align-items:flex-end; justify-content:center; position:relative; min-height:540px;
+    }
+    .lens-portrait {
+      position:relative; width:min(100%, 520px); height:520px;
+      border-radius:32px; background: radial-gradient(circle at 40% 30%, rgba(255,255,255,0.16), transparent 28%), linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.12);
+    }
+    .lens-portrait .glow {
+      position:absolute; inset:0;
+      background: radial-gradient(circle at 55% 25%, rgba(74, 154, 255, 0.4), transparent 30%), radial-gradient(circle at 28% 72%, rgba(255,255,255,0.15), transparent 22%);
+    }
+    .lens-portrait .person {
+      position:absolute; inset:0 0 0 0;
+      background: radial-gradient(circle at 60% 30%, rgba(255,255,255,0.7), transparent 8%),
+      linear-gradient(160deg, rgba(74, 58, 42, 0.94), rgba(117, 76, 43, .9));
+      clip-path: ellipse(52% 44% at 62% 28%);
+      transform: translate(8%, 8%);
+      opacity:.8;
+      filter: blur(0.4px);
+    }
+    .lens-portrait .glasses {
+      position:absolute; left:42%; top:28%; width:42%; height:18%; border-radius:48% 52% 46% 54% / 50% 50% 50% 50%; border:8px solid rgba(26,22,20,0.85); transform:rotate(-8deg); box-shadow: inset 0 0 8px rgba(0,0,0,0.35);
+    }
+    .lens-portrait .glasses::before, .lens-portrait .glasses::after {
+      content:""; position:absolute; top:18%; width:42%; height:64%; background:rgba(255,255,255,0.12); border-radius:50%;
+      box-shadow: inset 0 0 0 10px rgba(255,255,255,0.1);
+    }
+    .lens-portrait .glasses::before { left:4%; }
+    .lens-portrait .glasses::after { right:4%; }
+    .lens-portrait .caption {
+      position:absolute; right:18px; bottom:20px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); color:#fff; padding:12px 16px; border-radius:14px; backdrop-filter: blur(10px);
+      font-size:13px; letter-spacing:.05em; text-transform:uppercase;
+    }
+
+    .section { padding:26px 0; }
+    .section-head { display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:18px; }
+    .section-head h2 {
+      margin:0; letter-spacing:-.06em; font-size:clamp(2rem,3vw,3.2rem); color:var(--navy);
+    }
+    .small-muted { color:var(--muted); font-size:14px; }
+
+    .catalog-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px; }
+    .card {
+      background:#fff; border:1px solid rgba(15,31,50,0.08); border-radius:22px; overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column;
+    }
+    .card-art {
+      height:200px; position:relative; background:linear-gradient(140deg, #f1f6ff, #dfeeff);
+      display:grid; place-items:center;
+      border-bottom:1px solid rgba(15,31,50,0.06);
+    }
+    .card-art::before {
+      content:""; position:absolute; inset:18% 18% 14% 18%; border-radius:50%; background:radial-gradient(circle at 50% 40%, rgba(255,255,255,0.6), rgba(87,140,255,0.12), rgba(87,140,255,0.04));
+    }
+    .lens-bubble {
+      position:relative; width:150px; height:150px; border-radius:50%; background:radial-gradient(circle at 25% 25%, rgba(255,255,255,0.9), rgba(255,255,255,0.2) 18%, rgba(70,120,210,0.18) 36%, rgba(12,33,60,0.22) 100%);
+      box-shadow: inset 0 0 0 10px rgba(255,255,255,0.2), 0 12px 26px rgba(81,110,156,0.18);
+    }
+    .card-body { padding:16px 16px 18px; }
+    .badge { font-size:10px; letter-spacing:.14em; color:var(--gold); font-weight:800; text-transform:uppercase; }
+    .card h3 { margin:10px 0 8px; font-size:1.2rem; letter-spacing:-.04em; }
+    .card p { margin:0; color:var(--muted); line-height:1.55; font-size:14px; }
+    .card-meta { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:16px; }
+    .price { font-size:1.3rem; font-weight:900; color:var(--navy); }
+    .small-pill { background:#eef4ff; color:var(--navy); border-radius:999px; padding:6px 10px; font-size:12px; font-weight:700; }
+    .add-btn {
+      background:#f9d35a; color:#061f3d; border:none; border-radius:10px; padding:10px 14px; font-weight:800; cursor:pointer;
+    }
+
+    .brand-hero {
+      background:linear-gradient(120deg, #072d5f 0%, #0a4d92 40%, #0d3d78 100%);
+      border-radius:36px; overflow:hidden; position:relative; min-height:440px; box-shadow: var(--shadow);
+    }
+    .brand-hero .inner {
+      display:grid; grid-template-columns:1.05fr .95fr; gap:20px; padding:30px 32px; position:relative; z-index:1;
+    }
+    .crizal-block {
+      color:#fff; display:flex; flex-direction:column; justify-content:center;
+    }
+    .crizal-logo {
+      font-size:clamp(3.2rem, 5vw, 8rem); font-weight:900; letter-spacing:-.09em; line-height:0.9; margin:0 0 8px; 
+    }
+    .crizal-sub {
+      font-size:clamp(1.2rem, 2vw, 2.2rem); font-weight:700; color:rgba(255,255,255,0.9); letter-spacing:-.04em; margin-bottom:18px;
+    }
+    .crizal-copy { color: rgba(255,255,255,0.82); max-width:520px; font-size:1.05rem; line-height:1.5; }
+    .feature-row {
+      margin-top:22px; display:flex; flex-wrap:wrap; gap:14px;
+    }
+    .feature-chip {
+      min-width:120px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:16px 14px; text-align:center; color:#fff; font-size:12px; line-height:1.5;
+    }
+    .feature-chip .i {
+      display:block; width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,0.12); margin:0 auto 8px; position:relative;
+    }
+    .feature-chip .i:before { content:"✓"; position:absolute; inset:0; display:grid; place-items:center; font-size:20px; }
+    .crizal-visual { position:relative; min-height:360px; display:flex; align-items:flex-end; justify-content:center; }
+    .cleaner-box {
+      width:220px; height:250px; background:linear-gradient(180deg, #f8faff, #dfe8f8); border-radius:24px 24px 18px 18px; position:absolute; right:63%; bottom:34px; transform:rotate(-10deg); box-shadow: 0 26px 40px rgba(7,25,52,0.18);
+    }
+    .cleaner-box::before {
+      content:""; position:absolute; left:50%; transform:translateX(-50%); top:18px; width:78px; height:90px; border-radius:22px 22px 16px 16px; background:linear-gradient(180deg, #e8f0ff, #ffffff);
+      border:1px solid rgba(11,46,99,0.12);
+      box-shadow: inset 0 0 0 6px rgba(15,51,89,0.04);
+    }
+    .cleaner-box::after {
+      content:""; position:absolute; left:50%; transform:translateX(-50%); top:54px; width:32px; height:74px; border-radius:12px; background:linear-gradient(180deg, #0d4aa3, #1a63d9); box-shadow:0 0 0 4px rgba(255,255,255,0.18);
+    }
+    .cloth {
+      position:absolute; right:10%; bottom:24px; width:270px; height:170px; border-radius:20px; background:linear-gradient(180deg, #fdfdfd, #f4f7ff); transform:rotate(12deg); box-shadow: 0 26px 40px rgba(7,25,52,0.18);
+      border:1px solid rgba(17,31,52,0.08);
+    }
+    .cloth::before {
+      content:""; position:absolute; inset:18px; border-radius:18px; border:1px solid rgba(17,31,52,0.06); background:linear-gradient(145deg, rgba(255,255,255,0.0), rgba(136,171,225,0.08));
+    }
+    .cloth::after {
+      content:"Crizal"; position:absolute; left:50%; top:52%; transform:translate(-50%, -50%); font-weight:900; font-size:2.5rem; color:#0f3a75; letter-spacing:-.06em;
+    }
+
+    .product-shelf {
+      display:grid; grid-template-columns:1.1fr .9fr; gap:20px; align-items:stretch;
+    }
+    .banner {
+      background:linear-gradient(135deg, #0d4d8e, #0c7ac6 48%, #0d4f93); border-radius:28px; overflow:hidden; position:relative; padding:24px 24px 0; box-shadow:var(--shadow);
+    }
+    .banner .head {
+      display:flex; justify-content:space-between; align-items:center; gap:18px; margin-bottom:25px;
+    }
+    .banner .big {
+      font-size:clamp(2.2rem,3vw,4.2rem); letter-spacing:-.08em; line-height:0.9; font-weight:900; color:#fff; margin:0;
+    }
+    .banner .sub {
+      color: rgba(255,255,255,0.82); font-weight:700; font-size:1.2rem; letter-spacing:-.04em; margin-top:16px; text-transform:uppercase;
+    }
+    .delivery {
+      display:inline-flex; background: var(--gold); color:#071f3f; font-weight:900; border-radius:20px; padding:16px 20px; font-size:clamp(1.3rem, 2vw, 2.4rem); letter-spacing:-.04em; box-shadow:0 18px 30px rgba(247, 200, 74, 0.28);
+    }
+    .packshot {
+      min-height:420px; position:relative; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    }
+    .packshot .pack {
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    }
+    .box {
+      position:absolute; width:220px; height:310px; border-radius:18px; background:linear-gradient(180deg,#fff,#f3f6ff); bottom:30px; right:30px; box-shadow:0 24px 40px rgba(7,25,52,0.18);
+      border:1px solid rgba(13,35,70,0.08);
+    }
+    .box::before {
+      content:""; position:absolute; left:12%; right:12%; top:20%; height:42%; background:linear-gradient(180deg,#f9f9ff,#edf4ff); border-radius:8px; box-shadow:inset 0 0 0 1px rgba(13,35,70,0.05);
+    }
+    .box::after {
+      content:"BAUSCH + LOMB\A ULTRA"; white-space:pre; position:absolute; left:24px; right:24px; top:26%; color:#0a2d63; font-size:1.7rem; font-weight:900; letter-spacing:-.04em; line-height:1.1;
+    }
+    .lens-pack {
+      position:absolute; left:26px; bottom:20px; width:180px; height:230px; border-radius:18px; background:linear-gradient(180deg,#f9fbff,#ecf2fb); border:1px solid rgba(13,35,70,0.08); box-shadow:0 18px 30px rgba(9, 23, 44, 0.18);
+    }
+    .lens-pack::before {
+      content:""; position:absolute; left:20px; right:20px; top:26px; bottom:20px; background:linear-gradient(180deg, #f3f8ff, #eff9ff); border-radius:12px; border:1px solid rgba(13,35,70,0.08);
+    }
+    .lens-pack::after {
+      content:"Bio true"; position:absolute; left:26px; right:26px; top:44px; color:#0a2d63; font-size:2.1rem; font-weight:900; letter-spacing:-.06em; text-align:center;
+    }
+
+    .benefit-bar {
+      margin-top:20px; display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px;
+    }
+    .benefit {
+      background:#fff; border:1px solid rgba(15,31,50,0.08); border-radius:18px; padding:18px 16px; box-shadow:0 12px 28px rgba(8,26,50,0.06); text-align:center;
+    }
+    .benefit .icon {
+      width:52px; height:52px; border-radius:16px; margin:0 auto 10px; background:linear-gradient(135deg, #eff5ff, #dfeeff); position:relative;
+    }
+    .benefit .icon:before { content:"•"; position:absolute; inset:0; font-size:2rem; display:grid; place-items:center; color:#0d4b92; }
+    .benefit h4 { margin:0 0 6px; font-size:1rem; }
+    .benefit p { margin:0; color:var(--muted); font-size:13px; }
+
+    @media (max-width: 980px) {
+      .hero-content, .brand-hero .inner, .product-shelf { grid-template-columns:1fr; }
+      .hero-copy h1 { max-width: none; }
+      .nav-links { display:none; }
+      .brand { font-size:2rem; }
+      .benefit-bar { grid-template-columns:1fr; }
+    }
+    @media (max-width: 640px) {
+      .hero-content { padding:18px 18px 20px; }
+      .hero-panel { min-height:480px; }
+      .brand-hero .inner { padding:18px 18px 24px; }
+      .banner { padding:18px 18px 0; }
+      .cleaner-box { right:56%; width:170px; height:180px; }
+      .cloth { width:200px; height:120px; }
+      .box { width:180px; height:240px; }
+      .lens-pack { width:140px; height:180px; }
+    }
   </style>
 </head>
 <body>
-  <div class="topbar"><strong>Same-day delivery in Puducherry</strong> • Order before 4 PM • Bausch + Lomb contact lenses</div>
+  <div class="topbar">SAME-DAY DELIVERY IN PUDUCHERRY • ORDER BEFORE 4 PM</div>
 
-  <div class="container">
-    <header class="nav">
-      <div class="brand" aria-label="ReLens home">
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand" aria-label="ReLens brand">
         <div class="brand-mark">R</div>
-        <div><span class="light">Re</span><span class="gold">Lens</span></div>
+        <div><span class="re">Re</span><span class="lens">Lens</span></div>
       </div>
-      <div class="nav-right">
-        <nav class="nav-links">
-          <a href="#catalog">Catalog</a>
-          <a href="#contact-lenses">Contact lenses</a>
-          <a href="#essilor">Essilor</a>
-          <a href="#prescription">Prescription</a>
-          <a href="#book">Book</a>
-        </nav>
-        <button class="pill-btn secondary">Login</button>
-      </div>
-    </header>
+      <nav class="nav-links">
+        <a href="#catalog">Catalog</a>
+        <a href="#bausch">Bausch + Lomb</a>
+        <a href="#crizal">Crizal</a>
+        <a href="#premium">Premium</a>
+      </nav>
+      <button class="cta-btn">Book now</button>
+    </div>
+  </div>
 
+  <main class="container">
     <section class="hero" id="catalog">
-      <div class="hero-copy">
-        <div class="eyebrow">Premium lens replacement</div>
-        <h1>Give your frame a second life.</h1>
-        <p class="lead">Premium ValueVis lens replacement for the frame you already love. Pick a lens, see the full price, and book doorstep pickup and delivery in Puducherry.</p>
-        <div class="hero-actions">
-          <a href="#catalog" class="btn-primary">Browse lenses</a>
-          <a href="#book" class="btn-secondary">Book pickup</a>
+      <div class="hero-panel">
+        <div class="hero-visual"></div>
+        <div class="hero-content">
+          <div class="hero-copy">
+            <div class="eyebrow">Premium lens replacement</div>
+            <h1>Same Frame.<br>Better Vision.</h1>
+            <div class="tagline">Premium lens prescription and replacement services with expert guidance, same-day delivery, and a curated lens catalogue for every visual need.</div>
+            <div class="hero-actions">
+              <button class="btn-primary">Browse lenses</button>
+              <button class="btn-secondary">Book pickup</button>
+            </div>
+          </div>
+
+          <div class="hero-side">
+            <div class="lens-portrait" aria-label="Varilux progressive lens advertisement inspired"> 
+              <div class="glow"></div>
+              <div class="person"></div>
+              <div class="glasses"></div>
+              <div class="caption">Varilux progressive</div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <aside class="hero-card">
-        <div class="mini-badge">ReLens • Bausch + Lomb contact lenses</div>
-        <div class="stat-row">
-          <div class="stat-box">
-            <strong>7</strong>
-            <span>ValueVis options</span>
-          </div>
-          <div class="stat-box">
-            <strong>14</strong>
-            <span>Bausch packs</span>
-          </div>
-          <div class="stat-box">
-            <strong>5</strong>
-            <span>Essilor services</span>
-          </div>
-        </div>
-        <div style="margin-top:18px;padding:16px;border-radius:16px;background:#f8fafc;border:1px solid var(--line)">
-          <strong style="font-size:16px;color:var(--navy);display:block;margin-bottom:8px">Same-day delivery</strong>
-          <div class="small">Order before 4:00 PM. Powers from -0.50 D to -6.00 D.</div>
-        </div>
-      </aside>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <h2>ValueVis lens catalog</h2>
-        <div class="small">Tap a lens to view pricing and add it to your booking.</div>
+        <h2>Premium lens catalog</h2>
+        <div class="small-muted">Tailored premium and everyday lens options with reliable MRP data</div>
       </div>
-      <div class="category-row" id="valuevisCategories"></div>
-      <div class="card-grid" id="valuevisGrid"></div>
+      <div class="catalog-grid">
+        <article class="card">
+          <div class="card-art"><div class="lens-bubble"></div></div>
+          <div class="card-body">
+            <div class="badge">ValueVis</div>
+            <h3>ValueVis Progressive</h3>
+            <p>Designed for smooth transitions from distance to near with premium comfort.</p>
+            <div class="card-meta">
+              <div class="price">₹1,999</div>
+              <button class="add-btn">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-art"><div class="lens-bubble" style="transform:scale(1.06);"></div></div>
+          <div class="card-body">
+            <div class="badge">Bausch</div>
+            <h3>Ultra 6 pack</h3>
+            <p>Monthly silicone hydrogel lens with all-day comfort and reliable optical clarity.</p>
+            <div class="card-meta">
+              <div class="price">₹4,031</div>
+              <button class="add-btn">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-art"><div class="lens-bubble" style="transform:scale(0.8);"></div></div>
+          <div class="card-body">
+            <div class="badge">Essilor</div>
+            <h3>Varilux Progressive</h3>
+            <p>Advanced progression for all-day clarity from near, intermediate and distance.</p>
+            <div class="card-meta">
+              <div class="price">₹2,999</div>
+              <button class="add-btn">Add</button>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="section" id="contact-lenses">
-      <div class="section-head">
-        <h2>Bausch + Lomb contact lenses</h2>
-        <div class="small">Genuine Bausch + Lomb lenses at MRP 2026.</div>
+    <section class="section" id="crizal">
+      <div class="brand-hero">
+        <div class="inner">
+          <div class="crizal-block">
+            <div class="crizal-logo">Crizal</div>
+            <div class="crizal-sub">Live Life in the Clear</div>
+            <div class="crizal-copy">Designed to clean without harming lens coatings. Safe for all coatings, streak-free, and ultra-soft microfiber cleaning.</div>
+            <div class="feature-row">
+              <div class="feature-chip"><span class="i"></span>Safe for all<br>lens coatings</div>
+              <div class="feature-chip"><span class="i"></span>Streak-free<br>cleaning</div>
+              <div class="feature-chip"><span class="i"></span>Ultra-soft<br>microfiber</div>
+            </div>
+          </div>
+
+          <div class="crizal-visual">
+            <div class="cleaner-box"></div>
+            <div class="cloth"></div>
+          </div>
+        </div>
       </div>
-      <div class="category-row" id="blCategories"></div>
-      <div class="card-grid" id="blGrid"></div>
     </section>
 
-    <section class="section" id="essilor">
-      <div class="section-head">
-        <h2>Essilor lenses</h2>
-        <div class="small">Summary pricing and service categories are shown. Ask ReLens for the latest MRP.</div>
-      </div>
-      <div class="card-grid" id="essilorGrid"></div>
-    </section>
-
-    <section class="section" id="prescription">
-      <div class="booking-grid">
-        <div class="panel-box">
-          <div class="section-head" style="margin-bottom:12px"><h2>Upload your prescription</h2></div>
-          <div class="small" style="margin-bottom:18px">Add a photo of your prescription and the ReLens optometrist checks it before any lens is ordered.</div>
-
-          <div class="upload-box">
+    <section class="section" id="bausch">
+      <div class="product-shelf">
+        <div class="banner">
+          <div class="head">
             <div>
-              <strong>Prescription photo</strong>
-              <div>Tap to take a photo or choose a file</div>
-              <div class="small" style="margin-top:6px">Photo or PDF, up to 3 files</div>
+              <div class="eyebrow" style="color:rgba(255,255,255,0.8); margin-bottom:12px;">Bausch + Lomb</div>
+              <h2 class="big">CONTACT LENSES</h2>
+              <div class="sub">Clear Vision. All Day Comfort.</div>
             </div>
           </div>
 
-          <div class="form-grid" style="margin-top:18px">
-            <div class="field"><label>Name</label><input type="text" placeholder="Your name" /></div>
-            <div class="field"><label>WhatsApp number</label><input type="tel" placeholder="+91 " /></div>
-            <div class="field"><label>Powers (optional)</label><input type="text" placeholder="SPH / CYL / AXIS / ADD" /></div>
-            <div class="field"><label>PD (mm)</label><input type="text" placeholder="e.g. 62" /></div>
-            <div class="field" style="grid-column:1 / -1"><label>Notes</label><textarea placeholder="Lens type, frame, anything the optometrist should know"></textarea></div>
-          </div>
+          <div class="delivery">Same-Day Delivery</div>
+          <div class="small-muted" style="color:rgba(255,255,255,0.9); margin-top:18px; max-width:420px; line-height:1.55; font-size:15px;">for selected spherical powers and premium lens orders across Puducherry and surrounding areas.</div>
 
-          <div class="bottom-note">On a phone, WhatsApp opens with your photo attached. On a computer, WhatsApp opens with your details and you attach the photo in the chat.</div>
+          <div class="benefit-bar">
+            <div class="benefit">
+              <div class="icon"></div>
+              <h4>Comfortable</h4>
+              <p>Wear</p>
+            </div>
+            <div class="benefit">
+              <div class="icon"></div>
+              <h4>Moisture</h4>
+              <p>Retention</p>
+            </div>
+            <div class="benefit">
+              <div class="icon"></div>
+              <h4>Trusted</h4>
+              <p>Global brand</p>
+            </div>
+          </div>
         </div>
 
-        <aside class="book-panel" id="book">
-          <div class="section-head" style="margin:0 0 8px"><h2>Book your lens replacement</h2></div>
-          <div class="small" style="margin-bottom:12px">Send the request on WhatsApp and the ReLens optometrist verifies your prescription before anything is fitted.</div>
-
-          <div id="selectedItems" class="book-empty">Nothing selected yet. Pick a price from the catalog.</div>
-
-          <div class="total-row">
-            <span class="small">Total</span>
-            <div class="total" id="totalPrice">₹0</div>
-          </div>
-
-          <div style="margin-top:16px; display:grid; gap:10px;">
-            <button class="wa-btn" id="waButton">Send on WhatsApp</button>
-            <button class="other-btn" id="setmoreButton">Book on Setmore</button>
-          </div>
-        </aside>
+        <div class="packshot" aria-label="Bausch and Lomb product shot">
+          <div class="pack"></div>
+          <div class="box"></div>
+          <div class="lens-pack"></div>
+        </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top:0">
+    <section class="section" id="premium">
       <div class="section-head">
-        <h2>Original price sheets</h2>
-        <div class="small">Tap an image to enlarge.</div>
+        <h2>ReLens premium vision</h2>
+        <div class="small-muted">Precision, clarity, and lens recommendations for all-day comfort</div>
       </div>
-      <div class="card-grid">
-        <div class="lens-card" style="padding:0;overflow:hidden">
-          <div class="lens-thumb" style="height:220px;background:linear-gradient(135deg,#f4f7ff,#eaf0ff)"><img alt="Bausch + Lomb MRP list" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23edf3ff'/%3E%3Cg fill='%23061f3d' font-family='Arial'%3E%3Ctext x='60' y='120' font-size='50' font-weight='700'%3EBausch + Lomb%3C/text%3E%3Ctext x='60' y='200' font-size='36'%3EMRP list 2026%3C/text%3E%3Crect x='60' y='240' width='660' height='12' rx='6' fill='%23d4dff6'/%3E%3Crect x='60' y='280' width='600' height='12' rx='6' fill='%23d4dff6'/%3E%3Crect x='60' y='320' width='520' height='12' rx='6' fill='%23d4dff6'/%3E%3Crect x='60' y='360' width='640' height='12' rx='6' fill='%23d4dff6'/%3E%3C/g%3E%3C/svg%3E" /></div>
-          <div class="lens-body"><div class="label">ReLens × Bausch + Lomb</div><h3>Bausch + Lomb MRP list 2026</h3><p>Price sheet summary for contact lenses and care products.</p></div>
-        </div>
-        <div class="lens-card" style="padding:0;overflow:hidden">
-          <div class="lens-thumb" style="height:220px;background:linear-gradient(135deg,#f9f5ff,#efe8ff)"><img alt="ValueVis lens sheet" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23f3ecff'/%3E%3Cg fill='%23061f3d' font-family='Arial'%3E%3Ctext x='60' y='120' font-size='50' font-weight='700'%3EValueVis%3C/text%3E%3Ctext x='60' y='200' font-size='36'%3EProgressive plans%3C/text%3E%3Crect x='60' y='240' width='640' height='12' rx='6' fill='%23e1d6ff'/%3E%3Crect x='60' y='280' width='610' height='12' rx='6' fill='%23e1d6ff'/%3E%3Crect x='60' y='320' width='460' height='12' rx='6' fill='%23e1d6ff'/%3E%3Crect x='60' y='360' width='680' height='12' rx='6' fill='%23e1d6ff'/%3E%3C/g%3E%3C/svg%3E" /></div>
-          <div class="lens-body"><div class="label">ValueVis</div><h3>Evolux Elite and lens sheet</h3><p>Premium progressive product sheet with pricing details.</p></div>
-        </div>
+      <div class="catalog-grid">
+        <article class="card">
+          <div class="card-art"><div class="lens-bubble"></div></div>
+          <div class="card-body">
+            <div class="badge">ReLens</div>
+            <h3>Premium fitting</h3>
+            <p>Frame-matched lens consultation with premium guidance and same-day order check.</p>
+            <div class="card-meta">
+              <div class="price">₹1,990</div>
+              <button class="add-btn">Add</button>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-art"><div class="lens-bubble" style="transform:scale(0.9);"></div></div>
+          <div class="card-body">
+            <div class="badge">ValueVis</div>
+            <h3>Customized lens</h3>
+            <p>Advanced freeform or progressive design for sharper focus in all visual zones.</p>
+            <div class="card-meta">
+              <div class="price">₹3,290</div>
+              <button class="add-btn">Add</button>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-art"><div class="lens-bubble" style="transform:scale(1.1);"></div></div>
+          <div class="card-body">
+            <div class="badge">Bausch</div>
+            <h3>Bio True ONE Day</h3>
+            <p>Daily disposable comfort with a fresh feel, stable hydration and clean optics.</p>
+            <div class="card-meta">
+              <div class="price">₹2,765</div>
+              <button class="add-btn">Add</button>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
-  </div>
-
-  <footer class="footer">ReLens • Puducherry • Lens replacement • Premium quality • Pickup & delivery</footer>
-
-  <script>
-    const valueVisCatalog = [
-      { name:'Evolux Elite', type:'Flagship', category:'Premium', price:10190, desc:'Absolute precision across every focal zone with BlueCut+ comfort.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23061f3d%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%230d4b7d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Ccircle cx=%22210%22 cy=%22220%22 r=%22110%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Ccircle cx=%22590%22 cy=%22200%22 r=%22135%22 fill=%22rgba(255,255,255,.12)%22/%3E%3Cg transform=%22translate(130 100)%22%3E%3Ccircle cx=%2260%22 cy=%22140%22 r=%2250%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Ccircle cx=%22230%22 cy=%22140%22 r=%2250%22 fill=%22rgba(255,255,255,.2)%22/%3E%3Cpath d=%22M60 140 H230%22 stroke=%22rgba(255,255,255,.8)%22 stroke-width=%2212%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M145 95 V185%22 stroke=%22rgba(255,255,255,.9)%22 stroke-width=%2210%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3Ctext x=%2258%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3EEvolux Elite%3C/text%3E%3C/svg%3E' },
-      { name:'Evolux', type:'European tech', category:'Premium', price:6990, desc:'Wider field of view with minimal peripheral distortion.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%230b375f%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%235f71b8%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Ccircle cx=%22220%22 cy=%22220%22 r=%2290%22 fill=%22rgba(255,255,255,.14)%22/%3E%3Ccircle cx=%22590%22 cy=%22200%22 r=%2278%22 fill=%22rgba(255,255,255,.12)%22/%3E%3Cg transform=%22translate(160 110)%22%3E%3Ccircle cx=%2250%22 cy=%22140%22 r=%2245%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Ccircle cx=%22220%22 cy=%22140%22 r=%2245%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Cpath d=%22M50 140 H220%22 stroke=%22rgba(255,255,255,.8)%22 stroke-width=%2210%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M135 95 V185%22 stroke=%22rgba(255,255,255,.9)%22 stroke-width=%228%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3Ctext x=%2256%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3EEvolux%3C/text%3E%3C/svg%3E' },
-      { name:'Customized', type:'American freeform', category:'Premium', price:3290, desc:'Advanced freeform technology for smooth progression and all-day comfort.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%230d2a5e%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%230f5a8d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Cg transform=%22translate(120 120)%22%3E%3Ccircle cx=%2240%22 cy=%22160%22 r=%2260%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Ccircle cx=%22240%22 cy=%22160%22 r=%2260%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Cpath d=%22M40 160 H240%22 stroke=%22rgba(255,255,255,.8)%22 stroke-width=%2212%22/%3E%3Cpath d=%22M140 102 V218%22 stroke=%22rgba(255,255,255,.9)%22 stroke-width=%2210%22/%3E%3C/g%3E%3Ctext x=%2255%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3ECustomized%3C/text%3E%3C/svg%3E' },
-      { name:'Venture', type:'Freeform progressive', category:'Progressive', price:2290, desc:'Next-level progressives with smoother transitions and better peripheral control.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23061f3d%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%230c4d7a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Cg transform=%22translate(160 120)%22%3E%3Ccircle cx=%2255%22 cy=%22130%22 r=%2248%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Ccircle cx=%22220%22 cy=%22130%22 r=%2248%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Cpath d=%22M55 130 H220%22 stroke=%22rgba(255,255,255,.8)%22 stroke-width=%2210%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M140 95 V170%22 stroke=%22rgba(255,255,255,.9)%22 stroke-width=%228%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3Ctext x=%2258%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3EVenture%3C/text%3E%3C/svg%3E' },
-      { name:'Entice', type:'Entry progressive', category:'Budget', price:1590, desc:'Essential clarity for everyday vision in the ValueVis range.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%230b274d%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%23166d89%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Cg transform=%22translate(165 130)%22%3E%3Ccircle cx=%2250%22 cy=%22120%22 r=%2242%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Ccircle cx=%22210%22 cy=%22120%22 r=%2242%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Cpath d=%22M50 120 H210%22 stroke=%22rgba(255,255,255,.8)%22 stroke-width=%229%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3Ctext x=%2258%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3EEntice%3C/text%3E%3C/svg%3E' },
-      { name:'DayNite', type:'Adaptive light', category:'Premium', price:2590, desc:'Lenses that adapt to changing light with UV protection and bright clarity.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23092d5d%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%230a7ca3%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Cg transform=%22translate(150 110)%22%3E%3Ccircle cx=%2254%22 cy=%22140%22 r=%2254%22 fill=%22rgba(255,255,255,.2)%22/%3E%3Ccircle cx=%22225%22 cy=%22140%22 r=%2254%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Cpath d=%22M54 140 H225%22 stroke=%22rgba(255,255,255,.8)%22 stroke-width=%2212%22/%3E%3Cpath d=%22M140 90 V190%22 stroke=%22rgba(255,255,255,.9)%22 stroke-width=%2210%22/%3E%3C/g%3E%3Ctext x=%2258%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3EDayNite%3C/text%3E%3C/svg%3E' },
-      { name:'MR-8 1.60', type:'Premium material', category:'Premium', price:0, desc:'Strength without bulk. Up to 20% thinner than standard lens. Ask ReLens for the price for your prescription.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%230d2f63%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%23469ac7%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Cg transform=%22translate(150 60)%22%3E%3Crect x=%2220%22 y=%22140%22 width=%2260%22 height=%22210%22 rx=%2230%22 fill=%22rgba(255,255,255,.22)%22/%3E%3Crect x=%22240%22 y=%22140%22 width=%2260%22 height=%22210%22 rx=%2230%22 fill=%22rgba(255,255,255,.22)%22/%3E%3Cpath d=%22M60 210 H260%22 stroke=%22rgba(255,255,255,.75)%22 stroke-width=%2216%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3Ctext x=%2258%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3EMR-8 1.60%3C/text%3E%3C/svg%3E' }
-    ];
-
-    const blCatalog = [
-      { name:'Bio True ONE Day 30 lens', brand:'Bausch + Lomb', category:'Daily', price:2765, detail:'Fresh hypergel lens every day.' },
-      { name:'Bio True ONE Day 5 lens', brand:'Bausch + Lomb', category:'Daily', price:553, detail:'Travel-friendly pack with the same comfort.' },
-      { name:'Bio True ONE Day Toric 30 lens', brand:'Bausch + Lomb', category:'Toric', price:2765, detail:'Astigmatism-friendly daily lens.' },
-      { name:'Bio True ONE Day Multifocal 30 lens', brand:'Bausch + Lomb', category:'Multifocal', price:4500, detail:'Daily multifocal lens for near and distance clarity.' },
-      { name:'Bio True ONE Day Multifocal 5 lens', brand:'Bausch + Lomb', category:'Multifocal', price:825, detail:'Lite daily pack with multifocal comfort.' },
-      { name:'Ultra 6 lens', brand:'Bausch + Lomb', category:'Monthly', price:4031, detail:'Monthly silicone hydrogel lens.' },
-      { name:'Pure Vision 2 6 lens', brand:'Bausch + Lomb', category:'Monthly', price:2526, detail:'Reliable monthly lens with broad comfort.' },
-      { name:'Medivision Pro 3 lens', brand:'Bausch + Lomb', category:'Monthly', price:1968, detail:'Monthly lens option for comfort and value.' },
-      { name:'Medivision 6 lens', brand:'Bausch + Lomb', category:'Monthly', price:1592, detail:'Budget-friendly monthly lens.' },
-      { name:'SL 59 6 lens', brand:'Bausch + Lomb', category:'Monthly', price:1645, detail:'Good monthly fit and comfort profile.' },
-      { name:'Ultra Toric 6 lens', brand:'Bausch + Lomb', category:'Toric', price:4031, detail:'Toric monthly lens with stable visual performance.' },
-      { name:'Pure Vision 2 Toric 6 lens', brand:'Bausch + Lomb', category:'Toric', price:2995, detail:'Stable toric correction and comfort.' },
-      { name:'Ultra MF 6 lens', brand:'Bausch + Lomb', category:'Multifocal', price:5812, detail:'Multifocal monthly option.' },
-      { name:'Pure Vision 2 MF 6 lens', brand:'Bausch + Lomb', category:'Multifocal', price:4593, detail:'Multifocal monthly lens for daily use.' },
-      { name:'Ultra Multifocal Toric 6 lens', brand:'Bausch + Lomb', category:'Multifocal', price:8436, detail:'Premium simultaneous multifocal + toric support.' },
-      { name:'iConnect 30 lens', brand:'Bausch + Lomb', category:'Value', price:1045, detail:'Everyday value lens in 30-pack.' },
-      { name:'iConnect 10 lens', brand:'Bausch + Lomb', category:'Value', price:395, detail:'Shorter pack for convenient rotation.' },
-      { name:'iConnect 6 lens', brand:'Bausch + Lomb', category:'Value', price:665, detail:'Value pack for daily wear confidence.' },
-      { name:'iConnect 3 lens', brand:'Bausch + Lomb', category:'Value', price:399, detail:'Compact trial and replacement option.' },
-      { name:'iConnect OxyRich 3 lens', brand:'Bausch + Lomb', category:'Value', price:825, detail:'Higher oxygen comfort value lens.' },
-      { name:'SofLens 30 lens', brand:'Bausch + Lomb', category:'Soft', price:1921, detail:'Soft hydrogel monthly lens.' },
-      { name:'SofLens 90 lens', brand:'Bausch + Lomb', category:'Soft', price:5428, detail:'Longer-life soft lens for monthly use.' },
-      { name:'SofLens Toric 30 lens', brand:'Bausch + Lomb', category:'Toric', price:2146, detail:'Toric soft lens for astigmatism support.' },
-      { name:'SofLens Toric 6 lens', brand:'Bausch + Lomb', category:'Toric', price:2268, detail:'Six-pack toric option.' },
-      { name:'SofLens Toric 1 lens', brand:'Bausch + Lomb', category:'Toric', price:403, detail:'Single lens option.' },
-      { name:'Soft Lens MF 6 lens', brand:'Bausch + Lomb', category:'Multifocal', price:3375, detail:'Multifocal soft lens for daily flexibility.' }
-    ];
-
-    const essilorCatalog = [
-      { name:'Crizal', type:'Anti-reflective coating', price:0, detail:'Reduces glare, scratches, water, and smudges. Ask ReLens for current MRP.' },
-      { name:'Eyezen', type:'Single vision for screens', price:0, detail:'Optimised for digital life and reduced eyestrain.' },
-      { name:'Varilux', type:'Progressive lenses', price:0, detail:'Essilor progressive design with far, intermediate and near support.' },
-      { name:'Transitions GEN S', type:'Light-adaptive', price:0, detail:'Darkens outdoors, returns clear indoors, blocks UV and blue-violet light.' },
-      { name:'Stellest', type:'Myopia control for kids', price:0, detail:'For children and myopia management needs under clinician guidance.' }
-    ];
-
-    const valuevisCategories = ['All', 'Premium', 'Progressive', 'Budget'];
-    const blCategories = ['All', 'Daily', 'Monthly', 'Toric', 'Multifocal', 'Soft', 'Value'];
-
-    const selected = new Map();
-
-    function money(n){ return '₹' + n.toLocaleString('en-IN'); }
-
-    function renderValueVis(filter='All'){
-      const list = filter === 'All' ? valueVisCatalog : valueVisCatalog.filter(item => item.category === filter);
-      const container = document.getElementById('valuevisGrid');
-      container.innerHTML = list.map(item => `
-        <article class="lens-card">
-          <div class="lens-thumb"><img src="${item.image}" alt="${item.name}" /></div>
-          <div class="lens-body">
-            <div class="label">${item.type}</div>
-            <h3>${item.name}</h3>
-            <p>${item.desc}</p>
-            <div class="chip-row"><span class="chip">${item.category}</span></div>
-            <div class="price-row">
-              <div>
-                <div class="small">From</div>
-                <div class="price">${item.price ? money(item.price) : 'Price on request'}</div>
-              </div>
-              <button class="inline-btn ${item.price ? '' : 'secondary'}" data-kind="valuevis" data-name="${item.name}" data-price="${item.price || 0}" data-type="${item.category}">${item.price ? 'Add' : 'Ask for price'}</button>
-            </div>
-          </div>
-        </article>
-      `).join('');
-    }
-
-    function renderBL(filter='All'){
-      const list = filter === 'All' ? blCatalog : blCatalog.filter(item => item.category === filter);
-      const container = document.getElementById('blGrid');
-      container.innerHTML = list.map(item => `
-        <article class="lens-card">
-          <div class="lens-thumb" style="background:linear-gradient(135deg,#edf7ff,#eef7fb)"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='520' viewBox='0 0 800 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23061f3d'/%3E%3Cstop offset='100%25' stop-color='%230d5d8a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='520' fill='url(%23g)' rx='32'/%3E%3Ccircle cx='200' cy='220' r='90' fill='rgba(255,255,255,.15)'/%3E%3Ccircle cx='580' cy='200' r='120' fill='rgba(255,255,255,.12)'/%3E%3Cg transform='translate(160 120)'%3E%3Ccircle cx='60' cy='130' r='48' fill='rgba(255,255,255,.18)'/%3E%3Ccircle cx='220' cy='130' r='48' fill='rgba(255,255,255,.18)'/%3E%3Cpath d='M60 130 H220' stroke='rgba(255,255,255,.8)' stroke-width='10' stroke-linecap='round'/%3E%3C/g%3E%3Ctext x='58' y='440' fill='white' font-family='Arial' font-size='50' font-weight='700'%3E${encodeURIComponent(item.name).replace(/%20/g,' ')}%3C/text%3E%3C/svg%3E" alt="${item.name}" /></div>
-          <div class="lens-body">
-            <div class="label">${item.category}</div>
-            <h3>${item.name}</h3>
-            <p>${item.detail}</p>
-            <div class="chip-row"><span class="chip">${item.brand}</span></div>
-            <div class="price-row">
-              <div>
-                <div class="small">MRP</div>
-                <div class="price">${money(item.price)}</div>
-              </div>
-              <button class="inline-btn" data-kind="bausch" data-name="${item.name}" data-price="${item.price}" data-type="${item.category}">Add</button>
-            </div>
-          </div>
-        </article>
-      `).join('');
-    }
-
-    function renderEssilor(){
-      const container = document.getElementById('essilorGrid');
-      container.innerHTML = essilorCatalog.map(item => `
-        <article class="lens-card">
-          <div class="lens-thumb" style="background:linear-gradient(135deg,#f7f5ff,#f0ebff)"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='520' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23f4edff'/%3E%3Cg fill='%23061f3d' font-family='Arial' font-weight='700'%3E%3Ctext x='70' y='130' font-size='52'%3E${item.name}%3C/text%3E%3Ctext x='70' y='210' font-size='26'%3E${item.type}%3C/text%3E%3Crect x='70' y='260' width='640' height='12' rx='6' fill='%23ddd1ff'/%3E%3Crect x='70' y='300' width='520' height='12' rx='6' fill='%23ddd1ff'/%3E%3Crect x='70' y='340' width='610' height='12' rx='6' fill='%23ddd1ff'/%3E%3C/g%3E%3C/svg%3E" alt="${item.name}" /></div>
-          <div class="lens-body">
-            <div class="label">${item.type}</div>
-            <h3>${item.name}</h3>
-            <p>${item.detail}</p>
-            <div class="price-row">
-              <div>
-                <div class="small">MRP</div>
-                <div class="price">Ask for MRP</div>
-              </div>
-              <button class="inline-btn secondary" data-kind="essilor" data-name="${item.name}" data-price="0" data-type="${item.type}">Ask</button>
-            </div>
-          </div>
-        </article>
-      `).join('');
-    }
-
-    function renderTagButtons(){
-      const val = document.getElementById('valuevisCategories');
-      val.innerHTML = valuevisCategories.map(cat => `<button class="tag ${cat === 'All' ? 'active' : ''}" data-category="${cat}">${cat}</button>`).join('');
-      val.querySelectorAll('.tag').forEach(btn => {
-        btn.addEventListener('click', () => {
-          val.querySelectorAll('.tag').forEach(tag => tag.classList.remove('active'));
-          btn.classList.add('active');
-          renderValueVis(btn.dataset.category);
-        });
-      });
-
-      const bl = document.getElementById('blCategories');
-      bl.innerHTML = blCategories.map(cat => `<button class="tag ${cat === 'All' ? 'active' : ''}" data-category="${cat}">${cat}</button>`).join('');
-      bl.querySelectorAll('.tag').forEach(btn => {
-        btn.addEventListener('click', () => {
-          bl.querySelectorAll('.tag').forEach(tag => tag.classList.remove('active'));
-          btn.classList.add('active');
-          renderBL(btn.dataset.category);
-        });
-      });
-    }
-
-    function updateSelectionUI(){
-      const items = [...selected.values()];
-      const total = items.reduce((sum,item)=>sum + Number(item.price),0);
-      const holder = document.getElementById('selectedItems');
-      document.getElementById('totalPrice').textContent = money(total);
-
-      if(!items.length){
-        holder.className = 'book-empty';
-        holder.textContent = 'Nothing selected yet. Pick a price from the catalog.';
-        return;
-      }
-
-      holder.className = 'book-list';
-      holder.innerHTML = items.map(item => `
-        <div class="book-item">
-          <div>
-            <strong>${item.name}</strong>
-            <div class="small">${item.type}</div>
-          </div>
-          <div><strong>${money(item.price)}</strong></div>
-        </div>
-      `).join('');
-    }
-
-    function bindAddButtons(){
-      document.addEventListener('click', (e) => {
-        const btn = e.target.closest('[data-name]');
-        if(!btn) return;
-        const name = btn.dataset.name;
-        const price = Number(btn.dataset.price || 0);
-        const type = btn.dataset.type || 'selection';
-        if(price === 0){
-          if(btn.dataset.kind === 'essilor') return;
-        }
-        if(selected.has(name)) selected.delete(name);
-        else selected.set(name,{name,price,type});
-        updateSelectionUI();
-      });
-    }
-
-    function buildWhatsAppText(){
-      const items = [...selected.values()];
-      if(!items.length) return 'Hello ReLens, I would like to book a lens replacement consultation.';
-      const list = items.map(item => `- ${item.name} (${money(item.price)})`).join('\n');
-      return `Hello ReLens, I would like to book lens replacement.\n\nSelected items:\n${list}\n\nPlease confirm availability and prescription verification.`;
-    }
-
-    function bindBookingButtons(){
-      document.getElementById('waButton').addEventListener('click', () => {
-        const text = encodeURIComponent(buildWhatsAppText());
-        window.open(`https://wa.me/919488353749?text=${text}`, '_blank');
-      });
-      document.getElementById('setmoreButton').addEventListener('click', () => {
-        window.open('https://relens.setmore.com', '_blank');
-      });
-    }
-
-    renderTagButtons();
-    renderValueVis('All');
-    renderBL('All');
-    renderEssilor();
-    bindAddButtons();
-    updateSelectionUI();
-    bindBookingButtons();
-  </script>
+  </main>
 </body>
 </html>
