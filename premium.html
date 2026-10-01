@@ -13,12 +13,11 @@
 <body>
 <div class="app">
 <header class="header"><div class="logo">Re<span>Lens</span></div><div class="tag">GIVE YOUR FRAME A SECOND LIFE</div></header>
-<section class="hero"><div class="eyebrow">PREMIUM LENS CATALOGUE</div><h1>Same frame.<br>Better vision.</h1><p>Explore clear, comfortable lens options for every lifestyle. Keep the frame you love and let our optical team confirm the final prescription and fit.</p></section>
+<section class="hero"><div class="eyebrow">PREMIUM LENS CATALOGUE</div><h1>Same frame.<br>Better vision.</h1><p>Explore Bausch + Lomb lens options and premium ReLens recommendations for clear, comfortable vision and lasting value.</p></section>
 <div class="filters" id="filters" aria-label="Lens categories"></div>
-<main><div class="section-head"><h2 id="heading">All lenses</h2><span class="muted" id="count"></span></div><section class="grid" id="catalog" aria-live="polite"></section><div class="note"><strong>✨ Need help choosing?</strong><br>Lens availability and final pricing depend on your prescription, frame measurements and coating requirements. <a href="https://relens.setmore.com" target="_blank" rel="noopener">Book a free consultation</a> and our team will recommend the right option.</div></main>
+<main><div class="section-head"><h2 id="heading">All lenses</h2><span class="muted" id="count"></span></div><section class="grid" id="catalog" aria-live="polite"></section><div class="note"><strong>Updated pricing</strong><br>MRP information is aligned with the Bausch + Lomb India price list summary and ReLens premium catalogue guidance. Use the final prescription and frame measurements to confirm the right fit before purchase.</div></main>
 </div>
 <script>
-// SVG icons for lens categories
 const icons={
  progressive:'<svg viewBox="0 0 24 24" class="icon"><defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#eab52b;stop-opacity:1"/><stop offset="100%" style="stop-color:#d4941f;stop-opacity:1"/></linearGradient></defs><circle cx="7" cy="12" r="4" fill="url(#g1)" opacity="0.9"/><circle cx="17" cy="12" r="4" fill="url(#g1)" opacity="0.7"/><path d="M7 12v8" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round"/><path d="M17 12v6" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round"/></svg>',
  single:'<svg viewBox="0 0 24 24" class="icon"><defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#eab52b;stop-opacity:1"/><stop offset="100%" style="stop-color:#d4941f;stop-opacity:1"/></linearGradient></defs><circle cx="12" cy="12" r="5" fill="url(#g2)" opacity="0.9"/><path d="M12 7v10" stroke="url(#g2)" stroke-width="1.5" stroke-linecap="round"/></svg>',
@@ -26,19 +25,94 @@ const icons={
  premium:'<svg viewBox="0 0 24 24" class="icon"><defs><linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1"/><stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#g4)"/></svg>'
 };
 
-const imageBase='https://raw.githubusercontent.com/Relensservice/relens-ai-os/main/assets/catalog/';
-const products=[
- {id:'classic',brand:'ValueVis',name:'Classic Progressive',category:'Progressive',image:'valuevis-classic-progressive.webp',price:'From ₹1,999',description:'Reliable near, intermediate and distance vision in one everyday progressive lens.',tags:['Progressive','Everyday'],details:'A practical progressive design for first-time wearers and everyday use. Includes prescription verification and fitting guidance.',icon:'progressive'},
- {id:'customized',brand:'ValueVis',name:'Customized Progressive',category:'Progressive',image:'valuevis-customized-progressive.webp',price:'From ₹3,499',description:'A more personalised progressive built around your prescription and frame.',tags:['Progressive','Personalised'],details:'Customised corridor and fitting parameters help provide a smoother transition across viewing distances. Final design is confirmed after measurements.',icon:'progressive'},
- {id:'evolux',brand:'ValueVis',name:'Evolux Progressive',category:'Premium',image:'valuevis-evolux-progressive.webp',price:'From ₹5,999',description:'Premium progressive vision with enhanced comfort for demanding days.',tags:['Premium','Progressive'],details:'A premium option for wearers who want refined visual comfort and a wider usable field. Prescription and frame suitability must be checked.',icon:'premium'},
- {id:'single',brand:'ReLens',name:'Single Vision',category:'Single vision',image:'singlevision.svg',price:'From ₹999',description:'Clear vision for one distance: near, intermediate or far.',tags:['Distance','Near'],details:'A simple, dependable choice when your prescription is focused on one viewing distance. Available with optional protective coatings.',icon:'single'},
- {id:'blue',brand:'ReLens',name:'Blue Cut',category:'Blue-cut',image:'bluecut.svg',price:'From ₹1,499',description:'Comfort-focused lenses for long screen and indoor working hours.',tags:['Screen use','UV protection'],details:'Designed to reduce distracting reflections and support comfortable screen use. Your optician will confirm the best coating for your needs.',icon:'blue'},
- {id:'daynite',brand:'ReLens',name:'Day-Nite',category:'Premium',image:'daynite.svg',price:'From ₹2,499',description:'A versatile lens option for changing light and active days.',tags:['Adaptive','All day'],details:'A flexible everyday option for changing environments. Actual tint, coating and availability are confirmed with your prescription.',icon:'premium'}
+function makeThumb(label, a, b){
+  const svg = `
+  <svg xmlns='http://www.w3.org/2000/svg' width='800' height='520' viewBox='0 0 800 520'>
+    <defs>
+      <linearGradient id='bg' x1='0%' y1='0%' x2='100%' y2='100%'>
+        <stop offset='0%' stop-color='${a}'/>
+        <stop offset='100%' stop-color='${b}'/>
+      </linearGradient>
+    </defs>
+    <rect width='800' height='520' fill='url(#bg)' rx='32'/>
+    <circle cx='200' cy='220' r='110' fill='rgba(255,255,255,.12)'/>
+    <circle cx='610' cy='200' r='140' fill='rgba(255,255,255,.1)'/>
+    <g transform='translate(70 90)'>
+      <circle cx='110' cy='170' r='78' fill='rgba(255,255,255,.2)'/>
+      <circle cx='290' cy='170' r='78' fill='rgba(255,255,255,.18)'/>
+      <path d='M110 170 H290' stroke='rgba(255,255,255,.8)' stroke-width='15' stroke-linecap='round'/>
+      <path d='M210 110 V230' stroke='rgba(255,255,255,.9)' stroke-width='12' stroke-linecap='round'/>
+      <path d='M110 170 L40 90' stroke='rgba(255,255,255,.5)' stroke-width='8' stroke-linecap='round'/>
+      <path d='M290 170 L360 90' stroke='rgba(255,255,255,.5)' stroke-width='8' stroke-linecap='round'/>
+    </g>
+    <text x='60' y='440' fill='white' font-family='Arial, sans-serif' font-weight='700' font-size='52'>${label}</text>
+  </svg>`;
+  return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+}
+
+const products = [
+  {id:'ultra30',brand:'Bausch + Lomb',name:'Ultra 30',category:'Monthly',image:makeThumb('Ultra 30','#dfeeff','#163d7a'),price:'₹3,281',description:'Silicone hydrogel monthly lens for clear, all-day comfort and hydration.',tags:['Monthly','Silicone Hydrogel'],details:'Ultra 30 is designed for comfort-driven monthly wear with hydration-focused performance. Ideal for wearers looking for easy everyday handling and consistent power delivery.',icon:'progressive'},
+  {id:'ultra5',brand:'Bausch + Lomb',name:'Ultra 5',category:'Daily',image:makeThumb('Ultra 5','#e6f2ff','#194c7c'),price:'₹609',description:'A practical daily lens for everyday clarity and a fresh, comfortable experience.',tags:['Daily','Convenience'],details:'Ultra 5 offers a simple, professional daily lens option with easy replacement and comfortable wear. Suited for wearers who want lens freshness without exceeding their lens budget.',icon:'single'},
+  {id:'ultraAstig',brand:'Bausch + Lomb',name:'Ultra for Astigmatism',category:'Toric',image:makeThumb('Toric','#eaf9ff','#1d4fa8'),price:'₹4,031',description:'Toric monthly lens engineered for stable vision and comfort in astigmatism.',tags:['Astigmatism','Toric'],details:'Designed to minimize rotation and maintain stable visual axis, helping users with astigmatism stay comfortable while preserving crisp vision.',icon:'blue'},
+  {id:'ultraPresby',brand:'Bausch + Lomb',name:'Ultra for Presbyopia',category:'Multifocal',image:makeThumb('Presbyopia','#fef3c7','#b45309'),price:'₹5,812',description:'Progressive monthly lens option for near and distance focus for mature eyes.',tags:['Multifocal','Progressive'],details:'Ultra for Presbyopia blends near, intermediate, and distance vision for day-to-day ease. A popular choice for users needing multiple focal ranges in one lens.',icon:'premium'},
+  {id:'ultraMultiToric',brand:'Bausch + Lomb',name:'Ultra Multifocal Toric',category:'Multifocal',image:makeThumb('Multifocal','#fff7ed','#a16207'),price:'₹8,436',description:'Premium multifocal toric lens for complex prescription needs.',tags:['Multifocal','Toric'],details:'This premium offering is tailored for wearers who need multifocal correction and astigmatism control in one lens. It offers premium comfort and stable visual clarity.',icon:'premium'},
+  {id:'soflens30',brand:'Bausch + Lomb',name:'SofLens 30',category:'Monthly',image:makeThumb('SofLens 30','#edf4ff','#2b5ea8'),price:'₹1,921',description:'Hydrogel monthly lens with reliable comfort and smooth wear.',tags:['Monthly','Hydrogel'],details:'SofLens 30 remains a dependable monthly choice for day-to-day wearers who value comfort, optics, and a balanced cost profile.',icon:'progressive'},
+  {id:'soflens90',brand:'Bausch + Lomb',name:'SofLens 90',category:'Monthly',image:makeThumb('SofLens 90','#f1f5fe','#3457b6'),price:'₹5,428',description:'Extended wear monthly option for users with longer replacement cycles.',tags:['Monthly','Value'],details:'SofLens 90 is a longer-life lens choice with broad market appeal for wearers seeking value, clarity, and a classic monthly lens experience.',icon:'progressive'},
+  {id:'biotrueOneDay',brand:'Bausch + Lomb',name:'Biotrue ONEday',category:'Daily',image:makeThumb('Biotrue','#edfdf5','#166534'),price:'₹2,765',description:'Premium daily disposable lens with comfort and breathability features.',tags:['Daily','Premium'],details:'Biotrue ONEday is a premium daily choice for users who prefer fresh lenses each day and want comfort that supports long periods of wear.',icon:'premium'},
+  {id:'iconnect30',brand:'Bausch + Lomb',name:'iConnect 30',category:'Daily',image:makeThumb('iConnect 30','#e0f2fe','#0f766e'),price:'₹1,045',description:'Daily disposable lens with convenience and value for active daily use.',tags:['Daily','Disposable'],details:'A value-focused daily lens that keeps lens hygiene simple and easy for busy users who prefer single-use comfort.',icon:'single'},
+  {id:'optima38',brand:'Bausch + Lomb',name:'Optima 38',category:'Annual',image:makeThumb('Optima 38','#f5f3ff','#4f46e5'),price:'₹1,218',description:'Annual lens value option for users seeking long-life economy and convenience.',tags:['Annual','Value'],details:'Optima 38 fits annual lens users who require affordability and practicality while maintaining daily visual satisfaction.',icon:'single'},
+  {id:'soflensToric',brand:'Bausch + Lomb',name:'SofLens Toric',category:'Toric',image:makeThumb('SofLens Toric','#ecfeff','#0f766e'),price:'₹2,268',description:'Toric monthly lens with dependable stabilization for astigmatism wearers.',tags:['Toric','Astigmatism'],details:'SofLens Toric is a trusted option for astigmatism-correction, maintaining stable vision across active everyday use.',icon:'blue'},
+  {id:'ultraToric',brand:'Bausch + Lomb',name:'Ultra Toric',category:'Toric',image:makeThumb('Ultra Toric','#e0f2fe','#0369a1'),price:'₹4,031',description:'A premium toric monthly lens with advanced control and stable performance.',tags:['Toric','Premium'],details:'Ultra Toric is suited to wearers who need premium astigmatism control and excellent comfort over extended monthly cycles.',icon:'blue'},
+  {id:'pureVision2Toric',brand:'Bausch + Lomb',name:'Pure Vision 2 Toric',category:'Toric',image:makeThumb('Pure Vision','#dbeafe','#1d4ed8'),price:'₹2,995',description:'Toric lens built to handle astigmatism while maintaining crisp optics.',tags:['Toric','Optics'],details:'This option is ideal for patients requiring sharper visual correction in toric prescriptions while preserving comfort.',icon:'blue'},
+  {id:'soflensMulti',brand:'Bausch + Lomb',name:'SofLens Multifocal',category:'Multifocal',image:makeThumb('Multifocal','#fff7ed','#c2410c'),price:'₹3,375',description:'Multifocal lens for wearers needing controlled near and distance viewing.',tags:['Multifocal','Near + Far'],details:'A reliable multifocal option for readers and professionals who switch between close-up and distance tasks frequently.',icon:'premium'},
+  {id:'ultraMultifocal',brand:'Bausch + Lomb',name:'Ultra Multifocal',category:'Multifocal',image:makeThumb('Ultra Multifocal','#fef3c7','#92400e'),price:'₹5,812',description:'Premium multifocal lens with enhanced visual comfort and function.',tags:['Multifocal','Premium'],details:'Ultra Multifocal supports sharp focus transitions across near, intermediate, and distance ranges. Recommended for premium vision correction needs.',icon:'premium'},
+  {id:'lacelleCircle',brand:'Bausch + Lomb',name:'Lacelle Circle',category:'Color',image:makeThumb('Lacelle Circle','#fdf2f8','#9d174d'),price:'₹515',description:'Color lens for a defined, natural-looking eye enhancement.',tags:['Color','Cosmetic'],details:'Lacelle Circle brings a stylish cosmetic lens option for users seeking subtle or stronger appearance enhancement.',icon:'single'},
+  {id:'lacellePremium',brand:'Bausch + Lomb',name:'Lacelle Premium',category:'Color',image:makeThumb('Lacelle Premium','#fce7f3','#a21caf'),price:'₹562',description:'Premium cosmetic lens with an elevated appearance-focused finish.',tags:['Color','Premium'],details:'Lacelle Premium offers a more refined cosmetic effect for those looking for a premium aesthetic lens look.',icon:'premium'},
+  {id:'renuFresh',brand:'Bausch + Lomb',name:'Renu Fresh',category:'Care',image:makeThumb('Renu Fresh','#ecfeff','#115e59'),price:'₹605',description:'Lens care solution for fresh, clean lens handling and everyday hygiene.',tags:['Care','Solution'],details:'An everyday lens care solution to support cleaning, disinfection, and a fresh lens experience between wear cycles.',icon:'single'}
 ];
-const categories=['All','Progressive','Single vision','Blue-cut','Premium'];let selected='All';
-function renderFilters(){document.getElementById('filters').innerHTML=categories.map(c=>`<button class="filter ${c===selected?'active':''}" data-category="${c}">${c}</button>`).join('');document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{selected=b.dataset.category;renderFilters();render()})}
-function render(){const list=selected==='All'?products:products.filter(p=>p.category===selected);document.getElementById('heading').textContent=selected==='All'?'All lenses':selected+' lenses';document.getElementById('count').textContent=`${list.length} option${list.length===1?'':'s'}`;document.getElementById('catalog').innerHTML=list.length?list.map(p=>`<article class="card"><div class="product-image"><img src="${imageBase+p.image}" alt="${p.name} lens illustration" loading="lazy" onerror="this.classList.add('broken')"><span class="fallback" aria-hidden="true">◉</span></div><div class="body"><div class="brand">${icons[p.icon]||icons.single}${p.brand}</div><h3>${p.name}</h3><p class="desc">${p.description}</p><div class="meta">${p.tags.map(t=>`<span class="pill">${t}</span>`).join('')}</div><div class="price">${p.price}</div><div class="actions"><button class="btn secondary" data-details="${p.id}" aria-expanded="false">View details</button><a class="btn" href="https://relens.setmore.com" target="_blank" rel="noopener">Book now</a></div><div class="details" id="details-${p.id}"><strong>About this lens</strong><br>${p.details}</div></div></article>`).join(''):'<div class="empty">No lenses found in this category.</div>';document.querySelectorAll('[data-details]').forEach(b=>b.onclick=()=>{const d=document.getElementById('details-'+b.dataset.details);const open=d.classList.toggle('open');b.setAttribute('aria-expanded',open)})}
-renderFilters();render();
+
+const categories=['All','Monthly','Daily','Toric','Multifocal','Color','Care','Annual'];
+let selected='All';
+
+function renderFilters(){
+  document.getElementById('filters').innerHTML = categories.map(c => `<button class="filter ${c===selected?'active':''}" data-category="${c}">${c}</button>`).join('');
+  document.querySelectorAll('.filter').forEach(b => b.onclick = () => { selected = b.dataset.category; renderFilters(); render(); });
+}
+
+function render(){
+  const list = selected === 'All' ? products : products.filter(p => p.category === selected);
+  document.getElementById('heading').textContent = selected === 'All' ? 'All lenses' : `${selected} lenses`;
+  document.getElementById('count').textContent = `${list.length} option${list.length === 1 ? '' : 's'}`;
+
+  document.getElementById('catalog').innerHTML = list.length ? list.map(p => `
+    <article class="card">
+      <div class="product-image"><img src="${p.image}" alt="${p.name} lens image" loading="lazy" onerror="this.classList.add('broken')"><span class="fallback" aria-hidden="true">◉</span></div>
+      <div class="body">
+        <div class="brand">${icons[p.icon] || icons.single}${p.brand}</div>
+        <h3>${p.name}</h3>
+        <p class="desc">${p.description}</p>
+        <div class="meta">${p.tags.map(t => `<span class="pill">${t}</span>`).join('')}</div>
+        <div class="price">${p.price}</div>
+        <div class="actions">
+          <button class="btn secondary" data-details="${p.id}" aria-expanded="false">View details</button>
+          <a class="btn" href="https://relens.setmore.com" target="_blank" rel="noopener">Book now</a>
+        </div>
+        <div class="details" id="details-${p.id}"><strong>About this lens</strong><br>${p.details}</div>
+      </div>
+    </article>
+  `).join('') : '<div class="empty">No lenses found in this category.</div>';
+
+  document.querySelectorAll('[data-details]').forEach(b => {
+    b.onclick = () => {
+      const d = document.getElementById('details-' + b.dataset.details);
+      const open = d.classList.toggle('open');
+      b.setAttribute('aria-expanded', open);
+    };
+  });
+}
+
+renderFilters();
+render();
 </script>
 </body>
 </html>
