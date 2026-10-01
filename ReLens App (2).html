@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ReLens App</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+<style>
+:root{--navy:#0d2a5e;--navy2:#16408a;--gold:#e5a823;--bg:#f3f6fb;--card:#fff;--ink:#14213d;--mute:#5d6b85;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{min-height:100%;background:#dfe6f2;font-family:Outfit,system-ui,sans-serif;color:var(--ink);display:flex;justify-content:center}
+.app{width:100%;max-width:430px;min-height:100vh;background:var(--bg);display:flex;flex-direction:column;position:relative}
+header{text-align:center;padding:22px 20px 8px;background:#fff}
+.logo{font-size:34px;font-weight:700;color:var(--navy);letter-spacing:-.5px}
+.logo b{color:var(--gold);font-weight:700}
+.tag{font-size:11px;letter-spacing:.14em;color:var(--navy);margin-top:2px}
+main{flex:1;padding:16px 16px 90px}
+.hero{border-radius:20px;background:linear-gradient(120deg,var(--navy),var(--navy2));color:#fff;padding:20px;min-height:150px}
+.hero h2{font-size:21px;line-height:1.2;max-width:230px}
+.hero p{font-size:14px;opacity:.85;margin:6px 0 14px}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font:600 14px Outfit,sans-serif;border:0;border-radius:10px;padding:10px 16px;text-decoration:none;cursor:pointer}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.tile{background:var(--card);border:0;border-radius:16px;padding:18px 10px;font:500 14px Outfit,sans-serif;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:0 2px 8px rgba(13,42,94,.08);cursor:pointer}
+.tile svg,.tab svg{width:30px;height:30px;stroke:var(--navy);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.screen h2{font-size:22px;color:var(--navy);margin:6px 0 8px}
+.screen p{color:var(--mute);line-height:1.5;margin-bottom:16px}
+.back{background:none;border:0;color:var(--navy2);font:500 15px Outfit,sans-serif;padding:4px 0 10px;cursor:pointer}
+.list{background:#fff;border-radius:16px;padding:6px 16px;margin-bottom:16px}
+.list div{padding:12px 0;border-bottom:1px solid #e6ebf3;font-size:15px}
+.list div:last-child{border:0}
+nav{position:fixed;bottom:0;width:100%;max-width:430px;background:#fff;display:flex;justify-content:space-around;padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px));border-top:1px solid #e6ebf3}
+.tab{background:none;border:0;font:500 12px Outfit,sans-serif;color:var(--mute);display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:4px 18px}
+.tab svg{width:24px;height:24px;stroke:var(--mute)}
+.tab[aria-current=true]{color:var(--navy)}.tab[aria-current=true] svg{stroke:var(--navy)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:light}}
+
+.login{position:fixed;inset:0;z-index:10;background:#fff;display:flex;justify-content:center;overflow:auto}
+.login.off{display:none}
+.lw{width:100%;max-width:430px;display:flex;flex-direction:column}
+.lhero{background:linear-gradient(150deg,var(--navy),var(--navy2));color:#fff;padding:calc(36px + env(safe-area-inset-top,0px)) 24px 70px;border-radius:0 0 28px 28px}
+.lhero .logo{color:#fff;font-size:30px}.lhero h1{font-size:26px;line-height:1.2;margin-top:28px}.lhero p{opacity:.85;margin-top:8px;font-size:15px}
+.lcard{background:#fff;margin:-44px 16px 0;border-radius:20px;padding:22px 20px;box-shadow:0 6px 24px rgba(13,42,94,.15)}
+.lcard h2{font-size:20px;color:var(--navy);margin-bottom:4px}.lcard p{color:var(--mute);font-size:14px;margin-bottom:16px}
+.phone{display:flex;border:1.5px solid #c9d3e6;border-radius:12px;overflow:hidden;margin-bottom:6px}
+.phone:focus-within{border-color:var(--navy2)}
+.phone span{padding:14px;background:#f3f6fb;color:var(--ink);font-weight:500;border-right:1.5px solid #c9d3e6}
+.phone input{flex:1;border:0;padding:14px;font:500 18px Outfit,sans-serif;letter-spacing:.06em;min-width:0;outline:none}
+.err{color:#c0392b;font-size:13px;min-height:18px;margin-bottom:8px}
+.full{width:100%;padding:14px;font-size:16px;background:var(--navy);color:#fff}
+.otp{display:flex;gap:8px;justify-content:space-between;margin-bottom:6px}
+.otp input{width:100%;min-width:0;aspect-ratio:1;max-width:50px;text-align:center;border:1.5px solid #c9d3e6;border-radius:10px;font:600 22px Outfit,sans-serif}
+.otp input:focus{border-color:var(--navy2);outline:none}
+.link{background:none;border:0;color:var(--navy2);font:500 14px Outfit,sans-serif;cursor:pointer;padding:10px 0 0}
+.fine{font-size:12px;color:var(--mute);text-align:center;margin:16px 24px 24px}
+.hide{display:none}
+
+.slides{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:0 16px}
+.slides .hero{flex:0 0 88%;scroll-snap-align:start}
+.hero.alt{background:linear-gradient(120deg,#8a6210,var(--gold));color:var(--navy)}
+.hero.alt .btn{background:var(--navy);color:#fff}
+.box{background:#fff;border-radius:16px;padding:16px;margin-top:16px;box-shadow:0 2px 8px rgba(13,42,94,.08)}
+.box h3,.sec{font-size:18px;color:var(--navy);margin:22px 0 10px}.box h3{margin:0 0 10px;font-size:16px}
+.qa{display:flex;gap:8px}.qa .phone{flex:1;margin:0}.qa .btn{background:var(--navy);color:#fff}
+.ben{display:flex;gap:12px;align-items:flex-start;padding:10px 0}
+.ben svg{flex:0 0 28px;width:28px;height:28px;stroke:var(--navy);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ben b{display:block;font-size:15px}.ben span{font-size:13px;color:var(--mute)}
+.seg{display:flex;background:#e9eef7;border-radius:999px;padding:3px;margin-bottom:12px}
+.seg button{flex:1;border:0;background:none;border-radius:999px;padding:8px 4px;font:500 13px Outfit,sans-serif;color:var(--mute);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--navy);color:#fff}
+.cards{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:0 16px 4px}
+.cc{flex:0 0 62%;scroll-snap-align:start;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 8px rgba(13,42,94,.08)}
+.cc h4{font-size:17px;color:var(--navy)}.cc p{font-size:13px;color:var(--mute);margin:6px 0 12px;line-height:1.4}
+.help{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.help a,.help button{background:#fff;border:0;border-radius:14px;padding:14px 6px;text-align:center;text-decoration:none;color:var(--navy);font:500 13px Outfit,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(13,42,94,.08)}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="logo">Re<b>Lens</b></div><div class="tag">GIVE YOUR FRAME A SECOND LIFE</div></header>
+<main id="main"></main>
+<nav>
+<button class="tab" data-tab="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Home</button>
+<button class="tab" data-tab="bookings"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>Bookings</button>
+<button class="tab" data-tab="profile"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>Profile</button>
+</nav>
+</div>
+<section class="login" id="login"><div class="lw">
+<div class="lhero"><div class="logo">Re<b style="color:var(--gold)">Lens</b></div><h1>Your optical service in your pocket</h1><p>Book, track and manage everything for your glasses.</p></div>
+<div class="lcard">
+<div id="s1"><h2>Login to ReLens</h2><p>Enter your mobile number. We will send you an OTP.</p>
+<label class="phone"><span>+91</span><input id="ph" type="tel" inputmode="numeric" maxlength="10" placeholder="Mobile number" autocomplete="tel-national" aria-label="Mobile number"></label>
+<div class="err" id="e1" role="alert"></div><button class="btn full" id="go">Get OTP</button></div>
+<div id="s2" class="hide"><h2>Enter OTP</h2><p id="sent"></p>
+<div class="otp" id="otp"></div><div class="err" id="e2" role="alert"></div>
+<button class="btn full" id="ver">Verify and login</button>
+<button class="link" id="rs" disabled></button> <button class="link" id="chg">Change number</button></div>
+</div>
+<p class="fine">Demo mode: any 10-digit number works. Use OTP 123456.</p>
+</div></section>
+
+<script>
+var BOOK="https://relens.setmore.com",WA="https://wa.me/message/3XHYZJ2WIHFTO1";
+var ico={
+book:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/>',
+track:'<path d="M2 6h11v10H2zM13 9h5l3 3v4h-8"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>',
+lens:'<circle cx="7" cy="14" r="4"/><circle cx="17" cy="14" r="4"/><path d="M11 14h2M3 14l2-8M21 14l-2-8"/>',
+repair:'<path d="M14 6a4 4 0 0 0 5 5l-9 9a2 2 0 0 1-3-3l9-9a4 4 0 0 0-2-2z"/>',
+hist:'<path d="M6 3h9l4 4v14H6z"/><path d="M9 11h7M9 15h7"/>',
+chat:'<path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8"/>'};
+var tiles=[["book","Book Service"],["track","Track Order"],["lens","Lens Types"],["repair","Frame Repair"],["hist","Service History"],["chat","Chat Support"]];
+var screens={
+"Book Service":{t:"Book a service",p:"Choose what your frame needs. We pick up, fix and deliver.",l:["Lens replacement","Frame repair","Lens reconditioning","Contact lens order"],a:["Book on Setmore",BOOK]},
+"Track Order":{t:"Track order",p:"Live order status will appear here once you place an order.",l:["Order placed","Picked up","Lenses in making","Ready for delivery"]},
+"Lens Types":{t:"Lens catalog",p:"Browse lenses and contact lenses by brand.",l:["ValueVis","Essilor","Bausch + Lomb"]},
+"Frame Repair":{t:"Frame repair",p:"Broken hinge, nose pad or bent frame? Book a repair.",l:["Hinge and screw","Nose pad","Bent or misaligned frame"],a:["Book repair",BOOK]},
+"Service History":{t:"Service history",p:"Your past services will be listed here, with a rebook button on each."},
+"Chat Support":{t:"Chat support",p:"Ask our experts about lenses, frames or your order.",a:["Chat on WhatsApp",WA]},
+"Bookings":{t:"Bookings",p:"Upcoming and completed bookings will appear here. You have none yet.",a:["Book a service",BOOK]},
+"Profile":{t:"Profile",p:"Manage your address, prescription and account details.",l:["Address","Prescription","Account details"]}};
+var main=document.getElementById("main"),tabs=document.querySelectorAll(".tab");
+function svg(k){return '<svg viewBox="0 0 24 24">'+ico[k]+'</svg>'}
+function home(){
+ var lens={"Single vision":["Everyday clarity for one distance.","ValueVis, Essilor, Bausch + Lomb"],"Progressive":["One lens for near, middle and far.","Premium Essilor range"],"Blue-cut":["Comfort for long screen hours.","Available on most frames"]};
+ main.innerHTML='<div class="slides"><section class="hero"><h2>Lens Replacement at Your Doorstep</h2><p>Same Frame. Clearer Vision.</p><a class="btn" href="'+BOOK+'" target="_blank" rel="noopener">Book Now</a></section>'+
+ '<section class="hero alt"><h2>Give your frame a second life</h2><p>Keep the frame you love. Change only the lenses.</p><button class="btn" data-s="Lens Types">See lens types</button></section></div>'+
+ '<div class="box"><h3>Track your order</h3><div class="qa"><label class="phone"><span>+91</span><input id="tp" type="tel" inputmode="numeric" maxlength="10" placeholder="Mobile number" aria-label="Mobile number"></label><button class="btn" data-s="Track Order">Proceed</button></div></div>'+
+ '<h3 class="sec">Our services</h3><div class="grid" style="margin-top:0">'+tiles.map(function(x){return '<button class="tile" data-s="'+x[1]+'">'+svg(x[0])+x[1]+'</button>'}).join("")+'</div>'+
+ '<h3 class="sec">Get the best of ReLens</h3><div class="box" style="margin-top:0">'+
+ [["track","Doorstep pickup and delivery","We collect your glasses and bring them back."],["lens","Original lenses","ValueVis, Essilor and Bausch + Lomb."],["hist","Same frame, new lenses","No need to buy a new frame."],["book","Live order updates","See every stage from pickup to delivery."]].map(function(b){return '<div class="ben">'+svg(b[0])+'<div><b>'+b[1]+'</b><span>'+b[2]+'</span></div></div>'}).join("")+'</div>'+
+ '<h3 class="sec">Find the right lens</h3><div class="box" style="margin-top:0"><div class="seg" id="seg">'+Object.keys(lens).map(function(k,i){return '<button aria-pressed="'+(i==0)+'">'+k+'</button>'}).join("")+'</div><b id="lt"></b><p id="lp" style="color:#5d6b85;font-size:14px;margin:4px 0 12px"></p><button class="btn" data-s="Lens Types">Explore lenses</button></div>'+
+ '<h3 class="sec">Shop by brand</h3><div class="cards">'+[["ValueVis","Smart everyday lenses at a fair price."],["Essilor","Premium lenses, trusted worldwide."],["Bausch + Lomb","Clear vision, from glasses to contact lenses."]].map(function(c){return '<div class="cc"><h4>'+c[0]+'</h4><p>'+c[1]+'</p><button class="btn" data-s="Lens Types">Learn more</button></div>'}).join("")+'</div>'+
+ '<h3 class="sec">Need guidance?</h3><div class="help"><button data-s="Chat Support">Support</button><a href="'+WA+'" target="_blank" rel="noopener">Chat with us</a><a href="'+BOOK+'" target="_blank" rel="noopener">Book a slot</a></div>';
+ main.querySelectorAll("[data-s]").forEach(function(b){b.onclick=function(){show(b.dataset.s,true)}});
+ function pick(i){var k=Object.keys(lens)[i];document.getElementById("lt").textContent=k;document.getElementById("lp").textContent=lens[k][0]+" "+lens[k][1]+".";main.querySelectorAll("#seg button").forEach(function(x,j){x.setAttribute("aria-pressed",j==i)})}
+ main.querySelectorAll("#seg button").forEach(function(b,i){b.onclick=function(){pick(i)}});pick(0);
+}
+function show(name,fromHome){
+ var s=screens[name],h='<div class="screen">'+(fromHome?'<button class="back" id="bk">Back to home</button>':'')+'<h2>'+s.t+'</h2><p>'+s.p+'</p>';
+ if(s.l)h+='<div class="list">'+s.l.map(function(i){return '<div>'+i+'</div>'}).join("")+'</div>';
+ if(s.a)h+='<a class="btn" href="'+s.a[1]+'" target="_blank" rel="noopener">'+s.a[0]+'</a>';
+ main.innerHTML=h+'</div>';
+ var bk=document.getElementById("bk");if(bk)bk.onclick=function(){setTab("home")};
+ window.scrollTo(0,0);
+}
+function setTab(t){
+ tabs.forEach(function(b){b.removeAttribute("aria-current");if(b.dataset.tab===t)b.setAttribute("aria-current","true")});
+ if(t==="home")home();else show(t==="bookings"?"Bookings":"Profile",false);
+}
+tabs.forEach(function(b){b.onclick=function(){setTab(b.dataset.tab)}});
+setTab("home");
+var phone="",cd=0,tm;
+var $=function(i){return document.getElementById(i)},boxes=[];
+for(var i=0;i<6;i++){var b=document.createElement("input");b.maxLength=1;b.inputMode="numeric";b.setAttribute("aria-label","OTP digit "+(i+1));$("otp").appendChild(b);boxes.push(b)}
+boxes.forEach(function(b,i){
+ b.oninput=function(){b.value=b.value.replace(/\D/g,"");if(b.value&&i<5)boxes[i+1].focus()};
+ b.onkeydown=function(e){if(e.key==="Backspace"&&!b.value&&i>0)boxes[i-1].focus();if(e.key==="Enter")verify()};
+ b.onpaste=function(e){var t=(e.clipboardData.getData("text")||"").replace(/\D/g,"").slice(0,6);if(t){e.preventDefault();t.split("").forEach(function(c,j){boxes[j].value=c});boxes[Math.min(t.length,5)].focus()}};
+});
+function tick(){cd--;var r=$("rs");if(cd>0){r.textContent="Resend OTP in "+cd+"s";r.disabled=true}else{clearInterval(tm);r.textContent="Resend OTP";r.disabled=false}}
+function start(){cd=31;clearInterval(tm);tick();tm=setInterval(tick,1000)}
+function sendOtp(){
+ var v=$("ph").value.replace(/\D/g,"");
+ if(!/^[6-9]\d{9}$/.test(v)){$("e1").textContent="Enter a valid 10-digit mobile number.";return}
+ $("e1").textContent="";phone=v;$("sent").textContent="We sent a 6-digit OTP to +91 "+v.slice(0,2)+"XXXXX"+v.slice(7);
+ $("s1").classList.add("hide");$("s2").classList.remove("hide");boxes.forEach(function(b){b.value=""});boxes[0].focus();start();
+}
+function verify(){
+ if(boxes.map(function(b){return b.value}).join("")!=="123456"){$("e2").textContent="Incorrect OTP. Check the code and try again.";return}
+ $("e2").textContent="";screens.Profile.p="Logged in as +91 "+phone+".";$("login").classList.add("off");setTab("home");
+}
+$("go").onclick=sendOtp;$("ph").onkeydown=function(e){if(e.key==="Enter")sendOtp()};
+$("ver").onclick=verify;$("rs").onclick=function(){boxes.forEach(function(b){b.value=""});boxes[0].focus();$("e2").textContent="";start()};
+$("chg").onclick=function(){clearInterval(tm);$("s2").classList.add("hide");$("s1").classList.remove("hide");$("ph").focus()};
+</script>
+</body>
+</html>
