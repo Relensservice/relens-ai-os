@@ -1,111 +1,493 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#061f3d">
-<meta name="description" content="ReLens premium lens catalogue with updated Bausch + Lomb MRP pricing and categories.">
-<title>ReLens Premium Lens Catalogue</title>
-<style>
-:root{--navy:#061f3d;--navy2:#0b3565;--gold:#eab52b;--bg:#f4f6fa;--ink:#13243a;--muted:#6d7b8d;--line:#e3e8ef;--green:#18a66a;--shadow:0 14px 38px rgba(4,28,55,.12)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px system-ui,-apple-system,Segoe UI,sans-serif}.app{max-width:960px;margin:auto;min-height:100vh;background:#fff}.header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);padding:16px 20px;display:flex;align-items:center;gap:14px}.logo{font-weight:800;font-size:24px;color:var(--navy)}.logo span{color:var(--gold)}.tag{color:var(--muted);font-size:12px;letter-spacing:.08em;margin-left:auto}.hero{margin:20px;border-radius:22px;padding:30px;color:#fff;background:linear-gradient(120deg,var(--navy),var(--navy2))}.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.05;margin:8px 0}.hero p{max-width:620px;opacity:.9;line-height:1.5}.eyebrow{font-size:11px;letter-spacing:.16em;color:var(--gold);font-weight:700}.filters{display:flex;gap:8px;overflow:auto;padding:0 20px 18px}.filter{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:9px 14px;white-space:nowrap;cursor:pointer;transition:all .2s}.filter:hover{border-color:var(--gold)}.filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}main{padding:0 20px 40px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:8px 0 14px}.section-head h2{margin:0;color:var(--navy);font-size:24px}.muted{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:all .3s}.card:hover{box-shadow:0 16px 48px rgba(6,31,61,.18);transform:translateY(-2px)}.product-image{height:160px;background:linear-gradient(135deg,#f0f5fa 0%,#e8eef5 100%);display:flex;align-items:center;justify-content:center;padding:16px}.product-image img{max-width:90%;max-height:90%;object-fit:contain}.product-image img.broken{display:none}.fallback{display:none;text-align:center;color:var(--navy);font-size:48px}.product-image img.broken+.fallback{display:block}.body{padding:17px;flex:1;display:flex;flex-direction:column}.brand{font-size:10px;color:var(--gold);font-weight:900;letter-spacing:.12em;text-transform:uppercase}.card h3{margin:5px 0 8px;font-size:18px;color:var(--navy);font-weight:700}.desc{color:var(--muted);line-height:1.4;font-size:14px;margin:0 0 8px;flex:1}.meta{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0}.pill{background:#f0f5fa;border-radius:999px;color:var(--navy);font-size:11px;padding:4px 7px;font-weight:500}.price{font-weight:800;color:var(--navy);font-size:18px;margin:10px 0}.actions{display:flex;gap:8px}.btn{border:0;border-radius:8px;padding:10px 12px;font-weight:700;cursor:pointer;background:var(--gold);color:var(--navy);flex:1;text-decoration:none;text-align:center;font-size:14px;transition:all .2s}.btn:hover{background:#f5c547;transform:scale(1.02)}.btn.secondary{background:#edf3f8;color:var(--navy)}.btn.secondary:hover{background:#e0e8f2}.details{display:none;border-top:1px solid var(--line);margin-top:10px;padding-top:10px;color:var(--muted);line-height:1.5;font-size:13px}.details.open{display:block}.details strong{color:var(--ink)}.note{margin:24px 0;padding:16px;border-radius:14px;background:#f7f9fc;color:var(--muted);line-height:1.5;font-size:14px}.empty{grid-column:1/-1;text-align:center;padding:35px;color:var(--muted)}.icon{display:inline-block;width:20px;height:20px;margin-right:4px;vertical-align:middle}@media(max-width:560px){.tag{display:none}.hero{margin:14px 14px 18px;padding:24px 20px}main{padding:0 14px 30px}.filters{padding-left:14px;padding-right:14px}.product-image{height:140px}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#061f3d" />
+  <title>ReLens | Lens Replacement Catalog</title>
+  <style>
+    :root {
+      --navy:#061f3d;
+      --navy2:#0b3565;
+      --gold:#eab52b;
+      --bg:#f4f6fa;
+      --card:#ffffff;
+      --ink:#13243a;
+      --muted:#6d7b8d;
+      --line:#e3e8ef;
+      --green:#18a66a;
+      --red:#d94a38;
+      --shadow:0 18px 48px rgba(4,28,55,.12);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    .topbar{
+      background:linear-gradient(120deg,#0d2a5e,#163e78);
+      color:#fff;
+      font-size:14px;
+      padding:12px 18px;
+      text-align:center;
+      letter-spacing:.02em;
+    }
+    .topbar strong{color:#ffc857}
+    .container{max-width:1300px;margin:0 auto;padding:0 18px}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;
+      position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);z-index:20;border-bottom:1px solid var(--line)
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:26px;letter-spacing:-.04em}
+    .brand-mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--gold));display:grid;place-items:center;color:#fff;font-size:16px;font-weight:900}
+    .brand .light{color:var(--navy)}
+    .brand .gold{color:var(--gold)}
+    .nav-right{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+    .nav-links{display:flex;gap:18px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+    .nav-links a{padding:6px 0}
+    .nav-links a:hover{color:var(--navy)}
+    .pill-btn{
+      background:var(--navy);color:#fff;border:0;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer
+    }
+    .pill-btn.secondary{background:#fff;border:1px solid var(--line);color:var(--navy)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;padding:24px 0 10px}
+    .hero-copy{padding:26px 0}
+    .eyebrow{font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:800;text-transform:uppercase}
+    h1{font-size:clamp(2.3rem,4vw,4rem);line-height:1.02;margin:10px 0 14px;letter-spacing:-.05em}
+    .lead{font-size:1.05rem;color:var(--muted);max-width:620px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btn-primary,.btn-secondary,.btn-book{
+      display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:12px 18px;font-weight:700;border:none;cursor:pointer;transition:.2s ease
+    }
+    .btn-primary{background:var(--gold);color:var(--navy)}
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 32px rgba(234,181,43,.24)}
+    .btn-secondary{background:#edf3f8;color:var(--navy);border:1px solid var(--line)}
+    .hero-card{
+      background:linear-gradient(180deg,#fff,#f8fafc);
+      border:1px solid var(--line);border-radius:26px;padding:18px;box-shadow:var(--shadow)
+    }
+    .mini-badge{display:inline-block;background:#ecfdf5;color:#166534;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:700}
+    .stat-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+    .stat-box{flex:1;min-width:110px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+    .stat-box strong{display:block;font-size:26px;color:var(--navy)}
+    .stat-box span{font-size:12px;color:var(--muted)}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .catalog-wrap{padding:28px 0 10px}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+    .section-head h2{margin:0;font-size:clamp(1.6rem,2vw,2.1rem);letter-spacing:-.04em}
+    .muted{color:var(--muted)}
+    .category-row{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+    .tag{padding:9px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;color:var(--navy);cursor:pointer;transition:.2s ease}
+    .tag.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .lens-card{padding:0;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.2s ease}
+    .lens-card:hover{transform:translateY(-3px);box-shadow:0 20px 52px rgba(4,28,55,.15)}
+    .lens-thumb{height:170px;background:linear-gradient(135deg,#edf3fa,#dfeaf9);display:grid;place-items:center;position:relative;overflow:hidden}
+    .lens-thumb::before{content:"";position:absolute;inset:10% 18% 18% 18%;border-radius:50%;background:rgba(255,255,255,.18);filter:blur(5px)}
+    .lens-thumb img{max-width:86%;max-height:80%;position:relative;z-index:1;object-fit:contain}
+    .lens-body{padding:16px}
+    .label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:var(--gold);margin-bottom:8px}
+    .lens-card h3{margin:0 0 8px;font-size:1.12rem}
+    .lens-card p{margin:0 0 10px;color:var(--muted);font-size:14px;line-height:1.55}
+    .chip-row{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 12px}
+    .chip{background:#f3f7fb;border-radius:999px;padding:6px 9px;font-size:11px;color:var(--navy);font-weight:600}
+    .price-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px}
+    .price{font-size:1.2rem;font-weight:800;color:var(--navy)}
+    .small{font-size:12px;color:var(--muted)}
+    .inline-btn{background:var(--gold);color:var(--navy);border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
+    .inline-btn.secondary{background:#edf3f8}
+    .book-panel{
+      position:sticky;top:84px;background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);padding:20px
+    }
+    .book-list{display:grid;gap:10px;margin-top:12px}
+    .book-item{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:#f8fafc;border:1px solid var(--line);border-radius:12px;font-size:14px}
+    .book-empty{padding:18px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:14px;background:#fafbff}
+    .booking-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start;padding-bottom:18px}
+    .panel-box{padding:28px 26px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow)}
+    .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .field input,.field textarea,.field select{
+      width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)
+    }
+    textarea{min-height:90px;resize:vertical}
+    .upload-box{display:flex;align-items:center;justify-content:center;border:1.5px dashed var(--line);border-radius:16px;padding:22px;background:#f8faff;color:var(--muted);min-height:130px;text-align:center}
+    .upload-box strong{display:block;color:var(--navy)}
+    .bottom-note{margin-top:14px;color:var(--muted);font-size:13px}
+    .total-row{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid var(--line);margin-top:12px}
+    .total{font-size:2rem;font-weight:800;color:var(--navy)}
+    .wa-btn{background:#25D366;color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer;width:100%}
+    .other-btn{background:var(--navy);color:#fff;border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer;width:100%}
+    .section{padding:30px 0}
+    .list{display:grid;gap:12px;margin-top:18px}
+    .list-row{display:grid;grid-template-columns:1.4fr auto auto;gap:12px;align-items:center;padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:14px}
+    .list-row strong{display:block;font-size:16px}
+    .list-row small{color:var(--muted)}
+    .footer{padding:26px 0 50px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line);margin-top:20px}
+    @media (max-width:980px){.hero,.booking-grid{grid-template-columns:1fr}.book-panel{position:relative;top:0}.nav{flex-wrap:wrap}.nav-links{width:100%;justify-content:space-between}.form-grid{grid-template-columns:1fr}.brand{font-size:20px}}
+    @media (max-width:600px){.topbar{font-size:12px}.nav-right{width:100%;justify-content:space-between}.nav-links{gap:10px}.card-grid{grid-template-columns:1fr}.list-row{grid-template-columns:1fr}.hero{padding-top:12px}}
+  </style>
 </head>
 <body>
-<div class="app">
-<header class="header"><div class="logo">Re<span>Lens</span></div><div class="tag">GIVE YOUR FRAME A SECOND LIFE</div></header>
-<section class="hero"><div class="eyebrow">PREMIUM LENS CATALOGUE</div><h1>Same frame.<br>Better vision.</h1><p>Explore ReLens premium recommendations plus Bausch + Lomb India MRP lens options for monthly, daily, toric, multifocal, color and care products.</p></section>
-<div class="filters" id="filters" aria-label="Lens categories"></div>
-<main><div class="section-head"><h2 id="heading">All lenses</h2><span class="muted" id="count"></span></div><section class="grid" id="catalog" aria-live="polite"></section><div class="note"><strong>Updated pricing</strong><br>MRP values are aligned with the Bausch + Lomb India price sheet summary and should be confirmed with the final prescription, frame fit and lens coating selection before purchase or booking.</div></main>
-</div>
-<script>
-const icons={
-  progressive:'<svg viewBox="0 0 24 24" class="icon"><defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#eab52b;stop-opacity:1"/><stop offset="100%" style="stop-color:#d4941f;stop-opacity:1"/></linearGradient></defs><circle cx="7" cy="12" r="4" fill="url(#g1)" opacity="0.9"/><circle cx="17" cy="12" r="4" fill="url(#g1)" opacity="0.7"/><path d="M7 12v8" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round"/><path d="M17 12v6" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round"/></svg>',
-  single:'<svg viewBox="0 0 24 24" class="icon"><defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#eab52b;stop-opacity:1"/><stop offset="100%" style="stop-color:#d4941f;stop-opacity:1"/></linearGradient></defs><circle cx="12" cy="12" r="5" fill="url(#g2)" opacity="0.9"/><path d="M12 7v10" stroke="url(#g2)" stroke-width="1.5" stroke-linecap="round"/></svg>',
-  blue:'<svg viewBox="0 0 24 24" class="icon"><defs><linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#5ba3ff;stop-opacity:1"/><stop offset="100%" style="stop-color:#2563eb;stop-opacity:1"/></linearGradient></defs><circle cx="7" cy="12" r="4" fill="url(#g3)" opacity="0.9"/><circle cx="17" cy="12" r="4" fill="url(#g3)" opacity="0.9"/><path d="M3 12h18" stroke="url(#g3)" stroke-width="1.5" stroke-linecap="round"/></svg>',
-  premium:'<svg viewBox="0 0 24 24" class="icon"><defs><linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1"/><stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="url(#g4)"/></svg>'
-};
-function makeThumb(label, a, b){
-  const svg = `
-    <svg xmlns='http://www.w3.org/2000/svg' width='800' height='520' viewBox='0 0 800 520'>
-      <defs>
-        <linearGradient id='bg' x1='0%' y1='0%' x2='100%' y2='100%'>
-          <stop offset='0%' stop-color='${a}'/>
-          <stop offset='100%' stop-color='${b}'/>
-        </linearGradient>
-      </defs>
-      <rect width='800' height='520' fill='url(#bg)' rx='32'/>
-      <circle cx='200' cy='220' r='110' fill='rgba(255,255,255,.12)'/>
-      <circle cx='610' cy='200' r='140' fill='rgba(255,255,255,.12)'/>
-      <g transform='translate(70 90)'>
-        <circle cx='110' cy='170' r='78' fill='rgba(255,255,255,.24)'/>
-        <circle cx='290' cy='170' r='78' fill='rgba(255,255,255,.2)'/>
-        <path d='M110 170 H290' stroke='rgba(255,255,255,.75)' stroke-width='15' stroke-linecap='round'/>
-        <path d='M210 110 V230' stroke='rgba(255,255,255,.9)' stroke-width='12' stroke-linecap='round'/>
-        <path d='M110 170 L40 90' stroke='rgba(255,255,255,.5)' stroke-width='8' stroke-linecap='round'/>
-        <path d='M290 170 L360 90' stroke='rgba(255,255,255,.5)' stroke-width='8' stroke-linecap='round'/>
-      </g>
-      <text x='60' y='440' fill='white' font-family='Arial, sans-serif' font-weight='700' font-size='52'>${label}</text>
-    </svg>
-  `;
-  return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
-}
-const products = [
-  {id:'ultra30',brand:'Bausch + Lomb',name:'Ultra 30',category:'Monthly',image:makeThumb('Ultra 30','#dfeeff','#163d7a'),price:'₹3,281',description:'Silicone hydrogel monthly lens for clear, all-day comfort and hydration.',tags:['Monthly','Silicone Hydrogel'],details:'Ultra 30 is designed for comfort-driven monthly wear with hydration-focused performance. Ideal for wearers looking for easy everyday handling and consistent power delivery.',icon:'progressive'},
-  {id:'ultra5',brand:'Bausch + Lomb',name:'Ultra 5',category:'Monthly',image:makeThumb('Ultra 5','#e6f2ff','#194c7c'),price:'₹609',description:'A practical monthly lens for everyday clarity and a fresh, comfortable experience.',tags:['Monthly','Convenience'],details:'Ultra 5 offers a simple, professional monthly lens option with easy replacement and comfortable wear. Suited for wearers who want lens freshness without overspending.',icon:'single'},
-  {id:'ultraAstig',brand:'Bausch + Lomb',name:'Ultra for Astigmatism',category:'Toric',image:makeThumb('Toric','#eaf9ff','#1d4fa8'),price:'₹4,031',description:'Toric monthly lens engineered for stable vision and comfort in astigmatism.',tags:['Astigmatism','Toric'],details:'Designed to minimize rotation and maintain stable visual axis, helping users with astigmatism stay comfortable while preserving crisp vision.',icon:'blue'},
-  {id:'ultraPresby',brand:'Bausch + Lomb',name:'Ultra for Presbyopia',category:'Multifocal',image:makeThumb('Presbyopia','#fef3c7','#b45309'),price:'₹5,812',description:'Progressive monthly lens option for near and distance focus for mature eyes.',tags:['Multifocal','Progressive'],details:'Ultra for Presbyopia blends near, intermediate, and distance vision for day-to-day ease. A popular choice for wearers needing multiple focal ranges in one lens.',icon:'premium'},
-  {id:'ultraMultiToric',brand:'Bausch + Lomb',name:'Ultra Multifocal Toric',category:'Multifocal',image:makeThumb('Multifocal','#fff7ed','#a16207'),price:'₹8,436',description:'Premium multifocal toric lens for complex prescription needs.',tags:['Multifocal','Toric'],details:'This premium offering is tailored for wearers who need multifocal correction and astigmatism control in one lens. It offers premium comfort and stable visual clarity.',icon:'premium'},
-  {id:'soflens30',brand:'Bausch + Lomb',name:'SofLens 30',category:'Monthly',image:makeThumb('SofLens 30','#edf4ff','#2b5ea8'),price:'₹1,921',description:'Hydrogel monthly lens with reliable comfort and smooth wear.',tags:['Monthly','Hydrogel'],details:'SofLens 30 remains a dependable monthly choice for day-to-day wearers who value comfort, optics, and a balanced cost profile.',icon:'progressive'},
-  {id:'soflens90',brand:'Bausch + Lomb',name:'SofLens 90',category:'Monthly',image:makeThumb('SofLens 90','#f1f5fe','#3457b6'),price:'₹5,428',description:'Extended wear monthly option for users with longer replacement cycles.',tags:['Monthly','Value'],details:'SofLens 90 is a longer-life lens choice with broad market appeal for wearers seeking value, clarity, and a classic monthly lens experience.',icon:'progressive'},
-  {id:'biotrueOneDay',brand:'Bausch + Lomb',name:'Biotrue ONEday',category:'Daily',image:makeThumb('Biotrue','#edfdf5','#166534'),price:'₹2,765',description:'Premium daily disposable lens with comfort and breathability features.',tags:['Daily','Premium'],details:'Biotrue ONEday is a premium daily choice for users who prefer fresh lenses each day and want comfort that supports long periods of wear.',icon:'premium'},
-  {id:'iconnect30',brand:'Bausch + Lomb',name:'iConnect 30',category:'Daily',image:makeThumb('iConnect 30','#e0f2fe','#0f766e'),price:'₹1,045',description:'Daily disposable lens with convenience and value for active daily use.',tags:['Daily','Disposable'],details:'A value-focused daily lens that keeps lens hygiene simple and easy for busy users who prefer single-use comfort.',icon:'single'},
-  {id:'optima38',brand:'Bausch + Lomb',name:'Optima 38',category:'Annual',image:makeThumb('Optima 38','#f5f3ff','#4f46e5'),price:'₹1,218',description:'Annual lens value option for users seeking long-life economy and convenience.',tags:['Annual','Value'],details:'Optima 38 fits annual lens users who require affordability and practicality while maintaining daily visual satisfaction.',icon:'single'},
-  {id:'soflensToric',brand:'Bausch + Lomb',name:'SofLens Toric',category:'Toric',image:makeThumb('SofLens Toric','#ecfeff','#0f766e'),price:'₹2,268',description:'Toric monthly lens with dependable stabilization for astigmatism wearers.',tags:['Toric','Astigmatism'],details:'SofLens Toric is a trusted option for astigmatism-correction, maintaining stable vision across active everyday use.',icon:'blue'},
-  {id:'ultraToric',brand:'Bausch + Lomb',name:'Ultra Toric',category:'Toric',image:makeThumb('Ultra Toric','#e0f2fe','#0369a1'),price:'₹4,031',description:'A premium toric monthly lens with advanced control and stable performance.',tags:['Toric','Premium'],details:'Ultra Toric is suited to wearers who need premium astigmatism control and excellent comfort over extended monthly cycles.',icon:'blue'},
-  {id:'pureVision2Toric',brand:'Bausch + Lomb',name:'Pure Vision 2 Toric',category:'Toric',image:makeThumb('Pure Vision','#dbeafe','#1d4ed8'),price:'₹2,995',description:'Toric lens built to handle astigmatism while maintaining crisp optics.',tags:['Toric','Optics'],details:'This option is ideal for patients requiring sharper visual correction in toric prescriptions while preserving comfort.',icon:'blue'},
-  {id:'soflensMulti',brand:'Bausch + Lomb',name:'SofLens Multifocal',category:'Multifocal',image:makeThumb('Multifocal','#fff7ed','#c2410c'),price:'₹3,375',description:'Multifocal lens for wearers needing controlled near and distance viewing.',tags:['Multifocal','Near + Far'],details:'A reliable multifocal option for readers and professionals who switch between close-up and distance tasks frequently.',icon:'premium'},
-  {id:'ultraMultifocal',brand:'Bausch + Lomb',name:'Ultra Multifocal',category:'Multifocal',image:makeThumb('Ultra Multifocal','#fef3c7','#92400e'),price:'₹5,812',description:'Premium multifocal lens with enhanced visual comfort and function.',tags:['Multifocal','Premium'],details:'Ultra Multifocal supports sharp focus transitions across near, intermediate, and distance ranges. Recommended for premium vision correction needs.',icon:'premium'},
-  {id:'lacelleCircle',brand:'Bausch + Lomb',name:'Lacelle Circle',category:'Color',image:makeThumb('Lacelle Circle','#fdf2f8','#9d174d'),price:'₹515',description:'Color lens for a defined, natural-looking eye enhancement.',tags:['Color','Cosmetic'],details:'Lacelle Circle brings a stylish cosmetic lens option for users seeking subtle or stronger appearance enhancement.',icon:'single'},
-  {id:'lacellePremium',brand:'Bausch + Lomb',name:'Lacelle Premium',category:'Color',image:makeThumb('Lacelle Premium','#fce7f3','#a21caf'),price:'₹562',description:'Premium cosmetic lens with an elevated appearance-focused finish.',tags:['Color','Premium'],details:'Lacelle Premium offers a more refined cosmetic effect for those looking for a premium aesthetic lens look.',icon:'premium'},
-  {id:'renuFresh',brand:'Bausch + Lomb',name:'Renu Fresh',category:'Care',image:makeThumb('Renu Fresh','#ecfeff','#115e59'),price:'₹605',description:'Lens care solution for fresh, clean lens handling and everyday hygiene.',tags:['Care','Solution'],details:'An everyday lens care solution to support cleaning, disinfection, and a fresh lens experience between wear cycles.',icon:'single'}
-];
-const categories=['All','Monthly','Daily','Toric','Multifocal','Color','Care','Annual'];
-let selected='All';
-function renderFilters(){
-   document.getElementById('filters').innerHTML = categories.map(c => `<button class="filter ${c===selected?'active':''}" data-category="${c}">${c}</button>`).join('');
-   document.querySelectorAll('.filter').forEach(b => b.onclick = () => { selected = b.dataset.category; renderFilters(); render(); });
-}
-function render(){
-  const list = selected === 'All' ? products : products.filter(p => p.category === selected);
-  document.getElementById('heading').textContent = selected === 'All' ? 'All lenses' : `${selected} lenses`;
-  document.getElementById('count').textContent = `${list.length} option${list.length === 1 ? '' : 's'}`;
-  document.getElementById('catalog').innerHTML = list.length ? list.map(p => `
-    <article class="card">
-      <div class="product-image"><img src="${p.image}" alt="${p.name} lens image" loading="lazy" onerror="this.classList.add('broken')"><span class="fallback" aria-hidden="true">◉</span></div>
-      <div class="body">
-        <div class="brand">${icons[p.icon] || icons.single}${p.brand}</div>
-        <h3>${p.name}</h3>
-        <p class="desc">${p.description}</p>
-        <div class="meta">${p.tags.map(t => `<span class="pill">${t}</span>`).join('')}</div>
-        <div class="price">${p.price}</div>
-        <div class="actions">
-          <button class="btn secondary" data-details="${p.id}" aria-expanded="false">View details</button>
-          <a class="btn" href="https://relens.setmore.com" target="_blank" rel="noopener">Book now</a>
-        </div>
-        <div class="details" id="details-${p.id}"><strong>About this lens</strong><br>${p.details}</div>
+  <div class="topbar"><strong>Same-day delivery in Puducherry</strong> • Order before 4 PM • Bausch + Lomb contact lenses</div>
+
+  <div class="container">
+    <header class="nav">
+      <div class="brand" aria-label="ReLens home">
+        <div class="brand-mark">R</div>
+        <div><span class="light">Re</span><span class="gold">Lens</span></div>
       </div>
-    </article>
-  `).join('') : '<div class="empty">No lenses found in this category.</div>';
-  document.querySelectorAll('[data-details]').forEach(b => {
-    b.onclick = () => {
-      const d = document.getElementById('details-' + b.dataset.details);
-      const open = d.classList.toggle('open');
-      b.setAttribute('aria-expanded', open);
-    };
-  });
-}
-renderFilters();
-render();
-</script>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#catalog">Catalog</a>
+          <a href="#contact-lenses">Contact lenses</a>
+          <a href="#essilor">Essilor</a>
+          <a href="#prescription">Prescription</a>
+          <a href="#book">Book</a>
+        </nav>
+        <button class="pill-btn secondary">Login</button>
+      </div>
+    </header>
+
+    <section class="hero" id="catalog">
+      <div class="hero-copy">
+        <div class="eyebrow">Premium lens replacement</div>
+        <h1>Give your frame a second life.</h1>
+        <p class="lead">Premium ValueVis lens replacement for the frame you already love. Pick a lens, see the full price, and book doorstep pickup and delivery in Puducherry.</p>
+        <div class="hero-actions">
+          <a href="#catalog" class="btn-primary">Browse lenses</a>
+          <a href="#book" class="btn-secondary">Book pickup</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="mini-badge">ReLens • Bausch + Lomb contact lenses</div>
+        <div class="stat-row">
+          <div class="stat-box">
+            <strong>7</strong>
+            <span>ValueVis options</span>
+          </div>
+          <div class="stat-box">
+            <strong>14</strong>
+            <span>Bausch packs</span>
+          </div>
+          <div class="stat-box">
+            <strong>5</strong>
+            <span>Essilor services</span>
+          </div>
+        </div>
+        <div style="margin-top:18px;padding:16px;border-radius:16px;background:#f8fafc;border:1px solid var(--line)">
+          <strong style="font-size:16px;color:var(--navy);display:block;margin-bottom:8px">Same-day delivery</strong>
+          <div class="small">Order before 4:00 PM. Powers from -0.50 D to -6.00 D.</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>ValueVis lens catalog</h2>
+        <div class="small">Tap a lens to view pricing and add it to your booking.</div>
+      </div>
+      <div class="category-row" id="valuevisCategories"></div>
+      <div class="card-grid" id="valuevisGrid"></div>
+    </section>
+
+    <section class="section" id="contact-lenses">
+      <div class="section-head">
+        <h2>Bausch + Lomb contact lenses</h2>
+        <div class="small">Genuine Bausch + Lomb lenses at MRP 2026.</div>
+      </div>
+      <div class="category-row" id="blCategories"></div>
+      <div class="card-grid" id="blGrid"></div>
+    </section>
+
+    <section class="section" id="essilor">
+      <div class="section-head">
+        <h2>Essilor lenses</h2>
+        <div class="small">Summary pricing and service categories are shown. Ask ReLens for the latest MRP.</div>
+      </div>
+      <div class="card-grid" id="essilorGrid"></div>
+    </section>
+
+    <section class="section" id="prescription">
+      <div class="booking-grid">
+        <div class="panel-box">
+          <div class="section-head" style="margin-bottom:12px"><h2>Upload your prescription</h2></div>
+          <div class="small" style="margin-bottom:18px">Add a photo of your prescription and the ReLens optometrist checks it before any lens is ordered.</div>
+
+          <div class="upload-box">
+            <div>
+              <strong>Prescription photo</strong>
+              <div>Tap to take a photo or choose a file</div>
+              <div class="small" style="margin-top:6px">Photo or PDF, up to 3 files</div>
+            </div>
+          </div>
+
+          <div class="form-grid" style="margin-top:18px">
+            <div class="field"><label>Name</label><input type="text" placeholder="Your name" /></div>
+            <div class="field"><label>WhatsApp number</label><input type="tel" placeholder="+91 " /></div>
+            <div class="field"><label>Powers (optional)</label><input type="text" placeholder="SPH / CYL / AXIS / ADD" /></div>
+            <div class="field"><label>PD (mm)</label><input type="text" placeholder="e.g. 62" /></div>
+            <div class="field" style="grid-column:1 / -1"><label>Notes</label><textarea placeholder="Lens type, frame, anything the optometrist should know"></textarea></div>
+          </div>
+
+          <div class="bottom-note">On a phone, WhatsApp opens with your photo attached. On a computer, WhatsApp opens with your details and you attach the photo in the chat.</div>
+        </div>
+
+        <aside class="book-panel" id="book">
+          <div class="section-head" style="margin:0 0 8px"><h2>Book your lens replacement</h2></div>
+          <div class="small" style="margin-bottom:12px">Send the request on WhatsApp and the ReLens optometrist verifies your prescription before anything is fitted.</div>
+
+          <div id="selectedItems" class="book-empty">Nothing selected yet. Pick a price from the catalog.</div>
+
+          <div class="total-row">
+            <span class="small">Total</span>
+            <div class="total" id="totalPrice">₹0</div>
+          </div>
+
+          <div style="margin-top:16px; display:grid; gap:10px;">
+            <button class="wa-btn" id="waButton">Send on WhatsApp</button>
+            <button class="other-btn" id="setmoreButton">Book on Setmore</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="section-head">
+        <h2>Original price sheets</h2>
+        <div class="small">Tap an image to enlarge.</div>
+      </div>
+      <div class="card-grid">
+        <div class="lens-card" style="padding:0;overflow:hidden">
+          <div class="lens-thumb" style="height:220px;background:linear-gradient(135deg,#f4f7ff,#eaf0ff)"><img alt="Bausch + Lomb MRP list" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23edf3ff'/%3E%3Cg fill='%23061f3d' font-family='Arial'%3E%3Ctext x='60' y='120' font-size='50' font-weight='700'%3EBausch + Lomb%3C/text%3E%3Ctext x='60' y='200' font-size='36'%3EMRP list 2026%3C/text%3E%3Crect x='60' y='240' width='660' height='12' rx='6' fill='%23d4dff6'/%3E%3Crect x='60' y='280' width='600' height='12' rx='6' fill='%23d4dff6'/%3E%3Crect x='60' y='320' width='520' height='12' rx='6' fill='%23d4dff6'/%3E%3Crect x='60' y='360' width='640' height='12' rx='6' fill='%23d4dff6'/%3E%3C/g%3E%3C/svg%3E" /></div>
+          <div class="lens-body"><div class="label">ReLens × Bausch + Lomb</div><h3>Bausch + Lomb MRP list 2026</h3><p>Price sheet summary for contact lenses and care products.</p></div>
+        </div>
+        <div class="lens-card" style="padding:0;overflow:hidden">
+          <div class="lens-thumb" style="height:220px;background:linear-gradient(135deg,#f9f5ff,#efe8ff)"><img alt="ValueVis lens sheet" src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23f3ecff'/%3E%3Cg fill='%23061f3d' font-family='Arial'%3E%3Ctext x='60' y='120' font-size='50' font-weight='700'%3EValueVis%3C/text%3E%3Ctext x='60' y='200' font-size='36'%3EProgressive plans%3C/text%3E%3Crect x='60' y='240' width='640' height='12' rx='6' fill='%23e1d6ff'/%3E%3Crect x='60' y='280' width='610' height='12' rx='6' fill='%23e1d6ff'/%3E%3Crect x='60' y='320' width='460' height='12' rx='6' fill='%23e1d6ff'/%3E%3Crect x='60' y='360' width='680' height='12' rx='6' fill='%23e1d6ff'/%3E%3C/g%3E%3C/svg%3E" /></div>
+          <div class="lens-body"><div class="label">ValueVis</div><h3>Evolux Elite and lens sheet</h3><p>Premium progressive product sheet with pricing details.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">ReLens • Puducherry • Lens replacement • Premium quality • Pickup & delivery</footer>
+
+  <script>
+    const valueVisCatalog = [
+      { name:'Evolux Elite', type:'Flagship', category:'Premium', price:10190, desc:'Absolute precision across every focal zone with BlueCut+ comfort.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23061f3d%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%230d4b7d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Ccircle cx=%22210%22 cy=%22220%22 r=%22110%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Ccircle cx=%22590%22 cy=%22200%22 r=%22135%22 fill=%22rgba(255,255,255,.12)%22/%3E%3Cg transform=%22translate(130 100)%22%3E%3Ccircle cx=%2260%22 cy=%22140%22 r=%2250%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Ccircle cx=%22230%22 cy=%22140%22 r=%2250%22 fill=%22rgba(255,255,255,.2)%22/%3E%3Cpath d=%22M60 140 H230%22 stroke=%22rgba(255,255,255,.8)%22 stroke-width=%2212%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M145 95 V185%22 stroke=%22rgba(255,255,255,.9)%22 stroke-width=%2210%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3Ctext x=%2258%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3EEvolux Elite%3C/text%3E%3C/svg%3E' },
+      { name:'Evolux', type:'European tech', category:'Premium', price:6990, desc:'Wider field of view with minimal peripheral distortion.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%230b375f%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%235f71b8%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Ccircle cx=%22220%22 cy=%22220%22 r=%2290%22 fill=%22rgba(255,255,255,.14)%22/%3E%3Ccircle cx=%22590%22 cy=%22200%22 r=%2278%22 fill=%22rgba(255,255,255,.12)%22/%3E%3Cg transform=%22translate(160 110)%22%3E%3Ccircle cx=%2250%22 cy=%22140%22 r=%2245%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Ccircle cx=%22220%22 cy=%22140%22 r=%2245%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Cpath d=%22M50 140 H220%22 stroke=%22rgba(255,255,255,.8)%22 stroke-width=%2210%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M135 95 V185%22 stroke=%22rgba(255,255,255,.9)%22 stroke-width=%228%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3Ctext x=%2256%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3EEvolux%3C/text%3E%3C/svg%3E' },
+      { name:'Customized', type:'American freeform', category:'Premium', price:3290, desc:'Advanced freeform technology for smooth progression and all-day comfort.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%230d2a5e%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%230f5a8d%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Cg transform=%22translate(120 120)%22%3E%3Ccircle cx=%2240%22 cy=%22160%22 r=%2260%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Ccircle cx=%22240%22 cy=%22160%22 r=%2260%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Cpath d=%22M40 160 H240%22 stroke=%22rgba(255,255,255,.8)%22 stroke-width=%2212%22/%3E%3Cpath d=%22M140 102 V218%22 stroke=%22rgba(255,255,255,.9)%22 stroke-width=%2210%22/%3E%3C/g%3E%3Ctext x=%2255%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3ECustomized%3C/text%3E%3C/svg%3E' },
+      { name:'Venture', type:'Freeform progressive', category:'Progressive', price:2290, desc:'Next-level progressives with smoother transitions and better peripheral control.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23061f3d%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%230c4d7a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Cg transform=%22translate(160 120)%22%3E%3Ccircle cx=%2255%22 cy=%22130%22 r=%2248%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Ccircle cx=%22220%22 cy=%22130%22 r=%2248%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Cpath d=%22M55 130 H220%22 stroke=%22rgba(255,255,255,.8)%22 stroke-width=%2210%22 stroke-linecap=%22round%22/%3E%3Cpath d=%22M140 95 V170%22 stroke=%22rgba(255,255,255,.9)%22 stroke-width=%228%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3Ctext x=%2258%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3EVenture%3C/text%3E%3C/svg%3E' },
+      { name:'Entice', type:'Entry progressive', category:'Budget', price:1590, desc:'Essential clarity for everyday vision in the ValueVis range.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%230b274d%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%23166d89%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Cg transform=%22translate(165 130)%22%3E%3Ccircle cx=%2250%22 cy=%22120%22 r=%2242%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Ccircle cx=%22210%22 cy=%22120%22 r=%2242%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Cpath d=%22M50 120 H210%22 stroke=%22rgba(255,255,255,.8)%22 stroke-width=%229%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3Ctext x=%2258%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3EEntice%3C/text%3E%3C/svg%3E' },
+      { name:'DayNite', type:'Adaptive light', category:'Premium', price:2590, desc:'Lenses that adapt to changing light with UV protection and bright clarity.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23092d5d%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%230a7ca3%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Cg transform=%22translate(150 110)%22%3E%3Ccircle cx=%2254%22 cy=%22140%22 r=%2254%22 fill=%22rgba(255,255,255,.2)%22/%3E%3Ccircle cx=%22225%22 cy=%22140%22 r=%2254%22 fill=%22rgba(255,255,255,.18)%22/%3E%3Cpath d=%22M54 140 H225%22 stroke=%22rgba(255,255,255,.8)%22 stroke-width=%2212%22/%3E%3Cpath d=%22M140 90 V190%22 stroke=%22rgba(255,255,255,.9)%22 stroke-width=%2210%22/%3E%3C/g%3E%3Ctext x=%2258%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3EDayNite%3C/text%3E%3C/svg%3E' },
+      { name:'MR-8 1.60', type:'Premium material', category:'Premium', price:0, desc:'Strength without bulk. Up to 20% thinner than standard lens. Ask ReLens for the price for your prescription.', image:'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22520%22 viewBox=%220 0 800 520%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 stop-color=%22%230d2f63%22/%3E%3Cstop offset=%22100%25%22 stop-color=%22%23469ac7%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22800%22 height=%22520%22 fill=%22url(%23g)%22 rx=%2232%22/%3E%3Cg transform=%22translate(150 60)%22%3E%3Crect x=%2220%22 y=%22140%22 width=%2260%22 height=%22210%22 rx=%2230%22 fill=%22rgba(255,255,255,.22)%22/%3E%3Crect x=%22240%22 y=%22140%22 width=%2260%22 height=%22210%22 rx=%2230%22 fill=%22rgba(255,255,255,.22)%22/%3E%3Cpath d=%22M60 210 H260%22 stroke=%22rgba(255,255,255,.75)%22 stroke-width=%2216%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3Ctext x=%2258%22 y=%22438%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2250%22 font-weight=%22700%22%3EMR-8 1.60%3C/text%3E%3C/svg%3E' }
+    ];
+
+    const blCatalog = [
+      { name:'Bio True ONE Day 30 lens', brand:'Bausch + Lomb', category:'Daily', price:2765, detail:'Fresh hypergel lens every day.' },
+      { name:'Bio True ONE Day 5 lens', brand:'Bausch + Lomb', category:'Daily', price:553, detail:'Travel-friendly pack with the same comfort.' },
+      { name:'Bio True ONE Day Toric 30 lens', brand:'Bausch + Lomb', category:'Toric', price:2765, detail:'Astigmatism-friendly daily lens.' },
+      { name:'Bio True ONE Day Multifocal 30 lens', brand:'Bausch + Lomb', category:'Multifocal', price:4500, detail:'Daily multifocal lens for near and distance clarity.' },
+      { name:'Bio True ONE Day Multifocal 5 lens', brand:'Bausch + Lomb', category:'Multifocal', price:825, detail:'Lite daily pack with multifocal comfort.' },
+      { name:'Ultra 6 lens', brand:'Bausch + Lomb', category:'Monthly', price:4031, detail:'Monthly silicone hydrogel lens.' },
+      { name:'Pure Vision 2 6 lens', brand:'Bausch + Lomb', category:'Monthly', price:2526, detail:'Reliable monthly lens with broad comfort.' },
+      { name:'Medivision Pro 3 lens', brand:'Bausch + Lomb', category:'Monthly', price:1968, detail:'Monthly lens option for comfort and value.' },
+      { name:'Medivision 6 lens', brand:'Bausch + Lomb', category:'Monthly', price:1592, detail:'Budget-friendly monthly lens.' },
+      { name:'SL 59 6 lens', brand:'Bausch + Lomb', category:'Monthly', price:1645, detail:'Good monthly fit and comfort profile.' },
+      { name:'Ultra Toric 6 lens', brand:'Bausch + Lomb', category:'Toric', price:4031, detail:'Toric monthly lens with stable visual performance.' },
+      { name:'Pure Vision 2 Toric 6 lens', brand:'Bausch + Lomb', category:'Toric', price:2995, detail:'Stable toric correction and comfort.' },
+      { name:'Ultra MF 6 lens', brand:'Bausch + Lomb', category:'Multifocal', price:5812, detail:'Multifocal monthly option.' },
+      { name:'Pure Vision 2 MF 6 lens', brand:'Bausch + Lomb', category:'Multifocal', price:4593, detail:'Multifocal monthly lens for daily use.' },
+      { name:'Ultra Multifocal Toric 6 lens', brand:'Bausch + Lomb', category:'Multifocal', price:8436, detail:'Premium simultaneous multifocal + toric support.' },
+      { name:'iConnect 30 lens', brand:'Bausch + Lomb', category:'Value', price:1045, detail:'Everyday value lens in 30-pack.' },
+      { name:'iConnect 10 lens', brand:'Bausch + Lomb', category:'Value', price:395, detail:'Shorter pack for convenient rotation.' },
+      { name:'iConnect 6 lens', brand:'Bausch + Lomb', category:'Value', price:665, detail:'Value pack for daily wear confidence.' },
+      { name:'iConnect 3 lens', brand:'Bausch + Lomb', category:'Value', price:399, detail:'Compact trial and replacement option.' },
+      { name:'iConnect OxyRich 3 lens', brand:'Bausch + Lomb', category:'Value', price:825, detail:'Higher oxygen comfort value lens.' },
+      { name:'SofLens 30 lens', brand:'Bausch + Lomb', category:'Soft', price:1921, detail:'Soft hydrogel monthly lens.' },
+      { name:'SofLens 90 lens', brand:'Bausch + Lomb', category:'Soft', price:5428, detail:'Longer-life soft lens for monthly use.' },
+      { name:'SofLens Toric 30 lens', brand:'Bausch + Lomb', category:'Toric', price:2146, detail:'Toric soft lens for astigmatism support.' },
+      { name:'SofLens Toric 6 lens', brand:'Bausch + Lomb', category:'Toric', price:2268, detail:'Six-pack toric option.' },
+      { name:'SofLens Toric 1 lens', brand:'Bausch + Lomb', category:'Toric', price:403, detail:'Single lens option.' },
+      { name:'Soft Lens MF 6 lens', brand:'Bausch + Lomb', category:'Multifocal', price:3375, detail:'Multifocal soft lens for daily flexibility.' }
+    ];
+
+    const essilorCatalog = [
+      { name:'Crizal', type:'Anti-reflective coating', price:0, detail:'Reduces glare, scratches, water, and smudges. Ask ReLens for current MRP.' },
+      { name:'Eyezen', type:'Single vision for screens', price:0, detail:'Optimised for digital life and reduced eyestrain.' },
+      { name:'Varilux', type:'Progressive lenses', price:0, detail:'Essilor progressive design with far, intermediate and near support.' },
+      { name:'Transitions GEN S', type:'Light-adaptive', price:0, detail:'Darkens outdoors, returns clear indoors, blocks UV and blue-violet light.' },
+      { name:'Stellest', type:'Myopia control for kids', price:0, detail:'For children and myopia management needs under clinician guidance.' }
+    ];
+
+    const valuevisCategories = ['All', 'Premium', 'Progressive', 'Budget'];
+    const blCategories = ['All', 'Daily', 'Monthly', 'Toric', 'Multifocal', 'Soft', 'Value'];
+
+    const selected = new Map();
+
+    function money(n){ return '₹' + n.toLocaleString('en-IN'); }
+
+    function renderValueVis(filter='All'){
+      const list = filter === 'All' ? valueVisCatalog : valueVisCatalog.filter(item => item.category === filter);
+      const container = document.getElementById('valuevisGrid');
+      container.innerHTML = list.map(item => `
+        <article class="lens-card">
+          <div class="lens-thumb"><img src="${item.image}" alt="${item.name}" /></div>
+          <div class="lens-body">
+            <div class="label">${item.type}</div>
+            <h3>${item.name}</h3>
+            <p>${item.desc}</p>
+            <div class="chip-row"><span class="chip">${item.category}</span></div>
+            <div class="price-row">
+              <div>
+                <div class="small">From</div>
+                <div class="price">${item.price ? money(item.price) : 'Price on request'}</div>
+              </div>
+              <button class="inline-btn ${item.price ? '' : 'secondary'}" data-kind="valuevis" data-name="${item.name}" data-price="${item.price || 0}" data-type="${item.category}">${item.price ? 'Add' : 'Ask for price'}</button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderBL(filter='All'){
+      const list = filter === 'All' ? blCatalog : blCatalog.filter(item => item.category === filter);
+      const container = document.getElementById('blGrid');
+      container.innerHTML = list.map(item => `
+        <article class="lens-card">
+          <div class="lens-thumb" style="background:linear-gradient(135deg,#edf7ff,#eef7fb)"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='520' viewBox='0 0 800 520'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23061f3d'/%3E%3Cstop offset='100%25' stop-color='%230d5d8a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='520' fill='url(%23g)' rx='32'/%3E%3Ccircle cx='200' cy='220' r='90' fill='rgba(255,255,255,.15)'/%3E%3Ccircle cx='580' cy='200' r='120' fill='rgba(255,255,255,.12)'/%3E%3Cg transform='translate(160 120)'%3E%3Ccircle cx='60' cy='130' r='48' fill='rgba(255,255,255,.18)'/%3E%3Ccircle cx='220' cy='130' r='48' fill='rgba(255,255,255,.18)'/%3E%3Cpath d='M60 130 H220' stroke='rgba(255,255,255,.8)' stroke-width='10' stroke-linecap='round'/%3E%3C/g%3E%3Ctext x='58' y='440' fill='white' font-family='Arial' font-size='50' font-weight='700'%3E${encodeURIComponent(item.name).replace(/%20/g,' ')}%3C/text%3E%3C/svg%3E" alt="${item.name}" /></div>
+          <div class="lens-body">
+            <div class="label">${item.category}</div>
+            <h3>${item.name}</h3>
+            <p>${item.detail}</p>
+            <div class="chip-row"><span class="chip">${item.brand}</span></div>
+            <div class="price-row">
+              <div>
+                <div class="small">MRP</div>
+                <div class="price">${money(item.price)}</div>
+              </div>
+              <button class="inline-btn" data-kind="bausch" data-name="${item.name}" data-price="${item.price}" data-type="${item.category}">Add</button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderEssilor(){
+      const container = document.getElementById('essilorGrid');
+      container.innerHTML = essilorCatalog.map(item => `
+        <article class="lens-card">
+          <div class="lens-thumb" style="background:linear-gradient(135deg,#f7f5ff,#f0ebff)"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='520' viewBox='0 0 800 520'%3E%3Crect width='800' height='520' fill='%23f4edff'/%3E%3Cg fill='%23061f3d' font-family='Arial' font-weight='700'%3E%3Ctext x='70' y='130' font-size='52'%3E${item.name}%3C/text%3E%3Ctext x='70' y='210' font-size='26'%3E${item.type}%3C/text%3E%3Crect x='70' y='260' width='640' height='12' rx='6' fill='%23ddd1ff'/%3E%3Crect x='70' y='300' width='520' height='12' rx='6' fill='%23ddd1ff'/%3E%3Crect x='70' y='340' width='610' height='12' rx='6' fill='%23ddd1ff'/%3E%3C/g%3E%3C/svg%3E" alt="${item.name}" /></div>
+          <div class="lens-body">
+            <div class="label">${item.type}</div>
+            <h3>${item.name}</h3>
+            <p>${item.detail}</p>
+            <div class="price-row">
+              <div>
+                <div class="small">MRP</div>
+                <div class="price">Ask for MRP</div>
+              </div>
+              <button class="inline-btn secondary" data-kind="essilor" data-name="${item.name}" data-price="0" data-type="${item.type}">Ask</button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderTagButtons(){
+      const val = document.getElementById('valuevisCategories');
+      val.innerHTML = valuevisCategories.map(cat => `<button class="tag ${cat === 'All' ? 'active' : ''}" data-category="${cat}">${cat}</button>`).join('');
+      val.querySelectorAll('.tag').forEach(btn => {
+        btn.addEventListener('click', () => {
+          val.querySelectorAll('.tag').forEach(tag => tag.classList.remove('active'));
+          btn.classList.add('active');
+          renderValueVis(btn.dataset.category);
+        });
+      });
+
+      const bl = document.getElementById('blCategories');
+      bl.innerHTML = blCategories.map(cat => `<button class="tag ${cat === 'All' ? 'active' : ''}" data-category="${cat}">${cat}</button>`).join('');
+      bl.querySelectorAll('.tag').forEach(btn => {
+        btn.addEventListener('click', () => {
+          bl.querySelectorAll('.tag').forEach(tag => tag.classList.remove('active'));
+          btn.classList.add('active');
+          renderBL(btn.dataset.category);
+        });
+      });
+    }
+
+    function updateSelectionUI(){
+      const items = [...selected.values()];
+      const total = items.reduce((sum,item)=>sum + Number(item.price),0);
+      const holder = document.getElementById('selectedItems');
+      document.getElementById('totalPrice').textContent = money(total);
+
+      if(!items.length){
+        holder.className = 'book-empty';
+        holder.textContent = 'Nothing selected yet. Pick a price from the catalog.';
+        return;
+      }
+
+      holder.className = 'book-list';
+      holder.innerHTML = items.map(item => `
+        <div class="book-item">
+          <div>
+            <strong>${item.name}</strong>
+            <div class="small">${item.type}</div>
+          </div>
+          <div><strong>${money(item.price)}</strong></div>
+        </div>
+      `).join('');
+    }
+
+    function bindAddButtons(){
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-name]');
+        if(!btn) return;
+        const name = btn.dataset.name;
+        const price = Number(btn.dataset.price || 0);
+        const type = btn.dataset.type || 'selection';
+        if(price === 0){
+          if(btn.dataset.kind === 'essilor') return;
+        }
+        if(selected.has(name)) selected.delete(name);
+        else selected.set(name,{name,price,type});
+        updateSelectionUI();
+      });
+    }
+
+    function buildWhatsAppText(){
+      const items = [...selected.values()];
+      if(!items.length) return 'Hello ReLens, I would like to book a lens replacement consultation.';
+      const list = items.map(item => `- ${item.name} (${money(item.price)})`).join('\n');
+      return `Hello ReLens, I would like to book lens replacement.\n\nSelected items:\n${list}\n\nPlease confirm availability and prescription verification.`;
+    }
+
+    function bindBookingButtons(){
+      document.getElementById('waButton').addEventListener('click', () => {
+        const text = encodeURIComponent(buildWhatsAppText());
+        window.open(`https://wa.me/919488353749?text=${text}`, '_blank');
+      });
+      document.getElementById('setmoreButton').addEventListener('click', () => {
+        window.open('https://relens.setmore.com', '_blank');
+      });
+    }
+
+    renderTagButtons();
+    renderValueVis('All');
+    renderBL('All');
+    renderEssilor();
+    bindAddButtons();
+    updateSelectionUI();
+    bindBookingButtons();
+  </script>
 </body>
 </html>
