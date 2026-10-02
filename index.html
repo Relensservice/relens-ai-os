@@ -44,7 +44,7 @@
     .trust-badges { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
     .trust-badge { font-size: 0.78rem; font-weight: 600; color: #166534; background: #f0fdf4; padding: 4px 12px; border-radius: 9999px; border: 1px solid #bbf7d0; }
 
-    /* Brand Overview Grid */
+    /* Brand Showcase Cards */
     .brand-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
     .brand-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
     .brand-tag { font-size: 0.7rem; font-weight: 700; color: var(--primary); text-transform: uppercase; margin-bottom: 0.25rem; }
@@ -139,7 +139,7 @@
     .qty-stepper { display: inline-flex; align-items: center; border: 1px solid var(--border); border-radius: 6px; }
     .qty-stepper button { background: transparent; border: none; padding: 4px 10px; cursor: pointer; font-weight: 700; }
 
-    /* Prescription & Addons */
+    /* Prescription Section */
     .cart-rx-section { padding: 1rem 1.25rem; background: #fafafa; border-top: 1px solid var(--border); }
     .rx-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
     .rx-tab-toggle { display: flex; background: var(--slate-100); border-radius: 6px; padding: 2px; }
@@ -158,6 +158,7 @@
     .index-rec-box.rec-ultra { background: #fdf2f8; border-left-color: #ec4899; }
     .rec-filter-btn { margin-top: 0.5rem; width: 100%; padding: 0.4rem; font-size: 0.72rem; font-weight: 700; background: var(--slate-900); color: var(--white); border: none; border-radius: 6px; cursor: pointer; }
 
+    /* Addons */
     .cart-addons-section { padding: 1rem 1.25rem; background: var(--slate-100); border-top: 1px solid var(--border); }
     .addon-card { display: flex; gap: 0.65rem; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 0.65rem 0.8rem; cursor: pointer; margin-top: 0.5rem; }
     .addon-card:has(input:checked) { border-color: var(--primary); background: #f0f9ff; }
@@ -166,15 +167,36 @@
     .addon-price { color: var(--primary); font-weight: 700; }
     .addon-desc { font-size: 0.7rem; color: var(--slate-600); }
 
+    /* Appointment Slot */
     .cart-appointment-section { padding: 1rem 1.25rem; background: var(--white); border-top: 1px solid var(--border); }
     .slot-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.45rem; margin-top: 0.4rem; }
     .slot-pill input { display: none; }
     .slot-pill span { display: block; text-align: center; font-size: 0.72rem; padding: 0.45rem 0.2rem; background: var(--slate-100); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
     .slot-pill input:checked + span { background: var(--primary); color: var(--white); border-color: var(--primary); font-weight: 600; }
 
+    /* Promo Code Section */
+    .cart-promo-section { padding: 1rem 1.25rem; background: #f8fafc; border-top: 1px solid var(--border); }
+    .promo-header { margin-bottom: 0.4rem; }
+    .promo-title { font-size: 0.8rem; font-weight: 700; color: var(--slate-800); }
+    .promo-input-row { display: flex; gap: 0.5rem; }
+    .promo-input-row input { flex-grow: 1; padding: 0.5rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.825rem; text-transform: uppercase; font-weight: 600; outline: none; }
+    .promo-input-row input:focus { border-color: var(--primary); }
+    .promo-apply-btn { background: var(--slate-900); color: var(--white); border: none; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+    .quick-promo-pills { display: flex; align-items: center; gap: 0.35rem; margin-top: 0.45rem; flex-wrap: wrap; }
+    .promo-hint { font-size: 0.68rem; color: var(--slate-400); font-weight: 600; }
+    .quick-promo-pills button { background: var(--white); border: 1px dashed #cbd5e1; border-radius: 4px; padding: 2px 6px; font-size: 0.68rem; cursor: pointer; color: var(--primary-dark); font-weight: 600; }
+    .promo-feedback { font-size: 0.75rem; font-weight: 600; margin-top: 0.4rem; padding: 4px 8px; border-radius: 4px; }
+    .promo-feedback.success { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+    .promo-feedback.error { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+
+    /* Drawer Footer & Cost Breakdown */
     .cart-footer { padding: 1.25rem; border-top: 1px solid var(--border); background: var(--white); }
-    .total-row { display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem; }
-    .checkout-whatsapp-btn { width: 100%; background: var(--wa-green); color: var(--white); border: none; padding: 0.85rem; font-size: 0.95rem; font-weight: 700; border-radius: 10px; cursor: pointer; }
+    .cost-breakdown { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.85rem; }
+    .breakdown-row { display: flex; justify-content: space-between; font-size: 0.825rem; color: var(--slate-600); }
+    .discount-row { color: #166534; font-weight: 600; }
+    .discount-amount { font-weight: 700; }
+    .total-row { display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 800; padding-top: 0.4rem; border-top: 1px solid var(--border); }
+    .checkout-whatsapp-btn { width: 100%; background: var(--wa-green); color: var(--white); border: none; padding: 0.85rem; font-size: 0.95rem; font-weight: 700; border-radius: 10px; cursor: pointer; margin-top: 0.5rem; }
     .hidden { display: none !important; }
   </style>
 </head>
@@ -223,9 +245,9 @@
         <p>Effortlessly clear indoors and reactive dark outdoors for driving and sunny environments.</p>
       </div>
       <div class="brand-card">
-        <div class="brand-tag">HIGH IMPACT & THIN</div>
-        <h3>1.60 MR-8 & 1.74 Slim</h3>
-        <p>Up to 20% thinner edge profile, high tensile strength for rimless and sports frames.</p>
+        <div class="brand-tag">CONTACT OPTICS</div>
+        <h3>Bausch + Lomb 2026</h3>
+        <p>Ultra Silicone Hydrogels, Biotrue Hypergels, and Renu solutions with doorstep guidance.</p>
       </div>
     </section>
 
@@ -257,18 +279,20 @@
     <!-- Interactive Lens Catalog -->
     <section class="catalog-section">
       <div class="catalog-section-header">
-        <h2>ValueVis Optical Catalog (July 2026)</h2>
+        <h2>Optical Catalog (2026 Price List)</h2>
       </div>
 
       <div class="catalog-filters" id="filterContainer">
         <button class="filter-btn active" data-filter="all">All Lenses</button>
-        <button class="filter-btn" data-filter="Evolux Elite">Evolux Elite (Flagship)</button>
-        <button class="filter-btn" data-filter="Evolux">Evolux Progressive</button>
+        <button class="filter-btn" data-filter="Evolux Elite">Evolux Elite</button>
+        <button class="filter-btn" data-filter="Evolux">Evolux</button>
         <button class="filter-btn" data-filter="Customized">Customized Freeform</button>
         <button class="filter-btn" data-filter="Venture">Venture / Entice</button>
         <button class="filter-btn" data-filter="Single Vision">Single Vision Rx</button>
         <button class="filter-btn" data-filter="FSV Stock">FSV & Stock PALs</button>
         <button class="filter-btn" data-filter="Bifocals">Rx Bifocals</button>
+        <button class="filter-btn" data-filter="Contact Lenses">Contact Lenses (B+L)</button>
+        <button class="filter-btn" data-filter="Lens Care">Solutions & Drops</button>
       </div>
 
       <div class="catalog-grid" id="catalogGrid"></div>
@@ -318,7 +342,7 @@
 
     <div class="ai-chat-body" id="aiChatBody">
       <div class="ai-msg bot">
-        Hello! I'm your ReLens Vision Advisor. Tell me about your routine or prescription (e.g., <em>"I drive at night and work on laptops with -3.50 power"</em>) and I will match the exact ValueVis lens package.
+        Hello! I'm your ReLens Vision Advisor. Tell me about your routine or prescription (e.g., <em>"I drive at night and work on laptops with -3.50 power"</em>) and I will match the exact lens package.
       </div>
     </div>
 
@@ -544,16 +568,44 @@
           </label>
         </div>
       </div>
+
+      <!-- Promo Code Section -->
+      <div class="cart-promo-section">
+        <div class="promo-header">
+          <span class="promo-title">🏷️ Have a Promo Code?</span>
+        </div>
+        <div class="promo-input-row">
+          <input type="text" id="promoCodeInput" placeholder="Enter code (e.g. RELENS10)" />
+          <button type="button" class="promo-apply-btn" onclick="applyPromoCode()">Apply</button>
+        </div>
+        <div class="quick-promo-pills">
+          <span class="promo-hint">Try:</span>
+          <button type="button" onclick="quickApplyPromo('RELENS10')">RELENS10 (10% Off)</button>
+          <button type="button" onclick="quickApplyPromo('DOORSTEPFREE')">DOORSTEPFREE (₹200 Off)</button>
+          <button type="button" onclick="quickApplyPromo('PROG500')">PROG500 (₹500 Off PALs)</button>
+        </div>
+        <div id="promoFeedback" class="promo-feedback hidden"></div>
+      </div>
     </div>
 
     <!-- Drawer Footer -->
     <div class="cart-footer">
-      <div class="total-row">
-        <span>Estimated Total</span>
-        <span id="cartTotalPrice" style="color: var(--primary);">₹0</span>
+      <div class="cost-breakdown">
+        <div class="breakdown-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotalPrice">₹0</span>
+        </div>
+        <div class="breakdown-row discount-row hidden" id="discountDisplayRow">
+          <span>Discount (<span id="appliedPromoBadge">CODE</span>)</span>
+          <span class="discount-amount" id="cartDiscountPrice">-₹0</span>
+        </div>
+        <div class="total-row">
+          <span>Estimated Total</span>
+          <span id="cartTotalPrice" style="color: var(--primary);">₹0</span>
+        </div>
       </div>
       <button class="checkout-whatsapp-btn" onclick="checkoutWhatsApp()">
-        Book Doorstep Service via WhatsApp
+        Confirm & Book via WhatsApp
       </button>
     </div>
   </aside>
@@ -562,7 +614,7 @@
   <script>
     const RELENS_STORAGE_KEY = "relens_cart_session_v1";
 
-    // ValueVis Official July 2026 Price List Catalog
+    // Full 2026 Price List Catalog
     const catalogData = [
       // 1. EVOLUX ELITE (Flagship Series)
       {
@@ -572,7 +624,7 @@
         series: "Evolux Elite (EE)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
         features: ["Flagship panoramic field of view", "Bluvex ARC signature blue finish", "Laser authenticated (EE)"],
         price: 10190
       },
@@ -583,7 +635,7 @@
         series: "Evolux Elite (EE)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Unmatched clarity across every focal zone", "Optix ARC green reflection", "Instant adaptation comfort"],
         price: 10690
       },
@@ -594,7 +646,7 @@
         series: "Evolux Elite (EE)",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
         features: ["Maximum corridor width", "MR-8 high impact strength", "Ultra-smooth visual flow"],
         price: 12790
       },
@@ -605,7 +657,7 @@
         series: "Evolux Elite (EE)",
         index: 1.67,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1584447141399-be2c178221d7?auto=format&fit=crop&w=700&q=80",
         features: ["Ultra-thin edges for high additions", "Optix ARC coating", "Luxury visual balance"],
         price: 14490
       },
@@ -616,7 +668,7 @@
         series: "Evolux Elite (EE)",
         index: 1.74,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1516715094483-75da7dee9758?auto=format&fit=crop&w=700&q=80",
         features: ["Flattest & slimmest progressive on market", "Precision surfaced for high Rx", "Authentic engraving (EE)"],
         price: 26190
       },
@@ -627,7 +679,7 @@
         series: "Evolux Elite (EE)",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Flagship optics + fast photochromic", "Effortless transition in & outdoors", "Bluvex ARC signature reflection"],
         price: 17690
       },
@@ -640,7 +692,7 @@
         series: "Evolux (EX)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
         features: ["Advanced European Technology", "Refined blue reflection finish", "Extended field of vision (Far/Mid/Near)"],
         price: 6990
       },
@@ -651,7 +703,7 @@
         series: "Evolux (EX)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Green reflection coating", "Reduced peripheral swim", "Reliable all-day comfort"],
         price: 7490
       },
@@ -662,7 +714,7 @@
         series: "Evolux (EX)",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
         features: ["MR-8 premium strength", "20% thinner edge profile", "Ideal for daily drivers & screen users"],
         price: 9390
       },
@@ -673,7 +725,7 @@
         series: "Evolux (EX)",
         index: 1.67,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1584447141399-be2c178221d7?auto=format&fit=crop&w=700&q=80",
         features: ["Thin & lightweight for higher prescriptions", "Bluvex ARC reflection", "Authentic engraving (EX)"],
         price: 10690
       },
@@ -684,7 +736,7 @@
         series: "Evolux (EX)",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Intelligent light transition", "All-day clear indoors to dark outdoors", "Optix ARC green coating"],
         price: 13890
       },
@@ -697,7 +749,7 @@
         series: "Customized (CM)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["American Freeform design", "Optimized clarity across distances", "HMC Green multi-coat"],
         price: 3990
       },
@@ -708,7 +760,7 @@
         series: "Customized (CM)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
         features: ["Balanced corridor transition", "Blue-light screen protection", "Laser authenticated (CM)"],
         price: 4390
       },
@@ -719,7 +771,7 @@
         series: "Customized (CM)",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
         features: ["MR-8 premium substrate", "Impact resistance for rimless frames", "Smooth visual progression"],
         price: 6790
       },
@@ -730,7 +782,7 @@
         series: "Customized (CM)",
         index: 1.67,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1584447141399-be2c178221d7?auto=format&fit=crop&w=700&q=80",
         features: ["Slim edge profile for higher powers", "Digital back-surface surfacing", "Reduced eye minification"],
         price: 8390
       },
@@ -741,7 +793,7 @@
         series: "Customized (CM)",
         index: 1.74,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1516715094483-75da7dee9758?auto=format&fit=crop&w=700&q=80",
         features: ["Top-tier 1.74 thinness", "HMC Green ARC", "Flattest custom freeform profile"],
         price: 19790
       },
@@ -752,7 +804,7 @@
         series: "Customized (CM)",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Dual protection: Screens + Sunlight", "Intelligent tint adaptation", "HMC Green coating"],
         price: 11490
       },
@@ -765,7 +817,7 @@
         series: "Entice",
         index: 1.50,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Essential clarity for everyday vision", "Standard corridor design", "Economic entry-level progressive"],
         price: 2090
       },
@@ -776,7 +828,7 @@
         series: "Venture (VT)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
         features: ["Wider visual zones", "Smoother transitions", "Authentic engraving (VT)"],
         price: 3090
       },
@@ -787,7 +839,7 @@
         series: "Venture (VT)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
         features: ["Everyday performance", "Digital screen comfort", "HMC Green coat"],
         price: 3490
       },
@@ -798,7 +850,7 @@
         series: "Venture (VT)",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
         features: ["Thin & light for moderate powers", "Optimized computer intermediate corridor", "Quicker adaptation"],
         price: 5390
       },
@@ -809,7 +861,7 @@
         series: "Venture (VT)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Outdoor light adaptation", "Screen glare filtration", "HMC Green multi-coat"],
         price: 4490
       },
@@ -822,7 +874,7 @@
         series: "Single Vision Rx",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Custom surfaced precision optics", "Scratch resistance & UV block", "HMC Green coating"],
         price: 3290
       },
@@ -833,7 +885,7 @@
         series: "Single Vision Rx",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
         features: ["High energy screen filtration", "Hydrophobic easy-clean", "Surfaced power up to -8.00 D"],
         price: 3590
       },
@@ -844,7 +896,7 @@
         series: "Single Vision Rx",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
         features: ["MR-8 impact resistance", "20% thinner edge profile", "Best for rimless & supra frames"],
         price: 5790
       },
@@ -855,7 +907,7 @@
         series: "Single Vision Rx",
         index: 1.67,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1584447141399-be2c178221d7?auto=format&fit=crop&w=700&q=80",
         features: ["Aspheric design for powers up to -12.00 D", "HMC Green multi-coat", "Minimal eye minification"],
         price: 7390
       },
@@ -866,7 +918,7 @@
         series: "Single Vision Rx",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Adaptive indoor-to-outdoor clarity", "MR-8 durability", "HMC Green ARC"],
         price: 8290
       },
@@ -879,7 +931,7 @@
         series: "Precious Blue",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Exact power stock (+4.00 to -6.00 / Cyl -2.00)", "HMC Blue reflection", "Dust & water repellent"],
         price: 1490
       },
@@ -890,7 +942,7 @@
         series: "Precious Blue",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
         features: ["BlueCut digital screen protection", "HMC Blue coating", "Affordable daily stock lens"],
         price: 1590
       },
@@ -901,7 +953,7 @@
         series: "Precious Blue",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Fast reacting sunlight darkening", "HMC Blue reflection", "All-in-one spectacles + shades"],
         price: 1890
       },
@@ -912,7 +964,7 @@
         series: "Precious Blue",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Dual protection: Screen + Sunlight", "HMC Blue coating", "Rapid indoor fadeback"],
         price: 1990
       },
@@ -923,7 +975,7 @@
         series: "QuickFit Stock",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
         features: ["Stock PAL (+3.00 to -2.00 / Add +3.00)", "Immediate delivery", "HMC coating"],
         price: 1890
       },
@@ -934,7 +986,7 @@
         series: "QuickFit Stock",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Stock round-top bifocal", "HMC multi-coat", "Economical near-and-far solution"],
         price: 990
       },
@@ -947,7 +999,7 @@
         series: "Rx Bifocals",
         index: 1.50,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
         features: ["Classic round segment near vision", "HMC Green coating", "Dependable distance clarity"],
         price: 1990
       },
@@ -958,7 +1010,7 @@
         series: "Rx Bifocals",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
         features: ["Upgraded 1.56 thinness", "Screen blue-light filter", "HMC Green multi-coat"],
         price: 2690
       },
@@ -969,13 +1021,125 @@
         series: "Rx Bifocals",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Flat-top D segment for wider reading zone", "Eliminates image jump", "HMC Green coating"],
         price: 2790
+      },
+
+      // 8. BAUSCH + LOMB CONTACT LENSES & CARE
+      {
+        id: "bl-ultra-one-day-30",
+        name: "Bausch + Lomb Ultra ONE Day (30 Pack)",
+        category: "Contact Lenses",
+        series: "Daily Silicone Hydrogel",
+        index: null,
+        brand: "Bausch + Lomb",
+        image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80",
+        features: ["MoistureSeal & ComfortFeel 16h moisture", "Silicone hydrogel breathability", "Daily single use"],
+        price: 3281
+      },
+      {
+        id: "bl-biotrue-daily-30",
+        name: "Biotrue ONEday Hypergel (30 Pack)",
+        category: "Contact Lenses",
+        series: "Daily Hypergel",
+        index: null,
+        brand: "Bausch + Lomb",
+        image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80",
+        features: ["78% water matches cornea", "Hypergel bio-inspired hydration", "High definition optics"],
+        price: 2765
+      },
+      {
+        id: "bl-ultra-monthly-6",
+        name: "Bausch + Lomb Ultra Monthly (6 Pack)",
+        category: "Contact Lenses",
+        series: "Monthly Silicone Hydrogel",
+        index: null,
+        brand: "Bausch + Lomb",
+        image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80",
+        features: ["Retains 95% hydration for 16h", "Ideal for long screen hours", "High oxygen transmissibility"],
+        price: 4031
+      },
+      {
+        id: "bl-purevision-2-monthly-6",
+        name: "PureVision 2 HD Monthly (6 Pack)",
+        category: "Contact Lenses",
+        series: "Monthly Silicone Hydrogel",
+        index: null,
+        brand: "Bausch + Lomb",
+        image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80",
+        features: ["High Definition Optics reduce halos", "ComfortMoist thin-edge design", "Extended breathability"],
+        price: 2526
+      },
+      {
+        id: "bl-sl59-monthly-6",
+        name: "SofLens 59 Monthly (6 Pack)",
+        category: "Contact Lenses",
+        series: "Monthly Hydrogel",
+        index: null,
+        brand: "Bausch + Lomb",
+        image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80",
+        features: ["59% water content", "Deposit resistant Hilafilcon B", "Standard reliable comfort"],
+        price: 1645
+      },
+      {
+        id: "bl-biotrue-toric-daily-30",
+        name: "Biotrue ONEday Toric for Astigmatism (30 Pack)",
+        category: "Contact Lenses",
+        series: "Daily Toric",
+        index: null,
+        brand: "Bausch + Lomb",
+        image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80",
+        features: ["Peri-Ballast design for rotational stability", "78% cornea-matched hydration", "Stable astigmatism correction"],
+        price: 2765
+      },
+      {
+        id: "bl-ultra-toric-monthly-6",
+        name: "Bausch + Lomb Ultra Toric Monthly (6 Pack)",
+        category: "Contact Lenses",
+        series: "Monthly Toric",
+        index: null,
+        brand: "Bausch + Lomb",
+        image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80",
+        features: ["OpticAlign minimizes rotation", "MoistureSeal 16h moisture", "Silicone hydrogel for dry screen eyes"],
+        price: 4031
+      },
+      {
+        id: "bl-renu-fresh-355",
+        name: "Renu Fresh Multi-Purpose Solution (355 ml)",
+        category: "Lens Care",
+        series: "Solutions & Drops",
+        index: null,
+        brand: "Bausch + Lomb",
+        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=80",
+        features: ["Cleans, rinses, disinfects, and removes protein", "Sustained moisture", "Includes lens case"],
+        price: 605
+      },
+      {
+        id: "bl-biotrue-sol-300",
+        name: "Biotrue Multi-Purpose Solution (300 ml)",
+        category: "Lens Care",
+        series: "Solutions & Drops",
+        index: null,
+        brand: "Bausch + Lomb",
+        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=80",
+        features: ["pH matches human tears (pH 7.5)", "Hyaluronan natural lubricant retains 20h moisture", "Dual disinfection"],
+        price: 660
+      },
+      {
+        id: "bl-renu-drops-8ml",
+        name: "Renu MultiPlus Lubricating Drops (8 ml)",
+        category: "Lens Care",
+        series: "Solutions & Drops",
+        index: null,
+        brand: "Bausch + Lomb",
+        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=80",
+        features: ["Instant soothing relief for dry contact lens eyes", "Can be applied directly while wearing lenses", "Sterile formula"],
+        price: 215
       }
     ];
 
-    // Official Lab Services & Surcharges (July 2026 Price List)
+    // Official Lab Services & Surcharges
     const availableAddons = {
       fullfit: { id: "addon-fullfit", name: "Full Frame Edging Fitting", price: 200 },
       supra: { id: "addon-supra", name: "Supra (Semi-Rimless) Grooving Fitting", price: 300 },
@@ -985,6 +1149,13 @@
       nosepads: { id: "addon-nosepads", name: "German Silicone Nose Pads", price: 99 },
       ultrasonic: { id: "addon-ultrasonic", name: "Ultrasonic Deep Cleaning Spa", price: 149 },
       alignment: { id: "addon-alignment", name: "Frame Realignment & Tightening", price: 199 }
+    };
+
+    // Promo Code Registry
+    const PROMO_CODES = {
+      "RELENS10": { type: "percentage", value: 10, description: "10% Welcome Discount applied", minOrder: 1000 },
+      "DOORSTEPFREE": { type: "flat", value: 200, description: "₹200 Doorstep Special Discount applied", minOrder: 1200 },
+      "PROG500": { type: "progressive_only", value: 500, description: "₹500 Progressive Upgrade Discount applied", minOrder: 3000 }
     };
 
     // Live Order Database
@@ -1025,6 +1196,7 @@
 
     let cart = [];
     const selectedAddons = new Set();
+    let appliedPromo = null;
     let activeFilter = "all";
     let currentRecommendedIndex = null;
     let isIndexFilterActive = false;
@@ -1288,14 +1460,110 @@
       saveReLensState();
     }
 
+    // Promo Code Functions
+    function quickApplyPromo(code) {
+      const input = document.getElementById("promoCodeInput");
+      if (input) {
+        input.value = code;
+        applyPromoCode();
+      }
+    }
+
+    function applyPromoCode() {
+      const input = document.getElementById("promoCodeInput");
+      const code = input.value.trim().toUpperCase();
+
+      if (!code) {
+        showPromoFeedback("Please enter a valid coupon code.", "error");
+        return;
+      }
+
+      const promo = PROMO_CODES[code];
+      if (!promo) {
+        showPromoFeedback("Invalid coupon code. Try RELENS10 or DOORSTEPFREE.", "error");
+        appliedPromo = null;
+        updateCartTotals();
+        return;
+      }
+
+      const lensesSubtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      let addonsSubtotal = 0;
+      selectedAddons.forEach(key => {
+        addonsSubtotal += availableAddons[key].price;
+      });
+      const subtotal = lensesSubtotal + addonsSubtotal;
+
+      if (subtotal < promo.minOrder) {
+        showPromoFeedback(`Minimum order of ₹${promo.minOrder.toLocaleString("en-IN")} required for ${code}.`, "error");
+        appliedPromo = null;
+        updateCartTotals();
+        return;
+      }
+
+      if (promo.type === "progressive_only") {
+        const hasProgressive = cart.some(i => i.category === "Progressive" || i.category === "Evolux" || i.category === "Evolux Elite" || i.category === "Customized" || i.category === "Venture");
+        if (!hasProgressive) {
+          showPromoFeedback("PROG500 is only valid on Progressive lens orders.", "error");
+          appliedPromo = null;
+          updateCartTotals();
+          return;
+        }
+      }
+
+      appliedPromo = { code, ...promo };
+      showPromoFeedback(`✓ ${promo.description}`, "success");
+      updateCartTotals();
+      saveReLensState();
+    }
+
+    function showPromoFeedback(message, type) {
+      const feedback = document.getElementById("promoFeedback");
+      if (!feedback) return;
+      feedback.textContent = message;
+      feedback.className = `promo-feedback ${type}`;
+      feedback.classList.remove("hidden");
+    }
+
+    // Update Totals and Financial Breakdown
     function updateCartTotals() {
+      const subtotalElem = document.getElementById("cartSubtotalPrice");
+      const discountRow = document.getElementById("discountDisplayRow");
+      const discountElem = document.getElementById("cartDiscountPrice");
+      const promoBadge = document.getElementById("appliedPromoBadge");
       const totalElem = document.getElementById("cartTotalPrice");
+
       const lensesTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
       let addonsTotal = 0;
       selectedAddons.forEach(key => {
         addonsTotal += availableAddons[key].price;
       });
-      totalElem.textContent = `₹${(lensesTotal + addonsTotal).toLocaleString("en-IN")}`;
+
+      const subtotal = lensesTotal + addonsTotal;
+      let discountAmount = 0;
+
+      if (appliedPromo && subtotal >= appliedPromo.minOrder) {
+        if (appliedPromo.type === "percentage") {
+          discountAmount = Math.round((subtotal * appliedPromo.value) / 100);
+        } else {
+          discountAmount = appliedPromo.value;
+        }
+
+        if (discountRow) discountRow.classList.remove("hidden");
+        if (discountElem) discountElem.textContent = `-₹${discountAmount.toLocaleString("en-IN")}`;
+        if (promoBadge) promoBadge.textContent = appliedPromo.code;
+      } else {
+        if (discountRow) discountRow.classList.add("hidden");
+        if (appliedPromo && subtotal < appliedPromo.minOrder) {
+          appliedPromo = null;
+          const feedback = document.getElementById("promoFeedback");
+          if (feedback) feedback.classList.add("hidden");
+        }
+      }
+
+      const grandTotal = Math.max(0, subtotal - discountAmount);
+
+      if (subtotalElem) subtotalElem.textContent = `₹${subtotal.toLocaleString("en-IN")}`;
+      if (totalElem) totalElem.textContent = `₹${grandTotal.toLocaleString("en-IN")}`;
     }
 
     function updateCartUI() {
@@ -1406,41 +1674,119 @@
       `;
     }
 
+    // Prescription Summary Getter
+    function getPrescriptionSummary() {
+      if (currentRxMode === "upload") {
+        if (selectedRxFile) {
+          return `Prescription Slip: Uploaded (${selectedRxFile.name}) - [Attaching image on chat]`;
+        }
+        return `Prescription Slip: Will share photo via WhatsApp`;
+      }
+
+      const odSph = document.getElementById("odSph")?.value.trim() || "Plano";
+      const odCyl = document.getElementById("odCyl")?.value.trim() || "0.00";
+      const odAxis = document.getElementById("odAxis")?.value.trim() || "-";
+      const odAdd = document.getElementById("odAdd")?.value.trim() || "-";
+
+      const osSph = document.getElementById("osSph")?.value.trim() || "Plano";
+      const osCyl = document.getElementById("osCyl")?.value.trim() || "0.00";
+      const osAxis = document.getElementById("osAxis")?.value.trim() || "-";
+      const osAdd = document.getElementById("osAdd")?.value.trim() || "-";
+
+      const isBlank = (odSph === "Plano" && odCyl === "0.00" && osSph === "Plano" && osCyl === "0.00");
+      if (isBlank) {
+        return "Prescription: To be measured/verified during doorstep visit";
+      }
+
+      const recIndex = document.getElementById("recIndexVal")?.textContent || "1.56 Standard";
+
+      return `*Prescription Power:*\n• *OD (Right):* SPH ${odSph} | CYL ${odCyl} | AXIS ${odAxis} | ADD ${odAdd}\n• *OS (Left):*  SPH ${osSph} | CYL ${osCyl} | AXIS ${osAxis} | ADD ${osAdd}\n• *Recommended Lens Index:* ${recIndex}`;
+    }
+
+    // Refined WhatsApp Checkout
     function checkoutWhatsApp() {
       if (cart.length === 0 && selectedAddons.size === 0) {
         alert("Please select at least one lens package or fitting service before proceeding.");
         return;
       }
 
-      const lensesTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      const lensesSubtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      let addonsSubtotal = 0;
+      selectedAddons.forEach(key => {
+        addonsSubtotal += availableAddons[key].price;
+      });
+      const subtotal = lensesSubtotal + addonsSubtotal;
+
+      let discountAmount = 0;
+      let promoNote = "";
+      if (appliedPromo && subtotal >= appliedPromo.minOrder) {
+        discountAmount = appliedPromo.type === "percentage" 
+          ? Math.round((subtotal * appliedPromo.value) / 100) 
+          : appliedPromo.value;
+        promoNote = `🎁 *Promo Applied:* ${appliedPromo.code} (-₹${discountAmount.toLocaleString("en-IN")})\n`;
+      }
+      const grandTotal = Math.max(0, subtotal - discountAmount);
+
       let itemsSummary = cart.length > 0 
-        ? cart.map(item => `• ${item.name} (${item.series}) x ${item.quantity} = ₹${(item.price * item.quantity).toLocaleString("en-IN")}`).join("\n")
-        : "• Frame Service / Edging Only";
+        ? cart.map(item => `  • ${item.name} [${item.brand}] x${item.quantity} ➔ ₹${(item.price * item.quantity).toLocaleString("en-IN")}`).join("\n")
+        : "  • Frame Service / Refurbishing Only";
 
       let addonsSummary = "";
-      let addonsTotal = 0;
       if (selectedAddons.size > 0) {
-        const list = Array.from(selectedAddons).map(key => `  + ${availableAddons[key].name} (₹${availableAddons[key].price})`).join("\n");
-        addonsSummary = `\n*Frame Fitting & Lab Add-ons:*\n${list}\n`;
+        const list = Array.from(selectedAddons).map(key => `  + ${availableAddons[key].name} ➔ ₹${availableAddons[key].price}`).join("\n");
+        addonsSummary = `\n🛠️ *FITTING & LAB ADD-ONS:*\n${list}\n`;
       }
 
-      const grandTotal = lensesTotal + addonsTotal;
-      const odSph = document.getElementById("odSph")?.value || "0.00";
-      const osSph = document.getElementById("osSph")?.value || "0.00";
+      const rxDetails = getPrescriptionSummary();
       const appDate = document.getElementById("appointmentDate")?.value || "Earliest available";
       const appSlot = document.querySelector('input[name="appointmentSlot"]:checked')?.value || "09:00 AM - 11:00 AM";
 
-      const message = `*New ReLens Booking Request*\n📅 Preferred Slot: ${appDate} (${appSlot})\n\n*Lenses Selected:*\n${itemsSummary}${addonsSummary}\n*Prescription:* OD: ${odSph} | OS: ${osSph}\n*Estimated Total:* ₹${grandTotal.toLocaleString("en-IN")}\n📍 Location: Puducherry Doorstep`;
+      const hasContactLenses = cart.some(i => i.category === "Contact Lenses");
+      const clNotice = hasContactLenses 
+        ? `\n⚠ _Contact lenses: Please keep your eye test slip ready for base curve & diopter verification._\n` 
+        : "";
+
+      const tempOrderId = "RL-2026-" + Math.floor(1000 + Math.random() * 9000);
+
+      const message = 
+`👓 *RELENS DOORSTEP SERVICE BOOKING*
+*Order Ref:* #${tempOrderId}
+─────────────────────────────
+📍 *Location:* Puducherry Doorstep Service
+📅 *Appointment:* ${appDate}
+⏰ *Time Window:* ${appSlot}
+─────────────────────────────
+📦 *LENS PACKAGES:*
+${itemsSummary}
+${addonsSummary}
+─────────────────────────────
+📋 *PRESCRIPTION SUMMARY:*
+${rxDetails}
+${clNotice}─────────────────────────────
+💰 *BILLING SUMMARY:*
+• Subtotal: ₹${subtotal.toLocaleString("en-IN")}
+${promoNote}• *Estimated Total: ₹${grandTotal.toLocaleString("en-IN")}*
+─────────────────────────────
+Hello ReLens team! I would like to confirm this doorstep booking for my frame. Please confirm specialist availability.`;
+
       window.open(`https://wa.me/message/3XHYZJ2WIHFTO1?text=${encodeURIComponent(message)}`, "_blank");
     }
 
+    // Storage Management
     function saveReLensState() {
       try {
         const payload = {
           cart: cart || [],
           addons: Array.from(selectedAddons || []),
+          appliedPromo: appliedPromo || null,
           odSph: document.getElementById("odSph")?.value || "",
+          odCyl: document.getElementById("odCyl")?.value || "",
+          odAxis: document.getElementById("odAxis")?.value || "",
+          odAdd: document.getElementById("odAdd")?.value || "",
           osSph: document.getElementById("osSph")?.value || "",
+          osCyl: document.getElementById("osCyl")?.value || "",
+          osAxis: document.getElementById("osAxis")?.value || "",
+          osAdd: document.getElementById("osAdd")?.value || "",
           date: document.getElementById("appointmentDate")?.value || ""
         };
         localStorage.setItem(RELENS_STORAGE_KEY, JSON.stringify(payload));
@@ -1467,12 +1813,24 @@
             const cb = document.getElementById(`addon-${key}`);
             if (cb) cb.checked = true;
           });
-          updateCartTotals();
+        }
+        if (data.appliedPromo) {
+          appliedPromo = data.appliedPromo;
+          const input = document.getElementById("promoCodeInput");
+          if (input) input.value = appliedPromo.code;
+          showPromoFeedback(`✓ ${appliedPromo.description}`, "success");
         }
         if (data.odSph) document.getElementById("odSph").value = data.odSph;
+        if (data.odCyl) document.getElementById("odCyl").value = data.odCyl;
+        if (data.odAxis) document.getElementById("odAxis").value = data.odAxis;
+        if (data.odAdd) document.getElementById("odAdd").value = data.odAdd;
         if (data.osSph) document.getElementById("osSph").value = data.osSph;
+        if (data.osCyl) document.getElementById("osCyl").value = data.osCyl;
+        if (data.osAxis) document.getElementById("osAxis").value = data.osAxis;
+        if (data.osAdd) document.getElementById("osAdd").value = data.osAdd;
         if (data.date && datePicker) datePicker.value = data.date;
         evaluatePrescriptionIndex();
+        updateCartTotals();
       } catch (e) {}
     }
 
@@ -1489,7 +1847,7 @@
         });
       });
 
-      ["odSph", "odCyl", "osSph", "osCyl"].forEach(id => {
+      ["odSph", "odCyl", "odAxis", "odAdd", "osSph", "osCyl", "osAxis", "osAdd"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.addEventListener("input", () => { evaluatePrescriptionIndex(); saveReLensState(); });
       });
