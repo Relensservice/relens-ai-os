@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ReLens AI OS • Doorstep Lens Replacement & Frame Care</title>
+  <title>ReLens • Same Frame. Better Vision.</title>
   <link rel="icon" href="https://relensservice.github.io/Relensapp/icon-512.png" />
   <style>
     :root {
@@ -21,737 +21,160 @@
       --wa-green: #25d366;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--slate-800); line-height: 1.5; padding-bottom: 95px; }
 
-    body {
-      background-color: var(--bg);
-      color: var(--slate-800);
-      line-height: 1.5;
-      padding-bottom: 80px;
-    }
+    /* Header */
+    header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
+    .nav-container { max-width: 1100px; margin: 0 auto; padding: 0.85rem 1rem; display: flex; justify-content: space-between; align-items: center; }
+    .brand-logo-wrap { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--slate-900); font-weight: 800; font-size: 1.25rem; }
+    .brand-logo-wrap img { width: 32px; height: 32px; border-radius: 6px; }
+    .brand-logo-wrap span { color: var(--primary); }
+    .header-tagline { font-size: 0.75rem; color: var(--slate-600); font-weight: 500; }
 
-    header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
-    }
+    .main-container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
 
-    .nav-container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0.85rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    /* Hero */
+    .hero-banner { text-align: center; padding: 2rem 0 1.5rem; }
+    .hero-pill { display: inline-block; font-size: 0.72rem; font-weight: 700; background: #e0f2fe; color: var(--primary-dark); padding: 4px 12px; border-radius: 9999px; margin-bottom: 0.75rem; letter-spacing: 0.05em; }
+    .hero-banner h1 { font-size: 2.2rem; color: var(--slate-900); line-height: 1.2; margin-bottom: 0.5rem; }
+    .hero-banner h1 span { color: var(--primary); }
+    .hero-banner p { max-width: 650px; margin: 0 auto 1rem; color: var(--slate-600); font-size: 0.95rem; }
+    
+    .trust-badges { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .trust-badge { font-size: 0.78rem; font-weight: 600; color: #166534; background: #f0fdf4; padding: 4px 12px; border-radius: 9999px; border: 1px solid #bbf7d0; }
 
-    .brand-logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      color: var(--slate-900);
-      font-weight: 800;
-      font-size: 1.25rem;
-    }
+    /* Brand Overview Grid */
+    .brand-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .brand-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .brand-tag { font-size: 0.7rem; font-weight: 700; color: var(--primary); text-transform: uppercase; margin-bottom: 0.25rem; }
+    .brand-card h3 { font-size: 1.05rem; color: var(--slate-900); margin-bottom: 0.35rem; }
+    .brand-card p { font-size: 0.8rem; color: var(--slate-600); }
 
-    .brand-logo-wrap img {
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
-    }
-
-    .brand-logo-wrap span {
-      color: var(--primary);
-    }
-
-    .header-tagline {
-      font-size: 0.75rem;
-      color: var(--slate-600);
-      font-weight: 500;
-    }
-
-    .hero-banner {
-      max-width: 1080px;
-      margin: 1.5rem auto 1rem;
-      padding: 0 1rem;
-      text-align: center;
-    }
-
-    .hero-pill {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      background: #e0f2fe;
-      color: var(--primary-dark);
-      padding: 4px 12px;
-      border-radius: 9999px;
-      margin-bottom: 0.75rem;
-      letter-spacing: 0.05em;
-    }
-
-    .hero-banner h1 {
-      font-size: 2.1rem;
-      color: var(--slate-900);
-      line-height: 1.2;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-banner h1 span {
-      color: var(--primary);
-    }
-
-    .hero-banner p {
-      max-width: 600px;
-      margin: 0 auto 1.5rem;
-      color: var(--slate-600);
-      font-size: 0.95rem;
-    }
-
-    .main-container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    /* Live Order Tracking Card */
-    .order-tracker-section {
-      margin-bottom: 2.5rem;
-    }
-
-    .tracker-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-    }
-
-    .tracker-header h2 {
-      font-size: 1.25rem;
-      color: var(--slate-900);
-      margin: 0.25rem 0 0.5rem;
-    }
-
-    .tracker-header p {
-      font-size: 0.85rem;
-      color: var(--slate-600);
-      margin-bottom: 1rem;
-    }
-
-    .tracker-search-bar {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .input-wrapper {
-      position: relative;
-      flex-grow: 1;
-    }
-
-    .search-icon {
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0.9rem;
-    }
-
-    .input-wrapper input {
-      width: 100%;
-      padding: 0.75rem 0.75rem 0.75rem 2.25rem;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      outline: none;
-    }
-
-    .input-wrapper input:focus {
-      border-color: var(--primary);
-    }
-
-    .track-btn {
-      background: var(--slate-900);
-      color: var(--white);
-      border: none;
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .demo-id-pills {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin: 0.6rem 0 0.5rem;
-      font-size: 0.75rem;
-      color: var(--slate-600);
-    }
-
-    .demo-id-pills button {
-      background: var(--slate-100);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 2px 6px;
-      font-size: 0.72rem;
-      cursor: pointer;
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .tracker-result-area {
-      margin-top: 1rem;
-    }
+    /* Order Tracker */
+    .tracker-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); margin-bottom: 2.5rem; }
+    .tracker-header h2 { font-size: 1.25rem; color: var(--slate-900); margin: 0.25rem 0 0.5rem; }
+    .tracker-header p { font-size: 0.85rem; color: var(--slate-600); margin-bottom: 1rem; }
+    .tracker-search-bar { display: flex; gap: 0.5rem; }
+    .input-wrapper { position: relative; flex-grow: 1; }
+    .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 0.9rem; }
+    .input-wrapper input { width: 100%; padding: 0.75rem 0.75rem 0.75rem 2.25rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.9rem; outline: none; }
+    .track-btn { background: var(--slate-900); color: var(--white); border: none; padding: 0.75rem 1.25rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+    .demo-id-pills { display: flex; align-items: center; gap: 0.4rem; margin: 0.6rem 0 0.5rem; font-size: 0.75rem; color: var(--slate-600); }
+    .demo-id-pills button { background: var(--slate-100); border: 1px solid var(--border); border-radius: 4px; padding: 2px 6px; font-size: 0.72rem; cursor: pointer; color: var(--primary); font-weight: 600; }
 
     /* Catalog Section */
-    .catalog-section-header {
-      margin-bottom: 1rem;
-    }
+    .catalog-section-header { margin-bottom: 0.5rem; }
+    .catalog-section-header h2 { font-size: 1.35rem; color: var(--slate-900); }
+    .catalog-filters { display: flex; gap: 0.55rem; overflow-x: auto; padding: 0.5rem 0 1rem; -webkit-overflow-scrolling: touch; }
+    .catalog-filters::-webkit-scrollbar { display: none; }
+    .filter-btn { white-space: nowrap; padding: 0.5rem 1rem; border-radius: 9999px; border: 1px solid var(--border); background: var(--white); color: var(--slate-600); font-size: 0.825rem; font-weight: 600; cursor: pointer; }
+    .filter-btn.active { background: var(--slate-900); color: var(--white); border-color: var(--slate-900); }
 
-    .catalog-section-header h2 {
-      font-size: 1.35rem;
-      color: var(--slate-900);
-    }
+    .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
+    .catalog-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); display: flex; flex-direction: column; position: relative; }
+    .catalog-card.recommended-match { border: 2px solid var(--primary); box-shadow: 0 4px 16px rgba(2, 132, 199, 0.16); }
+    .match-badge { position: absolute; top: 10px; right: 10px; background: var(--primary); color: var(--white); font-size: 0.68rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; z-index: 2; }
+    
+    .card-media { position: relative; height: 160px; background: #e2e8f0; }
+    .card-media img.product-img { width: 100%; height: 100%; object-fit: cover; }
+    .brand-pill { position: absolute; top: 10px; left: 10px; background: rgba(255, 255, 255, 0.95); padding: 3px 8px; border-radius: 6px; font-size: 0.72rem; font-weight: 700; color: #0f172a; }
+    
+    .card-body { padding: 1rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .tag-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem; }
+    .category-badge { color: var(--primary); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; }
+    .index-pill { font-size: 0.68rem; font-weight: 600; background: var(--slate-100); color: var(--slate-600); padding: 2px 6px; border-radius: 4px; }
+    .product-title { font-size: 0.98rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--slate-900); }
+    .feature-tags { list-style: none; margin-bottom: 1rem; flex-grow: 1; }
+    .feature-tags li { font-size: 0.78rem; color: var(--slate-600); margin-bottom: 0.25rem; }
+    
+    .card-action { display: flex; justify-content: space-between; align-items: center; padding-top: 0.75rem; border-top: 1px solid var(--slate-100); }
+    .price-wrap { display: flex; flex-direction: column; }
+    .price-label { font-size: 0.65rem; color: var(--slate-400); text-transform: uppercase; }
+    .price { font-size: 1.15rem; font-weight: 800; color: var(--slate-900); }
+    .select-btn { background: var(--primary); color: var(--white); border: none; padding: 0.5rem 1.1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
 
-    .catalog-filters {
-      display: flex;
-      gap: 0.6rem;
-      overflow-x: auto;
-      padding: 0.5rem 0 1rem;
-      -webkit-overflow-scrolling: touch;
-    }
+    /* Direct Booking Form Section */
+    .booking-section { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; margin-bottom: 2.5rem; }
+    .booking-section h2 { font-size: 1.25rem; color: var(--slate-900); margin-bottom: 0.25rem; }
+    .booking-section p { font-size: 0.85rem; color: var(--slate-600); margin-bottom: 1rem; }
+    .booking-form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; }
+    .booking-form-grid select, .booking-form-grid input { width: 100%; padding: 0.65rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.85rem; outline: none; }
+    .book-direct-btn { background: var(--primary); color: var(--white); border: none; padding: 0.75rem; border-radius: 8px; font-weight: 700; cursor: pointer; }
 
-    .catalog-filters::-webkit-scrollbar {
-      display: none;
-    }
+    /* AI Assistant Trigger & Modal */
+    .ai-assistant-btn { position: fixed; bottom: 25px; left: 20px; display: flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #0284c7, #6366f1); color: #ffffff; border: none; padding: 10px 18px; border-radius: 9999px; font-size: 0.85rem; font-weight: 700; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4); cursor: pointer; z-index: 99; }
+    .ai-modal-overlay { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.5); backdrop-filter: blur(2px); z-index: 1002; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+    .ai-modal-overlay.active { opacity: 1; pointer-events: auto; }
+    .ai-modal { position: fixed; bottom: 90px; left: 20px; width: calc(100% - 40px); max-width: 380px; height: 480px; background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 1003; display: flex; flex-direction: column; transform: translateY(20px) scale(0.96); opacity: 0; pointer-events: none; transition: all 0.25s ease; overflow: hidden; }
+    .ai-modal.active { transform: translateY(0) scale(1); opacity: 1; pointer-events: auto; }
+    .ai-modal-header { padding: 0.85rem 1.1rem; background: #0f172a; color: #ffffff; display: flex; justify-content: space-between; align-items: center; }
+    .ai-badge { font-size: 0.65rem; color: #38bdf8; font-weight: 700; text-transform: uppercase; }
+    .ai-chat-body { flex-grow: 1; padding: 1rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.75rem; background: #f8fafc; }
+    .ai-msg { max-width: 85%; padding: 8px 12px; border-radius: 10px; font-size: 0.8rem; line-height: 1.4; }
+    .ai-msg.bot { background: #ffffff; color: #1e293b; border: 1px solid #e2e8f0; align-self: flex-start; }
+    .ai-msg.user { background: #0284c7; color: #ffffff; align-self: flex-end; }
+    .ai-quick-prompts { display: flex; gap: 4px; overflow-x: auto; padding: 6px 10px; background: #ffffff; border-top: 1px solid #f1f5f9; }
+    .ai-quick-prompts button { white-space: nowrap; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 0.68rem; padding: 3px 6px; cursor: pointer; color: #334155; }
+    .ai-input-bar { display: flex; padding: 8px 10px; background: #ffffff; border-top: 1px solid #e2e8f0; gap: 6px; }
+    .ai-input-bar input { flex-grow: 1; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 10px; font-size: 0.8rem; outline: none; }
+    .ai-send-btn { background: #0284c7; color: #ffffff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; }
+    .ai-action-btn { margin-top: 8px; background: #0284c7; color: #ffffff; border: none; padding: 6px 10px; border-radius: 6px; font-size: 0.72rem; font-weight: 700; cursor: pointer; }
 
-    .filter-btn {
-      white-space: nowrap;
-      padding: 0.5rem 1rem;
-      border-radius: 9999px;
-      border: 1px solid var(--border);
-      background: var(--white);
-      color: var(--slate-600);
-      font-size: 0.825rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
+    /* Cart Floating & Drawer */
+    .cart-floating-btn { position: fixed; bottom: 25px; right: 20px; width: 60px; height: 60px; border-radius: 50%; background: var(--primary); color: var(--white); border: none; box-shadow: 0 4px 16px rgba(2, 132, 199, 0.4); cursor: pointer; z-index: 99; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+    .cart-badge { position: absolute; top: -2px; right: -2px; background: #ef4444; color: var(--white); font-size: 0.75rem; font-weight: 700; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; }
+    
+    .cart-overlay { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(2px); z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .cart-overlay.active { opacity: 1; pointer-events: auto; }
+    .cart-drawer { position: fixed; top: 0; right: 0; width: 100%; max-width: 450px; height: 100%; background: var(--white); z-index: 1001; transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); display: flex; flex-direction: column; }
+    .cart-drawer.active { transform: translateX(0); }
+    
+    .cart-header { padding: 1.25rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .close-btn { background: none; border: none; font-size: 1.35rem; cursor: pointer; color: var(--slate-400); }
+    .cart-scroll-body { flex-grow: 1; overflow-y: auto; }
+    .cart-items { padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; }
+    .cart-item { border-bottom: 1px solid var(--border); padding-bottom: 0.85rem; }
+    .item-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; }
+    .qty-stepper { display: inline-flex; align-items: center; border: 1px solid var(--border); border-radius: 6px; }
+    .qty-stepper button { background: transparent; border: none; padding: 4px 10px; cursor: pointer; font-weight: 700; }
 
-    .filter-btn.active {
-      background: var(--slate-900);
-      color: var(--white);
-      border-color: var(--slate-900);
-    }
-
-    .catalog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .catalog-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .catalog-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-    }
-
-    .catalog-card.recommended-match {
-      border: 2px solid var(--primary);
-      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.16);
-    }
-
-    .match-badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: var(--primary);
-      color: var(--white);
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 6px;
-      z-index: 2;
-    }
-
-    .card-media {
-      position: relative;
-      height: 150px;
-      background: #e2e8f0;
-    }
-
-    .card-media img.product-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .brand-pill {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
-
-    .card-body {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .tag-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .category-badge {
-      color: var(--primary);
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .index-pill {
-      font-size: 0.68rem;
-      font-weight: 600;
-      background: var(--slate-100);
-      color: var(--slate-600);
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-
-    .product-title {
-      font-size: 1rem;
-      font-weight: 700;
-      margin: 0.4rem 0 0.6rem;
-      color: var(--slate-900);
-    }
-
-    .feature-tags {
-      list-style: none;
-      margin-bottom: 1rem;
-      flex-grow: 1;
-    }
-
-    .feature-tags li {
-      font-size: 0.8rem;
-      color: var(--slate-600);
-      margin-bottom: 0.25rem;
-    }
-
-    .card-action {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 0.75rem;
-      border-top: 1px solid var(--slate-100);
-    }
-
-    .price-wrap {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .price-label {
-      font-size: 0.65rem;
-      color: var(--slate-400);
-      text-transform: uppercase;
-    }
-
-    .price {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--slate-900);
-    }
-
-    .select-btn {
-      background: var(--primary);
-      color: var(--white);
-      border: none;
-      padding: 0.45rem 1rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    /* Floating Cart Button */
-    .cart-floating-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 20px;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: var(--white);
-      border: none;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
-      cursor: pointer;
-      z-index: 99;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-    }
-
-    .cart-badge {
-      position: absolute;
-      top: -2px;
-      right: -2px;
-      background: #ef4444;
-      color: var(--white);
-      font-size: 0.75rem;
-      font-weight: 700;
-      border-radius: 50%;
-      width: 22px;
-      height: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Drawer Overlay & Content */
-    .cart-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(2px);
-      z-index: 1000;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-
-    .cart-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .cart-drawer {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 100%;
-      max-width: 440px;
-      height: 100%;
-      background: var(--white);
-      z-index: 1001;
-      transform: translateX(100%);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .cart-drawer.active {
-      transform: translateX(0);
-    }
-
-    .cart-header {
-      padding: 1.25rem;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .cart-header h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .close-btn {
-      background: none;
-      border: none;
-      font-size: 1.35rem;
-      cursor: pointer;
-      color: var(--slate-400);
-    }
-
-    .cart-scroll-body {
-      flex-grow: 1;
-      overflow-y: auto;
-    }
-
-    .cart-items {
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .cart-item {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.85rem;
-    }
-
-    .cart-item-details h4 {
-      font-size: 0.95rem;
-      margin: 2px 0;
-    }
-
-    .item-brand {
-      font-size: 0.72rem;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .item-actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 0.5rem;
-    }
-
-    .qty-stepper {
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-    }
-
-    .qty-stepper button {
-      background: transparent;
-      border: none;
-      padding: 4px 10px;
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    /* Prescription Section */
-    .cart-rx-section {
-      padding: 1rem 1.25rem;
-      background: #fafafa;
-      border-top: 1px solid var(--border);
-    }
-
-    .rx-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.75rem;
-    }
-
-    .rx-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-    }
-
-    .rx-tab-toggle {
-      display: flex;
-      background: var(--slate-100);
-      border-radius: 6px;
-      padding: 2px;
-    }
-
-    .rx-tab-btn {
-      border: none;
-      background: transparent;
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 4px 8px;
-      border-radius: 4px;
-      cursor: pointer;
-      color: var(--slate-600);
-    }
-
-    .rx-tab-btn.active {
-      background: var(--white);
-      color: var(--slate-900);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
+    /* Prescription & Addons */
+    .cart-rx-section { padding: 1rem 1.25rem; background: #fafafa; border-top: 1px solid var(--border); }
+    .rx-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+    .rx-tab-toggle { display: flex; background: var(--slate-100); border-radius: 6px; padding: 2px; }
+    .rx-tab-btn { border: none; background: transparent; font-size: 0.72rem; font-weight: 600; padding: 4px 8px; border-radius: 4px; cursor: pointer; color: var(--slate-600); }
+    .rx-tab-btn.active { background: var(--white); color: var(--slate-900); }
     .rx-mode-content { display: none; }
     .rx-mode-content.active { display: block; }
-
-    .rx-power-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.75rem;
-    }
-
-    .rx-power-table th {
-      padding: 4px;
-      color: var(--slate-600);
-      text-align: center;
-    }
-
-    .rx-power-table td { padding: 3px 2px; }
-
-    .rx-power-table input {
-      width: 100%;
-      padding: 6px 4px;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      text-align: center;
-      font-size: 0.78rem;
-    }
-
-    .rx-file-dropzone {
-      display: block;
-      border: 1.5px dashed #cbd5e1;
-      border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
-      cursor: pointer;
-      background: var(--white);
-    }
-
-    .rx-file-dropzone input { display: none; }
-
-    /* Recommendation Box */
-    .index-rec-box {
-      margin-top: 0.75rem;
-      padding: 0.65rem 0.85rem;
-      border-radius: 8px;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      font-size: 0.75rem;
-      border-left: 4px solid;
-    }
-
+    .rx-power-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+    .rx-power-table th, .rx-power-table td { padding: 3px 2px; text-align: center; }
+    .rx-power-table input { width: 100%; padding: 6px 4px; border: 1px solid #cbd5e1; border-radius: 6px; text-align: center; font-size: 0.78rem; }
+    
+    .index-rec-box { margin-top: 0.75rem; padding: 0.65rem 0.85rem; border-radius: 8px; display: flex; gap: 0.6rem; font-size: 0.75rem; border-left: 4px solid; }
     .index-rec-box.rec-standard { background: #f0fdf4; border-left-color: var(--success); }
     .index-rec-box.rec-mid { background: #f0f9ff; border-left-color: var(--primary); }
     .index-rec-box.rec-high { background: #fefce8; border-left-color: #eab308; }
     .index-rec-box.rec-ultra { background: #fdf2f8; border-left-color: #ec4899; }
+    .rec-filter-btn { margin-top: 0.5rem; width: 100%; padding: 0.4rem; font-size: 0.72rem; font-weight: 700; background: var(--slate-900); color: var(--white); border: none; border-radius: 6px; cursor: pointer; }
 
-    .rec-filter-btn {
-      margin-top: 0.5rem;
-      width: 100%;
-      padding: 0.4rem;
-      font-size: 0.72rem;
-      font-weight: 700;
-      background: var(--slate-900);
-      color: var(--white);
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    /* Addons */
-    .cart-addons-section {
-      padding: 1rem 1.25rem;
-      background: var(--slate-100);
-      border-top: 1px solid var(--border);
-    }
-
-    .addon-card {
-      display: flex;
-      gap: 0.65rem;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.65rem 0.8rem;
-      cursor: pointer;
-      margin-top: 0.5rem;
-    }
-
-    .addon-card:has(input:checked) {
-      border-color: var(--primary);
-      background: #f0f9ff;
-    }
-
+    .cart-addons-section { padding: 1rem 1.25rem; background: var(--slate-100); border-top: 1px solid var(--border); }
+    .addon-card { display: flex; gap: 0.65rem; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 0.65rem 0.8rem; cursor: pointer; margin-top: 0.5rem; }
+    .addon-card:has(input:checked) { border-color: var(--primary); background: #f0f9ff; }
     .addon-info { flex-grow: 1; }
-    .addon-title-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
+    .addon-title-row { display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; }
     .addon-price { color: var(--primary); font-weight: 700; }
     .addon-desc { font-size: 0.7rem; color: var(--slate-600); }
 
-    /* Appointment Section */
-    .cart-appointment-section {
-      padding: 1rem 1.25rem;
-      background: var(--white);
-      border-top: 1px solid var(--border);
-    }
-
-    .slot-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.45rem;
-      margin-top: 0.4rem;
-    }
-
+    .cart-appointment-section { padding: 1rem 1.25rem; background: var(--white); border-top: 1px solid var(--border); }
+    .slot-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.45rem; margin-top: 0.4rem; }
     .slot-pill input { display: none; }
-    .slot-pill span {
-      display: block;
-      text-align: center;
-      font-size: 0.72rem;
-      padding: 0.45rem 0.2rem;
-      background: var(--slate-100);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      cursor: pointer;
-    }
+    .slot-pill span { display: block; text-align: center; font-size: 0.72rem; padding: 0.45rem 0.2rem; background: var(--slate-100); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+    .slot-pill input:checked + span { background: var(--primary); color: var(--white); border-color: var(--primary); font-weight: 600; }
 
-    .slot-pill input:checked + span {
-      background: var(--primary);
-      color: var(--white);
-      border-color: var(--primary);
-      font-weight: 600;
-    }
-
-    /* Drawer Footer */
-    .cart-footer {
-      padding: 1.25rem;
-      border-top: 1px solid var(--border);
-      background: var(--white);
-    }
-
-    .total-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 1.15rem;
-      font-weight: 800;
-      margin-bottom: 0.85rem;
-    }
-
-    .checkout-whatsapp-btn {
-      width: 100%;
-      background: var(--wa-green);
-      color: var(--white);
-      border: none;
-      padding: 0.85rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
+    .cart-footer { padding: 1.25rem; border-top: 1px solid var(--border); background: var(--white); }
+    .total-row { display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 800; margin-bottom: 0.85rem; }
+    .checkout-whatsapp-btn { width: 100%; background: var(--wa-green); color: var(--white); border: none; padding: 0.85rem; font-size: 0.95rem; font-weight: 700; border-radius: 10px; cursor: pointer; }
     .hidden { display: none !important; }
   </style>
 </head>
@@ -768,62 +191,149 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero-banner">
-    <span class="hero-pill">GIVE YOUR FRAME A SECOND LIFE</span>
-    <h1>Same Frame. <span>Better Vision.</span></h1>
-    <p>Upgrade your lenses at your doorstep in Puducherry. Pick premium progressive, single vision, or blue-cut solutions without visiting a physical store.</p>
-  </section>
-
   <main class="main-container">
 
-    <!-- 1. Live Order Tracking Card -->
-    <section class="order-tracker-section">
-      <div class="tracker-card">
-        <div class="tracker-header">
-          <span style="font-size: 0.72rem; font-weight: 700; color: var(--primary);">LIVE ORDER JOURNEY</span>
-          <h2>Track Your Doorstep Service</h2>
-          <p>Check the live inspection, optical edging, and dispatch status of your frame.</p>
-        </div>
-
-        <form class="tracker-search-bar" onsubmit="handleTrackOrder(event)">
-          <div class="input-wrapper">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="orderTrackerInput" placeholder="Enter Order ID (e.g. RL-2026-1042)" required />
-          </div>
-          <button type="submit" class="track-btn">Track Order</button>
-        </form>
-
-        <div class="demo-id-pills">
-          <span>Sample test IDs:</span>
-          <button type="button" onclick="quickFillTrack('RL-2026-1042')">#RL-2026-1042</button>
-          <button type="button" onclick="quickFillTrack('RL-2026-1088')">#RL-2026-1088</button>
-        </div>
-
-        <div id="trackerResultArea" class="tracker-result-area"></div>
+    <!-- Hero Section -->
+    <section class="hero-banner">
+      <span class="hero-pill">GIVE YOUR FRAME A SECOND LIFE</span>
+      <h1>Same Frame.<br><span>Better Vision.</span></h1>
+      <p>Upgrade to authentic ValueVis and high-index lenses at your doorstep in Puducherry. Maintain your favourite frame with zero optical compromise.</p>
+      <div class="trust-badges">
+        <span class="trust-badge">✓ Doorstep Service</span>
+        <span class="trust-badge">✓ Freeform European & US Tech</span>
+        <span class="trust-badge">✓ Authenticity Card Included</span>
       </div>
     </section>
 
-    <!-- 2. Catalog Section -->
+    <!-- Curated Brand Showcase -->
+    <section class="brand-grid">
+      <div class="brand-card">
+        <div class="brand-tag">FLAGSHIP PROGRESSIVES</div>
+        <h3>Evolux & Evolux Elite</h3>
+        <p>Panoramic focal zones, instant adaptation, Optix ARC Green, and Bluvex ARC Blue optics.</p>
+      </div>
+      <div class="brand-card">
+        <div class="brand-tag">SURFACED FREEFORM</div>
+        <h3>Customized & Venture</h3>
+        <p>American Freeform technology with balanced corridor progression for active daily routines.</p>
+      </div>
+      <div class="brand-card">
+        <div class="brand-tag">LIGHT-ADAPTIVE</div>
+        <h3>DayNite Photochromic</h3>
+        <p>Effortlessly clear indoors and reactive dark outdoors for driving and sunny environments.</p>
+      </div>
+      <div class="brand-card">
+        <div class="brand-tag">HIGH IMPACT & THIN</div>
+        <h3>1.60 MR-8 & 1.74 Slim</h3>
+        <p>Up to 20% thinner edge profile, high tensile strength for rimless and sports frames.</p>
+      </div>
+    </section>
+
+    <!-- Live Order Tracking -->
+    <section class="tracker-card">
+      <div class="tracker-header">
+        <span style="font-size: 0.72rem; font-weight: 700; color: var(--primary);">LIVE ORDER JOURNEY</span>
+        <h2>Track Your Doorstep Service</h2>
+        <p>Check the live inspection, optical edging, and dispatch status of your frame.</p>
+      </div>
+
+      <form class="tracker-search-bar" onsubmit="handleTrackOrder(event)">
+        <div class="input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="orderTrackerInput" placeholder="Enter Order ID (e.g. RL-2026-1042)" required />
+        </div>
+        <button type="submit" class="track-btn">Track Order</button>
+      </form>
+
+      <div class="demo-id-pills">
+        <span>Sample test IDs:</span>
+        <button type="button" onclick="quickFillTrack('RL-2026-1042')">#RL-2026-1042</button>
+        <button type="button" onclick="quickFillTrack('RL-2026-1088')">#RL-2026-1088</button>
+      </div>
+
+      <div id="trackerResultArea"></div>
+    </section>
+
+    <!-- Interactive Lens Catalog -->
     <section class="catalog-section">
       <div class="catalog-section-header">
-        <h2>Premium Lens Catalog</h2>
+        <h2>ValueVis Optical Catalog (July 2026)</h2>
       </div>
 
-      <!-- Category Filter Pills -->
       <div class="catalog-filters" id="filterContainer">
         <button class="filter-btn active" data-filter="all">All Lenses</button>
-        <button class="filter-btn" data-filter="Single Vision">Single Vision</button>
-        <button class="filter-btn" data-filter="Progressive">Progressive</button>
-        <button class="filter-btn" data-filter="Blue Cut">Blue Cut</button>
-        <button class="filter-btn" data-filter="Contact Lenses">Contact Lenses</button>
+        <button class="filter-btn" data-filter="Evolux Elite">Evolux Elite (Flagship)</button>
+        <button class="filter-btn" data-filter="Evolux">Evolux Progressive</button>
+        <button class="filter-btn" data-filter="Customized">Customized Freeform</button>
+        <button class="filter-btn" data-filter="Venture">Venture / Entice</button>
+        <button class="filter-btn" data-filter="Single Vision">Single Vision Rx</button>
+        <button class="filter-btn" data-filter="FSV Stock">FSV & Stock PALs</button>
+        <button class="filter-btn" data-filter="Bifocals">Rx Bifocals</button>
       </div>
 
-      <!-- Catalog Cards Grid -->
       <div class="catalog-grid" id="catalogGrid"></div>
     </section>
 
+    <!-- Direct Doorstep Appointment Form -->
+    <section class="booking-section">
+      <h2>Book Your ReLens Doorstep Service</h2>
+      <p>Select your required service and preferred appointment slot to confirm directly with our specialist on WhatsApp.</p>
+      <form class="booking-form-grid" onsubmit="handleDirectBooking(event)">
+        <select id="quickServiceSelect">
+          <option>Lens Replacement (Keep Frame)</option>
+          <option>Progressive Lens Trial & Consultation</option>
+          <option>Doorstep Eye Test Assistant</option>
+          <option>Frame Realignment & Hinge Spa</option>
+        </select>
+        <input type="date" id="quickBookingDate" required />
+        <select id="quickBookingSlot">
+          <option>09:00 AM - 11:00 AM</option>
+          <option>11:00 AM - 01:00 PM</option>
+          <option>01:00 PM - 03:00 PM</option>
+          <option>03:00 PM - 05:00 PM</option>
+          <option>05:00 PM - 07:00 PM</option>
+        </select>
+        <button type="submit" class="book-direct-btn">Schedule Visit</button>
+      </form>
+    </section>
+
   </main>
+
+  <!-- Floating AI Assistant Trigger -->
+  <button class="ai-assistant-btn" onclick="toggleAiAssistant(true)">
+    <span>✨</span>
+    <span>Ask ReLens AI</span>
+  </button>
+
+  <!-- AI Vision Advisor Modal -->
+  <div class="ai-modal-overlay" id="aiOverlay" onclick="toggleAiAssistant(false)"></div>
+  <div class="ai-modal" id="aiModal">
+    <div class="ai-modal-header">
+      <div>
+        <span class="ai-badge">✨ AI Vision Advisor</span>
+        <h4 style="font-size: 0.95rem;">ReLens Smart Guide</h4>
+      </div>
+      <button class="close-btn" style="color: #fff;" onclick="toggleAiAssistant(false)">✕</button>
+    </div>
+
+    <div class="ai-chat-body" id="aiChatBody">
+      <div class="ai-msg bot">
+        Hello! I'm your ReLens Vision Advisor. Tell me about your routine or prescription (e.g., <em>"I drive at night and work on laptops with -3.50 power"</em>) and I will match the exact ValueVis lens package.
+      </div>
+    </div>
+
+    <div class="ai-quick-prompts">
+      <button type="button" onclick="runAiPrompt('high-screen')">💻 Screen BlueCut</button>
+      <button type="button" onclick="runAiPrompt('reading-distance')">📖 Reading + Driving</button>
+      <button type="button" onclick="runAiPrompt('outdoor-sun')">☀️ DayNite Adaptive</button>
+      <button type="button" onclick="runAiPrompt('high-power')">👓 High Power (-5.00+)</button>
+    </div>
+
+    <div class="ai-input-bar">
+      <input type="text" id="aiUserInput" placeholder="Describe your vision need..." onkeypress="handleAiKeyPress(event)" />
+      <button type="button" class="ai-send-btn" onclick="processAiInput()">Send</button>
+    </div>
+  </div>
 
   <!-- Floating Cart Button -->
   <button class="cart-floating-btn" id="openCartBtn" onclick="toggleCart(true)">
@@ -835,25 +345,23 @@
   <div class="cart-overlay" id="cartOverlay" onclick="toggleCart(false)"></div>
   <aside class="cart-drawer" id="cartDrawer">
     <div class="cart-header">
-      <h3>Your ReLens Bag</h3>
+      <h3 style="font-size: 1.1rem; font-weight: 700;">Your ReLens Bag</h3>
       <button class="close-btn" onclick="toggleCart(false)">✕</button>
     </div>
 
     <div class="cart-scroll-body">
-      <!-- Added Items -->
       <div class="cart-items" id="cartItemsContainer"></div>
 
       <!-- Prescription Section -->
       <div class="cart-rx-section">
         <div class="rx-header">
-          <span class="rx-title">👓 Optical Prescription</span>
+          <span style="font-size: 0.85rem; font-weight: 700;">👓 Optical Prescription</span>
           <div class="rx-tab-toggle">
             <button type="button" class="rx-tab-btn active" id="tabBtnManual" onclick="switchRxMode('manual')">Enter Power</button>
             <button type="button" class="rx-tab-btn" id="tabBtnUpload" onclick="switchRxMode('upload')">Upload Slip</button>
           </div>
         </div>
 
-        <!-- Mode 1: Manual Power Inputs -->
         <div id="rxManualForm" class="rx-mode-content active">
           <table class="rx-power-table">
             <thead>
@@ -883,7 +391,6 @@
             </tbody>
           </table>
 
-          <!-- Dynamic Index Recommendation Box -->
           <div id="indexRecommendationBox" class="index-rec-box hidden">
             <div style="font-size: 1.1rem;">💡</div>
             <div style="flex-grow: 1;">
@@ -894,10 +401,9 @@
           </div>
         </div>
 
-        <!-- Mode 2: Upload File -->
         <div id="rxUploadForm" class="rx-mode-content">
-          <label class="rx-file-dropzone" for="rxFileInput">
-            <input type="file" id="rxFileInput" accept="image/*,.pdf" onchange="handleRxFileSelect(event)" />
+          <label class="rx-file-dropzone" for="rxFileInput" style="display: block; border: 1.5px dashed #cbd5e1; border-radius: 8px; padding: 1rem; text-align: center; cursor: pointer;">
+            <input type="file" id="rxFileInput" accept="image/*,.pdf" onchange="handleRxFileSelect(event)" style="display: none;" />
             <div id="dropzoneEmpty">
               <span style="font-size: 1.25rem;">📄</span>
               <div style="font-weight: 600; font-size: 0.8rem;">Tap to select prescription slip</div>
@@ -911,10 +417,65 @@
         </div>
       </div>
 
-      <!-- Add-ons Section -->
+      <!-- Addons Section (Spa & Official ValueVis Custom Lab Services) -->
       <div class="cart-addons-section">
-        <span style="font-size: 0.85rem; font-weight: 700;">🛠️ Frame Spa & Maintenance</span>
+        <span style="font-size: 0.85rem; font-weight: 700;">🛠 Frame Fitting & Lab Add-ons</span>
         <div class="addons-list">
+          <label class="addon-card" for="addon-fullfit">
+            <input type="checkbox" id="addon-fullfit" value="fullfit" onchange="toggleAddon('fullfit')" />
+            <div class="addon-info">
+              <div class="addon-title-row">
+                <span>Standard Full Frame Edging</span>
+                <span class="addon-price">+₹200</span>
+              </div>
+              <p class="addon-desc">Automated bevel edging & lens mounting on full-rim frames.</p>
+            </div>
+          </label>
+
+          <label class="addon-card" for="addon-supra">
+            <input type="checkbox" id="addon-supra" value="supra" onchange="toggleAddon('supra')" />
+            <div class="addon-info">
+              <div class="addon-title-row">
+                <span>Supra (Semi-Rimless) Grooving</span>
+                <span class="addon-price">+₹300</span>
+              </div>
+              <p class="addon-desc">Precision nylon-wire grooving for semi-rimless frames.</p>
+            </div>
+          </label>
+
+          <label class="addon-card" for="addon-rimless">
+            <input type="checkbox" id="addon-rimless" value="rimless" onchange="toggleAddon('rimless')" />
+            <div class="addon-info">
+              <div class="addon-title-row">
+                <span>Rimless Drill Mounting</span>
+                <span class="addon-price">+₹500</span>
+              </div>
+              <p class="addon-desc">Precision hole drilling on Coburn/Buhler machinery.</p>
+            </div>
+          </label>
+
+          <label class="addon-card" for="addon-dualcoat">
+            <input type="checkbox" id="addon-dualcoat" value="dualcoat" onchange="toggleAddon('dualcoat')" />
+            <div class="addon-info">
+              <div class="addon-title-row">
+                <span>Dual Coat™ (Front Green + Back Blue ARC)</span>
+                <span class="addon-price">+₹500</span>
+              </div>
+              <p class="addon-desc">Front surface green reflection + back surface blue reflection.</p>
+            </div>
+          </label>
+
+          <label class="addon-card" for="addon-tint">
+            <input type="checkbox" id="addon-tint" value="tint" onchange="toggleAddon('tint')" />
+            <div class="addon-info">
+              <div class="addon-title-row">
+                <span>Custom Tint (Full / Gradient)</span>
+                <span class="addon-price">+₹300</span>
+              </div>
+              <p class="addon-desc">Dark/Light Grey, Brown, Blue, Yellow, or Pink tints.</p>
+            </div>
+          </label>
+
           <label class="addon-card" for="addon-nosepads">
             <input type="checkbox" id="addon-nosepads" value="nosepads" onchange="toggleAddon('nosepads')" />
             <div class="addon-info">
@@ -950,42 +511,42 @@
         </div>
       </div>
 
-      <!-- Preferred Slot Section -->
+      <!-- Appointment Slot Section -->
       <div class="cart-appointment-section">
         <span style="font-size: 0.85rem; font-weight: 700;">📅 Preferred Doorstep Appointment</span>
         <div style="margin-top: 0.5rem;">
-          <input type="date" id="appointmentDate" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.85rem;" onchange="handleAppointmentChange()" />
+          <input type="date" id="appointmentDate" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.85rem;" onchange="saveReLensState()" />
         </div>
         <div class="slot-grid">
           <label class="slot-pill">
-            <input type="radio" name="appointmentSlot" value="09:00 AM - 11:00 AM" checked onchange="handleAppointmentChange()" />
+            <input type="radio" name="appointmentSlot" value="09:00 AM - 11:00 AM" checked onchange="saveReLensState()" />
             <span>09:00 AM - 11:00 AM</span>
           </label>
           <label class="slot-pill">
-            <input type="radio" name="appointmentSlot" value="11:00 AM - 01:00 PM" onchange="handleAppointmentChange()" />
+            <input type="radio" name="appointmentSlot" value="11:00 AM - 01:00 PM" onchange="saveReLensState()" />
             <span>11:00 AM - 01:00 PM</span>
           </label>
           <label class="slot-pill">
-            <input type="radio" name="appointmentSlot" value="01:00 PM - 03:00 PM" onchange="handleAppointmentChange()" />
+            <input type="radio" name="appointmentSlot" value="01:00 PM - 03:00 PM" onchange="saveReLensState()" />
             <span>01:00 PM - 03:00 PM</span>
           </label>
           <label class="slot-pill">
-            <input type="radio" name="appointmentSlot" value="03:00 PM - 05:00 PM" onchange="handleAppointmentChange()" />
+            <input type="radio" name="appointmentSlot" value="03:00 PM - 05:00 PM" onchange="saveReLensState()" />
             <span>03:00 PM - 05:00 PM</span>
           </label>
           <label class="slot-pill">
-            <input type="radio" name="appointmentSlot" value="05:00 PM - 07:00 PM" onchange="handleAppointmentChange()" />
+            <input type="radio" name="appointmentSlot" value="05:00 PM - 07:00 PM" onchange="saveReLensState()" />
             <span>05:00 PM - 07:00 PM</span>
           </label>
           <label class="slot-pill">
-            <input type="radio" name="appointmentSlot" value="07:00 PM - 09:00 PM" onchange="handleAppointmentChange()" />
+            <input type="radio" name="appointmentSlot" value="07:00 PM - 09:00 PM" onchange="saveReLensState()" />
             <span>07:00 PM - 09:00 PM</span>
           </label>
         </div>
       </div>
     </div>
 
-    <!-- Drawer Sticky Footer -->
+    <!-- Drawer Footer -->
     <div class="cart-footer">
       <div class="total-row">
         <span>Estimated Total</span>
@@ -997,7 +558,942 @@
     </div>
   </aside>
 
-  <!-- Connect Application Script -->
-  <script src="app.js"></script>
+  <!-- Complete Reactive Logic -->
+  <script>
+    const RELENS_STORAGE_KEY = "relens_cart_session_v1";
+
+    // ValueVis Official July 2026 Price List Catalog
+    const catalogData = [
+      // 1. EVOLUX ELITE (Flagship Series)
+      {
+        id: "vv-ee-156-bluvex",
+        name: "Evolux Elite 1.56 Clearview (Bluvex Blue ARC)",
+        category: "Evolux Elite",
+        series: "Evolux Elite (EE)",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=600&q=80",
+        features: ["Flagship panoramic field of view", "Bluvex ARC signature blue finish", "Laser authenticated (EE)"],
+        price: 10190
+      },
+      {
+        id: "vv-ee-156-optix",
+        name: "Evolux Elite 1.56 Clearview (Optix Green ARC)",
+        category: "Evolux Elite",
+        series: "Evolux Elite (EE)",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=600&q=80",
+        features: ["Unmatched clarity across every focal zone", "Optix ARC green reflection", "Instant adaptation comfort"],
+        price: 10690
+      },
+      {
+        id: "vv-ee-160-optix",
+        name: "Evolux Elite 1.60 MR-8 Clearview (Optix ARC)",
+        category: "Evolux Elite",
+        series: "Evolux Elite (EE)",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80",
+        features: ["Maximum corridor width", "MR-8 high impact strength", "Ultra-smooth visual flow"],
+        price: 12790
+      },
+      {
+        id: "vv-ee-167-optix",
+        name: "Evolux Elite 1.67 Ultra-Thin Clearview",
+        category: "Evolux Elite",
+        series: "Evolux Elite (EE)",
+        index: 1.67,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        features: ["Ultra-thin edges for high additions", "Optix ARC coating", "Luxury visual balance"],
+        price: 14490
+      },
+      {
+        id: "vv-ee-174-optix",
+        name: "Evolux Elite 1.74 Extreme High-Index",
+        category: "Evolux Elite",
+        series: "Evolux Elite (EE)",
+        index: 1.74,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        features: ["Flattest & slimmest progressive on market", "Precision surfaced for high Rx", "Authentic engraving (EE)"],
+        price: 26190
+      },
+      {
+        id: "vv-ee-160-daynite",
+        name: "Evolux Elite 1.60 MR-8 DayNite Adaptive",
+        category: "Evolux Elite",
+        series: "Evolux Elite (EE)",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        features: ["Flagship optics + fast photochromic", "Effortless transition in & outdoors", "Bluvex ARC signature reflection"],
+        price: 17690
+      },
+
+      // 2. EVOLUX (Advanced Progressive Lenses)
+      {
+        id: "vv-ex-156-bluvex",
+        name: "Evolux 1.56 Clearview (Bluvex Blue ARC)",
+        category: "Evolux",
+        series: "Evolux (EX)",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=600&q=80",
+        features: ["Advanced European Technology", "Refined blue reflection finish", "Extended field of vision (Far/Mid/Near)"],
+        price: 6990
+      },
+      {
+        id: "vv-ex-156-optix",
+        name: "Evolux 1.56 Clearview (Optix Green ARC)",
+        category: "Evolux",
+        series: "Evolux (EX)",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=600&q=80",
+        features: ["Green reflection coating", "Reduced peripheral swim", "Reliable all-day comfort"],
+        price: 7490
+      },
+      {
+        id: "vv-ex-160-bluvex",
+        name: "Evolux 1.60 MR-8 Clearview (Bluvex ARC)",
+        category: "Evolux",
+        series: "Evolux (EX)",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80",
+        features: ["MR-8 premium strength", "20% thinner edge profile", "Ideal for daily drivers & screen users"],
+        price: 9390
+      },
+      {
+        id: "vv-ex-167-bluvex",
+        name: "Evolux 1.67 Ultra-Thin Clearview",
+        category: "Evolux",
+        series: "Evolux (EX)",
+        index: 1.67,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        features: ["Thin & lightweight for higher prescriptions", "Bluvex ARC reflection", "Authentic engraving (EX)"],
+        price: 10690
+      },
+      {
+        id: "vv-ex-160-daynite",
+        name: "Evolux 1.60 MR-8 DayNite Adaptive (Optix ARC)",
+        category: "Evolux",
+        series: "Evolux (EX)",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        features: ["Intelligent light transition", "All-day clear indoors to dark outdoors", "Optix ARC green coating"],
+        price: 13890
+      },
+
+      // 3. CUSTOMIZED PROGRESSIVES (American Freeform Tech)
+      {
+        id: "vv-cm-156-clear-hmc",
+        name: "Customized 1.56 Clear Freeform (HMC Green)",
+        category: "Customized",
+        series: "Customized (CM)",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        features: ["American Freeform design", "Optimized clarity across distances", "HMC Green multi-coat"],
+        price: 3990
+      },
+      {
+        id: "vv-cm-156-bc-hmc",
+        name: "Customized 1.56 BlueCut Freeform (HMC Green)",
+        category: "Customized",
+        series: "Customized (CM)",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        features: ["Balanced corridor transition", "Blue-light screen protection", "Laser authenticated (CM)"],
+        price: 4390
+      },
+      {
+        id: "vv-cm-160-bc-hmc",
+        name: "Customized 1.60 MR-8 BlueCut (HMC Green)",
+        category: "Customized",
+        series: "Customized (CM)",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80",
+        features: ["MR-8 premium substrate", "Impact resistance for rimless frames", "Smooth visual progression"],
+        price: 6790
+      },
+      {
+        id: "vv-cm-167-bc-hmc",
+        name: "Customized 1.67 Ultra-Thin BlueCut (HMC Green)",
+        category: "Customized",
+        series: "Customized (CM)",
+        index: 1.67,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        features: ["Slim edge profile for higher powers", "Digital back-surface surfacing", "Reduced eye minification"],
+        price: 8390
+      },
+      {
+        id: "vv-cm-174-bc-hmc",
+        name: "Customized 1.74 Extreme Slim BlueCut",
+        category: "Customized",
+        series: "Customized (CM)",
+        index: 1.74,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=600&q=80",
+        features: ["Top-tier 1.74 thinness", "HMC Green ARC", "Flattest custom freeform profile"],
+        price: 19790
+      },
+      {
+        id: "vv-cm-160-daynite-bc",
+        name: "Customized 1.60 DayNite + BlueCut (HMC Green)",
+        category: "Customized",
+        series: "Customized (CM)",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        features: ["Dual protection: Screens + Sunlight", "Intelligent tint adaptation", "HMC Green coating"],
+        price: 11490
+      },
+
+      // 4. VENTURE & ENTICE PROGRESSIVES
+      {
+        id: "vv-entice-149",
+        name: "Entice 1.49 Freeform Progressive (HMC Green)",
+        category: "Venture",
+        series: "Entice",
+        index: 1.50,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        features: ["Essential clarity for everyday vision", "Standard corridor design", "Economic entry-level progressive"],
+        price: 2090
+      },
+      {
+        id: "vv-venture-156-clear",
+        name: "Venture 1.56 Clear Freeform (HMC Green)",
+        category: "Venture",
+        series: "Venture (VT)",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        features: ["Wider visual zones", "Smoother transitions", "Authentic engraving (VT)"],
+        price: 3090
+      },
+      {
+        id: "vv-venture-156-bc",
+        name: "Venture 1.56 BlueCut Freeform (HMC Green)",
+        category: "Venture",
+        series: "Venture (VT)",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        features: ["Everyday performance", "Digital screen comfort", "HMC Green coat"],
+        price: 3490
+      },
+      {
+        id: "vv-venture-160-bc",
+        name: "Venture 1.60 BlueCut Freeform (HMC Green)",
+        category: "Venture",
+        series: "Venture (VT)",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80",
+        features: ["Thin & light for moderate powers", "Optimized computer intermediate corridor", "Quicker adaptation"],
+        price: 5390
+      },
+      {
+        id: "vv-venture-156-daynite-bc",
+        name: "Venture 1.56 DayNite + BlueCut (HMC Green)",
+        category: "Venture",
+        series: "Venture (VT)",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        features: ["Outdoor light adaptation", "Screen glare filtration", "HMC Green multi-coat"],
+        price: 4490
+      },
+
+      // 5. SINGLE VISION RX (Surfaced Precision)
+      {
+        id: "vv-sv-156-clear-hmc",
+        name: "Single Vision Rx 1.56 Clear (HMC Green)",
+        category: "Single Vision",
+        series: "Single Vision Rx",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        features: ["Custom surfaced precision optics", "Scratch resistance & UV block", "HMC Green coating"],
+        price: 3290
+      },
+      {
+        id: "vv-sv-156-bc-hmc",
+        name: "Single Vision Rx 1.56 BlueCut (HMC Green)",
+        category: "Single Vision",
+        series: "Single Vision Rx",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        features: ["High energy screen filtration", "Hydrophobic easy-clean", "Surfaced power up to -8.00 D"],
+        price: 3590
+      },
+      {
+        id: "vv-sv-160-bc-hmc",
+        name: "Single Vision Rx 1.60 MR-8 BlueCut (HMC Green)",
+        category: "Single Vision",
+        series: "Single Vision Rx",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        features: ["MR-8 impact resistance", "20% thinner edge profile", "Best for rimless & supra frames"],
+        price: 5790
+      },
+      {
+        id: "vv-sv-167-bc-hmc",
+        name: "Single Vision Rx 1.67 Ultra-Thin BlueCut",
+        category: "Single Vision",
+        series: "Single Vision Rx",
+        index: 1.67,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80",
+        features: ["Aspheric design for powers up to -12.00 D", "HMC Green multi-coat", "Minimal eye minification"],
+        price: 7390
+      },
+      {
+        id: "vv-sv-160-daynite-hmc",
+        name: "Single Vision Rx 1.60 MR-8 DayNite (HMC Green)",
+        category: "Single Vision",
+        series: "Single Vision Rx",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        features: ["Adaptive indoor-to-outdoor clarity", "MR-8 durability", "HMC Green ARC"],
+        price: 8290
+      },
+
+      // 6. FSV & QUICKFIT STOCK LENSES
+      {
+        id: "vv-fsv-precious-clear",
+        name: "Precious Blue 1.56 FSV Clear (HMC Blue)",
+        category: "FSV Stock",
+        series: "Precious Blue",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        features: ["Exact power stock (+4.00 to -6.00 / Cyl -2.00)", "HMC Blue reflection", "Dust & water repellent"],
+        price: 1490
+      },
+      {
+        id: "vv-fsv-precious-bc",
+        name: "Precious Blue 1.56 FSV BlueCut (HMC Blue)",
+        category: "FSV Stock",
+        series: "Precious Blue",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        features: ["BlueCut digital screen protection", "HMC Blue coating", "Affordable daily stock lens"],
+        price: 1590
+      },
+      {
+        id: "vv-fsv-precious-daynite",
+        name: "Precious Blue 1.56 FSV DayNite (Photochromic)",
+        category: "FSV Stock",
+        series: "Precious Blue",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        features: ["Fast reacting sunlight darkening", "HMC Blue reflection", "All-in-one spectacles + shades"],
+        price: 1890
+      },
+      {
+        id: "vv-fsv-precious-daynite-bc",
+        name: "Precious Blue 1.56 FSV DayNite + BlueCut",
+        category: "FSV Stock",
+        series: "Precious Blue",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        features: ["Dual protection: Screen + Sunlight", "HMC Blue coating", "Rapid indoor fadeback"],
+        price: 1990
+      },
+      {
+        id: "vv-stock-v2-pal",
+        name: "QuickFit V2 Stock Progressive 1.56 (HMC)",
+        category: "FSV Stock",
+        series: "QuickFit Stock",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        features: ["Stock PAL (+3.00 to -2.00 / Add +3.00)", "Immediate delivery", "HMC coating"],
+        price: 1890
+      },
+      {
+        id: "vv-stock-v2-kt",
+        name: "QuickFit V2 Stock Kryptok 1.56 (HMC)",
+        category: "FSV Stock",
+        series: "QuickFit Stock",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        features: ["Stock round-top bifocal", "HMC multi-coat", "Economical near-and-far solution"],
+        price: 990
+      },
+
+      // 7. RX BIFOCAL LENSES
+      {
+        id: "vv-bf-kt-149",
+        name: "Kryptok (KT) Bifocal 1.49 (HMC Green)",
+        category: "Bifocals",
+        series: "Rx Bifocals",
+        index: 1.50,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=600&q=80",
+        features: ["Classic round segment near vision", "HMC Green coating", "Dependable distance clarity"],
+        price: 1990
+      },
+      {
+        id: "vv-bf-kt-plus-156-bc",
+        name: "KT Plus BlueCut Bifocal 1.56 (HMC Green)",
+        category: "Bifocals",
+        series: "Rx Bifocals",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80",
+        features: ["Upgraded 1.56 thinness", "Screen blue-light filter", "HMC Green multi-coat"],
+        price: 2690
+      },
+      {
+        id: "vv-bf-dbifocal-156-plus",
+        name: "D-Bifocal Plus 1.56 (HMC Green)",
+        category: "Bifocals",
+        series: "Rx Bifocals",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80",
+        features: ["Flat-top D segment for wider reading zone", "Eliminates image jump", "HMC Green coating"],
+        price: 2790
+      }
+    ];
+
+    // Official Lab Services & Surcharges (July 2026 Price List)
+    const availableAddons = {
+      fullfit: { id: "addon-fullfit", name: "Full Frame Edging Fitting", price: 200 },
+      supra: { id: "addon-supra", name: "Supra (Semi-Rimless) Grooving Fitting", price: 300 },
+      rimless: { id: "addon-rimless", name: "Rimless Precision Drill Mounting", price: 500 },
+      dualcoat: { id: "addon-dualcoat", name: "ValueVis Dual Coat™ (Front Green / Back Blue ARC)", price: 500 },
+      tint: { id: "addon-tint", name: "Custom Sunglass Tint (Full / Gradient)", price: 300 },
+      nosepads: { id: "addon-nosepads", name: "German Silicone Nose Pads", price: 99 },
+      ultrasonic: { id: "addon-ultrasonic", name: "Ultrasonic Deep Cleaning Spa", price: 149 },
+      alignment: { id: "addon-alignment", name: "Frame Realignment & Tightening", price: 199 }
+    };
+
+    // Live Order Database
+    const RELENS_ORDERS = {
+      "RL-2026-1042": {
+        orderId: "RL-2026-1042",
+        lensName: "Evolux Elite 1.60 MR-8 (Optix ARC)",
+        frameService: "Full Rim Fitting + Ultrasonic Spa",
+        deliveryType: "Doorstep Delivery (Puducherry)",
+        currentStageIndex: 2,
+        estimatedDelivery: "04 Oct 2026",
+        timeline: [
+          { title: "Order Confirmed", date: "01 Oct 2026, 10:30 AM", detail: "Booking created via WhatsApp" },
+          { title: "Prescription & Frame Inspected", date: "01 Oct 2026, 04:15 PM", detail: "Power verified (-3.00 SPH / 1.60 MR-8)" },
+          { title: "Optical Edging & Lens Fitting", date: "In Progress (Lab)", detail: "Free-form surfacing on Coburn Cobalt NXT" },
+          { title: "Quality & Alignment Check", date: "Pending", detail: "Axis balance and pantoscopic tilt verification" },
+          { title: "Out for Doorstep Delivery", date: "Scheduled", detail: "Optical specialist assigned for fitting" },
+          { title: "Delivered & Fitted", date: "Pending", detail: "Customer doorstep sign-off" }
+        ]
+      },
+      "RL-2026-1088": {
+        orderId: "RL-2026-1088",
+        lensName: "Single Vision Rx 1.60 MR-8 BlueCut",
+        frameService: "German Silicone Nose Pads",
+        deliveryType: "Doorstep Delivery (Lawspet, Puducherry)",
+        currentStageIndex: 4,
+        estimatedDelivery: "Today",
+        timeline: [
+          { title: "Order Confirmed", date: "02 Oct 2026, 09:00 AM", detail: "Service confirmed" },
+          { title: "Prescription & Frame Inspected", date: "02 Oct 2026, 11:30 AM", detail: "Single vision power matched" },
+          { title: "Optical Edging & Lens Fitting", date: "02 Oct 2026, 05:00 PM", detail: "Precision mounted into existing frame" },
+          { title: "Quality & Alignment Check", date: "03 Oct 2026, 09:30 AM", detail: "Zero-stress test and UV check passed" },
+          { title: "Out for Doorstep Delivery", date: "En Route", detail: "Specialist is out for doorstep trial" },
+          { title: "Delivered & Fitted", date: "Pending", detail: "Awaiting customer fit confirmation" }
+        ]
+      }
+    };
+
+    let cart = [];
+    const selectedAddons = new Set();
+    let activeFilter = "all";
+    let currentRecommendedIndex = null;
+    let isIndexFilterActive = false;
+    let currentRxMode = "manual";
+    let selectedRxFile = null;
+
+    // Render Catalog
+    function renderCatalog(items) {
+      const container = document.getElementById("catalogGrid");
+      if (!container) return;
+
+      if (!items || items.length === 0) {
+        container.innerHTML = `<div style="grid-column: 1 / -1; padding: 2rem; text-align: center; background: white; border-radius: 12px;"><p style="color: #64748b;">No lenses found matching this selection.</p></div>`;
+        return;
+      }
+
+      container.innerHTML = items.map(item => {
+        const isRecommended = currentRecommendedIndex && (item.index === currentRecommendedIndex);
+        return `
+          <article class="catalog-card ${isRecommended ? 'recommended-match' : ''}">
+            <div class="card-media">
+              ${isRecommended ? '<span class="match-badge">⭐ Recommended for Your Power</span>' : ''}
+              <img src="${item.image}" alt="${item.name}" loading="lazy" class="product-img">
+              <div class="brand-pill"><span>${item.brand} • ${item.series}</span></div>
+            </div>
+            <div class="card-body">
+              <div class="tag-row">
+                <span class="category-badge">${item.category}</span>
+                ${item.index ? `<span class="index-pill">${item.index} Index</span>` : ''}
+              </div>
+              <h3 class="product-title">${item.name}</h3>
+              <ul class="feature-tags">
+                ${item.features.map(f => `<li>✓ ${f}</li>`).join("")}
+              </ul>
+              <div class="card-action">
+                <div class="price-wrap">
+                  <span class="price-label">Official MRP</span>
+                  <span class="price">₹${item.price.toLocaleString("en-IN")}</span>
+                </div>
+                <button class="select-btn" onclick="handleSelectLens('${item.id}')">Select</button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function applyFilters() {
+      const filtered = catalogData.filter(item => {
+        const matchesCategory = (activeFilter === "all") || (item.category === activeFilter);
+        let matchesIndex = true;
+        if (isIndexFilterActive && currentRecommendedIndex && item.index) {
+          matchesIndex = (item.index === currentRecommendedIndex);
+        }
+        return matchesCategory && matchesIndex;
+      });
+      renderCatalog(filtered);
+    }
+
+    function toggleIndexFilter() {
+      isIndexFilterActive = !isIndexFilterActive;
+      const btn = document.getElementById("filterByIndexBtn");
+      if (btn) {
+        btn.textContent = isIndexFilterActive ? "Show All Available Lenses" : `Show Only ${currentRecommendedIndex} Lenses`;
+      }
+      applyFilters();
+      toggleCart(false);
+    }
+
+    // Prescription & Index Rule
+    function switchRxMode(mode) {
+      currentRxMode = mode;
+      document.getElementById("tabBtnManual").classList.toggle("active", mode === "manual");
+      document.getElementById("tabBtnUpload").classList.toggle("active", mode === "upload");
+      document.getElementById("rxManualForm").classList.toggle("active", mode === "manual");
+      document.getElementById("rxUploadForm").classList.toggle("active", mode === "upload");
+      saveReLensState();
+    }
+
+    function handleRxFileSelect(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      selectedRxFile = file;
+      document.getElementById("dropzoneEmpty").classList.add("hidden");
+      document.getElementById("dropzonePreview").classList.remove("hidden");
+      document.getElementById("rxFileName").textContent = `📎 ${file.name}`;
+      saveReLensState();
+    }
+
+    function clearRxFile(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      selectedRxFile = null;
+      document.getElementById("rxFileInput").value = "";
+      document.getElementById("dropzonePreview").classList.add("hidden");
+      document.getElementById("dropzoneEmpty").classList.remove("hidden");
+      saveReLensState();
+    }
+
+    function evaluatePrescriptionIndex() {
+      const parseVal = (id) => {
+        const raw = document.getElementById(id)?.value.trim();
+        if (!raw) return 0;
+        const clean = parseFloat(raw.replace("+", ""));
+        return isNaN(clean) ? 0 : clean;
+      };
+
+      const odSph = parseVal("odSph");
+      const odCyl = parseVal("odCyl");
+      const osSph = parseVal("osSph");
+      const osCyl = parseVal("osCyl");
+
+      const maxPower = Math.max(Math.abs(odSph) + Math.abs(odCyl), Math.abs(osSph) + Math.abs(osCyl));
+      const box = document.getElementById("indexRecommendationBox");
+      const title = document.getElementById("recIndexVal");
+      const reason = document.getElementById("recReasonText");
+      const filterBtn = document.getElementById("filterByIndexBtn");
+
+      if (maxPower === 0) {
+        currentRecommendedIndex = null;
+        isIndexFilterActive = false;
+        box.classList.add("hidden");
+        applyFilters();
+        return;
+      }
+
+      if (maxPower <= 2.00) {
+        currentRecommendedIndex = 1.56;
+        title.textContent = "1.56 Standard Index";
+        reason.textContent = "Optimal clarity and durability for light optical powers.";
+        box.className = "index-rec-box rec-standard";
+      } else if (maxPower <= 4.00) {
+        currentRecommendedIndex = 1.60;
+        title.textContent = "1.60 Thin Hi-Index (MR-8)";
+        reason.textContent = "Up to 20% thinner edge profile with high impact strength.";
+        box.className = "index-rec-box rec-mid";
+      } else if (maxPower <= 6.00) {
+        currentRecommendedIndex = 1.67;
+        title.textContent = "1.67 Ultra-Thin Hi-Index";
+        reason.textContent = "Significantly reduces edge thickness and peripheral distortion.";
+        box.className = "index-rec-box rec-high";
+      } else {
+        currentRecommendedIndex = 1.74;
+        title.textContent = "1.74 Extreme Hi-Index";
+        reason.textContent = "Slimmest aesthetic profile for high prescriptions.";
+        box.className = "index-rec-box rec-ultra";
+      }
+
+      filterBtn.textContent = isIndexFilterActive ? "Show All Available Lenses" : `Show Only ${currentRecommendedIndex} Lenses`;
+      box.classList.remove("hidden");
+      applyFilters();
+    }
+
+    // AI Vision Advisor Engine
+    function toggleAiAssistant(isOpen) {
+      document.getElementById("aiModal").classList.toggle("active", isOpen);
+      document.getElementById("aiOverlay").classList.toggle("active", isOpen);
+    }
+
+    function handleAiKeyPress(e) {
+      if (e.key === "Enter") processAiInput();
+    }
+
+    function runAiPrompt(type) {
+      let promptText = "";
+      if (type === "high-screen") promptText = "I spend 8+ hours on laptops and digital screens.";
+      if (type === "reading-distance") promptText = "I need clear vision for reading phone and distance driving.";
+      if (type === "outdoor-sun") promptText = "I want lenses that adapt and turn dark in sunlight.";
+      if (type === "high-power") promptText = "My power is high (-5.00 or above) and I need ultra-thin edges.";
+      
+      document.getElementById("aiUserInput").value = promptText;
+      processAiInput();
+    }
+
+    function processAiInput() {
+      const input = document.getElementById("aiUserInput");
+      const query = input.value.trim().toLowerCase();
+      if (!query) return;
+
+      const chatBody = document.getElementById("aiChatBody");
+      chatBody.innerHTML += `<div class="ai-msg user">${input.value}</div>`;
+      input.value = "";
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      setTimeout(() => {
+        let reply = "";
+        let recommendedLensId = "";
+
+        if (query.includes("screen") || query.includes("computer") || query.includes("laptop") || query.includes("blue")) {
+          reply = "For heavy screen usage, you need advanced reflection control. I recommend **Single Vision Rx 1.60 MR-8 BlueCut** or **Customized 1.56 BlueCut** with HMC Green reflection.";
+          recommendedLensId = "vv-sv-160-bc-hmc";
+        } else if (query.includes("reading") || query.includes("driving") || query.includes("progressive") || query.includes("bifocal")) {
+          reply = "For seamless multi-distance vision without dividing lines, the **Evolux 1.56 Clearview (Optix Green ARC)** or **Evolux Elite 1.60** provides an expanded visual field with quick adaptation.";
+          recommendedLensId = "vv-ex-156-optix";
+        } else if (query.includes("outdoor") || query.includes("sun") || query.includes("dark") || query.includes("photochromic")) {
+          reply = "You need light-adaptive technology. The **Precious Blue 1.56 FSV DayNite** or **Evolux 1.60 DayNite** reacts smoothly from indoor clear to outdoor dark.";
+          recommendedLensId = "vv-fsv-precious-daynite";
+        } else if (query.includes("high") || query.includes("thick") || query.includes("-5") || query.includes("-6") || query.includes("thin")) {
+          reply = "For strong prescriptions, standard lenses become thick and heavy. I recommend **Customized 1.67 Ultra-Thin BlueCut** or **Evolux Elite 1.74 Extreme Thin**.";
+          recommendedLensId = "vv-cm-167-bc-hmc";
+        } else {
+          reply = "Based on balanced everyday performance, the **Precious Blue 1.56 FSV BlueCut** offers great screen comfort and multi-coating at optimal value.";
+          recommendedLensId = "vv-fsv-precious-bc";
+        }
+
+        chatBody.innerHTML += `
+          <div class="ai-msg bot">
+            ${reply}
+            <br><br>
+            <button class="ai-action-btn" onclick="handleSelectLens('${recommendedLensId}'); toggleAiAssistant(false);">
+              👉 Add Recommended Lens to Bag
+            </button>
+          </div>
+        `;
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }, 400);
+    }
+
+    // Cart & Addons
+    function toggleCart(isOpen) {
+      document.getElementById("cartDrawer")?.classList.toggle("active", isOpen);
+      document.getElementById("cartOverlay")?.classList.toggle("active", isOpen);
+    }
+
+    function handleSelectLens(lensId) {
+      const item = catalogData.find(l => l.id === lensId);
+      if (!item) return;
+
+      const existing = cart.find(ci => ci.id === lensId);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ ...item, quantity: 1 });
+      }
+
+      updateCartUI();
+      saveReLensState();
+      toggleCart(true);
+    }
+
+    function updateQuantity(lensId, delta) {
+      const itemIndex = cart.findIndex(ci => ci.id === lensId);
+      if (itemIndex === -1) return;
+
+      cart[itemIndex].quantity += delta;
+      if (cart[itemIndex].quantity <= 0) {
+        cart.splice(itemIndex, 1);
+      }
+
+      updateCartUI();
+      saveReLensState();
+    }
+
+    function toggleAddon(addonKey) {
+      if (selectedAddons.has(addonKey)) {
+        selectedAddons.delete(addonKey);
+      } else {
+        selectedAddons.add(addonKey);
+      }
+      updateCartTotals();
+      saveReLensState();
+    }
+
+    function updateCartTotals() {
+      const totalElem = document.getElementById("cartTotalPrice");
+      const lensesTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      let addonsTotal = 0;
+      selectedAddons.forEach(key => {
+        addonsTotal += availableAddons[key].price;
+      });
+      totalElem.textContent = `₹${(lensesTotal + addonsTotal).toLocaleString("en-IN")}`;
+    }
+
+    function updateCartUI() {
+      const container = document.getElementById("cartItemsContainer");
+      const badge = document.getElementById("cartCount");
+      badge.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+      if (cart.length === 0) {
+        container.innerHTML = `<div style="text-align: center; padding: 2rem 0; color: #64748b;"><p style="font-weight: 600;">No lenses in your bag yet.</p><span style="font-size: 0.8rem;">Select a lens package from the catalog to continue.</span></div>`;
+        updateCartTotals();
+        return;
+      }
+
+      container.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div class="cart-item-details">
+            <span class="item-brand" style="font-size: 0.72rem; color: var(--primary); font-weight: 700;">${item.brand} • ${item.series}</span>
+            <h4 style="font-size: 0.95rem; margin: 2px 0;">${item.name}</h4>
+            <span style="font-size: 0.8rem; color: #64748b;">₹${item.price.toLocaleString("en-IN")} each</span>
+          </div>
+          <div class="item-actions">
+            <div class="qty-stepper">
+              <button onclick="updateQuantity('${item.id}', -1)">−</button>
+              <span style="padding: 0 8px; font-size: 0.85rem;">${item.quantity}</span>
+              <button onclick="updateQuantity('${item.id}', 1)">+</button>
+            </div>
+            <span style="font-weight: 700;">₹${(item.price * item.quantity).toLocaleString("en-IN")}</span>
+          </div>
+        </div>
+      `).join("");
+
+      updateCartTotals();
+    }
+
+    function handleDirectBooking(event) {
+      event.preventDefault();
+      const service = document.getElementById("quickServiceSelect").value;
+      const date = document.getElementById("quickBookingDate").value;
+      const slot = document.getElementById("quickBookingSlot").value;
+
+      const message = `*Direct Service Appointment Request*\nService: ${service}\nPreferred Slot: ${date} (${slot})\nLocation: Puducherry`;
+      window.open(`https://wa.me/message/3XHYZJ2WIHFTO1?text=${encodeURIComponent(message)}`, "_blank");
+    }
+
+    function handleTrackOrder(event) {
+      event.preventDefault();
+      const input = document.getElementById("orderTrackerInput");
+      displayOrderStatus(input.value.trim().toUpperCase().replace("#", ""));
+    }
+
+    function quickFillTrack(id) {
+      document.getElementById("orderTrackerInput").value = id;
+      displayOrderStatus(id);
+    }
+
+    function displayOrderStatus(orderId) {
+      const resultArea = document.getElementById("trackerResultArea");
+      const order = RELENS_ORDERS[orderId];
+
+      if (!order) {
+        resultArea.innerHTML = `
+          <div style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 8px; padding: 1rem; text-align: center; color: #9f1239; margin-top: 1rem;">
+            <h4>Order #${orderId} Not Found</h4>
+            <p style="font-size: 0.8rem; margin: 4px 0 8px;">Please check your Order ID or contact ReLens WhatsApp support directly.</p>
+            <a href="https://wa.me/message/3XHYZJ2WIHFTO1?text=Hi%20ReLens,%20help%20me%20track%20order%20%23${orderId}" target="_blank" style="color: #0284c7; font-weight: 700; font-size: 0.85rem;">Contact Support</a>
+          </div>`;
+        return;
+      }
+
+      const timelineHTML = order.timeline.map((step, idx) => {
+        const isDone = idx < order.currentStageIndex;
+        const isCurrent = idx === order.currentStageIndex;
+        const color = isDone ? "#22c55e" : isCurrent ? "#0284c7" : "#cbd5e1";
+        const icon = isDone ? "✓" : isCurrent ? "●" : "○";
+
+        return `
+          <div style="display: flex; gap: 12px; position: relative;">
+            <div style="display: flex; flex-direction: column; align-items: center; width: 20px;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: ${isDone || isCurrent ? color : '#fff'}; border: 2px solid ${color}; color: ${isDone || isCurrent ? '#fff' : 'transparent'}; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700;">${icon}</span>
+              ${idx < order.timeline.length - 1 ? `<span style="width: 2px; flex-grow: 1; background: ${isDone ? '#22c55e' : '#e2e8f0'}; min-height: 24px;"></span>` : ''}
+            </div>
+            <div style="padding-bottom: 1rem; flex-grow: 1;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; color: ${isCurrent ? '#0284c7' : '#1e293b'};">
+                <span>${step.title}</span>
+                <span style="font-size: 0.72rem; color: #64748b; font-weight: 400;">${step.date}</span>
+              </div>
+              <p style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">${step.detail}</p>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      resultArea.innerHTML = `
+        <div style="border-top: 1px solid #e2e8f0; padding-top: 1rem; margin-top: 1rem;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+            <div>
+              <span style="background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px;">#${order.orderId}</span>
+              <h3 style="font-size: 1rem; margin-top: 4px;">${order.lensName}</h3>
+              <span style="font-size: 0.75rem; color: #64748b;">${order.frameService} • ${order.deliveryType}</span>
+            </div>
+            <div style="text-align: right;">
+              <span style="font-size: 0.65rem; color: #166534; font-weight: 700; text-transform: uppercase;">Estimated Delivery</span>
+              <div style="font-size: 0.85rem; font-weight: 700; color: #15803d;">${order.estimatedDelivery}</div>
+            </div>
+          </div>
+          <div>${timelineHTML}</div>
+        </div>
+      `;
+    }
+
+    function checkoutWhatsApp() {
+      if (cart.length === 0 && selectedAddons.size === 0) {
+        alert("Please select at least one lens package or fitting service before proceeding.");
+        return;
+      }
+
+      const lensesTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      let itemsSummary = cart.length > 0 
+        ? cart.map(item => `• ${item.name} (${item.series}) x ${item.quantity} = ₹${(item.price * item.quantity).toLocaleString("en-IN")}`).join("\n")
+        : "• Frame Service / Edging Only";
+
+      let addonsSummary = "";
+      let addonsTotal = 0;
+      if (selectedAddons.size > 0) {
+        const list = Array.from(selectedAddons).map(key => `  + ${availableAddons[key].name} (₹${availableAddons[key].price})`).join("\n");
+        addonsSummary = `\n*Frame Fitting & Lab Add-ons:*\n${list}\n`;
+      }
+
+      const grandTotal = lensesTotal + addonsTotal;
+      const odSph = document.getElementById("odSph")?.value || "0.00";
+      const osSph = document.getElementById("osSph")?.value || "0.00";
+      const appDate = document.getElementById("appointmentDate")?.value || "Earliest available";
+      const appSlot = document.querySelector('input[name="appointmentSlot"]:checked')?.value || "09:00 AM - 11:00 AM";
+
+      const message = `*New ReLens Booking Request*\n📅 Preferred Slot: ${appDate} (${appSlot})\n\n*Lenses Selected:*\n${itemsSummary}${addonsSummary}\n*Prescription:* OD: ${odSph} | OS: ${osSph}\n*Estimated Total:* ₹${grandTotal.toLocaleString("en-IN")}\n📍 Location: Puducherry Doorstep`;
+      window.open(`https://wa.me/message/3XHYZJ2WIHFTO1?text=${encodeURIComponent(message)}`, "_blank");
+    }
+
+    function saveReLensState() {
+      try {
+        const payload = {
+          cart: cart || [],
+          addons: Array.from(selectedAddons || []),
+          odSph: document.getElementById("odSph")?.value || "",
+          osSph: document.getElementById("osSph")?.value || "",
+          date: document.getElementById("appointmentDate")?.value || ""
+        };
+        localStorage.setItem(RELENS_STORAGE_KEY, JSON.stringify(payload));
+      } catch (e) {}
+    }
+
+    function loadReLensState() {
+      const now = new Date();
+      const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+      const datePicker = document.getElementById("appointmentDate");
+      const quickDate = document.getElementById("quickBookingDate");
+      if (datePicker) { datePicker.min = today; datePicker.value = today; }
+      if (quickDate) { quickDate.min = today; quickDate.value = today; }
+
+      try {
+        const raw = localStorage.getItem(RELENS_STORAGE_KEY);
+        if (!raw) return;
+        const data = JSON.parse(raw);
+        if (Array.isArray(data.cart)) { cart = data.cart; updateCartUI(); }
+        if (Array.isArray(data.addons)) {
+          selectedAddons.clear();
+          data.addons.forEach(key => {
+            selectedAddons.add(key);
+            const cb = document.getElementById(`addon-${key}`);
+            if (cb) cb.checked = true;
+          });
+          updateCartTotals();
+        }
+        if (data.odSph) document.getElementById("odSph").value = data.odSph;
+        if (data.osSph) document.getElementById("osSph").value = data.osSph;
+        if (data.date && datePicker) datePicker.value = data.date;
+        evaluatePrescriptionIndex();
+      } catch (e) {}
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderCatalog(catalogData);
+      loadReLensState();
+
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          activeFilter = btn.dataset.filter;
+          applyFilters();
+        });
+      });
+
+      ["odSph", "odCyl", "osSph", "osCyl"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener("input", () => { evaluatePrescriptionIndex(); saveReLensState(); });
+      });
+    });
+  </script>
 </body>
 </html>
