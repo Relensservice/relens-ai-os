@@ -1,16 +1,1003 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#071a33">
-<title>ReLens Premium App</title>
-<meta http-equiv="refresh" content="0;url=https://relensservice.github.io/Relensapp/premium.html">
-<link rel="canonical" href="https://relensservice.github.io/Relensapp/premium.html">
-<meta property="og:url" content="https://relensservice.github.io/Relensapp/premium.html">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReLens AI OS • Doorstep Lens Replacement & Frame Care</title>
+  <link rel="icon" href="https://relensservice.github.io/Relensapp/icon-512.png" />
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-600: #475569;
+      --slate-400: #94a3b8;
+      --slate-100: #f1f5f9;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --success: #22c55e;
+      --wa-green: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--slate-800);
+      line-height: 1.5;
+      padding-bottom: 80px;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    }
+
+    .nav-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0.85rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--slate-900);
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+
+    .brand-logo-wrap img {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .brand-logo-wrap span {
+      color: var(--primary);
+    }
+
+    .header-tagline {
+      font-size: 0.75rem;
+      color: var(--slate-600);
+      font-weight: 500;
+    }
+
+    .hero-banner {
+      max-width: 1080px;
+      margin: 1.5rem auto 1rem;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    .hero-pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: #e0f2fe;
+      color: var(--primary-dark);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-banner h1 {
+      font-size: 2.1rem;
+      color: var(--slate-900);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-banner h1 span {
+      color: var(--primary);
+    }
+
+    .hero-banner p {
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      color: var(--slate-600);
+      font-size: 0.95rem;
+    }
+
+    .main-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Live Order Tracking Card */
+    .order-tracker-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .tracker-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .tracker-header h2 {
+      font-size: 1.25rem;
+      color: var(--slate-900);
+      margin: 0.25rem 0 0.5rem;
+    }
+
+    .tracker-header p {
+      font-size: 0.85rem;
+      color: var(--slate-600);
+      margin-bottom: 1rem;
+    }
+
+    .tracker-search-bar {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .input-wrapper {
+      position: relative;
+      flex-grow: 1;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+    }
+
+    .input-wrapper input {
+      width: 100%;
+      padding: 0.75rem 0.75rem 0.75rem 2.25rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .input-wrapper input:focus {
+      border-color: var(--primary);
+    }
+
+    .track-btn {
+      background: var(--slate-900);
+      color: var(--white);
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .demo-id-pills {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 0.6rem 0 0.5rem;
+      font-size: 0.75rem;
+      color: var(--slate-600);
+    }
+
+    .demo-id-pills button {
+      background: var(--slate-100);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 0.72rem;
+      cursor: pointer;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .tracker-result-area {
+      margin-top: 1rem;
+    }
+
+    /* Catalog Section */
+    .catalog-section-header {
+      margin-bottom: 1rem;
+    }
+
+    .catalog-section-header h2 {
+      font-size: 1.35rem;
+      color: var(--slate-900);
+    }
+
+    .catalog-filters {
+      display: flex;
+      gap: 0.6rem;
+      overflow-x: auto;
+      padding: 0.5rem 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .catalog-filters::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-btn {
+      white-space: nowrap;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--slate-600);
+      font-size: 0.825rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active {
+      background: var(--slate-900);
+      color: var(--white);
+      border-color: var(--slate-900);
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .catalog-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .catalog-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+
+    .catalog-card.recommended-match {
+      border: 2px solid var(--primary);
+      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.16);
+    }
+
+    .match-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      z-index: 2;
+    }
+
+    .card-media {
+      position: relative;
+      height: 150px;
+      background: #e2e8f0;
+    }
+
+    .card-media img.product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-pill {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .card-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .tag-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .category-badge {
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .index-pill {
+      font-size: 0.68rem;
+      font-weight: 600;
+      background: var(--slate-100);
+      color: var(--slate-600);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .product-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0.4rem 0 0.6rem;
+      color: var(--slate-900);
+    }
+
+    .feature-tags {
+      list-style: none;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .feature-tags li {
+      font-size: 0.8rem;
+      color: var(--slate-600);
+      margin-bottom: 0.25rem;
+    }
+
+    .card-action {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--slate-100);
+    }
+
+    .price-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-label {
+      font-size: 0.65rem;
+      color: var(--slate-400);
+      text-transform: uppercase;
+    }
+
+    .price {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+
+    .select-btn {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Floating Cart Button */
+    .cart-floating-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+      cursor: pointer;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      background: #ef4444;
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Drawer Overlay & Content */
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(2px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .cart-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 440px;
+      height: 100%;
+      background: var(--white);
+      z-index: 1001;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.active {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      padding: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-header h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 1.35rem;
+      cursor: pointer;
+      color: var(--slate-400);
+    }
+
+    .cart-scroll-body {
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+
+    .cart-items {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cart-item {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.85rem;
+    }
+
+    .cart-item-details h4 {
+      font-size: 0.95rem;
+      margin: 2px 0;
+    }
+
+    .item-brand {
+      font-size: 0.72rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .item-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .qty-stepper {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .qty-stepper button {
+      background: transparent;
+      border: none;
+      padding: 4px 10px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    /* Prescription Section */
+    .cart-rx-section {
+      padding: 1rem 1.25rem;
+      background: #fafafa;
+      border-top: 1px solid var(--border);
+    }
+
+    .rx-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .rx-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .rx-tab-toggle {
+      display: flex;
+      background: var(--slate-100);
+      border-radius: 6px;
+      padding: 2px;
+    }
+
+    .rx-tab-btn {
+      border: none;
+      background: transparent;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--slate-600);
+    }
+
+    .rx-tab-btn.active {
+      background: var(--white);
+      color: var(--slate-900);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .rx-mode-content { display: none; }
+    .rx-mode-content.active { display: block; }
+
+    .rx-power-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.75rem;
+    }
+
+    .rx-power-table th {
+      padding: 4px;
+      color: var(--slate-600);
+      text-align: center;
+    }
+
+    .rx-power-table td { padding: 3px 2px; }
+
+    .rx-power-table input {
+      width: 100%;
+      padding: 6px 4px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 0.78rem;
+    }
+
+    .rx-file-dropzone {
+      display: block;
+      border: 1.5px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      background: var(--white);
+    }
+
+    .rx-file-dropzone input { display: none; }
+
+    /* Recommendation Box */
+    .index-rec-box {
+      margin-top: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.75rem;
+      border-left: 4px solid;
+    }
+
+    .index-rec-box.rec-standard { background: #f0fdf4; border-left-color: var(--success); }
+    .index-rec-box.rec-mid { background: #f0f9ff; border-left-color: var(--primary); }
+    .index-rec-box.rec-high { background: #fefce8; border-left-color: #eab308; }
+    .index-rec-box.rec-ultra { background: #fdf2f8; border-left-color: #ec4899; }
+
+    .rec-filter-btn {
+      margin-top: 0.5rem;
+      width: 100%;
+      padding: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: var(--slate-900);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Addons */
+    .cart-addons-section {
+      padding: 1rem 1.25rem;
+      background: var(--slate-100);
+      border-top: 1px solid var(--border);
+    }
+
+    .addon-card {
+      display: flex;
+      gap: 0.65rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.65rem 0.8rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    .addon-card:has(input:checked) {
+      border-color: var(--primary);
+      background: #f0f9ff;
+    }
+
+    .addon-info { flex-grow: 1; }
+    .addon-title-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .addon-price { color: var(--primary); font-weight: 700; }
+    .addon-desc { font-size: 0.7rem; color: var(--slate-600); }
+
+    /* Appointment Section */
+    .cart-appointment-section {
+      padding: 1rem 1.25rem;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+    }
+
+    .slot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.45rem;
+      margin-top: 0.4rem;
+    }
+
+    .slot-pill input { display: none; }
+    .slot-pill span {
+      display: block;
+      text-align: center;
+      font-size: 0.72rem;
+      padding: 0.45rem 0.2rem;
+      background: var(--slate-100);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .slot-pill input:checked + span {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Drawer Footer */
+    .cart-footer {
+      padding: 1.25rem;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 0.85rem;
+    }
+
+    .checkout-whatsapp-btn {
+      width: 100%;
+      background: var(--wa-green);
+      color: var(--white);
+      border: none;
+      padding: 0.85rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .hidden { display: none !important; }
+  </style>
 </head>
 <body>
-<p>Opening <a href="https://relensservice.github.io/Relensapp/premium.html">ReLens Premium App</a>…</p>
-<script>window.location.replace("https://relensservice.github.io/Relensapp/premium.html");</script>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo-wrap">
+        <img src="https://relensservice.github.io/Relensapp/icon-512.png" alt="ReLens Icon" />
+        <div>Re<span>Lens</span></div>
+      </a>
+      <span class="header-tagline">Puducherry Doorstep Optical Lab</span>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-banner">
+    <span class="hero-pill">GIVE YOUR FRAME A SECOND LIFE</span>
+    <h1>Same Frame. <span>Better Vision.</span></h1>
+    <p>Upgrade your lenses at your doorstep in Puducherry. Pick premium progressive, single vision, or blue-cut solutions without visiting a physical store.</p>
+  </section>
+
+  <main class="main-container">
+
+    <!-- 1. Live Order Tracking Card -->
+    <section class="order-tracker-section">
+      <div class="tracker-card">
+        <div class="tracker-header">
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--primary);">LIVE ORDER JOURNEY</span>
+          <h2>Track Your Doorstep Service</h2>
+          <p>Check the live inspection, optical edging, and dispatch status of your frame.</p>
+        </div>
+
+        <form class="tracker-search-bar" onsubmit="handleTrackOrder(event)">
+          <div class="input-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="orderTrackerInput" placeholder="Enter Order ID (e.g. RL-2026-1042)" required />
+          </div>
+          <button type="submit" class="track-btn">Track Order</button>
+        </form>
+
+        <div class="demo-id-pills">
+          <span>Sample test IDs:</span>
+          <button type="button" onclick="quickFillTrack('RL-2026-1042')">#RL-2026-1042</button>
+          <button type="button" onclick="quickFillTrack('RL-2026-1088')">#RL-2026-1088</button>
+        </div>
+
+        <div id="trackerResultArea" class="tracker-result-area"></div>
+      </div>
+    </section>
+
+    <!-- 2. Catalog Section -->
+    <section class="catalog-section">
+      <div class="catalog-section-header">
+        <h2>Premium Lens Catalog</h2>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="catalog-filters" id="filterContainer">
+        <button class="filter-btn active" data-filter="all">All Lenses</button>
+        <button class="filter-btn" data-filter="Single Vision">Single Vision</button>
+        <button class="filter-btn" data-filter="Progressive">Progressive</button>
+        <button class="filter-btn" data-filter="Blue Cut">Blue Cut</button>
+        <button class="filter-btn" data-filter="Contact Lenses">Contact Lenses</button>
+      </div>
+
+      <!-- Catalog Cards Grid -->
+      <div class="catalog-grid" id="catalogGrid"></div>
+    </section>
+
+  </main>
+
+  <!-- Floating Cart Button -->
+  <button class="cart-floating-btn" id="openCartBtn" onclick="toggleCart(true)">
+    <span>🛒</span>
+    <span class="cart-badge" id="cartCount">0</span>
+  </button>
+
+  <!-- Slide-Over Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart(false)"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your ReLens Bag</h3>
+      <button class="close-btn" onclick="toggleCart(false)">✕</button>
+    </div>
+
+    <div class="cart-scroll-body">
+      <!-- Added Items -->
+      <div class="cart-items" id="cartItemsContainer"></div>
+
+      <!-- Prescription Section -->
+      <div class="cart-rx-section">
+        <div class="rx-header">
+          <span class="rx-title">👓 Optical Prescription</span>
+          <div class="rx-tab-toggle">
+            <button type="button" class="rx-tab-btn active" id="tabBtnManual" onclick="switchRxMode('manual')">Enter Power</button>
+            <button type="button" class="rx-tab-btn" id="tabBtnUpload" onclick="switchRxMode('upload')">Upload Slip</button>
+          </div>
+        </div>
+
+        <!-- Mode 1: Manual Power Inputs -->
+        <div id="rxManualForm" class="rx-mode-content active">
+          <table class="rx-power-table">
+            <thead>
+              <tr>
+                <th>Eye</th>
+                <th>SPH</th>
+                <th>CYL</th>
+                <th>AXIS</th>
+                <th>ADD</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 700;">OD (R)</td>
+                <td><input type="text" id="odSph" placeholder="-1.50" /></td>
+                <td><input type="text" id="odCyl" placeholder="0.00" /></td>
+                <td><input type="number" id="odAxis" placeholder="0" min="0" max="180" /></td>
+                <td><input type="text" id="odAdd" placeholder="+1.50" /></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700;">OS (L)</td>
+                <td><input type="text" id="osSph" placeholder="-1.50" /></td>
+                <td><input type="text" id="osCyl" placeholder="0.00" /></td>
+                <td><input type="number" id="osAxis" placeholder="0" min="0" max="180" /></td>
+                <td><input type="text" id="osAdd" placeholder="+1.50" /></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Dynamic Index Recommendation Box -->
+          <div id="indexRecommendationBox" class="index-rec-box hidden">
+            <div style="font-size: 1.1rem;">💡</div>
+            <div style="flex-grow: 1;">
+              <div style="font-weight: 700;" id="recIndexVal">1.60 Hi-Index</div>
+              <div style="color: var(--slate-600);" id="recReasonText">Recommended thickness for your entered power.</div>
+              <button type="button" class="rec-filter-btn" id="filterByIndexBtn" onclick="toggleIndexFilter()">Show Only Recommended Lenses</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mode 2: Upload File -->
+        <div id="rxUploadForm" class="rx-mode-content">
+          <label class="rx-file-dropzone" for="rxFileInput">
+            <input type="file" id="rxFileInput" accept="image/*,.pdf" onchange="handleRxFileSelect(event)" />
+            <div id="dropzoneEmpty">
+              <span style="font-size: 1.25rem;">📄</span>
+              <div style="font-weight: 600; font-size: 0.8rem;">Tap to select prescription slip</div>
+              <div style="font-size: 0.7rem; color: var(--slate-400);">PNG, JPG, or PDF</div>
+            </div>
+            <div id="dropzonePreview" class="hidden">
+              <span id="rxFileName">📎 file.jpg</span>
+              <button type="button" style="background: none; border: none; color: #ef4444; margin-left: 8px; cursor: pointer;" onclick="clearRxFile(event)">✕</button>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Add-ons Section -->
+      <div class="cart-addons-section">
+        <span style="font-size: 0.85rem; font-weight: 700;">🛠️ Frame Spa & Maintenance</span>
+        <div class="addons-list">
+          <label class="addon-card" for="addon-nosepads">
+            <input type="checkbox" id="addon-nosepads" value="nosepads" onchange="toggleAddon('nosepads')" />
+            <div class="addon-info">
+              <div class="addon-title-row">
+                <span>German Silicone Nose Pads</span>
+                <span class="addon-price">+₹99</span>
+              </div>
+              <p class="addon-desc">Anti-slip, air-cushioned replacement.</p>
+            </div>
+          </label>
+
+          <label class="addon-card" for="addon-ultrasonic">
+            <input type="checkbox" id="addon-ultrasonic" value="ultrasonic" onchange="toggleAddon('ultrasonic')" />
+            <div class="addon-info">
+              <div class="addon-title-row">
+                <span>Ultrasonic Deep Cleaning Spa</span>
+                <span class="addon-price">+₹149</span>
+              </div>
+              <p class="addon-desc">Cleans grease, sweat, and micro-dirt from hinges.</p>
+            </div>
+          </label>
+
+          <label class="addon-card" for="addon-alignment">
+            <input type="checkbox" id="addon-alignment" value="alignment" onchange="toggleAddon('alignment')" />
+            <div class="addon-info">
+              <div class="addon-title-row">
+                <span>Frame Realignment & Tightening</span>
+                <span class="addon-price">+₹199</span>
+              </div>
+              <p class="addon-desc">Balances pantoscopic tilt and tightens loose temples.</p>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Preferred Slot Section -->
+      <div class="cart-appointment-section">
+        <span style="font-size: 0.85rem; font-weight: 700;">📅 Preferred Doorstep Appointment</span>
+        <div style="margin-top: 0.5rem;">
+          <input type="date" id="appointmentDate" style="width: 100%; padding: 0.5rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.85rem;" onchange="handleAppointmentChange()" />
+        </div>
+        <div class="slot-grid">
+          <label class="slot-pill">
+            <input type="radio" name="appointmentSlot" value="09:00 AM - 11:00 AM" checked onchange="handleAppointmentChange()" />
+            <span>09:00 AM - 11:00 AM</span>
+          </label>
+          <label class="slot-pill">
+            <input type="radio" name="appointmentSlot" value="11:00 AM - 01:00 PM" onchange="handleAppointmentChange()" />
+            <span>11:00 AM - 01:00 PM</span>
+          </label>
+          <label class="slot-pill">
+            <input type="radio" name="appointmentSlot" value="01:00 PM - 03:00 PM" onchange="handleAppointmentChange()" />
+            <span>01:00 PM - 03:00 PM</span>
+          </label>
+          <label class="slot-pill">
+            <input type="radio" name="appointmentSlot" value="03:00 PM - 05:00 PM" onchange="handleAppointmentChange()" />
+            <span>03:00 PM - 05:00 PM</span>
+          </label>
+          <label class="slot-pill">
+            <input type="radio" name="appointmentSlot" value="05:00 PM - 07:00 PM" onchange="handleAppointmentChange()" />
+            <span>05:00 PM - 07:00 PM</span>
+          </label>
+          <label class="slot-pill">
+            <input type="radio" name="appointmentSlot" value="07:00 PM - 09:00 PM" onchange="handleAppointmentChange()" />
+            <span>07:00 PM - 09:00 PM</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer Sticky Footer -->
+    <div class="cart-footer">
+      <div class="total-row">
+        <span>Estimated Total</span>
+        <span id="cartTotalPrice" style="color: var(--primary);">₹0</span>
+      </div>
+      <button class="checkout-whatsapp-btn" onclick="checkoutWhatsApp()">
+        Book Doorstep Service via WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- Connect Application Script -->
+  <script src="app.js"></script>
 </body>
 </html>
