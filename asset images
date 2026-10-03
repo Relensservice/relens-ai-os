@@ -1,0 +1,226 @@
+const catalogData = [
+      // =========================================================================
+      // 1. FLAGSHIP PROGRESSIVES: EVOLUX ELITE & VARILUX XR
+      // =========================================================================
+      {
+        id: "vv-ee-156-bluvex",
+        name: "Evolux Elite 1.56 Clearview (Bluvex Blue ARC)",
+        category: "Evolux Elite",
+        series: "Evolux Elite (EE)",
+        index: 1.56,
+        brand: "ValueVis",
+        // Ray-tracing freeform progressive visual corridor graphic (Ref: Varilux cockpit)
+        image: "assets/lenses/varilux-cockpit.jpg",
+        features: ["Flagship panoramic field of view", "Bluvex ARC signature blue finish", "Laser authenticated (EE)"],
+        price: 10190
+      },
+      {
+        id: "vv-ee-156-optix",
+        name: "Evolux Elite 1.56 Clearview (Optix Green ARC)",
+        category: "Evolux Elite",
+        series: "Evolux Elite (EE)",
+        index: 1.56,
+        brand: "ValueVis",
+        // 3D Optical Wavefront Ray-tracing simulation (Ref: Varilux XR Series)
+        image: "assets/lenses/varilux-xr.jpg",
+        features: ["Unmatched clarity across every focal zone", "Optix ARC green reflection", "Instant adaptation comfort"],
+        price: 10690
+      },
+      {
+        id: "vv-ee-160-optix",
+        name: "Evolux Elite 1.60 MR-8 Clearview (Optix ARC)",
+        category: "Evolux Elite",
+        series: "Evolux Elite (EE)",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "assets/lenses/varilux-cockpit.jpg",
+        features: ["Maximum corridor width", "MR-8 high impact strength", "Ultra-smooth visual flow"],
+        price: 12790
+      },
+      {
+        id: "vv-ee-167-optix",
+        name: "Evolux Elite 1.67 Ultra-Thin Clearview",
+        category: "Evolux Elite",
+        series: "Evolux Elite (EE)",
+        index: 1.67,
+        brand: "ValueVis",
+        image: "assets/lenses/varilux-xr.jpg",
+        features: ["Ultra-thin edges for high additions", "Optix ARC coating", "Luxury visual balance"],
+        price: 14490
+      },
+      {
+        id: "vv-ee-174-optix",
+        name: "Evolux Elite 1.74 Extreme High-Index",
+        category: "Evolux Elite",
+        series: "Evolux Elite (EE)",
+        index: 1.74,
+        brand: "ValueVis",
+        image: "assets/lenses/varilux-xr.jpg",
+        features: ["Flattest & slimmest progressive on market", "Precision surfaced for high Rx", "Authentic engraving (EE)"],
+        price: 26190
+      },
+      {
+        id: "vv-ee-160-daynite",
+        name: "Evolux Elite 1.60 MR-8 DayNite Adaptive",
+        category: "Evolux Elite",
+        series: "Evolux Elite (EE)",
+        index: 1.60,
+        brand: "ValueVis",
+        // Transitions Gen S 8-color gradient palette
+        image: "assets/lenses/transitions-swatches.jpg",
+        features: ["Flagship optics + fast photochromic", "Effortless transition in & outdoors", "Bluvex ARC signature reflection"],
+        price: 17690
+      },
+
+      // =========================================================================
+      // 2. EVOLUX PROGRESSIVE (Advanced European Technology)
+      // =========================================================================
+      {
+        id: "vv-ex-156-bluvex",
+        name: "Evolux 1.56 Clearview (Bluvex Blue ARC)",
+        category: "Evolux",
+        series: "Evolux (EX)",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "assets/lenses/varilux-cockpit.jpg",
+        features: ["Advanced European Technology", "Refined blue reflection finish", "Extended field of vision (Far/Mid/Near)"],
+        price: 6990
+      },
+      {
+        id: "vv-ex-156-optix",
+        name: "Evolux 1.56 Clearview (Optix Green ARC)",
+        category: "Evolux",
+        series: "Evolux (EX)",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "assets/lenses/varilux-cockpit.jpg",
+        features: ["Green reflection coating", "Reduced peripheral swim", "Reliable all-day comfort"],
+        price: 7490
+      },
+      {
+        id: "vv-ex-160-bluvex",
+        name: "Evolux 1.60 MR-8 Clearview (Bluvex ARC)",
+        category: "Evolux",
+        series: "Evolux (EX)",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "assets/lenses/varilux-xr.jpg",
+        features: ["MR-8 premium strength", "20% thinner edge profile", "Ideal for daily drivers & screen users"],
+        price: 9390
+      },
+      {
+        id: "vv-ex-167-bluvex",
+        name: "Evolux 1.67 Ultra-Thin Clearview",
+        category: "Evolux",
+        series: "Evolux (EX)",
+        index: 1.67,
+        brand: "ValueVis",
+        image: "assets/lenses/varilux-xr.jpg",
+        features: ["Thin & lightweight for higher prescriptions", "Bluvex ARC reflection", "Authentic engraving (EX)"],
+        price: 10690
+      },
+      {
+        id: "vv-ex-160-daynite",
+        name: "Evolux 1.60 MR-8 DayNite Adaptive (Optix ARC)",
+        category: "Evolux",
+        series: "Evolux (EX)",
+        index: 1.60,
+        brand: "ValueVis",
+        // Fast-reacting sun photochromic eyewear
+        image: "assets/lenses/transitions-model.jpg",
+        features: ["Intelligent light transition", "All-day clear indoors to dark outdoors", "Optix ARC green coating"],
+        price: 13890
+      },
+
+      // =========================================================================
+      // 3. ESSILOR STELLEST & MYOPIA MANAGEMENT (New Pediatric Addition)
+      // =========================================================================
+      {
+        id: "es-stellest-clear",
+        name: "Essilor Stellest® Myopia Control (1.59 Airwear)",
+        category: "Single Vision",
+        series: "Essilor Stellest",
+        index: 1.59,
+        brand: "Essilor",
+        // FDA-approved concentric microlens rings
+        image: "assets/lenses/stellest-tech.jpg",
+        features: ["H.A.L.T. concentric ring technology", "Slows myopia progression by 67%", "Shock-resistant Airwear material"],
+        price: 15500
+      },
+      {
+        id: "es-stellest-sun",
+        name: "Essilor Stellest® Tint / Transitions Gen S",
+        category: "Single Vision",
+        series: "Essilor Stellest",
+        index: 1.59,
+        brand: "Essilor",
+        // Child wearing pediatric round frame
+        image: "assets/lenses/stellest-kids.jpg",
+        features: ["Outdoor light & UV protection for kids", "Myopia slowdown + glare comfort", "Authenticity warranty included"],
+        price: 17500
+      },
+
+      // =========================================================================
+      // 4. DAYNITE & CUSTOM TINTS (Transitions Gen S Style)
+      // =========================================================================
+      {
+        id: "vv-fsv-precious-daynite",
+        name: "Precious Blue 1.56 FSV DayNite (Photochromic)",
+        category: "FSV Stock",
+        series: "Precious Blue",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "assets/lenses/transitions-swatches.jpg",
+        features: ["Available in Grey, Brown & Green tints", "HMC Blue reflection", "All-in-one spectacles + shades"],
+        price: 1890
+      },
+      {
+        id: "vv-tint-sunglass-pkg",
+        name: "Custom Prescription Sunglasses (Full / Gradient Tint)",
+        category: "Single Vision",
+        series: "Sun Optics",
+        index: 1.56,
+        brand: "ValueVis",
+        // Geometric tinted sunglass array on display
+        image: "assets/lenses/transitions-frames.jpg",
+        features: ["Dark/Light Grey, Brown, Blue & Green tints", "Blocks 100% UVA & UVB rays", "Precision edged into your frame"],
+        price: 1790
+      },
+
+      // =========================================================================
+      // 5. CUSTOMIZED PROGRESSIVES & SINGLE VISION RX
+      // =========================================================================
+      {
+        id: "vv-cm-156-bc-hmc",
+        name: "Customized 1.56 BlueCut Freeform (HMC Green)",
+        category: "Customized",
+        series: "Customized (CM)",
+        index: 1.56,
+        brand: "ValueVis",
+        image: "assets/lenses/varilux-cockpit.jpg",
+        features: ["Balanced corridor transition", "Blue-light screen protection", "Laser authenticated (CM)"],
+        price: 4390
+      },
+      {
+        id: "vv-cm-160-bc-hmc",
+        name: "Customized 1.60 MR-8 BlueCut (HMC Green)",
+        category: "Customized",
+        series: "Customized (CM)",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "assets/lenses/varilux-xr.jpg",
+        features: ["MR-8 premium substrate", "Impact resistance for rimless frames", "Smooth visual progression"],
+        price: 6790
+      },
+      {
+        id: "vv-sv-160-bc-hmc",
+        name: "ValueVis RX MR-8 Hi-Index BlueCut (1.60)",
+        category: "Single Vision",
+        series: "Single Vision Rx",
+        index: 1.60,
+        brand: "ValueVis",
+        image: "assets/lenses/varilux-xr.jpg",
+        features: ["MR-8 impact resistant material", "20% thinner profile", "Perfect for rimless & supra frames"],
+        price: 5790
+      }
+    ];
