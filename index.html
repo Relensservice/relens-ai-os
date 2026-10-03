@@ -44,7 +44,7 @@
     .trust-badges { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
     .trust-badge { font-size: 0.78rem; font-weight: 600; color: #166534; background: #f0fdf4; padding: 4px 12px; border-radius: 9999px; border: 1px solid #bbf7d0; }
 
-    /* Brand Showcase Cards */
+    /* Brand Showcase Grid */
     .brand-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
     .brand-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
     .brand-tag { font-size: 0.7rem; font-weight: 700; color: var(--primary); text-transform: uppercase; margin-bottom: 0.25rem; }
@@ -232,17 +232,17 @@
       <div class="brand-card">
         <div class="brand-tag">FLAGSHIP PROGRESSIVES</div>
         <h3>Evolux & Evolux Elite</h3>
-        <p>Panoramic focal zones, instant adaptation, Optix ARC Green, and Bluvex ARC Blue optics.</p>
+        <p>Panoramic focal zones, instant adaptation, Optix ARC Green, and Bluvex ARC Blue optics[span_17](start_span)[span_17](end_span)[span_18](start_span)[span_18](end_span)[span_19](start_span)[span_19](end_span).</p>
       </div>
       <div class="brand-card">
         <div class="brand-tag">SURFACED FREEFORM</div>
         <h3>Customized & Venture</h3>
-        <p>American Freeform technology with balanced corridor progression for active daily routines.</p>
+        <p>American Freeform technology with balanced corridor progression for active daily routines[span_20](start_span)[span_20](end_span)[span_21](start_span)[span_21](end_span)[span_22](start_span)[span_22](end_span).</p>
       </div>
       <div class="brand-card">
         <div class="brand-tag">LIGHT-ADAPTIVE</div>
         <h3>DayNite Photochromic</h3>
-        <p>Effortlessly clear indoors and reactive dark outdoors for driving and sunny environments.</p>
+        <p>Effortlessly clear indoors and reactive dark outdoors for driving and sunny environments[span_23](start_span)[span_23](end_span).</p>
       </div>
       <div class="brand-card">
         <div class="brand-tag">CONTACT OPTICS</div>
@@ -452,7 +452,7 @@
                 <span>Standard Full Frame Edging</span>
                 <span class="addon-price">+₹200</span>
               </div>
-              <p class="addon-desc">Automated bevel edging & lens mounting on full-rim frames.</p>
+              <p class="addon-desc">Automated bevel edging & lens mounting on full-rim frames[span_24](start_span)[span_24](end_span).</p>
             </div>
           </label>
 
@@ -463,7 +463,7 @@
                 <span>Supra (Semi-Rimless) Grooving</span>
                 <span class="addon-price">+₹300</span>
               </div>
-              <p class="addon-desc">Precision nylon-wire grooving for semi-rimless frames.</p>
+              <p class="addon-desc">Precision nylon-wire grooving for semi-rimless frames[span_25](start_span)[span_25](end_span).</p>
             </div>
           </label>
 
@@ -474,7 +474,7 @@
                 <span>Rimless Drill Mounting</span>
                 <span class="addon-price">+₹500</span>
               </div>
-              <p class="addon-desc">Precision hole drilling on Coburn/Buhler machinery.</p>
+              <p class="addon-desc">Precision hole drilling on Coburn/Buhler machinery[span_26](start_span)[span_26](end_span).</p>
             </div>
           </label>
 
@@ -485,7 +485,7 @@
                 <span>Dual Coat™ (Front Green + Back Blue ARC)</span>
                 <span class="addon-price">+₹500</span>
               </div>
-              <p class="addon-desc">Front surface green reflection + back surface blue reflection.</p>
+              <p class="addon-desc">Front surface green reflection + back surface blue reflection[span_27](start_span)[span_27](end_span).</p>
             </div>
           </label>
 
@@ -496,7 +496,7 @@
                 <span>Custom Tint (Full / Gradient)</span>
                 <span class="addon-price">+₹300</span>
               </div>
-              <p class="addon-desc">Dark/Light Grey, Brown, Blue, Yellow, or Pink tints.</p>
+              <p class="addon-desc">Dark/Light Grey, Brown, Blue, Yellow, or Pink tints[span_28](start_span)[span_28](end_span).</p>
             </div>
           </label>
 
@@ -614,9 +614,11 @@
   <script>
     const RELENS_STORAGE_KEY = "relens_cart_session_v1";
 
-    // Full 2026 Price List Catalog
+    // Product Catalog with Curated Eyeglass & Authentic Packaging Visuals
     const catalogData = [
-      // 1. EVOLUX ELITE (Flagship Series)
+      // =========================================================================
+      // 1. FLAGSHIP PROGRESSIVES: EVOLUX ELITE & EVOLUX
+      // =========================================================================
       {
         id: "vv-ee-156-bluvex",
         name: "Evolux Elite 1.56 Clearview (Bluvex Blue ARC)",
@@ -624,7 +626,7 @@
         series: "Evolux Elite (EE)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Flagship panoramic field of view", "Bluvex ARC signature blue finish", "Laser authenticated (EE)"],
         price: 10190
       },
@@ -635,7 +637,7 @@
         series: "Evolux Elite (EE)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80",
         features: ["Unmatched clarity across every focal zone", "Optix ARC green reflection", "Instant adaptation comfort"],
         price: 10690
       },
@@ -657,7 +659,7 @@
         series: "Evolux Elite (EE)",
         index: 1.67,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1584447141399-be2c178221d7?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Ultra-thin edges for high additions", "Optix ARC coating", "Luxury visual balance"],
         price: 14490
       },
@@ -668,7 +670,7 @@
         series: "Evolux Elite (EE)",
         index: 1.74,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1516715094483-75da7dee9758?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1582142839970-2b99c5a74e50?auto=format&fit=crop&w=700&q=80",
         features: ["Flattest & slimmest progressive on market", "Precision surfaced for high Rx", "Authentic engraving (EE)"],
         price: 26190
       },
@@ -679,7 +681,7 @@
         series: "Evolux Elite (EE)",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=700&q=80",
         features: ["Flagship optics + fast photochromic", "Effortless transition in & outdoors", "Bluvex ARC signature reflection"],
         price: 17690
       },
@@ -692,7 +694,7 @@
         series: "Evolux (EX)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Advanced European Technology", "Refined blue reflection finish", "Extended field of vision (Far/Mid/Near)"],
         price: 6990
       },
@@ -703,7 +705,7 @@
         series: "Evolux (EX)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80",
         features: ["Green reflection coating", "Reduced peripheral swim", "Reliable all-day comfort"],
         price: 7490
       },
@@ -725,7 +727,7 @@
         series: "Evolux (EX)",
         index: 1.67,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1584447141399-be2c178221d7?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Thin & lightweight for higher prescriptions", "Bluvex ARC reflection", "Authentic engraving (EX)"],
         price: 10690
       },
@@ -736,12 +738,14 @@
         series: "Evolux (EX)",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=700&q=80",
         features: ["Intelligent light transition", "All-day clear indoors to dark outdoors", "Optix ARC green coating"],
         price: 13890
       },
 
+      // =========================================================================
       // 3. CUSTOMIZED PROGRESSIVES (American Freeform Tech)
+      // =========================================================================
       {
         id: "vv-cm-156-clear-hmc",
         name: "Customized 1.56 Clear Freeform (HMC Green)",
@@ -749,7 +753,7 @@
         series: "Customized (CM)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80",
         features: ["American Freeform design", "Optimized clarity across distances", "HMC Green multi-coat"],
         price: 3990
       },
@@ -760,7 +764,7 @@
         series: "Customized (CM)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Balanced corridor transition", "Blue-light screen protection", "Laser authenticated (CM)"],
         price: 4390
       },
@@ -782,7 +786,7 @@
         series: "Customized (CM)",
         index: 1.67,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1584447141399-be2c178221d7?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Slim edge profile for higher powers", "Digital back-surface surfacing", "Reduced eye minification"],
         price: 8390
       },
@@ -793,7 +797,7 @@
         series: "Customized (CM)",
         index: 1.74,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1516715094483-75da7dee9758?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1582142839970-2b99c5a74e50?auto=format&fit=crop&w=700&q=80",
         features: ["Top-tier 1.74 thinness", "HMC Green ARC", "Flattest custom freeform profile"],
         price: 19790
       },
@@ -804,12 +808,14 @@
         series: "Customized (CM)",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=700&q=80",
         features: ["Dual protection: Screens + Sunlight", "Intelligent tint adaptation", "HMC Green coating"],
         price: 11490
       },
 
+      // =========================================================================
       // 4. VENTURE & ENTICE PROGRESSIVES
+      // =========================================================================
       {
         id: "vv-entice-149",
         name: "Entice 1.49 Freeform Progressive (HMC Green)",
@@ -817,7 +823,7 @@
         series: "Entice",
         index: 1.50,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80",
         features: ["Essential clarity for everyday vision", "Standard corridor design", "Economic entry-level progressive"],
         price: 2090
       },
@@ -839,7 +845,7 @@
         series: "Venture (VT)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Everyday performance", "Digital screen comfort", "HMC Green coat"],
         price: 3490
       },
@@ -850,7 +856,7 @@
         series: "Venture (VT)",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Thin & light for moderate powers", "Optimized computer intermediate corridor", "Quicker adaptation"],
         price: 5390
       },
@@ -861,43 +867,45 @@
         series: "Venture (VT)",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=700&q=80",
         features: ["Outdoor light adaptation", "Screen glare filtration", "HMC Green multi-coat"],
         price: 4490
       },
 
-      // 5. SINGLE VISION RX (Surfaced Precision)
+      // =========================================================================
+      // 5. SINGLE VISION RX (Surfaced Precision - Ref: Clear Eyeglass Frames)
+      // =========================================================================
       {
         id: "vv-sv-156-clear-hmc",
-        name: "Single Vision Rx 1.56 Clear (HMC Green)",
+        name: "ValueVis RX Clear Single Vision (1.56)",
         category: "Single Vision",
         series: "Single Vision Rx",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80",
         features: ["Custom surfaced precision optics", "Scratch resistance & UV block", "HMC Green coating"],
         price: 3290
       },
       {
         id: "vv-sv-156-bc-hmc",
-        name: "Single Vision Rx 1.56 BlueCut (HMC Green)",
+        name: "ValueVis RX BlueCut Single Vision (1.56)",
         category: "Single Vision",
         series: "Single Vision Rx",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
-        features: ["High energy screen filtration", "Hydrophobic easy-clean", "Surfaced power up to -8.00 D"],
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
+        features: ["Custom surfaced optics", "HMC Green/Blue ARC", "Higher cyl power availability"],
         price: 3590
       },
       {
         id: "vv-sv-160-bc-hmc",
-        name: "Single Vision Rx 1.60 MR-8 BlueCut (HMC Green)",
+        name: "ValueVis RX MR-8 Hi-Index BlueCut (1.60)",
         category: "Single Vision",
         series: "Single Vision Rx",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
-        features: ["MR-8 impact resistance", "20% thinner edge profile", "Best for rimless & supra frames"],
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
+        features: ["MR-8 impact resistant material", "20% thinner profile", "Perfect for rimless & supra frames"],
         price: 5790
       },
       {
@@ -907,7 +915,7 @@
         series: "Single Vision Rx",
         index: 1.67,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1584447141399-be2c178221d7?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Aspheric design for powers up to -12.00 D", "HMC Green multi-coat", "Minimal eye minification"],
         price: 7390
       },
@@ -918,12 +926,14 @@
         series: "Single Vision Rx",
         index: 1.60,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=700&q=80",
         features: ["Adaptive indoor-to-outdoor clarity", "MR-8 durability", "HMC Green ARC"],
         price: 8290
       },
 
+      // =========================================================================
       // 6. FSV & QUICKFIT STOCK LENSES
+      // =========================================================================
       {
         id: "vv-fsv-precious-clear",
         name: "Precious Blue 1.56 FSV Clear (HMC Blue)",
@@ -931,7 +941,7 @@
         series: "Precious Blue",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80",
         features: ["Exact power stock (+4.00 to -6.00 / Cyl -2.00)", "HMC Blue reflection", "Dust & water repellent"],
         price: 1490
       },
@@ -942,7 +952,7 @@
         series: "Precious Blue",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["BlueCut digital screen protection", "HMC Blue coating", "Affordable daily stock lens"],
         price: 1590
       },
@@ -953,7 +963,7 @@
         series: "Precious Blue",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=700&q=80",
         features: ["Fast reacting sunlight darkening", "HMC Blue reflection", "All-in-one spectacles + shades"],
         price: 1890
       },
@@ -964,7 +974,7 @@
         series: "Precious Blue",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Dual protection: Screen + Sunlight", "HMC Blue coating", "Rapid indoor fadeback"],
         price: 1990
       },
@@ -986,12 +996,14 @@
         series: "QuickFit Stock",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=700&q=80",
         features: ["Stock round-top bifocal", "HMC multi-coat", "Economical near-and-far solution"],
         price: 990
       },
 
+      // =========================================================================
       // 7. RX BIFOCAL LENSES
+      // =========================================================================
       {
         id: "vv-bf-kt-149",
         name: "Kryptok (KT) Bifocal 1.49 (HMC Green)",
@@ -999,7 +1011,7 @@
         series: "Rx Bifocals",
         index: 1.50,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80",
         features: ["Classic round segment near vision", "HMC Green coating", "Dependable distance clarity"],
         price: 1990
       },
@@ -1010,7 +1022,7 @@
         series: "Rx Bifocals",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
         features: ["Upgraded 1.56 thinness", "Screen blue-light filter", "HMC Green multi-coat"],
         price: 2690
       },
@@ -1021,12 +1033,14 @@
         series: "Rx Bifocals",
         index: 1.56,
         brand: "ValueVis",
-        image: "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=700&q=80",
+        image: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=700&q=80",
         features: ["Flat-top D segment for wider reading zone", "Eliminates image jump", "HMC Green coating"],
         price: 2790
       },
 
-      // 8. BAUSCH + LOMB CONTACT LENSES & CARE
+      // =========================================================================
+      // 8. BAUSCH + LOMB (Authentic Product Packaging Reference)
+      // =========================================================================
       {
         id: "bl-ultra-one-day-30",
         name: "Bausch + Lomb Ultra ONE Day (30 Pack)",
@@ -1326,22 +1340,22 @@
       if (maxPower <= 2.00) {
         currentRecommendedIndex = 1.56;
         title.textContent = "1.56 Standard Index";
-        reason.textContent = "Optimal clarity and durability for light optical powers.";
+        reason.textContent = "Optimal clarity and durability for light optical powers.[span_29](start_span)"[span_29](end_span);
         box.className = "index-rec-box rec-standard";
       } else if (maxPower <= 4.00) {
         currentRecommendedIndex = 1.60;
         title.textContent = "1.60 Thin Hi-Index (MR-8)";
-        reason.textContent = "Up to 20% thinner edge profile with high impact strength.";
+        reason.textContent = "Up to 20% thinner edge profile with high impact strength.[span_30](start_span)"[span_30](end_span);
         box.className = "index-rec-box rec-mid";
       } else if (maxPower <= 6.00) {
         currentRecommendedIndex = 1.67;
         title.textContent = "1.67 Ultra-Thin Hi-Index";
-        reason.textContent = "Significantly reduces edge thickness and peripheral distortion.";
+        reason.textContent = "Significantly reduces edge thickness and peripheral distortion.[span_31](start_span)"[span_31](end_span);
         box.className = "index-rec-box rec-high";
       } else {
         currentRecommendedIndex = 1.74;
         title.textContent = "1.74 Extreme Hi-Index";
-        reason.textContent = "Slimmest aesthetic profile for high prescriptions.";
+        reason.textContent = "Slimmest aesthetic profile for high prescriptions.[span_32](start_span)"[span_32](end_span);
         box.className = "index-rec-box rec-ultra";
       }
 
@@ -1386,19 +1400,19 @@
         let recommendedLensId = "";
 
         if (query.includes("screen") || query.includes("computer") || query.includes("laptop") || query.includes("blue")) {
-          reply = "For heavy screen usage, you need advanced reflection control. I recommend **Single Vision Rx 1.60 MR-8 BlueCut** or **Customized 1.56 BlueCut** with HMC Green reflection.";
+          reply = "For heavy screen usage, you need advanced reflection control. I recommend **Single Vision Rx 1.60 MR-8 BlueCut** or **Customized 1.56 BlueCut** with HMC Green reflection.[span_33](start_span)[span_34](start_span)[span_35](start_span)"[span_33](end_span)[span_34](end_span)[span_35](end_span);
           recommendedLensId = "vv-sv-160-bc-hmc";
         } else if (query.includes("reading") || query.includes("driving") || query.includes("progressive") || query.includes("bifocal")) {
-          reply = "For seamless multi-distance vision without dividing lines, the **Evolux 1.56 Clearview (Optix Green ARC)** or **Evolux Elite 1.60** provides an expanded visual field with quick adaptation.";
+          reply = "For seamless multi-distance vision without dividing lines, the **Evolux 1.56 Clearview (Optix Green ARC)** or **Evolux Elite 1.60** provides an expanded visual field with quick adaptation.[span_36](start_span)[span_37](start_span)"[span_36](end_span)[span_37](end_span);
           recommendedLensId = "vv-ex-156-optix";
         } else if (query.includes("outdoor") || query.includes("sun") || query.includes("dark") || query.includes("photochromic")) {
-          reply = "You need light-adaptive technology. The **Precious Blue 1.56 FSV DayNite** or **Evolux 1.60 DayNite** reacts smoothly from indoor clear to outdoor dark.";
+          reply = "You need light-adaptive technology. The **Precious Blue 1.56 FSV DayNite** or **Evolux 1.60 DayNite** reacts smoothly from indoor clear to outdoor dark.[span_38](start_span)[span_39](start_span)[span_40](start_span)"[span_38](end_span)[span_39](end_span)[span_40](end_span);
           recommendedLensId = "vv-fsv-precious-daynite";
         } else if (query.includes("high") || query.includes("thick") || query.includes("-5") || query.includes("-6") || query.includes("thin")) {
-          reply = "For strong prescriptions, standard lenses become thick and heavy. I recommend **Customized 1.67 Ultra-Thin BlueCut** or **Evolux Elite 1.74 Extreme Thin**.";
+          reply = "For strong prescriptions, standard lenses become thick and heavy[span_41](start_span)[span_41](end_span). I recommend **Customized 1.67 Ultra-Thin BlueCut** or **Evolux Elite 1.74 Extreme Thin**.[span_42](start_span)[span_43](start_span)"[span_42](end_span)[span_43](end_span);
           recommendedLensId = "vv-cm-167-bc-hmc";
         } else {
-          reply = "Based on balanced everyday performance, the **Precious Blue 1.56 FSV BlueCut** offers great screen comfort and multi-coating at optimal value.";
+          reply = "Based on balanced everyday performance, the **Precious Blue 1.56 FSV BlueCut** offers great screen comfort and multi-coating at optimal value.[span_44](start_span)"[span_44](end_span);
           recommendedLensId = "vv-fsv-precious-bc";
         }
 
