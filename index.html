@@ -1,214 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
+<html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ReLens | ValueVis Lens Catalog & Booking</title>
+<title>ReLens • Same Frame. Better Vision.</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap">
 <style>
-:root{--bg:#f4f6fb;--card:#fff;--ink:#0f1c3f;--mut:#5a6787;--navy:#14295a;--gold:#c9962b;--gold2:#e6b54a;--line:#dde3f0;--bh:40px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#f4f6fb;--card:#fff;--ink:#0f1c3f;--mut:#5a6787;--navy:#14295a;--gold:#c9962b;--gold2:#e6b54a;--line:#dde3f0;--ok:#1e8e5a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1330;--card:#111e45;--ink:#eef1fa;--mut:#9aa7c9;--line:#25356b}}
 :root[data-theme="dark"]{--bg:#0a1330;--card:#111e45;--ink:#eef1fa;--mut:#9aa7c9;--line:#25356b}
-html{scroll-behavior:smooth;scroll-padding-top:calc(64px + var(--bh,0px) + env(safe-area-inset-top,0px))}
-*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}*{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 'DM Sans',system-ui,sans-serif}
-h1,h2,h3{font-family:Outfit,'DM Sans',sans-serif;line-height:1.15;margin:0}
-a{color:inherit}
+h1,h2,h3{font-family:Outfit,'DM Sans',sans-serif;line-height:1.15;margin:0}a{color:inherit}
 :focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
-nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--bh,0px));z-index:20;background:var(--navy);color:#fff;display:flex;align-items:center;gap:18px;padding:8px 18px;flex-wrap:wrap}
-nav img{height:44px;width:44px;border-radius:10px;background:#fff;padding:2px}
-nav b{font:700 20px Outfit,sans-serif;margin-right:auto}
-nav a{text-decoration:none;font-weight:500;opacity:.9}
-nav a.cta{background:var(--gold);color:#101a38;padding:8px 14px;border-radius:999px;font-weight:700;opacity:1}
-.hero{background:linear-gradient(135deg,#0d1d47,#14295a 60%,#1d3a7a);color:#fff;padding:56px 18px 64px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);color:#fff;display:flex;align-items:center;gap:14px;padding:8px 16px;flex-wrap:wrap}
+nav img{height:44px;width:44px;border-radius:10px;background:#fff;padding:2px}nav .br{margin-right:auto;line-height:1.1}nav b{font:700 20px Outfit}nav small{display:block;font-size:11px;color:#cfd8f2}
+nav a{text-decoration:none;font-weight:500}
+.pill{border:0;cursor:pointer;font:700 14px 'DM Sans';padding:9px 14px;border-radius:999px;background:var(--gold);color:#101a38}.pill.o{background:transparent;color:#fff;border:1px solid #ffffff77}
 .wrap{max-width:1120px;margin:0 auto}
-.hero .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:32px;align-items:center}
-.hero h1{font-size:clamp(34px,5.4vw,58px);font-weight:700}
-.hero h1 span{color:var(--gold2)}
-.hero p{max-width:52ch;color:#cfd8f2;font-size:18px}
-.hero .lg{background:#fff;border-radius:24px;padding:8px;box-shadow:0 20px 50px #0006;justify-self:center;max-width:560px;width:100%}
-.hero .lg img{width:100%;display:block;border-radius:18px}
-.btn{display:inline-block;border:0;cursor:pointer;font:700 15px 'DM Sans',sans-serif;padding:12px 20px;border-radius:12px;background:var(--gold);color:#101a38;text-decoration:none}
-.btn.o{background:transparent;color:inherit;border:2px solid currentColor}
-.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-section{padding:52px 18px}
-section h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:8px}
-.sub{color:var(--mut);max-width:64ch;margin:0 0 26px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
-.card .ph{aspect-ratio:3/2;background:#0d1d47;cursor:zoom-in}
-.card img{width:100%;height:100%;object-fit:cover;display:block}
-.card .b{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
-.tag{align-self:flex-start;background:var(--gold);color:#101a38;font-weight:700;font-size:12px;padding:3px 10px;border-radius:99px}
-.card h3{font-size:22px}.card p{margin:0;color:var(--mut);font-size:15px}
-.from{font:700 22px Outfit,sans-serif;color:var(--navy);margin-top:auto}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .from{color:var(--gold2)}}
-:root[data-theme="dark"] .from{color:var(--gold2)}
-.from small{font:500 13px 'DM Sans';color:var(--mut)}
-.det{display:none;grid-column:1/-1;background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:18px}
-.det.on{display:block}
-.det h4{margin:18px 0 8px;font:700 17px Outfit}
-.tw{overflow-x:auto}
-table{border-collapse:collapse;width:100%;min-width:520px;font-size:14px}
-th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right}
-th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
-th{background:var(--navy);color:#fff;font-weight:600;font-size:13px}
-td button{font:700 14px 'DM Sans';background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:5px 9px;cursor:pointer}
-td button:hover{background:var(--gold);color:#101a38;border-color:var(--gold)}
-.note{font-size:13px;color:var(--mut);margin-top:12px}
-.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
-.gal figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:zoom-in}
-.gal img{width:100%;display:block}.gal figcaption{padding:8px 12px;font-weight:700;font-size:14px}
-.bk{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
-label{display:block;font-weight:700;font-size:14px;margin:12px 0 4px}
-input,select,textarea{width:100%;font:inherit;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
-.it{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
-.it button{background:none;border:0;color:var(--mut);cursor:pointer;font-size:18px}
-.tot{display:flex;justify-content:space-between;font:700 22px Outfit;margin-top:14px}
-.sd{background:var(--navy);color:#fff;border-radius:14px;padding:14px 18px;margin:0 0 24px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;border-left:6px solid var(--gold)}
-.sd b{font:700 19px Outfit}.ph svg{width:100%;height:100%;display:block}
-.pl{list-style:none;margin:8px 0 0;padding:0}.pl li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--line);font-size:14px}
-.pl button{font:700 14px 'DM Sans';background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:4px 9px;cursor:pointer;white-space:nowrap}
-.pl button:hover{background:var(--gold);color:#101a38;border-color:var(--gold)}
-details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-top:10px}summary{font-weight:700;cursor:pointer}
-#all table{min-width:0}#all td:last-child,#all th:last-child{text-align:right}
-.cp{background:#fff!important;cursor:zoom-in}.cp img{object-fit:contain;padding:8px}.th{display:flex;gap:8px;padding:8px 16px 0}.th img{width:64px;height:48px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:8px;cursor:zoom-in}nav a.lk{display:inline!important;border:1px solid #ffffff66;padding:7px 14px;border-radius:999px}
-#lg{position:fixed;inset:0;z-index:40;background:var(--bg);overflow:auto;display:none;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}#lg.on{display:block}
-.lgw{min-height:100%;display:grid;grid-template-columns:1fr 1fr}
-.lgw aside{background:linear-gradient(160deg,#0d1d47,#14295a 60%,#1d3a7a);color:#fff;padding:48px 36px;display:flex;flex-direction:column;justify-content:center;gap:16px}
-.lgw aside img{width:110px;border-radius:20px;background:#fff;padding:4px}.lgw aside h2{font-size:34px;margin:0}.lgw aside li{margin:8px 0;color:#cfd8f2}.lgw aside ul{padding-left:20px;margin:0}
-.lgw main{padding:48px 36px;max-width:480px;width:100%;margin:auto}
-.tabs{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px;margin:16px 0}
-.tabs button{flex:1;border:0;background:transparent;color:var(--ink);font:700 15px 'DM Sans';padding:10px;border-radius:9px;cursor:pointer}.tabs button.on{background:var(--navy);color:#fff}
-#lm{min-height:22px;font-size:14px;font-weight:700;color:#c0392b;margin-top:10px}#lm.ok{color:#1e8e5a}
-.xx{float:right;background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:6px 14px;cursor:pointer;font:700 14px 'DM Sans'}
-.bkh{border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:10px;background:var(--card);font-size:14px}
-@media(max-width:800px){.lgw{grid-template-columns:1fr}.lgw aside{padding:28px 24px}.lgw main{padding:24px}}
-.dz{display:block;border:2px dashed var(--gold);border-radius:16px;padding:26px 16px;text-align:center;cursor:pointer;background:var(--bg);font-weight:700}.dz:focus-within{outline:3px solid var(--gold2);outline-offset:2px}.dz small{display:block;font-weight:400;color:var(--mut);margin-top:4px}.dz input{position:absolute;opacity:0;width:1px;height:1px}
-.pv{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.pv>div{position:relative;width:110px;height:110px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg);font-size:12px;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px;word-break:break-all}.pv img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.pv button{position:absolute;top:4px;right:4px;z-index:1;border:0;border-radius:99px;width:24px;height:24px;background:#000a;color:#fff;cursor:pointer}
-.pw{width:100%;min-width:0;padding:8px;text-align:center}.pt{min-width:0;font-size:14px}.pt th,.pt td{text-align:center;padding:5px 4px}.pt td:first-child{text-align:left;font-weight:700}
-#rxs{margin-top:12px;font-weight:700;font-size:14px;min-height:20px}
-.wf{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;background:#25d366;color:#053b1c;font:700 15px 'DM Sans',sans-serif;padding:12px 18px;border-radius:999px;text-decoration:none;box-shadow:0 8px 24px #0004}#bn{position:sticky;top:env(safe-area-inset-top,0px);z-index:22;height:40px;background:var(--gold2);color:#101a38;display:flex;align-items:center;font-size:14px;font-weight:700}
-#bn .vp{position:relative;flex:1;height:100%;overflow:hidden}
-#bn .sl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 44px;text-align:center;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transform:translateY(100%);transition:transform .5s ease}
-#bn .sl.on{transform:none}#bn .sl.out{transform:translateY(-100%)}
-#bn button{flex:none;width:36px;height:36px;border:0;background:transparent;color:inherit;font-size:20px;cursor:pointer;border-radius:99px}
-#bn button:hover{background:#0002}
-@media(max-width:600px){#bn{font-size:13px}#bn .sl{padding:0 6px;white-space:normal;line-height:1.15}#bn .pn{display:none}}
-@media(prefers-reduced-motion:reduce){#bn .sl{transition:none}}
-#iv{position:fixed;inset:0;z-index:45;background:var(--bg);overflow:auto;display:none;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}#iv.on{display:block}
-.ivg{display:grid;grid-template-columns:400px 1fr;gap:20px;padding:20px;max-width:1240px;margin:0 auto;align-items:start}
-.ln{display:grid;grid-template-columns:1fr 54px 88px 30px;gap:6px;margin-top:6px}.ln input{padding:8px}.ln button{border:0;background:none;color:var(--mut);font-size:18px;cursor:pointer}
-.ivr{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-#inv{background:#fff;color:#111;padding:28px;border-radius:12px;font-size:14px;line-height:1.45}
-#inv table{min-width:0;color:#111}#inv th{background:#14295a;color:#fff}#inv td,#inv th{border-color:#ddd}#inv .tt{width:52%;margin-left:auto;margin-top:12px}#inv .tt td{border:0;padding:4px 10px}#inv .gt td{border-top:2px solid #14295a;font-weight:700;font-size:16px}
-.ivh{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}.ivh img{width:64px;border-radius:12px}
-@media(max-width:900px){.ivg{grid-template-columns:1fr}}
-@media print{body>*{display:none!important}body>#iv{display:block!important;position:static;overflow:visible}#iv .noprint{display:none!important}.ivg{display:block;padding:0}#inv{border-radius:0;padding:0}}
-#lb{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
-#lb.on{display:flex}#lb img{max-width:100%;max-height:100%;border-radius:10px}
-footer{background:var(--navy);color:#cfd8f2;text-align:center;padding:28px 18px;font-size:14px}
-@media(max-width:800px){.hero .wrap,.bk{grid-template-columns:1fr}nav a:not(.cta){display:none}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
-</head>
-<body>
-<div id="bn" role="region" aria-label="Announcements"><button class="pn" id="bp" aria-label="Previous message">‹</button><div class="vp">
-<a class="sl on" href="#contacts">Same-day delivery in Puducherry on Bausch + Lomb contact lenses. Order before 4 PM.</a>
-<a class="sl" href="#book">Give your frame a second life: lens replacement with doorstep pickup and delivery.</a>
-<a class="sl" href="#catalog">ValueVis Evolux Elite, Evolux, Customized and DayNite lenses with full price lists.</a>
-<a class="sl" href="#rx">Upload your prescription and our optometrist will verify it before ordering.</a></div>
-<button class="pn" id="bnx" aria-label="Next message">›</button><button id="bc" aria-label="Close announcements">×</button></div>
-<nav><img src="" data-img="1" alt="ReLens logo"><b>ReLens</b><a href="#catalog">Catalog</a><a href="#contacts">Contact lenses</a><a href="#essilor">Essilor</a><a href="#rx">Prescription</a><a href="#sheets">Price sheets</a><a class="lk" id="lgb" href="#login">Login</a><a class="cta" href="#book">Book · <span id="cnt">0</span> selected</a></nav>
-<header class="hero"><div class="wrap"><div>
-<h1>Give your frame a <span>second life.</span></h1>
-<p>Premium ValueVis lens replacement for the frame you already love. Pick a lens, see the full price, and book doorstep pickup and delivery in Puducherry.</p>
-<div class="row"><a class="btn" href="#catalog">Browse lenses</a><a class="btn o" href="#book">Book pickup</a></div></div>
-<div class="lg"><img data-img="cv" alt="ReLens Bausch + Lomb contact lenses with same-day delivery"></div></div></header>
+.hero{background:linear-gradient(135deg,#0d1d47,#14295a 60%,#1d3a7a);color:#fff;padding:54px 16px 60px}.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.eb{color:var(--gold2);font:700 13px 'DM Sans';letter-spacing:.14em}.hero h1{font-size:clamp(36px,5.6vw,60px);margin:10px 0}.hero h1 span{color:var(--gold2)}.hero p{color:#cfd8f2;font-size:18px;max-width:50ch}
+.chk{display:flex;gap:8px 18px;flex-wrap:wrap;font-weight:700;font-size:14px;margin:14px 0}.chk span::before{content:"✓ ";color:var(--gold2)}
+.lg{background:#fff;border-radius:26px;padding:12px;max-width:330px;justify-self:center;box-shadow:0 20px 50px #0006}.lg img{width:100%;display:block;border-radius:16px}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 15px 'DM Sans';padding:12px 20px;border-radius:12px;background:var(--gold);color:#101a38;text-decoration:none}.btn.o{background:transparent;color:inherit;border:2px solid currentColor}.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+section{padding:50px 16px}section h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:8px}.sub{color:var(--mut);max-width:64ch;margin:0 0 24px}.lab{color:var(--gold);font:700 12px 'DM Sans';letter-spacing:.14em}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.tile{position:relative;min-height:230px;border-radius:18px;overflow:hidden;color:#fff;cursor:pointer;border:0;text-align:left;padding:0;display:flex;align-items:flex-end;background:#0d1d47}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}.tile div{position:relative;padding:16px;background:linear-gradient(transparent,#0d1d47ee 70%);width:100%}.tile h3{font-size:21px;margin:4px 0}.tile p{margin:0;font-size:14px;color:#dbe3f7}
+.tr{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;max-width:760px}.tr .row{margin-top:10px}
+input,select,textarea{width:100%;font:inherit;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}label{display:block;font-weight:700;font-size:14px;margin:12px 0 4px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);font:700 13px 'DM Sans';padding:7px 12px;border-radius:99px;cursor:pointer}.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tl{list-style:none;margin:16px 0 0;padding:0}.tl li{display:flex;gap:12px;align-items:center;padding:7px 0;color:var(--mut)}.tl li::before{content:"";width:16px;height:16px;border-radius:99px;border:2px solid var(--line);flex:none}.tl li.d{color:var(--ink)}.tl li.d::before{background:var(--ok);border-color:var(--ok)}.tl li.c{color:var(--ink);font-weight:700}.tl li.c::before{background:var(--gold);border-color:var(--gold)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}.card .ph{aspect-ratio:3/2;background:#fff;cursor:zoom-in}.card .ph img{width:100%;height:100%;object-fit:contain;display:block}
+.card .b{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}.tag{align-self:flex-start;background:var(--gold);color:#101a38;font-weight:700;font-size:12px;padding:3px 10px;border-radius:99px}.card p{margin:0;color:var(--mut);font-size:14px}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px;min-width:430px}th,td{padding:6px 7px;border-bottom:1px solid var(--line);text-align:right}th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}th{background:var(--navy);color:#fff;font-size:12px}
+td button,.pl button{font:700 13px 'DM Sans';background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:4px 7px;cursor:pointer}td button:hover,.pl button:hover{background:var(--gold);color:#101a38;border-color:var(--gold)}
+.pl{list-style:none;margin:0;padding:0}.pl li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--line);font-size:14px}
+.note{font-size:13px;color:var(--mut)}.box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}.bk{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+footer{background:var(--navy);color:#cfd8f2;text-align:center;padding:26px 16px;font-size:14px}
+.fab{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:30;background:var(--gold);color:#101a38;border:0;font:700 15px 'DM Sans';padding:13px 18px;border-radius:999px;box-shadow:0 8px 24px #0005;cursor:pointer}
+.dim{position:fixed;inset:0;background:#0008;z-index:40;display:none}.dim.on{display:block}
+.pan{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--bg);z-index:41;transform:translateX(105%);transition:transform .3s;overflow:auto;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(24px + env(safe-area-inset-bottom,0px))}.pan.on{transform:none}
+.pan h3{display:flex;justify-content:space-between;align-items:center;font-size:22px}.x{border:0;background:var(--card);color:var(--ink);width:34px;height:34px;border-radius:99px;cursor:pointer;font-size:16px}
+.sec{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:12px}.sec h4{margin:0 0 8px;font:700 16px Outfit}
+.rx td,.rx th{text-align:center;padding:4px}.rx input{padding:7px;text-align:center;min-width:0}
+.rec{background:#c9962b22;border:1px solid var(--gold);border-radius:12px;padding:10px 12px;margin-top:10px;font-size:14px}
+.ao{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}.ao input{width:auto;margin-top:4px}.ao small{display:block;color:var(--mut)}
+.it{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}.it button{background:none;border:0;color:var(--mut);cursor:pointer;font-size:17px}
+.tot{display:flex;justify-content:space-between;padding:3px 0}.tot.g{font:700 22px Outfit;border-top:2px solid var(--navy);margin-top:6px;padding-top:8px}
+.msg{display:flex;margin:8px 0}.msg div{max-width:88%;padding:9px 12px;border-radius:14px;font-size:14px;background:var(--card);border:1px solid var(--line)}.msg.u{justify-content:flex-end}.msg.u div{background:var(--navy);color:#fff;border-color:var(--navy)}
+.msg button{display:block;margin-top:6px;font:700 13px 'DM Sans';border:1px solid var(--gold);background:transparent;color:var(--ink);border-radius:8px;padding:5px 9px;cursor:pointer;text-align:left}
+#lb{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:60;padding:16px}#lb.on{display:flex}#lb img{max-width:100%;max-height:100%;border-radius:10px}
+@media(max-width:800px){.hero .wrap,.bk{grid-template-columns:1fr}nav a{display:none}.fab{bottom:calc(74px + env(safe-area-inset-bottom,0px))}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pan{transition:none}}
+</style></head><body>
+<nav><img data-i="1" alt="ReLens logo"><div class="br"><b>ReLens</b><small>Puducherry Doorstep Optical Lab</small></div><a href="#catalog">Lenses</a><a href="#track">Track</a><a href="#book">Book</a><button class="pill o" id="aib">✨ Ask ReLens AI</button><button class="pill" id="bgb" aria-label="Open bag">🛒 <span id="cc">0</span></button></nav>
+<header class="hero"><div class="wrap"><div><div class="eb">GIVE YOUR FRAME A SECOND LIFE</div><h1>Same Frame. <span>Better Vision.</span></h1>
+<p>Upgrade to authentic ValueVis and high-index lenses at your doorstep in Puducherry. Keep your favourite frame with zero optical compromise.</p>
+<div class="chk"><span>Doorstep Service</span><span>Freeform European &amp; US Tech</span><span>Authenticity Card Included</span></div>
+<div class="row"><a class="btn" href="#catalog">Explore lenses</a><a class="btn o" href="#book">Schedule visit</a></div></div>
+<div class="lg"><img data-i="1" alt="ReLens logo"></div></div></header>
 
-<section id="catalog"><div class="wrap"><h2>ValueVis lens catalog</h2>
-<p class="sub">Tap a lens to see every index, coating and price. Tap a price to add it to your booking.</p>
-<div class="grid" id="cg"></div></div></section>
+<section><div class="wrap"><div class="tiles">
+<button class="tile" data-f="Evolux Elite"><img data-i="9" alt=""><div><div class="lab">FLAGSHIP PROGRESSIVES</div><h3>Evolux &amp; Evolux Elite</h3><p>Panoramic focal zones, instant adaptation, Optix ARC Green and Bluvex ARC Blue optics.</p></div></button>
+<button class="tile" data-f="Customized Freeform"><img data-i="4" alt=""><div><div class="lab">SURFACED FREEFORM</div><h3>Customized &amp; Venture</h3><p>American Freeform technology with balanced corridor progression for active daily routines.</p></div></button>
+<button class="tile" data-f="Customized Freeform"><img data-i="2" alt=""><div><div class="lab">LIGHT-ADAPTIVE</div><h3>DayNite &amp; Transitions</h3><p>Clear indoors and reactive dark outdoors for driving and sunny environments.</p></div></button>
+<button class="tile" data-f="Contact Lenses (B+L)"><img data-i="cv" alt=""><div><div class="lab">CONTACT OPTICS</div><h3>Bausch + Lomb 2026</h3><p>Ultra silicone hydrogels, Biotrue hypergels and Renu solutions with doorstep guidance.</p></div></button></div></div></section>
 
-<section id="contacts"><div class="wrap"><h2>Bausch + Lomb contact lenses</h2>
-<p class="sub">Genuine Bausch + Lomb lenses at MRP 2026. Tap a price to add the pack to your booking.</p>
-<div class="sd"><b>Same-day delivery in Puducherry</b><span>Order before 4:00 PM. Powers -0.50 D to -6.00 D.</span></div>
-<div class="grid" id="cl"></div>
-<h3 style="margin-top:34px">Full Bausch + Lomb MRP list</h3><div id="all"></div>
-<p class="note">Sheet prices are MRP per pack. *The sheet prints two Medivision+ rows as "30 Lens"; the 1026 row is likely the 5-lens pack, please confirm before ordering. Toric, multifocal and colour lenses depend on your prescription.</p></div></section>
-<section id="sheets" style="background:var(--card)"><div class="wrap"><h2>Original price sheets</h2>
-<p class="sub">The ValueVis sheets exactly as supplied. Tap an image to enlarge.</p><div class="gal" id="gal"></div></div></section>
+<section id="track" style="background:var(--card)"><div class="wrap"><div class="lab">LIVE ORDER JOURNEY</div><h2>Track Your Doorstep Service</h2><p class="sub">Check the inspection, optical edging and dispatch status of your frame.</p>
+<div class="tr"><label for="tid">Order ID</label><div style="display:flex;gap:8px"><input id="tid" placeholder="#RL-2026-1042" autocapitalize="characters"><button class="btn" id="tgo">Track Order</button></div>
+<div class="row"><span class="note">Sample test IDs:</span><button class="chip" data-t="RL-2026-1042">#RL-2026-1042</button><button class="chip" data-t="RL-2026-1088">#RL-2026-1088</button></div><div id="tres" role="status"></div></div></div></section>
 
-<section id="essilor"><div class="wrap"><h2>Essilor lenses</h2>
-<p class="sub">Genuine Essilor lens technologies for your frame. Descriptions are summarised from the Essilor India website. Ask ReLens for today's MRP for your prescription.</p>
-<div class="grid" id="es"></div>
-<p class="note">Essilor does not publish MRP on its website, so no price is shown until the official Essilor MRP sheet is added. Availability depends on prescription and index.</p></div></section>
-<section id="rx" style="background:var(--card)"><div class="wrap"><h2>Upload your prescription</h2>
-<p class="sub">Add a photo of your prescription and the ReLens optometrist checks it before any lens is ordered. Powers are optional if the photo is clear.</p>
-<div class="bk"><div class="box"><h3>Prescription photo</h3>
-<label class="dz" for="rxf">Tap to take a photo or choose a file<small>Photo or PDF, up to 3 files</small><input id="rxf" type="file" accept="image/*,application/pdf" multiple></label>
-<div class="pv" id="rxp"></div>
-<label for="rxn">Name</label><input id="rxn" autocomplete="name"><label for="rxt">WhatsApp number</label><input id="rxt" type="tel" autocomplete="tel"></div>
-<div class="box"><h3>Powers (optional)</h3><div class="tw"><table class="pt"><tr><th></th><th>SPH</th><th>CYL</th><th>AXIS</th><th>ADD</th></tr>
-<tr><td>Right</td><td><input class="pw" data-k="R SPH" aria-label="Right SPH"></td><td><input class="pw" data-k="R CYL" aria-label="Right CYL"></td><td><input class="pw" data-k="R AXIS" aria-label="Right AXIS"></td><td><input class="pw" data-k="R ADD" aria-label="Right ADD"></td></tr>
-<tr><td>Left</td><td><input class="pw" data-k="L SPH" aria-label="Left SPH"></td><td><input class="pw" data-k="L CYL" aria-label="Left CYL"></td><td><input class="pw" data-k="L AXIS" aria-label="Left AXIS"></td><td><input class="pw" data-k="L ADD" aria-label="Left ADD"></td></tr></table></div>
-<label for="rxd">PD (pupil distance, mm)</label><input id="rxd" inputmode="decimal">
-<label for="rxk">Notes</label><textarea id="rxk" rows="2" placeholder="Lens type, frame, anything the optometrist should know"></textarea>
-<div class="row"><button class="btn" id="rxg">Send to ReLens on WhatsApp</button></div><div id="rxs" role="status"></div>
-<p class="note">On a phone, WhatsApp opens with your photo attached. On a computer, WhatsApp opens with your details and you attach the photo in the chat.</p></div></div></div></section>
-<section id="book"><div class="wrap"><h2>Book your lens replacement</h2>
-<p class="sub">Send the request on WhatsApp and the ReLens optometrist verifies your prescription before anything is fitted.</p>
-<div class="bk"><div class="box"><h3>Your selection</h3><div id="items"><p class="note">Nothing selected yet. Pick a price from the catalog.</p></div>
-<div class="tot"><span>Total</span><span id="tot">₹0</span></div>
-<p class="note">Prices are catalog MRP: ValueVis per pair, Bausch + Lomb per pack. Frame fitting and taxes are confirmed by ReLens.</p></div>
-<div class="box"><h3>Pickup details</h3>
-<label for="nm">Name</label><input id="nm" autocomplete="name">
-<label for="ph">WhatsApp number</label><input id="ph" type="tel" autocomplete="tel">
-<label for="ad">Pickup address</label><textarea id="ad" rows="2"></textarea>
-<label for="dt">Pickup date</label><input id="dt" type="date">
-<label for="sl">Time slot</label><select id="sl"><option>Morning 10 AM to 1 PM</option><option>Afternoon 2 PM to 5 PM</option><option>Evening 5 PM to 8 PM</option></select>
-<div class="row"><button class="btn" id="send">Send on WhatsApp</button><a class="btn o" href="https://relens.setmore.com/" target="_blank" rel="noopener">Book on Setmore</a></div>
-<div id="bkc" role="status" style="margin-top:12px;font-weight:700"></div><p class="note">Have your prescription image and a photo of your frame ready to share on WhatsApp.</p></div></div></div></section>
-<footer>ReLens · Puducherry · Lens replacement · Premium quality · Pickup &amp; delivery<br>WhatsApp <a href="https://wa.me/message/3XHYZJ2WIHFTO1" target="_blank" rel="noopener">Chat with ReLens</a> · +91 94883 53749<br><a href="#billing" id="sb">Staff billing</a></footer>
-<div id="lg" role="dialog" aria-label="Customer login"><div class="lgw">
-<aside><img data-img="1" alt="ReLens logo"><h2>Your ReLens account</h2><ul><li>Save your pickup address and number</li><li>Rebook a lens in one tap</li><li>See your past booking requests</li></ul></aside>
-<main><button class="xx" id="lx">Close</button>
-<div id="lf"><h2>Customer login</h2>
-<div class="tabs"><button class="on" data-m="in">Sign in</button><button data-m="up">Create account</button></div>
-<div id="nmw" hidden><label for="ln">Full name</label><input id="ln" autocomplete="name"></div>
-<label for="lp">WhatsApp number</label><input id="lp" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10 digit number">
-<label for="lc">4 digit PIN</label><input id="lc" type="password" inputmode="numeric" maxlength="4" autocomplete="current-password">
-<div id="adw" hidden><label for="la">Pickup address (optional)</label><textarea id="la" rows="2"></textarea></div>
-<div class="row"><button class="btn" id="lgo">Sign in</button></div><div id="lm" role="status"></div>
-<p class="note">Forgot your PIN? <a href="https://wa.me/919488353749?text=Hi%20ReLens%2C%20I%20forgot%20my%20account%20PIN" target="_blank" rel="noopener">Message ReLens on WhatsApp</a>. Your account is saved on this device only.</p></div>
-<div id="ac" hidden></div></main></div></div>
-<a class="wf" href="https://wa.me/message/3XHYZJ2WIHFTO1" target="_blank" rel="noopener" aria-label="Chat with ReLens on WhatsApp">Chat on WhatsApp</a><div id="iv" role="dialog" aria-label="Staff billing"><div id="ivgate" class="box noprint" style="max-width:420px;margin:60px auto"><h2>Staff billing</h2><p class="sub" id="ivgm"></p><label for="ivpin">Staff PIN</label><input id="ivpin" type="password" inputmode="numeric" maxlength="6" autocomplete="off"><div class="row"><button class="btn" id="ivpg">Unlock</button><button class="btn o" id="ivc0">Close</button></div><div id="ivgt" role="status" style="margin-top:10px;font-weight:700;color:#c0392b"></div></div>
-<div id="ivapp" class="ivg" hidden><div class="box noprint"><h3>Create invoice</h3>
-<label for="ivn">Customer name</label><input id="ivn"><label for="ivp">Customer phone</label><input id="ivp" type="tel"><label for="iva">Address</label><textarea id="iva" rows="2"></textarea>
-<label for="ivgs">Your GSTIN (shown on invoice)</label><input id="ivgs" autocapitalize="characters">
-<h3 style="margin-top:18px">Items</h3><div id="ivl"></div>
-<div class="row"><button class="btn o" id="ivsl">Add from booking</button><button class="btn o" id="ivad">Add line</button></div>
-<div class="ivr"><div><label for="ivgr">GST rate</label><select id="ivgr"><option>0</option><option selected>5</option><option>12</option><option>18</option></select></div><div><label for="ivd">Discount (₹)</label><input id="ivd" type="number" min="0" value="0"></div>
-<div><label for="ivx">Advance paid (₹)</label><input id="ivx" type="number" min="0" value="0"></div><div><label>&nbsp;</label><label style="margin:0;font-weight:500"><input id="ivin" type="checkbox" checked style="width:auto"> Prices include GST</label></div></div>
-<p class="note">Confirm the GST rate with your accountant. CGST and SGST are shown half each.</p>
-<div class="row"><button class="btn" id="ivpr">Print or save PDF</button><button class="btn o" id="ivwa">Send on WhatsApp</button></div>
-<div class="row"><button class="btn o" id="ivnw">New invoice</button><button class="btn o" id="ivc1">Close</button></div></div>
-<div id="inv"></div></div></div>
+<section id="catalog"><div class="wrap"><h2>Optical Catalog (2026 Price List)</h2><p class="sub">ValueVis and Bausch + Lomb MRP. Tap a price to add it to your bag.</p><div class="chips" id="chips"></div><div class="grid" id="cg"></div></div></section>
+
+<section id="book" style="background:var(--card)"><div class="wrap"><h2>Book Your ReLens Doorstep Service</h2><p class="sub">Select your service and appointment slot and confirm directly with our specialist on WhatsApp.</p>
+<div class="box" style="max-width:640px"><label for="bs">Service</label><select id="bs"><option>Lens Replacement (Keep Frame)</option><option>Progressive Lens Trial &amp; Consultation</option><option>Doorstep Eye Test Assistant</option><option>Frame Realignment &amp; Hinge Spa</option></select>
+<label for="bn">Name</label><input id="bn" autocomplete="name"><label for="bp">WhatsApp number</label><input id="bp" type="tel" autocomplete="tel"><label for="bd">Date</label><input id="bd" type="date"><label for="bt">Time slot</label><select id="bt"></select>
+<div class="row"><button class="btn" id="bgo">Schedule Visit</button></div><div id="bm" class="note" role="status" style="margin-top:10px"></div></div></div></section>
+<footer>ReLens · Puducherry Doorstep Optical Lab · WhatsApp +91 94883 53749 · <a href="https://wa.me/message/3XHYZJ2WIHFTO1" target="_blank" rel="noopener">Chat with ReLens</a></footer>
+
+<button class="fab" id="aif">✨ Ask ReLens AI</button>
+<div class="dim" id="dim"></div>
+<aside class="pan" id="bag" aria-label="Your ReLens Bag"><h3>Your ReLens Bag <button class="x" data-c="1" aria-label="Close">✕</button></h3>
+<div class="sec"><h4>👓 Optical Prescription</h4><div class="row" style="margin:0 0 8px"><button class="chip on" id="m1">Enter Power</button><button class="chip" id="m2">Upload Slip</button></div>
+<div id="rxp"><div class="tw"><table class="rx"><tr><th>Eye</th><th>SPH</th><th>CYL</th><th>AXIS</th><th>ADD</th></tr>
+<tr><td>OD (R)</td><td><input data-r aria-label="OD SPH" inputmode="decimal"></td><td><input data-r aria-label="OD CYL" inputmode="decimal"></td><td><input data-r aria-label="OD AXIS"></td><td><input data-r aria-label="OD ADD"></td></tr>
+<tr><td>OS (L)</td><td><input data-r aria-label="OS SPH" inputmode="decimal"></td><td><input data-r aria-label="OS CYL" inputmode="decimal"></td><td><input data-r aria-label="OS AXIS"></td><td><input data-r aria-label="OS ADD"></td></tr></table></div>
+<div class="rec" id="rec" hidden></div><label style="font-weight:500"><input type="checkbox" id="orc" style="width:auto"> Show only recommended lenses</label></div>
+<div id="slp" hidden><label class="chip" style="display:block;text-align:center;padding:18px;border-style:dashed">Tap to select prescription slip<br><small>PNG, JPG or PDF</small><input id="slf" type="file" accept="image/*,application/pdf" style="display:none"></label><div id="sln" class="note" style="margin-top:8px"></div></div></div>
+<div class="sec"><h4>🛒 Items</h4><div id="its"><p class="note">Your bag is empty. Add a lens from the catalog.</p></div></div>
+<div class="sec"><h4>🛠 Frame Fitting &amp; Lab Add-ons</h4><div id="ads"></div></div>
+<div class="sec"><h4>📅 Preferred Doorstep Appointment</h4><label for="pd">Date</label><input id="pd" type="date"><label for="pt">Time slot</label><select id="pt"></select></div>
+<div class="sec"><h4>🏷️ Have a Promo Code?</h4><div style="display:flex;gap:8px"><input id="pc" placeholder="Promo code" autocapitalize="characters"><button class="btn" id="pa">Apply</button></div><div id="pm" class="note" style="margin-top:6px">Try: RELENS10 (10% off), DOORSTEPFREE (₹200 off), PROG500 (₹500 off progressives)</div></div>
+<div class="sec"><div class="tot"><span>Subtotal</span><span id="st">₹0</span></div><div class="tot"><span id="dl">Discount</span><span id="dv">-₹0</span></div><div class="tot g"><span>Estimated Total</span><span id="gt">₹0</span></div>
+<label for="cn">Name</label><input id="cn" autocomplete="name"><label for="cp">WhatsApp number</label><input id="cp" type="tel" autocomplete="tel">
+<div class="row"><button class="btn" id="cf" style="width:100%">Confirm &amp; Book via WhatsApp</button></div><div id="cm" class="note" role="status" style="margin-top:8px"></div></div></aside>
+
+<aside class="pan" id="ai" aria-label="AI Vision Advisor"><h3>✨ AI Vision Advisor <button class="x" data-c="1" aria-label="Close">✕</button></h3><p class="note">ReLens Smart Guide</p><div id="chat"></div>
+<div class="row" style="margin:8px 0"><button class="chip" data-q="Screen BlueCut for laptop work">💻 Screen BlueCut</button><button class="chip" data-q="Reading and driving, progressive lenses">📖 Reading + Driving</button><button class="chip" data-q="DayNite adaptive for outdoor sun">☀️ DayNite Adaptive</button><button class="chip" data-q="High power -5.50">👓 High Power (-5.00+)</button></div>
+<div style="display:flex;gap:8px"><input id="aq" placeholder="e.g. I drive at night and use laptops, -3.50 power" aria-label="Ask ReLens AI"><button class="btn" id="as">Send</button></div></aside>
 <div id="lb" role="dialog" aria-label="Image preview"><img alt=""></div>
-
 <script>
-const IM = {
-  /* Embed your base64 images dictionary here */
-};
-
-// Initialize elements and image loaders
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('img[data-img]').forEach(img => {
-    const k = img.getAttribute('data-img');
-    if (IM[k]) img.src = IM[k];
-  });
-});
-</script>
-</body>
-</html>
+const IM={"1": "img/1.jpg", "10": "img/10.jpg", "9": "img/9.jpg", "8": "img/8.jpg", "7": "img/7.jpg", "6": "img/6.jpg", "5": "img/5.jpg", "4": "img/4.jpg", "3": "img/3.jpg", "2": "img/2.jpg", "cv": "img/cv.jpg", "b1": "img/b1.jpg", "b2": "img/b2.jpg", "p6": "img/p6.jpg", "p5": "img/p5.jpg", "p4": "img/p4.jpg", "p3": "img/p3.jpg", "p2": "img/p2.jpg", "p1": "img/p1.jpg", "e1": "img/e1.jpg", "e2": "img/e2.jpg", "e3": "img/e3.jpg", "e4": "img/e4.jpg", "e5": "img/e5.jpg", "e6": "img/e6.jpg", "e7": "img/e7.jpg", "e8": "img/e8.jpg", "e9": "img/e9.jpg", "e10": "img/e10.jpg", "e11": "img/e11.jpg", "e12": "img/e12.jpg", "e13": "img/e13.jpg", "e14": "img/e14.jpg", "e15": "img/e15.jpg", "e16": "img/e16.jpg"};const $=s=>document.querySelector(s),W='919488353749',fm=n=>'₹'+n.toLocaleString('en-IN');
+document.querySelectorAll('[data-i]').forEach(e=>e.src=IM[e.dataset.i]);
+const C4=['HC','TUFF HC','HMC Green','HMC Blue'],CE=['Clearview Optix ARC','Clearview Bluvex ARC','DayNite Optix ARC','DayNite Bluvex ARC'];
+const CATS=['All','Evolux Elite','Evolux','Customized Freeform','Venture / Entice','Single Vision Rx','FSV & Stock PALs','Rx Bifocals','Contact Lenses (B+L)','Solutions & Drops'];
+const S=[
+{id:'el',cat:'Evolux Elite',n:'Evolux Elite',t:'Flagship',im:'9',c:CE,d:'Absolute precision across every focal zone, expanded visual field and BlueCut+. Prices include all taxes.',g:[['Freeform progressive',[['1.56','',[10190,10690,11190,11690]],['1.60','',[12290,12790,17090,17590]],['1.67','',[13990,14490,21190,21690]],['1.74','',[25690,26190,37790,38290]]]]]},
+{id:'ev',cat:'Evolux',n:'Evolux',t:'European tech',im:'7',c:CE,d:'Wider field of view with minimal peripheral distortion for focus shifters, drivers and screen users.',g:[['Freeform progressive',[['1.56','',[6990,7490,8190,8690]],['1.60','',[8890,9390,13890,14390]],['1.67','',[10690,11190,17690,18190]]]]]},
+{id:'cu',cat:'Customized Freeform',n:'Customized',t:'American freeform',im:'4',c:C4,d:'Advanced American freeform. Smooth progression, all-day comfort and reduced distortion.',g:[['Progressive, white',[['1.56','Clear',[3290,3490,3990,4290]],['1.56','Bluecut',[3590,3790,4390,4690]],['1.60','Clear',[5490,5690,6490,6790]],['1.60','Bluecut',[5590,5790,6790,7090]],['1.67','Clear',[6990,7190,8090,8390]],['1.67','Bluecut',[7390,7590,8390,8690]],['1.74','Clear',[17990,18190,18990,19290]],['1.74','Bluecut',[18790,18990,19790,20090]]]]]},
+{id:'dn',cat:'Customized Freeform',n:'DayNite',t:'Adapts to light',im:'2',c:C4,d:'Clear indoors, dark outdoors. UV protection and all-day clarity in Customized, Venture and Entice designs.',g:[['Customized DayNite',[['1.56','PG',[4190,4390,5290,5590]],['1.56','PG Bluecut',[4590,4790,5790,6090]],['1.60','PG',[8090,8290,9090,9390]],['1.60','PG Bluecut',[10490,10690,11490,11790]],['1.67','PG',[12490,12690,13490,13790]],['1.67','PG Bluecut',[14390,14590,15390,15790]],['1.74','PG',[28790,28990,29890,30190]],['1.74','PG Bluecut',[30790,30990,31790,32090]]]],['Venture DayNite',[['1.56','PG',[3290,3490,4090,4290]],['1.56','PG Bluecut',[3590,3790,4490,4690]],['1.60','PG',[6790,6990,7690,7890]],['1.60','PG Bluecut',[9090,9290,9790,9990]]]],['Entice DayNite',[['1.49','PG',[2590,2790,2990,3190]]]]]},
+{id:'ve',cat:'Venture / Entice',n:'Venture',t:'Freeform progressive',im:'3',c:C4,d:'Wider visual zones, smoother transitions and quicker adaptation.',g:[['Progressive, white',[['1.56','Clear',[2290,2490,3090,3290]],['1.56','Bluecut',[2590,2790,3490,3690]],['1.60','Clear',[4390,4590,5090,5290]],['1.60','Bluecut',[4490,4690,5390,5590]]]]]},
+{id:'en',cat:'Venture / Entice',n:'Entice',t:'Entry progressive',im:'3',c:C4,d:'Essential clarity for everyday vision at the most affordable freeform price.',g:[['Progressive, white',[['1.49','Clear',[1590,1790,2090,2290]]]]]}];
+const L=[
+{cat:'Contact Lenses (B+L)',n:'Bio True ONE Day',t:'Daily',im:'p6',d:'Fresh hypergel lens every day.',i:[['Bio True ONE Day 30 lens',2765],['Bio True ONE Day 5 lens',553],['Bio True ONE Day Toric 30 lens',2765],['Bio True ONE Day MF 30 lens',4500],['Bio True ONE Day MF 5 lens',825]]},
+{cat:'Contact Lenses (B+L)',n:'Monthly disposable',t:'Monthly',im:'p1',d:'Ultra, PureVision 2, Medivision and more.',i:[['Ultra 6 lens',4031],['Pure Vision 2 6 lens',2526],['Medivision Pro 3 lens',1968],['Medivision 6 lens',1592],['Ultra Toric 6 lens',4031],['Ultra MF 6 lens',5812]]},
+{cat:'Contact Lenses (B+L)',n:'iConnect',t:'Value range',im:'p2',d:'Everyday value packs and OxyRich.',i:[['iConnect 30 lens',1045],['iConnect 10 lens',395],['iConnect 6 lens',665],['iConnect 3 lens',399],['iConnect OxyRich 3 lens',825]]},
+{cat:'Contact Lenses (B+L)',n:'SofLens',t:'Soft lens',im:'p4',d:'Hydrogel lenses in 30 and 90 packs.',i:[['SofLens 30 lens',1921],['SofLens 90 lens',5428],['SofLens Toric 30 lens',2146],['SofLens Toric 6 lens',2268],['SL 59 6 lens',1645]]},
+{cat:'Solutions & Drops',n:'Renu, Bio True and Boston',t:'Lens care',im:'b2',d:'Bausch + Lomb lens care solutions.',i:[['Renu Fresh 60 ml',170],['Renu Fresh 120 ml',285],['Renu Fresh 355 ml',605],['Renu Fresh 500 ml',700],['Bio True 60 ml',190],['Bio True 120 ml',360],['Bio True 300 ml',660],['Renu Advance 60 ml',180],['Renu Advance 118 ml',340],['Renu Advance 355 ml',630],['Renu Advance 473 ml',780],['Boston Simplus 105 ml',260],['Renu Rewetting Drops 8 ml',215]]}];
+const Q=[['Single Vision Rx','Single Vision Rx lenses','Clear, BlueCut and hi-index single vision lenses cut to your prescription. Includes MR-8 1.60, up to 20% thinner and impact resistant.','5'],['FSV & Stock PALs','Finished SV and stock progressives','Ready-made single vision and stock progressive lenses for quick turnaround.','3'],['Rx Bifocals','Rx Bifocals','Prescription bifocal lenses for near and distance.','3']];
+const ADD=[['Standard Full Frame Edging',200,'Automated bevel edging and lens mounting on full-rim frames.'],['Supra (Semi-Rimless) Grooving',300,'Precision nylon-wire grooving for semi-rimless frames.'],['Rimless Drill Mounting',500,'Precision hole drilling for rimless frames.'],['Dual Coat (Front Green + Back Blue ARC)',500,'Front surface green reflection plus back surface blue reflection.'],['Custom Tint (Full / Gradient)',300,'Dark or light grey, brown, blue, yellow or pink tints.'],['German Silicone Nose Pads',99,'Anti-slip, air-cushioned replacement.'],['Ultrasonic Deep Cleaning Spa',149,'Cleans grease, sweat and micro-dirt from hinges.'],['Frame Realignment & Tightening',199,'Balances pantoscopic tilt and tightens loose temples.']];
+const SL1=['09:00 AM - 11:00 AM','11:00 AM - 01:00 PM','01:00 PM - 03:00 PM','03:00 PM - 05:00 PM','05:00 PM - 07:00 PM'],SL2=[...SL1,'07:00 PM - 09:00 PM'];
+const PROMO={RELENS10:['pct',10],DOORSTEPFREE:['flat',200],PROG500:['flat',500,1]};
+let bag=[],ads=new Set(),rec=null,only=false,cat='All',promo=null,slip=null;
+const so=a=>a.map(x=>`<option>${x}</option>`).join('');$('#bt').innerHTML=so(SL1);$('#pt').innerHTML=so(SL2);
+const tm=new Date(Date.now()+864e5).toISOString().slice(0,10);['#bd','#pd'].forEach(s=>{$(s).min=tm;$(s).value=tm});
+function lb(k){$('#lb img').src=IM[k];$('#lb').classList.add('on')}$('#lb').onclick=()=>$('#lb').classList.remove('on');
+function pan(id,on){$('#dim').classList.toggle('on',on);$('#'+id).classList.toggle('on',on)}
+function closeAll(){['bag','ai'].forEach(i=>pan(i,false))}$('#dim').onclick=closeAll;document.querySelectorAll('[data-c]').forEach(b=>b.onclick=closeAll);
+document.addEventListener('keydown',e=>{if(e.key=='Escape'){closeAll();$('#lb').classList.remove('on')}});
+$('#bgb').onclick=()=>pan('bag',true);const oai=()=>{pan('ai',true);if(!$('#chat').children.length)say('Hello! I am your ReLens Vision Advisor. Tell me about your routine or prescription (for example: I drive at night and work on laptops with -3.50 power) and I will match a lens package.')};$('#aib').onclick=$('#aif').onclick=oai;
+function add(n,ix,ty,co,p,pal){bag.push({n,ix,ty,co,p,pal});draw();pan('bag',true)}
+function card(s){const rows=s.g?s.g.map(([t,r])=>[t,r.filter(x=>!only||!rec||x[0].startsWith(rec))]).filter(g=>g[1].length):1;
+ if(s.g&&!rows.length)return'';if(only&&rec&&!s.g)return'';
+ const body=s.g?rows.map(([t,r])=>`<div class="tw"><table><tr><th>${t}</th><th></th>${s.c.map(x=>`<th>${x}</th>`).join('')}</tr>${r.map(x=>`<tr><td>${x[0]}</td><td>${x[1]||'Clear'}</td>${x[2].map((p,j)=>`<td><button data-a="${s.n}|${x[0]}|${x[1]||'Clear'}|${s.c[j]}|${p}">${fm(p)}</button></td>`).join('')}</tr>`).join('')}</table></div>`).join(''):
+ s.i?`<ul class="pl">${s.i.map((x,j)=>`<li><span>${x[0]}</span><button data-l="${s.n}|${x[0]}|${x[1]}">${fm(x[1])}</button></li>`).join('')}</ul>`:
+ `<a class="btn" style="text-align:center" target="_blank" rel="noopener" href="https://wa.me/${W}?text=${encodeURIComponent('Hi ReLens, please share the price for: '+s.n)}">Ask for price</a>`;
+ return`<div class="card"><div class="ph" onclick="lb('${s.im}')"><img src="${IM[s.im]}" alt="${s.n}"></div><div class="b"><span class="tag">${s.t||'Rx'}</span><h3>${s.n}</h3><p>${s.d}</p>${body}${s.g&&s.c===C4?'<p>HC hard coat · TUFF HC scratch-resistant · HMC Green/Blue hard multi coat.</p>':''}</div></div>`}
+function cat_(){const all=[...S,...L,...Q.map(q=>({cat:q[0],n:q[1],d:q[2],im:q[3],t:'On request'}))];
+ $('#chips').innerHTML=CATS.map(c=>`<button class="chip${c==cat?' on':''}" data-k="${c}">${c}</button>`).join('');
+ const h=all.filter(s=>cat=='All'||s.cat==cat).map(card).join('');$('#cg').innerHTML=h||'<p class="note">No lenses match the recommended thickness here. Untick "Show only recommended lenses" in your bag.</p>'}
+$('#chips').onclick=e=>{if(e.target.dataset.k){cat=e.target.dataset.k;cat_()}};
+document.querySelectorAll('.tile').forEach(t=>t.onclick=()=>{cat=t.dataset.f;cat_();$('#catalog').scrollIntoView()});
+$('#cg').onclick=e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.a){const[n,ix,ty,co,p]=b.dataset.a.split('|');add(n,ix,ty,co,+p,1)}else if(b.dataset.l){const[n,ix,p]=b.dataset.l.split('|');add(n,ix,'','',+p,0)}};
+// bag
+$('#ads').innerHTML=ADD.map((a,i)=>`<label class="ao"><input type="checkbox" data-d="${i}"><span><b>${a[0]} +₹${a[1]}</b><small>${a[2]}</small></span></label>`).join('');
+$('#ads').onchange=e=>{const i=+e.target.dataset.d;e.target.checked?ads.add(i):ads.delete(i);draw()};
+$('#m1').onclick=()=>{$('#rxp').hidden=false;$('#slp').hidden=true;$('#m1').classList.add('on');$('#m2').classList.remove('on')};
+$('#m2').onclick=()=>{$('#rxp').hidden=true;$('#slp').hidden=false;$('#m2').classList.add('on');$('#m1').classList.remove('on')};
+$('#slf').onchange=e=>{slip=e.target.files[0]||null;$('#sln').textContent=slip?'📎 '+slip.name:''};
+const rv=()=>[...document.querySelectorAll('[data-r]')].map(i=>parseFloat(i.value));
+$('#rxp').oninput=()=>{const[a,b,,,c,d]=rv(),m=Math.max(...[[a,b],[c,d]].map(([s,y])=>isNaN(s)?0:Math.max(Math.abs(s),Math.abs(s+(y||0)))));
+ rec=m?(m<=2?'1.56':m<=4?'1.60':m<=6?'1.67':'1.74'):null;const r=$('#rec');r.hidden=!rec;if(rec)r.innerHTML=`💡 <b>${rec} ${rec=='1.56'?'Standard':'Hi-Index'}</b><br>Recommended thickness for your entered power.`;if(only)cat_()};
+$('#orc').onchange=e=>{only=e.target.checked;cat_()};
+function tot(){const sub=bag.reduce((a,x)=>a+x.p,0)+[...ads].reduce((a,i)=>a+ADD[i][1],0);let d=0,m='';
+ if(promo){const[t,v,pal]=PROMO[promo];if(pal&&!bag.some(x=>x.pal&&/./.test(x.ix))){m='PROG500 needs a progressive lens in your bag.'}else d=t=='pct'?Math.round(sub*v/100):Math.min(v,sub)}
+ return{sub,d,t:Math.max(0,sub-d),m}}
+function draw(){$('#cc').textContent=bag.length;$('#its').innerHTML=bag.length?bag.map((x,i)=>`<div class="it"><span><b>${x.n}</b> ${x.ix} ${x.ty}<br><small>${x.co}</small></span><span>${fm(x.p)} <button data-x="${i}" aria-label="Remove">×</button></span></div>`).join(''):'<p class="note">Your bag is empty. Add a lens from the catalog.</p>';
+ const t=tot();$('#st').textContent=fm(t.sub);$('#dl').textContent='Discount'+(promo&&!t.m?' ('+promo+')':'');$('#dv').textContent='-'+fm(t.d);$('#gt').textContent=fm(t.t);if(promo)$('#pm').textContent=t.m||promo+' applied.'}
+$('#its').onclick=e=>{if(e.target.dataset.x!==undefined){bag.splice(+e.target.dataset.x,1);draw()}};
+$('#pa').onclick=()=>{const c=$('#pc').value.trim().toUpperCase();if(PROMO[c]){promo=c;draw()}else{promo=null;$('#pm').textContent='Invalid code. Try RELENS10, DOORSTEPFREE or PROG500.';draw()}};
+$('#cf').onclick=async()=>{const n=$('#cn').value.trim(),p=$('#cp').value.replace(/\D/g,'').slice(-10),c=$('#cm');
+ if(!n||p.length!=10){c.style.color='#c0392b';c.textContent='Enter your name and a 10 digit WhatsApp number.';return}
+ if(!bag.length&&!ads.size){c.style.color='#c0392b';c.textContent='Add a lens or a lab add-on first.';return}
+ const id='RL-'+Date.now().toString(36).slice(-5).toUpperCase(),t=tot(),rx=rv(),f=(k)=>isNaN(rx[k])?'-':rx[k];
+ const ok='Hi '+n+', this is ReLens. Your booking #'+id+' is confirmed. Our team is ready to pick up your frame on '+$('#pd').value+', '+$('#pt').value+'. Thank you!';
+ const m=['NEW BOOKING #'+id,'Name: '+n,'Phone: '+p,'Visit: '+$('#pd').value+', '+$('#pt').value,'',rec||rx.some(x=>!isNaN(x))?`Rx OD ${f(0)}/${f(1)}/${f(2)} ADD ${f(3)} | OS ${f(4)}/${f(5)}/${f(6)} ADD ${f(7)}`+(rec?' (suggested '+rec+')':''):(slip?'Rx slip: attached':'Rx: not entered'),'Items:',...bag.map(x=>`- ${x.n} ${x.ix} ${x.ty} ${x.co}: ${fm(x.p)}`),...(ads.size?['Add-ons:',...[...ads].map(i=>`- ${ADD[i][0]}: ${fm(ADD[i][1])}`)]:[]),'Subtotal: '+fm(t.sub),promo&&!t.m?'Promo '+promo+': -'+fm(t.d):'','Total: '+fm(t.t),'','Team: tap to confirm pickup:','https://wa.me/91'+p+'?text='+encodeURIComponent(ok)].filter(x=>x!=='').join('\n');
+ c.style.color='#1e8e5a';c.textContent='Booking #'+id+' created. Press send in WhatsApp and ReLens will confirm your pickup.';
+ try{if(slip&&navigator.canShare&&navigator.canShare({files:[slip]})){await navigator.share({files:[slip],text:m});return}}catch(e){if(e.name=='AbortError')return}
+ window.open('https://wa.me/'+W+'?text='+encodeURIComponent(m),'_blank')};
+// book service
+$('#bgo').onclick=()=>{const n=$('#bn').value.trim(),p=$('#bp').value.replace(/\D/g,'').slice(-10),b=$('#bm');if(!n||p.length!=10){b.style.color='#c0392b';b.textContent='Enter your name and a 10 digit WhatsApp number.';return}
+ const id='RL-'+Date.now().toString(36).slice(-5).toUpperCase(),ok='Hi '+n+', this is ReLens. Your visit #'+id+' is confirmed for '+$('#bd').value+', '+$('#bt').value+'. Our team is ready to pick up your frame. Thank you!';
+ window.open('https://wa.me/'+W+'?text='+encodeURIComponent(['NEW SERVICE REQUEST #'+id,'Service: '+$('#bs').value,'Name: '+n,'Phone: '+p,'Visit: '+$('#bd').value+', '+$('#bt').value,'','Team: tap to confirm:','https://wa.me/91'+p+'?text='+encodeURIComponent(ok)].join('\n')),'_blank');b.style.color='#1e8e5a';b.textContent='Request #'+id+' created. Press send in WhatsApp to confirm.'};
+// track
+const ST=['Order received','Frame inspection','Optical edging','Quality check','Out for delivery','Delivered'],OR={'RL-2026-1042':[2,'Evolux Elite 1.60 lenses'],'RL-2026-1088':[4,'Customized 1.67 Bluecut lenses']};
+function trk(v){const k=v.replace('#','').trim().toUpperCase(),o=OR[k],r=$('#tres');$('#tid').value='#'+k;
+ r.innerHTML=o?`<p style="margin:16px 0 0"><b>#${k}</b> · ${o[1]}</p><ul class="tl">${ST.map((s,i)=>`<li class="${i<o[0]?'d':i==o[0]?'c':''}">${s}</li>`).join('')}</ul><p class="note">Demo order for testing. Live tracking needs the ReLens order system.</p>`:`<p class="note" style="margin-top:14px">No order found for #${k.replace(/[<>&]/g,'')}. Check the ID or message us on WhatsApp.</p>`}
+$('#tgo').onclick=()=>trk($('#tid').value);document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>trk(b.dataset.t));
+// advisor
+function say(h,u){const d=document.createElement('div');d.className='msg'+(u?' u':'');const i=document.createElement('div');u?i.textContent=h:i.innerHTML=h;d.appendChild(i);$('#chat').appendChild(d);$('#chat').scrollIntoView({block:'end'});return i}
+function find(id,ix,ty,col){const s=S.find(x=>x.id==id),r=s.g[0][1].find(x=>x[0]==ix&&(x[1]||'')==ty);return r?{n:s.n,ix,ty:r[1]||'',co:s.c[col],p:r[2][col]}:null}
+let opts=[];
+function adv(q){const t=q.toLowerCase(),nums=(t.match(/[-+]?\d+(?:\.\d+)?/g)||[]).map(Number).filter(n=>Math.abs(n)>=.25&&Math.abs(n)<=20),pw=nums.find(n=>Math.abs(n)<20);
+ const a=Math.abs(pw||0),ix=pw?(a<=2?'1.56':a<=4?'1.60':a<=6?'1.67':'1.74'):'1.60',scr=/screen|laptop|computer|mobile|phone|blue/.test(t),sun=/sun|outdoor|daynite|transition|photo|glare|bright/.test(t),pal=/read|near|progress|bifocal|multifocal|presby|driv|night|age/.test(t);
+ let h=pw?`For <b>${pw}</b> power I suggest <b>${ix}</b> index${a>=5?' (high power, so thinner and lighter)':''}. `:'';opts=[];
+ if(pal||sun||scr&&!pw){const ty=scr?'Bluecut':'Clear';
+  if(sun){const dt=find('dn',ix,'PG Bluecut',3)||find('dn',ix,'PG',3);dt&&opts.push(dt);const e=find('el',ix,'',3);e&&opts.push(e)}
+  else{const c=find('cu',ix,ty,3);c&&opts.push(c);const e=find('el',ix,'',1);e&&opts.push(e)}
+  h+=opts.length?'Matched packages:':'Tell me your power and I will match a package.'}
+ else h+='For single vision lenses the ReLens specialist quotes your exact price after checking the prescription.'+(scr?' Ask for BlueCut coating since you use screens.':'');
+ const i=say(h);opts.forEach((o,k)=>{const b=document.createElement('button');b.textContent=`${o.n} ${o.ix} ${o.ty} ${o.co}: ${fm(o.p)} · Add to bag`;b.onclick=()=>{add(o.n,o.ix,o.ty,o.co,o.p,1);closeAll();pan('bag',true)};i.appendChild(b)});
+ if(!opts.length&&!pal){const b=document.createElement('button');b.textContent='Ask the specialist on WhatsApp';b.onclick=()=>window.open('https://wa.me/'+W+'?text='+encodeURIComponent('Hi ReLens, I need a lens recommendation: '+q));i.appendChild(b)}}
+const ask=q=>{if(!q.trim())return;say(q,1);$('#aq').value='';adv(q)};
+$('#as').onclick=()=>ask($('#aq').value);$('#aq').onkeydown=e=>{if(e.key=='Enter')ask($('#aq').value)};document.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>ask(b.dataset.q));
+cat_();draw();
+</script></body></html>
